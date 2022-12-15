@@ -7,11 +7,10 @@
     background-size: 100% 600px;
     background-repeat: no-repeat;
 } */
-*{
-    font-family: Barlow;
-}
+
 body{
     margin: 0%;
+    font-family: Barlow;
     /* background-color: black; */
 
 }

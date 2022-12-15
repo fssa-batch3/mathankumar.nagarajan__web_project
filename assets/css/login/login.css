@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
 
-*{
-    font-family: Barlow;
-}
 body{
+    font-family: Barlow;
     margin: 0%;
     background-color: #f5f5f7;
 }
