@@ -59,7 +59,7 @@ header{
     border: 1px solid white;
     background-color: gray;
     background-blend-mode: multiply;
-    background-image: url(../../../image/entertainment/avatar-banner.jpg);
+    background-image: url(../../../image/entertainment/about-avatar/avatar-banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
