@@ -38,3 +38,36 @@ a{
     margin-right: 50px;
 }
 /* Nav Finished */
+.container{
+    display: flex;
+}
+#sign-img{
+    width: 600px;
+}
+.box-column{
+    display: flex;
+}
+input{
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+.icon{
+    width: 20px;
+    background-color: white;
+    margin-left: 20px;
+}
+.box-column p{
+    margin-right: 30px;
+}
+.icons-alignment{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+    margin-right: 20px;
+}
+.create-ac-btn{
+    padding: 10px;
+    background-color: orange;
+    display: block;
+}
