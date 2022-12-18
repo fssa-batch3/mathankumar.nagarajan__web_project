@@ -37,6 +37,9 @@ a{
 #signup{
     margin-right: 50px;
 }
+.nav-highlighted{
+    border-bottom: 2px solid blue;
+}
 /* Nav Finished */
 
 #pvr-banner{

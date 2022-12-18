@@ -8,24 +8,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
         <title>SpartansMT</title>
         <link rel="icon" type="image/png" sizes="32x32" href="../../assets/image/home/logo icon.png" alt="logo icon">
-    </head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />    </head>
 <body>
     
-    <nav id="#homepage">
-        <img id="logo" src="../../assets/image/home/logo1.png" alt="logo"/>
-        <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../../pages/stores/stores.html">Stores</a></li>
-            <li><a>Offers</a></li>
-            <li><a href="../../pages/entertainment/entertainment.html">Entertainment</a></li>
-            <li><a>Foodcourt</a></li>
-            <li><a>Services</a></li>
-            <li><a href="../../pages/cart/add-to- cart.html">Cart</a></li>
-            <li><a id="signup" href="../../pages/login/login.html">Signup</a></li>
-        </ul>
-    </nav>
-
-    <main>
+    <!-- <main>
 
         <h1>Welcome</h1>
         <img alt="logo" id="login-page-logo" src="../../assets/image/home/logo1.png">
@@ -34,7 +20,46 @@
         <a id="login-btn" href="../../index.html">Login</a>
         <p>Don't have an account?<a href="../login/signup.html">Sign Up</a></p>
 
-    </main>
+    </main> -->
+
+   
+    <header>
+        <main>
+
+            <div>
+                <img src="../../assets/image/signup/login-page-img.jpg" alt="login-page-img"/>
+            </div>
+            <div>
+                <h1>Sign Up</h1>
+                <div class="input-alignment">
+                    <span class="material-symbols-outlined">person</span>
+                    <label><input class="input-box" type="email" name="email" placeholder="Email" required></label> 
+                </div>
+                <hr>
+                <div class="input-alignment">
+                    <span class="material-symbols-outlined">lock</span>
+                    <label><input class="input-box" type="password" name="password" placeholder="Password" required/></label>
+                </div>
+                <hr>
+                <label><input id="checkbox" type="checkbox" name="checkbox" required/>Remember me</label>
+                <br>
+                <a href="../../pages/home/home.html"><p id="login"><b>Login</b></p></a>
+            </div>
+
+        </main>
+        <div class="footer">
+            <div>
+                <a href="../../pages/login/signup.html"><p>Create an account</p></a>
+            </div>
+            <div id="icons">
+                <p>Or login with</p>
+                <img src="../../assets/image/home/facebook.png" alt="facebook icon"/>
+                <img src="../../assets/image/home/twitter-sign.png" alt="twitter icon"/>
+                <img src="../../assets/image/home/google-icon.png" alt="google-icon"/>
+            </div>
+        </div>
+
+    </header>
 
 
 </body>

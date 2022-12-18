@@ -47,7 +47,7 @@ body{
     padding: 15px;
     padding-left: 40px;
     padding-right: 40px;
-    color: black;
+    color: rgb(29, 28, 28);
     background-color: orange;
     display: inline;
     text-decoration: none;
@@ -61,8 +61,10 @@ body{
 #signin{
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end; 
     margin-top: 40px;
+    margin-left: 1150px;    
 }
 
+a{
+    text-decoration: none;
+}

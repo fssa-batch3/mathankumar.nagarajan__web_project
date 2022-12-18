@@ -33,6 +33,9 @@ a{
 #signup{
     margin-right: 50px;
 }
+.nav-highlighted{
+    border-bottom: 2px solid blue;
+}
 /* nav finished */
 #homecover{
     width: 100%;
