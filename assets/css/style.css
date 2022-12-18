@@ -73,10 +73,17 @@ a{
     width: 260px;
     height: 230px;
     padding-top: 30px;
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: white;
     /* border: 1px solid gray; */
     margin-bottom: 50px;
+}
+.imgstore1{
+    width: 220px;
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .stores{
     display: flex;
