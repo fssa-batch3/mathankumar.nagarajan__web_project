@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
 
 
-body{
+body {
     margin: 0%;
     font-family: 'Barlow', sans-serif;
 }
-nav{
+
+nav {
     width: 100%;
     height: 80px;
     display: flex;
@@ -13,45 +14,54 @@ nav{
     align-items: center;
     /* position: fixed; */
 }
-#logo{
+
+#logo {
     width: 180px;
     height: 60px;
     margin-left: 50px;
     margin-right: 350px;
 }
-ul{
+
+ul {
     display: flex;
     justify-content: space-around;
     width: 100%;
     font-size: 20px;
 }
-li{
+
+li {
     display: flex;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
 }
-#signup{
+
+#signup {
     margin-right: 50px;
 }
+
 /* Nav Finished */
-h6{
+h6 {
     font-size: 30px;
     margin: 0%;
 }
-.banner{
+
+.banner {
     width: 100%;
     height: 450px;
 }
-.products{
+
+.products {
     margin-top: 40px;
-    display: flex;  
+    display: flex;
     justify-content: space-around;
     margin-left: 40px;
     margin-right: 40px;
 }
-.products-items{
+
+.products-items {
     width: 320px;
     height: 400px;
     text-align: center;
@@ -59,19 +69,22 @@ h6{
     transition: transform .2s;
 
 }
-.products-items:hover{
+
+.products-items:hover {
     transform: scale(1.01);
     box-shadow: 2px 2px 20px 4px black;
 }
+
 /* bags Code */
-.products-items-bag{
+.products-items-bag {
     width: 320px;
     height: 540px;
     text-align: center;
     border: 1px solid black;
     transition: transform .2s;
 }
-.productsimg-bag{
+
+.productsimg-bag {
     width: 240px;
     height: 270px;
     margin-top: 10px;
@@ -79,43 +92,51 @@ h6{
 
 
 /* end */
-.cress{
-    text-decoration:line-through;
+.cress {
+    text-decoration: line-through;
 }
-.productsimg{
+
+.productsimg {
     width: 240px;
     height: 120px;
     margin-top: 10px;
 }
 
-.column{
+.column {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.column p{
+
+.column p {
     margin-top: 10px;
 }
-.star-rating{
+
+.star-rating {
     width: 100px;
 }
-.star-center-tag{
+
+.star-center-tag {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.star-center-tag h3,h4{
+
+.star-center-tag h3,
+h4 {
     margin: 0%;
 }
+
 /* last scroll line */
-#most-viewed{
+#most-viewed {
     font-size: 30px;
     text-align: center;
     width: 100%;
     margin-top: 40px;
     margin-bottom: 40px;
 }
-#scroll-box{
+
+#scroll-box {
     margin-bottom: 50px;
     text-align: center;
     display: flex;
@@ -123,10 +144,12 @@ h6{
     overflow: hidden;
     overflow-x: scroll;
 }
-#scroll-box::-webkit-scrollbar{
+
+#scroll-box::-webkit-scrollbar {
     display: none;
 }
-.single-box{
+
+.single-box {
     border: 1px solid black;
     width: 240px;
     height: 240px;
@@ -134,25 +157,30 @@ h6{
     margin-left: 40px;
     transition: transform .2s;
 }
-.single-box:hover{
+
+.single-box:hover {
     transform: scale(1.01);
     box-shadow: 2px 2px 20px 4px black;
 }
-.view-more{
+
+.view-more {
     font-size: 16px;
 }
-.img-size{
+
+.img-size {
     margin-left: 10px;
     margin-right: 10px;
     width: 200px;
-    height: 100px; 
+    height: 100px;
 }
-.item-price{
+
+.item-price {
     font-size: 30px;
 }
+
 /* Footer Starting */
 
-.back-to-top{
+.back-to-top {
     margin-top: 40px;
     padding: 20px;
     background-color: #37475a;
@@ -160,43 +188,51 @@ h6{
     display: block;
     text-align: center;
 }
-footer{
+
+footer {
     background-color: #232f3e;
     color: white;
 }
-.footer{
+
+.footer {
     display: flex;
     justify-content: space-around;
 }
-#footer-logo{
+
+#footer-logo {
     width: 180px;
     height: 60px;
     margin-left: 70px;
     margin-top: 20px;
 }
-#footer-email{
+
+#footer-email {
     height: 50px;
     width: 350px;
 }
-#footer-button{
+
+#footer-button {
     height: 58px;
     width: 50px;
 }
-.footer-icon{
+
+.footer-icon {
     width: 40px;
     height: 40px;
     margin-right: 10px;
     background-color: white;
     border-radius: 15px;
 }
-.footer-h3{
+
+.footer-h3 {
     color: white;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
 
-#highlighted{
+#highlighted {
     border: 3px;
     border-style: groove;
     border-color: red yellowgreen blue orange;
