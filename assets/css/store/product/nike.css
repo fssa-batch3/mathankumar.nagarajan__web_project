@@ -1,239 +1,652 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
 
+@media screen and (max-width:600px) {
 
-body {
-    margin: 0%;
-    font-family: 'Barlow', sans-serif;
+    body {
+        margin: 0%;
+        font-family: 'Barlow', sans-serif;
+    }
+
+    nav {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        background-color: #f5f5f7;
+        align-items: center;
+        /* position: fixed; */
+    }
+
+    #logo {
+        display: flex;
+        align-items: center;
+        width: 4em;
+        margin: 0%;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        padding: 0%;
+        width: 100%;
+        font-size: .6em;
+    }
+
+    li {
+        display: flex;
+        margin-left: 5px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    #signup {
+        margin-right: 50px;
+    }
+
+    /* Nav Finished */
+    h6 {
+        font-size: 30px;
+        margin: 0%;
+    }
+
+    .banner {
+        width: 100%;
+        /* height: 450px; */
+    }
+
+    .products {
+        /* margin-top: 40px; */
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .products-items {
+        margin-top: 20px;
+        width: 270px;
+        height: 340px;
+        text-align: center;
+        border: 1px solid black;
+        transition: transform .2s;
+        font-size: 14px;
+    }
+
+    .products-items:hover {
+        transform: scale(1.01);
+        box-shadow: 2px 2px 20px 4px black;
+    }
+
+    /* bags Code */
+    .products-items-bag {
+        font-size: 8px;
+        width: 200px;
+        height: 340px;
+        margin: 40px;
+        text-align: center;
+        border: 1px solid black;
+        transition: transform .2s;
+    }
+
+    .productsimg-bag {
+        /* width: 240px; */
+        height: 140px;
+        margin-top: 10px;
+    }
+
+
+    /* end */
+
+    /* Fashion dress store codes */
+
+    .productsimg-fashion-dress {
+        /* width: 140px; */
+        height: 200px;
+        margin-top: 10px;
+    }
+    .products-items-fashion .item-price{
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .products-items-fashion .star-rating{
+        width: 50px;
+    }
+    .products-items-fashion {
+        font-size: 10px;
+        margin-top: 30px;
+        width: 200px;
+        height: 370px;
+        text-align: center;
+        border: 1px solid black;
+        transition: transform .2s;
+    }
+
+    /* End fashion dress store codes */
+
+    .cress {
+        text-decoration: line-through;
+        color: red;
+        margin-left: 10px;
+    }
+
+    .cress ~ p {
+        color: green;
+        margin-left: 10px;
+    }
+
+    .productsimg {
+        width: 160px;
+        height: 80px;
+        margin-top: 10px;
+    }
+
+    .column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .column p {
+        margin-top: 10px;
+    }
+
+    .star-rating {
+        width: 100px;
+    }
+
+    .star-center-tag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .star-center-tag h3,
+    h4 {
+        margin: 0%;
+    }
+
+    /* last scroll line */
+    #most-viewed {
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    #scroll-box {
+        /* margin-bottom: 50px; */
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        overflow-x: scroll;
+        padding: 30px;
+    }
+
+    #scroll-box::-webkit-scrollbar {
+        display: none;
+    }
+
+    .single-box {
+        border: 1px solid black;
+        width: 240px;
+        height: 240px;
+        padding-top: 10px;
+        margin-left: 40px;
+        transition: transform .2s;
+    }
+
+    .single-box:hover {
+        transform: scale(1.01);
+        box-shadow: 0px 0px 15px 0px black;
+    }
+
+    .view-more {
+        font-size: 16px;
+    }
+
+    .img-size {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 200px;
+        height: 100px;
+    }
+
+    .item-price {
+        font-size: 30px;
+    }
+
+    /* Footer starting */
+    .back-to-top {
+        margin-top: 40px;
+        padding: 20px;
+        background-color: #37475a;
+        color: white;
+        display: block;
+        text-align: center;
+    }
+
+    footer {
+        font-size: .6em;
+        background-color: #232f3e;
+        color: white;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #footer-logo {
+        width: 100px;
+        height: 40px;
+        margin-left: 30px;
+        margin-top: 20px;
+    }
+
+    #footer-email {
+        height: 30px;
+        width: 80px;
+    }
+
+    #footer-button {
+        height: 38px;
+        width: 30px;
+    }
+
+    .footer-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        background-color: white;
+        border-radius: 15px;
+    }
+
+    .footer-h3 {
+        color: white;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* #highlighted {
+        border: 3px;
+        border-style: groove;
+        border-color: red yellowgreen blue orange;
+    } */
+
+    /* Mobile phones page starting */
+    /* ivenus */
+
+    .mobile-brands {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        border: 2px solid black;
+    }
+
+    .mobile-brands-img {
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+
+    .mobile-brands img {
+        width: 100px;
+        /* height: 100px; */
+        margin-top: 10px;
+    }
+
+    /* Moblie phones apple for ivenus store */
+
+    .mobile-brands-apple {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    #apple-mobile-banner {
+        width: 90%;
+        margin-left: 15px;
+        margin-top: 20px;
+    }
+
+    .mobile-brands-apple img {
+        height: 50px;
+        margin-top: 10px;
+    }
+
+    /* Mobile phones page ending */
+
+
 }
 
-nav {
-    width: 100%;
-    height: 80px;
-    display: flex;
-    background-color: #f5f5f7;
-    align-items: center;
-    /* position: fixed; */
-}
-
-#logo {
-    width: 180px;
-    height: 60px;
-    margin-left: 50px;
-    margin-right: 350px;
-}
-
-ul {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    font-size: 20px;
-}
-
-li {
-    display: flex;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-#signup {
-    margin-right: 50px;
-}
-
-/* Nav Finished */
-h6 {
-    font-size: 30px;
-    margin: 0%;
-}
-
-.banner {
-    width: 100%;
-    height: 450px;
-}
-
-.products {
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-around;
-    margin-left: 40px;
-    margin-right: 40px;
-}
-
-.products-items {
-    width: 320px;
-    height: 400px;
-    text-align: center;
-    border: 1px solid black;
-    transition: transform .2s;
-
-}
-
-.products-items:hover {
-    transform: scale(1.01);
-    box-shadow: 2px 2px 20px 4px black;
-}
-
-/* bags Code */
-.products-items-bag {
-    width: 320px;
-    height: 540px;
-    text-align: center;
-    border: 1px solid black;
-    transition: transform .2s;
-}
-
-.productsimg-bag {
-    width: 240px;
-    height: 270px;
-    margin-top: 10px;
-}
+@media screen and (min-width:600px) {
 
 
-/* end */
-.cress {
-    text-decoration: line-through;
-}
+    body {
+        margin: 0%;
+        font-family: 'Barlow', sans-serif;
+    }
 
-.productsimg {
-    width: 240px;
-    height: 120px;
-    margin-top: 10px;
-}
+    nav {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        background-color: #f5f5f7;
+        align-items: center;
+        justify-content: space-between;
+        /* position: fixed; */
+    }
 
-.column {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    #logo {
+        width: 11.5em;
+        height: 4em;
+        margin-left: 30px;
+    }
 
-.column p {
-    margin-top: 10px;
-}
+    ul {
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        font-size: 20px;
+    }
 
-.star-rating {
-    width: 100px;
-}
+    li {
+        display: flex;
+    }
 
-.star-center-tag {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    a {
+        text-decoration: none;
+        color: black;
+    }
 
-.star-center-tag h3,
-h4 {
-    margin: 0%;
-}
+    #signup {
+        margin-right: 30px;
+    }
 
-/* last scroll line */
-#most-viewed {
-    font-size: 30px;
-    text-align: center;
-    width: 100%;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
+    /* Nav Finished */
+    h6 {
+        font-size: 30px;
+        margin: 0%;
+    }
 
-#scroll-box {
-    margin-bottom: 50px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden;
-    overflow-x: scroll;
-}
+    .banner {
+        width: 100%;
+        height: 450px;
+    }
 
-#scroll-box::-webkit-scrollbar {
-    display: none;
-}
+    .products {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 40px;
+    }
 
-.single-box {
-    border: 1px solid black;
-    width: 240px;
-    height: 240px;
-    padding-top: 10px;
-    margin-left: 40px;
-    transition: transform .2s;
-}
+    .products-items {
+        width: 320px;
+        height: 400px;
+        margin-bottom: 40px;
+        text-align: center;
+        border: 1px solid black;
+        transition: transform .2s;
 
-.single-box:hover {
-    transform: scale(1.01);
-    box-shadow: 2px 2px 20px 4px black;
-}
+    }
 
-.view-more {
-    font-size: 16px;
-}
+    .products-items:hover {
+        transform: scale(1.01);
+        box-shadow: 2px 2px 20px 4px black;
+    }
 
-.img-size {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 200px;
-    height: 100px;
-}
+    /* bags Code */
+    .products-items-bag {
+        width: 320px;
+        height: 540px;
+        margin-bottom: 40px;
+        text-align: center;
+        border: 1px solid black;
+        transition: transform .2s;
+    }
 
-.item-price {
-    font-size: 30px;
-}
+    .productsimg-bag {
+        /* width: 240px; */
+        height: 270px;
+        margin-top: 10px;
+    }
 
-/* Footer Starting */
 
-.back-to-top {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #37475a;
-    color: white;
-    display: block;
-    text-align: center;
-}
+    /* end */
 
-footer {
-    background-color: #232f3e;
-    color: white;
-}
+    /* Fashion dress store codes */
 
-.footer {
-    display: flex;
-    justify-content: space-around;
-}
+    .productsimg-fashion-dress {
+        /* width: 140px; */
+        height: 300px;
+        margin-top: 10px;
+    }
 
-#footer-logo {
-    width: 180px;
-    height: 60px;
-    margin-left: 70px;
-    margin-top: 20px;
-}
+    .products-items-fashion {
+        margin-top: 30px;
+        width: 320px;
+        height: 560px;
+        text-align: center;
+        border: 1px solid black;
+        transition: transform .2s;
+    }
 
-#footer-email {
-    height: 50px;
-    width: 350px;
-}
+    /* End fashion dress store codes */
 
-#footer-button {
-    height: 58px;
-    width: 50px;
-}
+    .cress {
+        text-decoration: line-through;
+        color: red;
+        margin-left: 10px;
+    }
 
-.footer-icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    background-color: white;
-    border-radius: 15px;
-}
 
-.footer-h3 {
-    color: white;
-}
+    .productsimg {
+        width: 240px;
+        height: 120px;
+        margin-top: 10px;
+    }
 
-html {
-    scroll-behavior: smooth;
-}
+    .column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-#highlighted {
-    border: 3px;
-    border-style: groove;
-    border-color: red yellowgreen blue orange;
+    .column p {
+        margin-top: 10px;
+    }
+
+    .cress ~ p{
+        color: green;
+        margin-left: 10px;
+    }
+
+    .star-rating {
+        width: 100px;
+    }
+
+    .star-center-tag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .star-center-tag h3,
+    h4 {
+        margin: 0%;
+    }
+
+    /* last scroll line */
+    #most-viewed {
+        font-size: 30px;
+        text-align: center;
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    #scroll-box {
+        /* margin-bottom: 50px; */
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        overflow-x: scroll;
+        padding: 30px;
+    }
+
+    #scroll-box::-webkit-scrollbar {
+        display: none;
+    }
+
+    .single-box {
+        border: 1px solid black;
+        width: 240px;
+        height: 240px;
+        padding-top: 10px;
+        margin-left: 40px;
+        transition: transform .2s;
+    }
+
+    .single-box:hover {
+        transform: scale(1.01);
+        box-shadow: 0px 0px 15px 0px black;
+    }
+
+    .view-more {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .img-size {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 200px;
+        height: 100px;
+    }
+
+    .item-price {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .cress + p {
+        font-weight: bold;
+    }
+
+    /* Footer Starting */
+
+    .back-to-top {
+        margin-top: 40px;
+        padding: 20px;
+        background-color: #37475a;
+        color: white;
+        display: block;
+        text-align: center;
+    }
+
+    footer {
+        background-color: #232f3e;
+        color: white;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #footer-logo {
+        width: 180px;
+        height: 60px;
+        margin-left: 70px;
+        margin-top: 20px;
+    }
+
+    #footer-email {
+        height: 50px;
+        width: 350px;
+    }
+
+    #footer-button {
+        height: 58px;
+        width: 50px;
+    }
+
+    .footer-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        background-color: white;
+        border-radius: 15px;
+    }
+
+    .footer-h3 {
+        color: white;
+        padding: 5px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    #highlighted {
+        border: 3px;
+        border-style: groove;
+        border-color: red yellowgreen blue orange;
+    }
+
+    /* Mobile phones page starting */
+    /* ivenus */
+
+    .mobile-brands {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border: 2px solid black;
+    }
+
+    .mobile-brands-img {
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+
+    .mobile-brands img {
+        width: 100px;
+        /* height: 100px; */
+        margin-top: 10px;
+    }
+
+    /* Moblie phones apple for ivenus store */
+
+    .mobile-brands-apple {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #apple-mobile-banner {
+        width: 90%;
+        margin-left: 15px;
+        margin-top: 20px;
+    }
+
+    .mobile-brands-apple img {
+        height: 100px;
+        margin-top: 10px;
+    }
+
+    /* Mobile phones page ending */
+
 }

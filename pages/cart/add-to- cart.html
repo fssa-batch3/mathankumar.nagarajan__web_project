@@ -31,7 +31,7 @@
 
 
     <div class="main-contant">
-        <div class="order-summary">
+        <!-- <div class="order-summary">
             <div>
                 <img class="order-img" src="../../assets/image/stores/items/nike1.jpg" alt="produte image"/>
             </div>
@@ -48,7 +48,9 @@
                         <p><b>4.5</b>&#9733;</p>
                         <h4>( 2,200 ) Rating</h4>
                     </div>
-                    <h3 class="add-more-items">Add More Items<label><input class="number-of-items" type="number" placeholder="0" name="number" min="1" max="5"/></label> </h3>
+                    <h3 class="add-more-items">Add More Items<label>
+                        <input class="number-of-items" type="number" placeholder="0" name="number" min="1" max="5"/></label> 
+                    </h3>
             </div>
         </div>
 
@@ -73,7 +75,7 @@
                     </div>
                     <h3 class="add-more-items">Add More Items<label><input class="number-of-items" type="number" placeholder="0" name="number" min="1" max="5"/></label> </h3>
             </div>
-        </div>
+        </div> -->
 
   
     </div>
@@ -108,10 +110,10 @@
                 <h4>Address:</h4>
             </div>
             <div id="align-details2">
-                <h4>Mathankumar G N</h4>
-                <h4>kumarmadhan432@gmail.com</h4>
+                <h4 id="user-name-address"></h4>
+                <h4 id="user-email-address"></h4>
                 <h4>8940169934</h4>
-                <h4>1/74(5) Jeevanager,Emaneshwaram, Paramakudi.</h4>
+                <h4 id="user-address"></h4>
             </div>
         </div>
 
@@ -156,6 +158,167 @@
     </footer>
 
 
+    <script>
+
+        // const user_email = localStorage.getItem("key")
+
+        const user_email = localStorage.getItem("user_email");
+        const first_name = localStorage.getItem("first_name")
+        const address = localStorage.getItem("address")
+
+        console.log(user_email);
+        console.log(first_name);
+        console.log(address);
+
+        document.getElementById("user-email-address").innerText = user_email;
+        document.getElementById("user-name-address").innerText = first_name;
+        document.getElementById("user-address").innerText = address;
+
+
+        let div_order_summary;
+        let div_img;
+        let div_detalis;
+        let produte_img;
+        let title;
+        let p_special_price;
+        let div_column;
+        let h6_rate;
+        let p_line_through;
+        let p_green
+        let h4;
+        let div_rating;
+        let p;
+        let b;
+        let h4_rating;
+        let h3_add_more_items;
+        let input_items;
+        let label_number_of_items;
+
+        const produte_list = [
+            {
+                "produte_img":{
+                    "src":"../../assets/image/stores/items/nike1.jpg",
+                    "alt": "Product Image"
+                },
+                "produte_title" : "Nike Mens Air Zoom Vomero 15 Running Shoe",
+                "rate": "₹6000",
+                "full_rate": "₹10,000",
+                "offer": "(40% off)",
+                "rating":"4.5",
+                "rating_value": "( 2200 ) Rating"
+            },
+            {
+                "produte_img":{
+                    "src":"../../assets/image/stores/items/nike12.jpg",
+                    "alt": "Product Image"
+                },
+                "produte_title" : "ASIAN Delta-20 Sports Running Walking ",
+                "rate": "₹5,000",
+                "full_rate": "₹10000",
+                "offer": "(50% off)",
+                "rating":"4.7",
+                "rating_value": "( 3228 ) Rating"
+            }
+        ]
+        // produte_img = ["../../assets/image/stores/items/nike1.jpg", "../../assets/image/stores/items/nike12.jpg"]
+
+
+
+        for (let i=0; i<=1; i++) {
+                console.log("hello world")
+            
+                div_order_summary = document.createElement("div");
+                div_order_summary.setAttribute("class", "order-summary");
+                console.log(div_order_summary);
+
+                produte_img = document.createElement("img");
+                produte_img.setAttribute("class", "order-img");
+                produte_img.setAttribute("src",  produte_list[i]["produte_img"]["src"])
+                produte_img.setAttribute("alt",  produte_list[i]["produte_img"]["alt"])
+                div_order_summary.prepend(produte_img);
+
+                div_detalis = document.createElement("div");
+                div_order_summary.append(div_detalis);
+
+                title = document.createElement("h1");
+                title.innerText = produte_list[i]["produte_title"];
+                div_detalis.prepend(title);
+
+                p_special_price = document.createElement("p");
+                p_special_price.setAttribute("class", "price-color");
+                p_special_price.innerText = "Special Price";
+                div_detalis.append(p_special_price);
+
+                div_column = document.createElement("div");
+                div_column.setAttribute("class", "column");
+                div_detalis.append(div_column);
+
+                h6_rate = document.createElement("h6");
+                h6_rate.setAttribute("class", "rate");
+                h6_rate.innerText = produte_list[i]["rate"];
+                div_column.prepend(h6_rate);
+
+                p_line_through = document.createElement("p");
+                p_line_through.setAttribute("class", "line-through");
+                p_line_through.innerText = produte_list[i]["full_rate"];
+                div_column.append(p_line_through);
+
+                p_green = document.createElement("p");
+                p_green.setAttribute("class", "green");
+                div_column.append(p_green);
+
+                b = document.createElement("b")
+                b.innerText = produte_list[i]["offer"];
+                p_green.append(b)
+
+                h4 = document.createElement("h4");
+                h4.innerText = "Delivery FREE";
+                div_detalis.append(h4);
+
+                div_rating = document.createElement("div");
+                div_rating.setAttribute("class", "rating-line");
+                div_detalis.append(div_rating);
+
+                p = document.createElement("p");
+                p.innerText = "★";
+                div_rating.prepend(p);
+
+                b = document.createElement("b")
+                b.innerText = produte_list[i]["rating"];
+                p.append(b)
+
+                h4_rating = document.createElement("h4");
+                h4_rating.innerText = produte_list[i]["rating_value"];
+                div_rating.append(h4_rating);
+
+                h3_add_more_items = document.createElement("h3");
+                h3_add_more_items.setAttribute("class", "add-more-items");
+                h3_add_more_items.innerText = "Add More Items";
+                div_detalis.append(h3_add_more_items);
+
+                label_number_of_items = document.createElement("label");
+                h3_add_more_items.append(label_number_of_items);
+
+                input_items = document.createElement("input");
+                input_items.setAttribute("class", "number-of-items")
+                input_items.setAttribute("type","number");
+                input_items.setAttribute("type","number");
+                input_items.setAttribute("placeholder","1");
+                input_items.setAttribute("name","number");
+                input_items.setAttribute("min","1");
+                input_items.setAttribute("max","5");
+                label_number_of_items.append(input_items)
+
+
+                document.querySelector("div.main-contant").append(div_order_summary);
+
+
+            }
+
+
+
+
+    </script>
 
 
 

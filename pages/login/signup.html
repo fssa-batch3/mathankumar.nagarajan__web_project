@@ -1,63 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../assets/css/login/signup.css">
-        <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
-        <title>SpartansMT</title>
-        <link rel="icon" type="image/png" sizes="32x32" href="../../assets/image/home/logo icon.png" alt="logo icon">
-    </head>
-    <body>
 
-        <p id="signin">Already have an account? <a href="../../pages/login/login.html">Sign in here!</a></p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/login/signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>SpartansMT</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/image/home/logo icon.png" alt="logo icon">
+</head>
+
+<body>
+
+    <p id="signin">Already have an account? <a href="../../pages/login/login.html">Sign in here!</a></p>
 
 
-        <header>
+    <header>
 
-            
-            <div class="container">
 
-                <div>
-                    <img id="sign-img" src="../../assets/image/signup/signup-img.png" alt="signup img">
+        <div class="container">
+
+            <div>
+                <img id="sign-img" src="../../assets/image/signup/signup-img.png" alt="signup img">
+            </div>
+            <div>
+                <h1>Create An Account</h1>
+                <div class="box-column">
+                    <label>First Name<br><input type="text" id="firstname" name="first-name" class="input"></label>
+                    <label>Last Name<br><input type="text" id="lastname" name="Last-name" class="input"></label>
                 </div>
-                <div>
-                    <h1>Create An Account</h1>
-                    <div class="box-column">
-                        <label>First Name<br><input type="text" name="first-name" class="input"></label>
-                        <label>Last Name<br><input type="text" name="Last-name" class="input"></label>
-                    </div>
 
-                    <div class="box-column">
-                        <label>Email<br><input type="email" required name="email" class="input"></label>
-                        <label>Address<br><input type="text" required name="address" class="input"></label>
-                    </div>
+                <div class="box-column">
+                    <label>Email<br><input type="email" id="email" required name="email" class="input"></label>
+                    <label>Address<br><input type="text" id="address" required name="address" class="input"></label>
+                </div>
 
-                    <div class="box-column">
-                        <label>Create Password<br><input type="password" required name="create password" class="input"></label>
-                        <label>Confirm Password<br><input type="password" required name="confirm password" class="input"></label>
-                    </div>
-                    <label><input type="checkbox" name="checkbox" id="checkbox">Creating your account and you accepting <b>Terms & Conditions.</b></label>
-                    <br>
-                    <a href="../login/login.html"><p class="create-ac-btn"><b>Create Account</b></p></a>
+                <div class="box-column">
+                    <label>Create Password<br><input id="creatpassword" type="password" required name="create password"
+                            class="input"></label>
+                    <label>Confirm Password<br><input id="confirmpassword" type="password" required
+                            name="confirm password" class="input"></label>
+                </div>
+                <label><input type="checkbox" name="checkbox" id="checkbox">Creating your account and you accepting
+                    <b>Terms & Conditions.</b></label>
+                <br>
+                <button type="button" onclick="signup()" class="create-ac-btn"><b>Create Account</b></button>
 
-                    <div class="box-column">
-                        <div class="icons-alignment">
-                            <img class="icon" src="../../assets/image/home/facebook.png" alt="facebook icon"><p><b>Sign up Using Facebook!</b></p>
-                        </div>
-                        <div class="icons-alignment">
-                            <img class="icon" src="../../assets/image/home/twitter-sign.png" alt="icon"><p><b>Sign up Using Twitter!</b></p>
-                        </div>
+                <div class="box-column">
+                    <div class="icons-alignment">
+                        <img class="icon" src="../../assets/image/home/facebook.png" alt="facebook icon">
+                        <p><b>Sign up Using Facebook!</b></p>
                     </div>
-                   
+                    <div class="icons-alignment">
+                        <img class="icon" src="../../assets/image/home/twitter-sign.png" alt="icon">
+                        <p><b>Sign up Using Twitter!</b></p>
+                    </div>
                 </div>
 
             </div>
 
-        </header>
+        </div>
+
+    </header>
 
 
-        
-    </body>
+    <script>
+
+        function signup() {
+
+            // const firstname=document.getElementById("firstname").value
+            // const lastname=document.getElementById("lastname").value
+            // const email=document.getElementById("email").value
+            // const address=document.getElementById("address").value
+            // const creatpassword=document.getElementById("creatpassword").value
+            // const confirmpassword=document.getElementById("confirmpassword").value
+
+            // console.log(firstname)
+            // console.log(lastname)
+            // console.log(email)
+            // console.log(address)
+            // console.log(creatpassword)
+            // console.log(confirmpassword)
+
+            //logalStorage.setItem("key", value)
+
+            // localStorage.setItem("first_name", firstname)
+            // localStorage.setItem("last_name", lastname)
+            // localStorage.setItem("user_email", email)
+            // localStorage.setItem("address", address)
+            // localStorage.setItem("creatpassword", creatpassword)
+            // localStorage.setItem("confirm_password", confirmpassword)
+
+
+            // new line
+
+
+            let user = {};
+            let user_signup_List = [];
+
+            user["first_name"] = document.getElementById("firstname").value
+            user["last_name"] = document.getElementById("lastname").value
+            user["user_email"] = document.getElementById("email").value
+            user["address"] = document.getElementById("address").value
+            user["creatpassword"] = document.getElementById("creatpassword").value
+            user["confirm_password"] = document.getElementById("confirmpassword").value
+
+
+            user_signup_List.push(user)
+
+            let record = JSON.parse(localStorage.getItem("User Signup List")) || [];
+            record.push(user);
+            localStorage.setItem("User Signup List", JSON.stringify(record));
+
+            if(creatpassword === confirmpassword){
+                alert("SignUp Successfully");
+                
+            } else{
+                alert("Something it's wrong");
+            }
+
+
+
+
+            window.location.href = "../../pages/login/login.html"
+
+        }
+
+
+    </script>
+
+
+</body>
+
 </html>
