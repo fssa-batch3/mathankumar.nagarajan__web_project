@@ -68,65 +68,100 @@
 
     <script>
 
+
+
+        // const firstname=document.getElementById("firstname").value
+        // const lastname=document.getElementById("lastname").value
+        // const email=document.getElementById("email").value
+        // const address=document.getElementById("address").value
+        // const creatpassword=document.getElementById("creatpassword").value
+        // const confirmpassword=document.getElementById("confirmpassword").value
+
+        // console.log(firstname)
+        // console.log(lastname)
+        // console.log(email)
+        // console.log(address)
+        // console.log(creatpassword)
+        // console.log(confirmpassword)
+
+        //logalStorage.setItem("key", value)
+
+        // localStorage.setItem("first_name", firstname)
+        // localStorage.setItem("last_name", lastname)
+        // localStorage.setItem("user_email", email)
+        // localStorage.setItem("address", address)
+        // localStorage.setItem("creatpassword", creatpassword)
+        // localStorage.setItem("confirm_password", confirmpassword)
+
+
+        // new line
+
+
+        // let user = {};
+        // let user_signup_List = [];
+
+        // user["first_name"] = document.getElementById("firstname").value
+        // user["last_name"] = document.getElementById("lastname").value
+        // user["user_email"] = document.getElementById("email").value
+        // user["address"] = document.getElementById("address").value
+        // user["creatpassword"] = document.getElementById("creatpassword").value
+        // user["confirm_password"] = document.getElementById("confirmpassword").value
+
+
+        // user_signup_List.push(user)
+
+        // let record = JSON.parse(localStorage.getItem("User_Signup_List")) || [];
+        // record.push(user);
+        // localStorage.setItem("User_Signup_List", JSON.stringify(record));
+
+        // if(creatpassword === confirmpassword){
+        //     alert("SignUp Successfully");
+        //     return true
+
+        // } else{
+        //     alert("Something it's wrong");
+        //     return false
+        // }
+
         function signup() {
 
-            // const firstname=document.getElementById("firstname").value
-            // const lastname=document.getElementById("lastname").value
-            // const email=document.getElementById("email").value
-            // const address=document.getElementById("address").value
-            // const creatpassword=document.getElementById("creatpassword").value
-            // const confirmpassword=document.getElementById("confirmpassword").value
 
-            // console.log(firstname)
-            // console.log(lastname)
-            // console.log(email)
-            // console.log(address)
-            // console.log(creatpassword)
-            // console.log(confirmpassword)
+            const first_name = document.getElementById("firstname").value
+            const last_name = document.getElementById("lastname").value
+            const user_email = document.getElementById("email").value
+            const address = document.getElementById("address").value
+            const creatpassword = document.getElementById("creatpassword").value
+            const confirm_password = document.getElementById("confirmpassword").value
+            
 
-            //logalStorage.setItem("key", value)
+            if(creatpassword === confirm_password){
+                let user_data = {
+                "firstname": first_name,
+                "lastname": last_name,
+                "email": user_email,
+                "address": address,
+                "creatpassword": creatpassword,
+                "confirmpassword": confirm_password,
+            }
+            let arr = localStorage.getItem("arr")
+                ? JSON.parse(localStorage.getItem("arr")) :
+                [];
+            arr.push(user_data)
+            localStorage.setItem("arr", JSON.stringify(arr))
+            window.location.href = "../../pages/login/login.html"
 
-            // localStorage.setItem("first_name", firstname)
-            // localStorage.setItem("last_name", lastname)
-            // localStorage.setItem("user_email", email)
-            // localStorage.setItem("address", address)
-            // localStorage.setItem("creatpassword", creatpassword)
-            // localStorage.setItem("confirm_password", confirmpassword)
-
-
-            // new line
-
-
-            let user = {};
-            let user_signup_List = [];
-
-            user["first_name"] = document.getElementById("firstname").value
-            user["last_name"] = document.getElementById("lastname").value
-            user["user_email"] = document.getElementById("email").value
-            user["address"] = document.getElementById("address").value
-            user["creatpassword"] = document.getElementById("creatpassword").value
-            user["confirm_password"] = document.getElementById("confirmpassword").value
-
-
-            user_signup_List.push(user)
-
-            let record = JSON.parse(localStorage.getItem("User Signup List")) || [];
-            record.push(user);
-            localStorage.setItem("User Signup List", JSON.stringify(record));
-
-            if(creatpassword === confirmpassword){
-                alert("SignUp Successfully");
-                
-            } else{
-                alert("Something it's wrong");
+            } 
+            else{
+                alert("password is not equal")
             }
 
 
 
-
-            window.location.href = "../../pages/login/login.html"
-
         }
+
+
+
+        
 
 
     </script>

@@ -41,7 +41,7 @@
                 <br>
 
                 <button id="login" type="button" onclick="login()"><b>Login</b></button>
-
+                
             </div>
 
         </main>
@@ -63,52 +63,48 @@
 
     <script>
 
+        // const confirm_email=document.getElementById("confirm_email").value
+        // const password=document.getElementById("password").value
+
+
+        // console.log(confirm_email)
+        // console.log(password)
+
+        // localStorage.setItem("key", value)
+
+        // localStorage.setItem("confirm_email", confirm_email)
+        // localStorage.setItem("password", password)
+
+        //new line
+
+
+        // user["confirm_email"] = document.getElementById("confirm_email").value
+        // user["password"] = document.getElementById("password").value
+
         function login() {
-            // const confirm_email=document.getElementById("confirm_email").value
-            // const password=document.getElementById("password").value
-
-
-            // console.log(confirm_email)
-            // console.log(password)
-
-            // localStorage.setItem("key", value)
-
-            // localStorage.setItem("confirm_email", confirm_email)
-            // localStorage.setItem("password", password)
-
-            //new line
-
-
-            // user["confirm_email"] = document.getElementById("confirm_email").value
-            // user["password"] = document.getElementById("password").value
-
-            const loginpage = document.getElementById("loginform");
-            loginpage.onsubmit = e => {
-                e.preventDefault();
-                const emailInput = loginpage["confirm_email"].value;
-                const passwordInput = loginpage["password"].value;
-                let usersdata = JSON.parse(localStorage.getItem("usersList"));
-                if (!usersdata) {
-                    alert("Login Failure");
-                    return;
+            const email = document.getElementById("confirm_email").value
+            const password = document.getElementById("password").value
+            const User_details = JSON.parse(localStorage.getItem("arr"))
+            let check;
+            User_details.find(element => {
+                if (element["email"] == email && element["creatpassword"] == password) {
+                    return check = 1
                 }
-                let Success;
-                for (let i = 0; i < usersdata.length; i++) {
-                    if ((usersdata[i].emailid === emailInput) && (usersdata[i].password === passwordInput)) {
-                        Success = true;
-                        break;
-                    }
+                else {
+                    return check = 0
                 }
-                if (Success) {
-                    alert("Login Success");
-                } else {
-                    alert("Login Failure");
-                }
+            })
+            if (check == 1) {
+                alert("Logged in")
+            window.location.href = "../../pages/home/profile.html"
             }
-
-            window.location.href = "../../pages/home/home.html"
-
+            else {
+                alert("Invalid")
+            }
         }
+
+
+
     </script>
 
 

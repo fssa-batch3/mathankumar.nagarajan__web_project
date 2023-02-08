@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <title>SpartansMT</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/image/home/logo icon.png" alt="logo icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+
+
+<body>
+
+
+    <!-- <label id="first_name"><input type="text"></label>
+    <label id="last_name"></label>
+    <label id="address"></label>
+    <label id="email"></label>
+    <label id="create_password"></label>
+    <label id="confirm_password"></label> -->
+
+    <h1 id="first_name"></h1>
+    <h1 id="last_name"></h1>
+    <h1 id="address"></h1>
+    <h1 id="email"></h1>
+    <h1 id="address"></h1>
+    <h1 id="create_password"></h1>
+    <h1 id="confirm_password"></h1>
+    <button type="button">Submit</button>
+
+
+    <script>
+
+        // function profile() {
+            let users = JSON.parse(localStorage.getItem('arr'));
+            // console.log(users)
+            // console.log(users[1]["firstname"])
+            for (let i = 0; i <= users.length; i++) {
+                document.getElementById("first_name").innerText = users[1]["firstname"];
+                document.getElementById("last_name").innerText = users[1]["lastname"];
+                document.getElementById("email").innerText = users[1]["email"];
+                document.getElementById("address").innerText = users[1]["address"];
+                document.getElementById("create_password").innerText = users[1]["creatpassword"];
+                document.getElementById("confirm_password").innerText = users[1]["confirmpassword"];
+            }
+        // }
+
+    </script>
+
+
+
+
+</body>
+
+</html>
