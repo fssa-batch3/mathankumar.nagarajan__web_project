@@ -36,19 +36,20 @@
 
     <script>
 
-        // function profile() {
+        function profile() {
             let users = JSON.parse(localStorage.getItem('arr'));
             // console.log(users)
             // console.log(users[1]["firstname"])
             for (let i = 0; i <= users.length; i++) {
-                document.getElementById("first_name").innerText = users[1]["firstname"];
-                document.getElementById("last_name").innerText = users[1]["lastname"];
-                document.getElementById("email").innerText = users[1]["email"];
-                document.getElementById("address").innerText = users[1]["address"];
-                document.getElementById("create_password").innerText = users[1]["creatpassword"];
-                document.getElementById("confirm_password").innerText = users[1]["confirmpassword"];
+                document.getElementById("first_name").innerText = users[i]["first_name"];
+                document.getElementById("last_name").innerText = users[i]["last_name"];
+                document.getElementById("email").innerText = users[i]["user_email"];
+                document.getElementById("address").innerText = users[i]["address"];
+                document.getElementById("create_password").innerText = users[i]["creatpassword"];
+                document.getElementById("confirm_password").innerText = users[i]["confirm_password"];
             }
-        // }
+            window.location.href="home.html"
+        }
 
     </script>
 

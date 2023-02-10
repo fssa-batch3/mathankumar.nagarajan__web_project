@@ -28,23 +28,20 @@
             <div>
                 <h1>Create An Account</h1>
                 <div class="box-column">
-                    <label>First Name<br><input type="text" id="firstname" name="first-name" class="input"></label>
-                    <label>Last Name<br><input type="text" id="lastname" name="Last-name" class="input"></label>
+                    <label>First Name<br><input type="text" id="firstname" name="first-name" class="input" pattern="[A-Za-Z]{1-16}" required="true"></label>
+                    <label>Last Name<br><input type="text" id="lastname" name="Last-name" class="input" pattern="[A-Za-Z]{1-16}" required="true"></label>
                 </div>
 
                 <div class="box-column">
-                    <label>Email<br><input type="email" id="email" required name="email" class="input"></label>
-                    <label>Address<br><input type="text" id="address" required name="address" class="input"></label>
+                    <label>Email<br><input type="email" id="email" required="true" name="email" class="input"></label>
+                    <label>Address<br><input type="text" id="address" required="true" name="address" class="input"></label>
                 </div>
 
                 <div class="box-column">
-                    <label>Create Password<br><input id="creatpassword" type="password" required name="create password"
-                            class="input"></label>
-                    <label>Confirm Password<br><input id="confirmpassword" type="password" required
-                            name="confirm password" class="input"></label>
+                    <label>Create Password<br><input id="creatpassword" type="password" name="create password" pattern="[A-Za-Z0-9]{8-16}"  class="input" required="true"></label>
+                    <label>Confirm Password<br><input id="confirmpassword" type="password" required="true" name="confirm password" pattern="[A-Za-Z0-9]{8-16}" class="input"></label>
                 </div>
-                <label><input type="checkbox" name="checkbox" id="checkbox">Creating your account and you accepting
-                    <b>Terms & Conditions.</b></label>
+                <label><input type="checkbox" name="checkbox" id="checkbox">Creating your account and you accepting<b>Terms & Conditions.</b></label>
                 <br>
                 <button type="button" onclick="signup()" class="create-ac-btn"><b>Create Account</b></button>
 
@@ -96,68 +93,86 @@
 
         // new line
 
+function signup(){
 
-        // let user = {};
-        // let user_signup_List = [];
-
-        // user["first_name"] = document.getElementById("firstname").value
-        // user["last_name"] = document.getElementById("lastname").value
-        // user["user_email"] = document.getElementById("email").value
-        // user["address"] = document.getElementById("address").value
-        // user["creatpassword"] = document.getElementById("creatpassword").value
-        // user["confirm_password"] = document.getElementById("confirmpassword").value
+        const first_name = document.getElementById("firstname").value.trim();
+        const last_name = document.getElementById("lastname").value.trim();
+        const user_email = document.getElementById("email").value.trim();
+        const address = document.getElementById("address").value.trim();
+        const creatpassword = document.getElementById("creatpassword").value.trim();
+        const confirm_password = document.getElementById("confirmpassword").value.trim();
 
 
-        // user_signup_List.push(user)
 
-        // let record = JSON.parse(localStorage.getItem("User_Signup_List")) || [];
-        // record.push(user);
-        // localStorage.setItem("User_Signup_List", JSON.stringify(record));
+        if(first_name !="" && last_name !="" && user_email !="" && address !=""&& creatpassword !="" && confirm_password !="" && creatpassword === confirm_password){
+           
+            let user = {};
+            let arr=[];
 
-        // if(creatpassword === confirmpassword){
-        //     alert("SignUp Successfully");
-        //     return true
+            user["first_name"]=first_name;
+            user["last_name"]=last_name;
+            user["user_email"]=user_email;
+            user["address"]=address;
+            user["creatpassword"]=creatpassword;
+            user["confirm_password"]=confirm_password;
 
-        // } else{
-        //     alert("Something it's wrong");
-        //     return false
-        // }
-
-        function signup() {
-
-
-            const first_name = document.getElementById("firstname").value
-            const last_name = document.getElementById("lastname").value
-            const user_email = document.getElementById("email").value
-            const address = document.getElementById("address").value
-            const creatpassword = document.getElementById("creatpassword").value
-            const confirm_password = document.getElementById("confirmpassword").value
-            
-
-            if(creatpassword === confirm_password){
-                let user_data = {
-                "firstname": first_name,
-                "lastname": last_name,
-                "email": user_email,
-                "address": address,
-                "creatpassword": creatpassword,
-                "confirmpassword": confirm_password,
+            let User_details=JSON.parse(localStorage.getItem('arr'));
+            User_details.find(element => {
+                if (element["user_email"] === user_email) {
+                    return check = 1 
+                }
+                else {
+                    return check = 0
+                }
+            })
+            if (check == 1) {
+                alert("email already exists")
             }
-            let arr = localStorage.getItem("arr")
-                ? JSON.parse(localStorage.getItem("arr")) :
-                [];
-            arr.push(user_data)
-            localStorage.setItem("arr", JSON.stringify(arr))
-            window.location.href = "../../pages/login/login.html"
-
-            } 
-            else{
-                alert("password is not equal")
+            else {
+                const user_datas =JSON.parse(localStorage.getItem('arr'))??[];
+                user_datas.push(user);
+                localStorage.setItem("arr",JSON.stringify(user_datas));
+                window.location.href="login.html"
             }
-
 
 
         }
+        else{
+            alert("Field can't be empty")
+        }
+    }
+        // function signup() {
+
+
+        //     const first_name = document.getElementById("firstname").value
+        //     const last_name = document.getElementById("lastname").value
+        //     const user_email = document.getElementById("email").value
+        //     const address = document.getElementById("address").value
+        //     const creatpassword = document.getElementById("creatpassword").value
+        //     const confirm_password = document.getElementById("confirmpassword").value
+            
+
+        //     if(creatpassword === confirm_password){
+        //         let user_data = {
+        //         "firstname": first_name,
+        //         "lastname": last_name,
+        //         "email": user_email,
+        //         "address": address,
+        //         "creatpassword": creatpassword,
+        //         "confirmpassword": confirm_password,
+        //     }
+        //     let arr = localStorage.getItem("arr")
+        //         ? JSON.parse(localStorage.getItem("arr")) :
+        //         [];
+        //     arr.push(user_data)
+        //     localStorage.setItem("arr", JSON.stringify(arr))
+        //     window.location.href = "../../pages/login/login.html"
+
+        //     } 
+        //     else{
+        //         alert("password is not equal")
+        //     }
+        // }
 
 
 

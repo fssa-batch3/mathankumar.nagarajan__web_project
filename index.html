@@ -455,380 +455,66 @@
         let p_viewmore;
         let a_items;
 
-        const store = [
-            { items:[{
-                    id: '0',
-                    img: {
-                        src: "../../../assets/image/stores/items/nike1.jpg",
-                        alt: "shoes image"
-                    },
-                    title: "Mens Air Zoom Vomero 15 Running Shoe",
-                    rate: "₹6000",
-                    full_rate: "₹10000",
-                    offer: "(40% off)",
-                    rating: "4.5",
-                    reviews: "( 2023 ) Reviews",
-                },
-
-                {
-                    id: "1",
-                    img: {
-                        src: "../../../assets/image/stores/items/nike2.jpg",
-                        alt: "shoes image"
-                    },
-                    title: "Men's Ultra Light Running and Training Shoes",
-                    rate: "₹1518",
-                    full_rate: "₹2999",
-                    offer: "(49% off)",
-                    rating: "4.5",
-                    reviews: "( 3366 ) Reviews",
-                },
-
-                {
-                    id: '2',
-                    img: {
-                        src: "../../../assets/image/stores/items/nike3.jpg",
-                        alt: "shoes image"
-                    },
-                    title: "Men's Running Shoe Bacca Bucci",
-                    rate: "₹1329",
-                    full_rate: "₹2999",
-                    offer: "(56% off)",
-                    rating: "4.3",
-                    reviews: "( 2470 ) Reviews",
-                },
-                {
-                    id: "3",
-                    img: {
-                        src: "../../../assets/image/stores/items/nike4.jpg",
-                        alt: "shoes image"
-                    },
-                    title: "Mens Slip-on Premium Comfy-fit Sneaker",
-                    rate: "₹1000",
-                    full_rate: "₹2000",
-                    offer: "(50% off)",
-                    rating: "4.5",
-                    reviews: "( 2229 ) Reviews",
-                },
-                {
-                    id: "4",
-                    img: {
-                        src: "../../../assets/image/stores/items/nike5.jpg",
-                        alt: "shoes image"
-                    },
-                    title: "Men's Wonder-13 Sports Running Shoes",
-                    rate: "₹1999",
-                    full_rate: "₹3299",
-                    offer: "(39% off)",
-                    rating: "4.2",
-                    reviews: "( 1290 ) Reviews",
-                },
-                {
-                    id: "5",
-                    img: {
-                        src: "../../../assets/image/stores/items/nike6.jpg",
-                        alt: "shoes image"
-                    },
-                    title: "Mens Ultimate Ease Range Walking Shoe",
-                    rate: "₹1239",
-                    full_rate: "₹1499",
-                    offer: "(18% off)",
-                    rating: "3.9",
-                    reviews: "( 4238 ) Reviews",
-                },
-                {
-                    id: '6',
-                    img: {
-                        src: "../../../assets/image/stores/items/nike7.jpg",
-                        alt: "shoes image"
-                    },
-                    title: "Men's Wonder-13 Sports Running Shoes",
-                    rate: "₹2000",
-                    full_rate: "₹4000",
-                    offer: "(50% off)",
-                    rating: "4.7",
-                    reviews: "( 1234 ) Reviews",
-                },
-                {
-                    id: "7",
-                    img: {
-                        src: "../../../assets/image/stores/items/nike8.jpg",
-                        alt: "shoes image"
-                    },
-                    title: "ASIAN Delta-20 Sports Running Walking",
-                    rate: "₹1500",
-                    full_rate: "₹3000",
-                    offer: "(50% off)",
-                    rating: "4.5",
-                    reviews: "( 1908 ) Reviews",
-                },
-                {
-                    id: "8",
-                    img: {
-                        src: "../../../assets/image/stores/items/nike9.jpg",
-                        alt: "shoes image"
-                    },
-                    title: "Flash Shoe Badminton Shoes for Mens",
-                    rate: "₹3064",
-                    full_rate: "₹6000",
-                    offer: "(43% off)",
-                    rating: "4.1",
-                    reviews: "( 3193 ) Reviews",
-                },
-                {
-                    id: "9",
-                    img: {
-                        src: "../../../assets/image/stores/items/nike10.jpeg",
-                        alt: "shoes image"
-                    },
-                    title: "Men's Cosko Sports Running, Walking,Gym",
-                    rate: "₹1499",
-                    full_rate: "₹4000",
-                    offer: "(63% off)",
-                    rating: "4.5",
-                    reviews: "( 1208 ) Reviews",
-                },
-                {
-                    id: "10",
-                    img: {
-                        src: "../../../assets/image/stores/items/nike11.jpg",
-                        alt: "shoes image"
-                    },
-                    title: "Crystal-13 Sports Running Walking Shoes",
-                    rate: "₹1249",
-                    full_rate: "₹2299",
-                    offer: "(46% off)",
-                    rating: "4.3",
-                    reviews: "( 6009 ) Reviews",
-                },
-                {
-                    id: "11",
-                    img: {
-                        src: "../../../assets/image/stores/items/nike12.jpg",
-                        alt: "shoes image"
-                    },
-                    title: "Skypee-31 Running Shoes,Walking Shoes",
-                    rate: "₹1999",
-                    full_rate: "₹4999",
-                    offer: "(49% off)",
-                    rating: "4.5",
-                    reviews: "( 2317 ) Reviews",
-                },],
-                value:0,
-                name:"Nike",
-                category:"Shoes Shop",
-                image:"assets/image/stores/store27.png"
-            },
-            { items:[{
-                    id: '0',
-                    img: {
-                        src: "../../../assets/image/stores/ss-beauty/gold1.webp",
-                        alt: "shoes image"
-                    },
-                    title: "Mens Air Zoom Vomero 15 Running Shoe",
-                    rate: "₹6000",
-                    full_rate: "₹10000",
-                    offer: "(40% off)",
-                    rating: "4.5",
-                    reviews: "( 2023 ) Reviews",
-                },
-
-                {
-                    id: "1",
-                    img: {
-                        src: "../../../assets/image/stores/ss-beauty/gold2.webp",
-                        alt: "shoes image"
-                    },
-                    title: "Men's Ultra Light Running and Training Shoes",
-                    rate: "₹1518",
-                    full_rate: "₹2999",
-                    offer: "(49% off)",
-                    rating: "4.5",
-                    reviews: "( 3366 ) Reviews",
-                },
-
-                {
-                    id: '2',
-                    img: {
-                        src: "../../../assets/image/stores/ss-beauty/gold3.webp",
-                        alt: "shoes image"
-                    },
-                    title: "Men's Running Shoe Bacca Bucci",
-                    rate: "₹1329",
-                    full_rate: "₹2999",
-                    offer: "(56% off)",
-                    rating: "4.3",
-                    reviews: "( 2470 ) Reviews",
-                },
-                {
-                    id: "3",
-                    img: {
-                        src: "../../../assets/image/stores/ss-beauty/gold4.webp",
-                        alt: "shoes image"
-                    },
-                    title: "Mens Slip-on Premium Comfy-fit Sneaker",
-                    rate: "₹1000",
-                    full_rate: "₹2000",
-                    offer: "(50% off)",
-                    rating: "4.5",
-                    reviews: "( 2229 ) Reviews",
-                },
-                {
-                    id: "4",
-                    img: {
-                        src: "../../../assets/image/stores/ss-beauty/gold5.webp",
-                        alt: "shoes image"
-                    },
-                    title: "Men's Wonder-13 Sports Running Shoes",
-                    rate: "₹1999",
-                    full_rate: "₹3299",
-                    offer: "(39% off)",
-                    rating: "4.2",
-                    reviews: "( 1290 ) Reviews",
-                },
-                {
-                    id: "5",
-                    img: {
-                        src: "../../../assets/image/stores/ss-beauty/gold6.webp",
-                        alt: "shoes image"
-                    },
-                    title: "Mens Ultimate Ease Range Walking Shoe",
-                    rate: "₹1239",
-                    full_rate: "₹1499",
-                    offer: "(18% off)",
-                    rating: "3.9",
-                    reviews: "( 4238 ) Reviews",
-                },
-                {
-                    id: '6',
-                    img: {
-                        src: "../../../assets/image/stores/ss-beauty/gold7.webp",
-                        alt: "shoes image"
-                    },
-                    title: "Men's Wonder-13 Sports Running Shoes",
-                    rate: "₹2000",
-                    full_rate: "₹4000",
-                    offer: "(50% off)",
-                    rating: "4.7",
-                    reviews: "( 1234 ) Reviews",
-                },
-                {
-                    id: "7",
-                    img: {
-                        src: "../../../assets/image/stores/ss-beauty/gold8.webp",
-                        alt: "shoes image"
-                    },
-                    title: "ASIAN Delta-20 Sports Running Walking",
-                    rate: "₹1500",
-                    full_rate: "₹3000",
-                    offer: "(50% off)",
-                    rating: "4.5",
-                    reviews: "( 1908 ) Reviews",
-                },
-                {
-                    id: "8",
-                    img: {
-                        src: "../../../assets/image/stores/ss-beauty/gold9.webp",
-                        alt: "shoes image"
-                    },
-                    title: "Flash Shoe Badminton Shoes for Mens",
-                    rate: "₹3064",
-                    full_rate: "₹6000",
-                    offer: "(43% off)",
-                    rating: "4.1",
-                    reviews: "( 3193 ) Reviews",
-                },
-                {
-                    id: "9",
-                    img: {
-                        src: "../../../assets/image/stores/ss-beauty/gold10.webp",
-                        alt: "shoes image"
-                    },
-                    title: "Men's Cosko Sports Running, Walking,Gym",
-                    rate: "₹1499",
-                    full_rate: "₹4000",
-                    offer: "(63% off)",
-                    rating: "4.5",
-                    reviews: "( 1208 ) Reviews",
-                },
-                {
-                    id: "10",
-                    img: {
-                        src: "../../../assets/image/stores/ss-beauty/gold11.webp",
-                        alt: "shoes image"
-                    },
-                    title: "Crystal-13 Sports Running Walking Shoes",
-                    rate: "₹1249",
-                    full_rate: "₹2299",
-                    offer: "(46% off)",
-                    rating: "4.3",
-                    reviews: "( 6009 ) Reviews",
-                },
-                {
-                    id: "11",
-                    img: {
-                        src: "../../../assets/image/stores/ss-beauty/gold12.webp",
-                        alt: "shoes image"
-                    },
-                    title: "Skypee-31 Running Shoes,Walking Shoes",
-                    rate: "₹1999",
-                    full_rate: "₹4999",
-                    offer: "(49% off)",
-                    rating: "4.5",
-                    reviews: "( 2317 ) Reviews",
-                },],
-                value:1,
-                name:"SS Beauty Shop",
-                category:"Beauty Shop",
-                image:"assets/image/stores/store1.jpeg"
+        const stores = [
+            {
+                value: 0,
+                name: "Nike",
+                category: "Shoes Shop",
+                image: "assets/image/stores/store27.png",
             },
             {
-                value:2,
-                name:"Lenskart",
-                category:"Specse Shop",
-                image:"assets/image/stores/store42.jpg"
+                value: 1,
+                name: "SS Beauty Shop",
+                category: "Beauty Shop",
+                image: "assets/image/stores/store1.jpeg",
             },
             {
-                value:3,
-                name:"Chales & Keith",
-                category:"Bags & Luggage",
-                image:"assets/image/stores/store2.png"
+                value: 2,
+                name: "Lenskart",
+                category: "Specse Shop",
+                image: "assets/image/stores/store42.jpg"
             },
             {
-                value:4,
-                name:"Vero Moda",
-                category:"Fashion Dress For Women",
-                image:"assets/image/stores/store3.png"
+                value: 3,
+                name: "Chales & Keith",
+                category: "Bags & Luggage",
+                image: "assets/image/stores/store2.png"
             },
             {
-                value:5,
-                name:"Poorvika",
-                category:"Mobile Shop",
-                image:"assets/image/stores/store52.png"
+                value: 4,
+                name: "Vero Moda",
+                category: "Fashion Dress For Women",
+                image: "assets/image/stores/store3.png"
             },
             {
-                value:6,
-                name:"MAC",
-                category:"Beauty Products",
-                image:"assets/image/stores/store34.gif"
+                value: 5,
+                name: "Poorvika",
+                category: "Mobile Shop",
+                image: "assets/image/stores/store52.png"
             },
             {
-                value:7,
-                name:"Jack & Zone",
-                category:"Mens Fashion",
-                image:"assets/image/stores/store4.png"
+                value: 6,
+                name: "MAC",
+                category: "Beauty Products",
+                image: "assets/image/stores/store34.gif"
             },
             {
-                value:8,
-                name:"Label Ritu Kumar",
-                category:"Designer Wear",
-                image:"assets/image/stores/store9.jpg"
+                value: 7,
+                name: "Jack & Zone",
+                category: "Mens Fashion",
+                image: "assets/image/stores/store4.png"
             },
             {
-                value:9,
-                name:"ivenus",
-                category:"Apple Premium Reseller",
-                image:"assets/image/stores/store18.jpeg"
+                value: 8,
+                name: "Label Ritu Kumar",
+                category: "Designer Wear",
+                image: "assets/image/stores/store9.jpg"
+            },
+            {
+                value: 9,
+                name: "ivenus",
+                category: "Apple Premium Reseller",
+                image: "assets/image/stores/store18.jpeg"
             }
         ]
 
@@ -854,7 +540,7 @@
             console.log("hello world")
 
             a_items = document.createElement("a");              // create tage
-            a_items.setAttribute("href", "pages/stores/prducts/nike.html?value=" + store[i]["value"]);
+            a_items.setAttribute("href", "pages/stores/prducts/nike.html?value=" + stores[i]["value"]);
                  // adding class or same attribute
             
             console.log(a_items);                               // view code
@@ -865,7 +551,7 @@
             a_items.append(div_store)                           // placeing place 
 
             img_imgstore = document.createElement("img");       // creating img tag
-            img_imgstore.setAttribute("src", store[i]["image"]);  // add some attribute
+            img_imgstore.setAttribute("src", stores[i]["image"]);  // add some attribute
             img_imgstore.setAttribute("alt", "Store Logo");
             img_imgstore.setAttribute("class", "imgstore");
             div_store.append(img_imgstore);
@@ -879,12 +565,12 @@
 
             h3_storenames = document.createElement("h3");
             h3_storenames.setAttribute("class", "storenames");
-            h3_storenames.innerText = store[i]["name"];
+            h3_storenames.innerText = stores[i]["name"];
             div.append(h3_storenames);
 
             p_storecategory = document.createElement("p");
             p_storecategory.setAttribute("class", "store_category");
-            p_storecategory.innerText = store[i]["category"];
+            p_storecategory.innerText = stores[i]["category"];
             div.append(p_storecategory);
 
             

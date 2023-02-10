@@ -24,17 +24,15 @@
                 <img src="../../assets/image/signup/login-page-img.jpg" alt="login-page-img" />
             </div>
             <div>
-                <h1>Sign Up</h1>
+                <h1>Sign In</h1>
                 <div class="input-alignment">
                     <span class="material-symbols-outlined">person</span>
-                    <label><input class="input-box" id="confirm_email" type="email" name="email" placeholder="Email"
-                            required></label>
+                    <label><input class="input-box" id="confirm_email" type="email" name="email" placeholder="Email"  required="true"></label>
                 </div>
                 <hr>
                 <div class="input-alignment">
                     <span class="material-symbols-outlined">lock</span>
-                    <label><input class="input-box" id="password" type="password" name="password" placeholder="Password"
-                            required /></label>
+                    <label><input class="input-box" id="password" type="password" name="password" placeholder="Password" pattern="[A-Za-z0-9]{8-16}" required="true" /></label>
                 </div>
                 <hr>
                 <label><input id="checkbox" type="checkbox" name="checkbox" required />Remember me</label>
@@ -87,7 +85,7 @@
             const User_details = JSON.parse(localStorage.getItem("arr"))
             let check;
             User_details.find(element => {
-                if (element["email"] == email && element["creatpassword"] == password) {
+                if (element["user_email"] === email && element["creatpassword"] === password) {
                     return check = 1
                 }
                 else {
@@ -96,7 +94,8 @@
             })
             if (check == 1) {
                 alert("Logged in")
-            window.location.href = "../../pages/home/profile.html"
+                window.location.href = "../../pages/home/home.html"
+            // window.location.href = "../../pages/home/profile.html"
             }
             else {
                 alert("Invalid")
