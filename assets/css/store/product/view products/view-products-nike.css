@@ -37,6 +37,7 @@ a{
 }
 /* Nav Finished */
 .product-img{
+    margin: 30px;
     padding: 80px;
     width: 500px;
     height: 250px;
@@ -44,7 +45,7 @@ a{
 }
 .view-product{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     margin-top: 30px;
 }
@@ -64,8 +65,9 @@ a{
     font-size: 30px;
 }
 .line-through{
-    text-decoration: line-through;
     color: red;
+    text-decoration: line-through;
+    font-weight: bold;
 }
 .button{
     font-size: 30px;
@@ -82,10 +84,15 @@ a{
     color: white;
 }
 .green{
-    color: rgb(87, 247, 82);
+    color: rgb(4, 134, 0);
+    font-weight: bold;
+    text-shadow: 0px 0px 0.5px black;
 }
 .price-color{
     color: rgb(101, 101, 101);
+}
+ol li{
+    font: bold;
 }
 .size{
     width: 200px;
@@ -113,6 +120,8 @@ a{
 }
 .offer-items{
     display: flex;
+    min-width: 200px;
+    max-width: 440px;
     border: 1px solid black;
     margin-bottom: 20px;
     margin-right: 20px;
@@ -121,7 +130,7 @@ a{
 }
 .offer-items:hover{
     transform: scale(1.01);
-    box-shadow: 2px 2px 20px 4px black;
+    box-shadow: 0px 0px 20px 4px gainsboro;
 }
 .offer-img{
     width: 200px;
@@ -153,13 +162,14 @@ a{
 
 /* last scroll line */
 #most-viewed{
-    font-size: 30px;
+    /* font-size: 30px; */
     text-align: center;
     width: 100%;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    /* margin-top: 40px; */
+    /* margin-bottom: 40px; */
 }
 #scroll-box{
+    padding: 30px 0px;
     display: flex;
     justify-content: space-between;
     overflow: hidden;
@@ -175,11 +185,11 @@ a{
     height: 250px;
     padding-top: 10px;
     margin-left: 40px;
-    transition: transform .2s;
+    transition: transform .3s;
 }
 .single-box:hover{
     transform: scale(1.01);
-    box-shadow: 2px 2px 20px 4px black;
+    box-shadow: 0px 0px 20px 4px gainsboro;
 }
 .view-more{
     font-size: 16px;

@@ -26,6 +26,7 @@
                 <img id="sign-img" src="../../assets/image/signup/signup-img.png" alt="signup img">
             </div>
             <div>
+                <form>
                 <h1>Create An Account</h1>
                 <div class="box-column">
                     <label>First Name<br><input type="text" id="firstname" name="first-name" class="input" pattern="[A-Za-Z]{1-16}" required="true"></label>
@@ -38,7 +39,7 @@
                 </div>
 
                 <div class="box-column">
-                    <label>Create Password<br><input id="creatpassword" type="password" name="create password" pattern="[A-Za-Z0-9]{8-16}"  class="input" required="true"></label>
+                    <label>Create Password<br><input id="creatpassword" type="password" name="create password" pattern="[A-Za-z0-9]{8-16}"  class="input" required="true"></label>
                     <label>Confirm Password<br><input id="confirmpassword" type="password" required="true" name="confirm password" pattern="[A-Za-Z0-9]{8-16}" class="input"></label>
                 </div>
                 <label><input type="checkbox" name="checkbox" id="checkbox">Creating your account and you accepting<b>Terms & Conditions.</b></label>
@@ -55,6 +56,7 @@
                         <p><b>Sign up Using Twitter!</b></p>
                     </div>
                 </div>
+            </form>
 
             </div>
 
@@ -117,10 +119,14 @@ function signup(){
             user["confirm_password"]=confirm_password;
 
             let User_details=JSON.parse(localStorage.getItem('arr'));
+
             User_details.find(element => {
+
                 if (element["user_email"] === user_email) {
+
                     return check = 1 
                 }
+
                 else {
                     return check = 0
                 }
@@ -129,7 +135,9 @@ function signup(){
                 alert("email already exists")
             }
             else {
-                const user_datas =JSON.parse(localStorage.getItem('arr'))??[];
+                const user_datas =JSON.parse(localStorage.getItem('arr')) ?? [];
+
+
                 user_datas.push(user);
                 localStorage.setItem("arr",JSON.stringify(user_datas));
                 window.location.href="login.html"

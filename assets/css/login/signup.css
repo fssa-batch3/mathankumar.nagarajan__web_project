@@ -68,3 +68,13 @@ body{
 a{
     text-decoration: none;
 }
+/* label{
+    border: 2px solid black;
+}
+
+label:valid{
+border: 2px solid green;
+}
+label:invalid{
+    border: 2px solid red;
+} */

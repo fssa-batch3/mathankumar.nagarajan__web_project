@@ -396,7 +396,26 @@ html {
     display: none;
 }
 
-
+/* #name{
+    outline: none;
+    padding: 5px 10px;
+    font-size: 20px;
+} */
+.material-symbols-outlined{
+    width: 40px;
+}
+#login{
+    position: fixed;
+    width: 120px;
+    height: 80px;
+    top: 60px;
+    right: -120px;
+    background-color: white;
+    transition: all .5s;
+}
+#login:hover {
+    right: 0px;
+}
 
 
 @media screen and (max-width:1082px) {
@@ -432,12 +451,14 @@ html {
         height: 35px;
     }
 }
+
 @media screen and (max-width:824px) {
     nav ul{
         font-size: 10px;
     }    
 
 }
+
 
 @media screen and (max-width:760px) {
 
@@ -457,7 +478,6 @@ html {
     nav ul li{
         display: block;
         margin: 15px 0;
-        padding: 0%;
         line-height: 30px;
         font-size: 20px;
         padding: 20px;
