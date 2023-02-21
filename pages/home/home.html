@@ -27,9 +27,9 @@
                 <li><a href="../../pages/cart/add-to- cart.html">Cart</a></li>
                 
                 <label for="login">
-                    <a href="../../index.html">
+                    <!-- <a id="logout" href="../../index.html"> -->
                         <p class="material-symbols-outlined">logout</p>
-                    </a>
+                    <!-- </a> -->
                 </label>
             </ul>
 
@@ -39,7 +39,9 @@
         </nav>
 
         <ul id="login">
-            <p>Profile</p>
+            <a id="logout" href="../../index.html">
+                <p>Profile</p>
+            </a>
             <p>Logout</p>
         </ul>
 
@@ -452,104 +454,103 @@
             let p_viewmore;
             let a_items;
     
-            const store = [
+            const stores = [
                 {
-                    value:0,
-                    name:"Nike",
-                    category:"Shoes Shop",
-                    image:"../../assets/image/stores/store27.png"
+                    value: 0,
+                    name: "Nike",
+                    category: "Shoes Shop",
+                    image: "../../assets/image/stores/store27.png",
                 },
                 {
-                    value:1,
-                    name:"SS Beauty Shop",
-                    category:"Beauty Shop",
-                    image:"../../assets/image/stores/store1.jpeg"
+                    value: 1,
+                    name: "SS Beauty Shop",
+                    category: "Beauty Shop",
+                    image: "../../assets/image/stores/store1.jpeg",
                 },
                 {
-                    value:2,
-                    name:"Lenskart",
-                    category:"Specse Shop",
-                    image:"../../assets/image/stores/store42.jpg"
+                    value: 2,
+                    name: "Lenskart",
+                    category: "Specse Shop",
+                    image: "../../assets/image/stores/store42.jpg"
                 },
                 {
-                    value:3,
-                    name:"Chales & Keith",
-                    category:"Bags & Luggage",
-                    image:"../../assets/image/stores/store2.png"
+                    value: 3,
+                    name: "Chales & Keith",
+                    category: "Bags & Luggage",
+                    image: "../../assets/image/stores/store2.png"
                 },
                 {
-                    value:4,
-                    name:"Vero Moda",
-                    category:"Fashion Dress For Women",
-                    image:"../../assets/image/stores/store3.png"
+                    value: 4,
+                    name: "Vero Moda",
+                    category: "Fashion Dress For Women",
+                    image: "../../assets/image/stores/store3.png"
                 },
                 {
-                    value:5,
-                    name:"Poorvika",
-                    category:"Mobile Shop",
-                    image:"../../assets/image/stores/store52.png"
+                    value: 5,
+                    name: "Poorvika",
+                    category: "Mobile Shop",
+                    image: "../../assets/image/stores/store52.png"
                 },
                 {
-                    value:6,
-                    name:"MAC",
-                    category:"Beauty Products",
-                    image:"../../assets/image/stores/store34.gif"
+                    value: 6,
+                    name: "MAC",
+                    category: "Beauty Products",
+                    image: "../../assets/image/stores/store34.gif"
                 },
                 {
-                    value:7,
-                    name:"Jack & Zone",
-                    category:"Mens Fashion",
-                    image:"../../assets/image/stores/store4.png"
+                    value: 7,
+                    name: "Jack & Zone",
+                    category: "Mens Fashion",
+                    image: "../../assets/image/stores/store4.png"
                 },
                 {
-                    value:8,
-                    name:"Label Ritu Kumar",
-                    category:"Designer Wear",
-                    image:"../../assets/image/stores/store9.jpg"
+                    value: 8,
+                    name: "Label Ritu Kumar",
+                    category: "Designer Wear",
+                    image: "../../assets/image/stores/store9.jpg"
                 },
                 {
-                    value:9,
-                    name:"ivenus",
-                    category:"Apple Premium Reseller",
-                    image:"../../assets/image/stores/store18.jpeg"
+                    value: 9,
+                    name: "ivenus",
+                    category: "Apple Premium Reseller",
+                    image: "../../assets/image/stores/store18.jpeg"
                 }
             ]
-
-        
-
     
-
-             // store names in Array
-        // const store_names = ["Nike", "SS Beauty Shop", "Lenskart", "Chales & Keith", "Vero Moda", "Poorvika", "MAC", "Jack & Zone", "Label Ritu Kumar", "ivenus"];
-        
-        // store category in Array
-        // const store_category = ["Shoes Shop", "Beauty Shop", "Specse Shop", "Bags & Luggage", "Fashion Dress For Women", "Mobile Shop", "Beauty Products", "Mens Fashion", "Designer Wear", "Apple Premium Reseller"];
-        
-        // store images path in Array
-        // const store_images = ["assets/image/stores/store27.png", "assets/image/stores/store1.jpeg", "assets/image/stores/store42.jpg", "assets/image/stores/store2.png", "assets/image/stores/store3.png",
-        //     "assets/image/stores/store52.png", "assets/image/stores/store34.gif", "assets/image/stores/store4.png", "assets/image/stores/store9.jpg", "assets/image/stores/store18.jpeg"];
-
-        // next page file path in Array 
-        const store_items = ["../../pages/stores/prducts/nike.html", "../../pages/stores/prducts/ss-beauty.html", "../../pages/stores/prducts/lenskart.html", "../../pages/stores/prducts/charles-keith.html", "../../pages/stores/prducts/vero-moda.html",
-                                "../../pages/stores/prducts/poorvika.html", "../../pages/stores/prducts/mac.html", "../../pages/stores/prducts/jack-zone.html", "../../pages/stores/prducts/label-designer-wear.html", "../../pages/stores/prducts/ivenus.html"]
-
-        
-
+    
+            // store names in Array
+            // const store_names = ["Nike", "SS Beauty Shop", "Lenskart", "Chales & Keith", "Vero Moda", "Poorvika", "MAC", "Jack & Zone", "Label Ritu Kumar", "ivenus"];
             
-            for (let i = 0; i <= 9; i++) {
+            // store category in Array
+            // const store_category = ["Shoes Shop", "Beauty Shop", "Specse Shop", "Bags & Luggage", "Fashion Dress For Women", "Mobile Shop", "Beauty Products", "Mens Fashion", "Designer Wear", "Apple Premium Reseller"];
+            
+            // store images path in Array
+            // const store_images = ["assets/image/stores/store27.png", "assets/image/stores/store1.jpeg", "assets/image/stores/store42.jpg", "assets/image/stores/store2.png", "assets/image/stores/store3.png",
+            //     "assets/image/stores/store52.png", "assets/image/stores/store34.gif", "assets/image/stores/store4.png", "assets/image/stores/store9.jpg", "assets/image/stores/store18.jpeg"];
+    
+            // next page file path in Array 
+            // const store_items = ["pages/stores/prducts/nike.html", "pages/stores/prducts/ss-beauty.html", "pages/stores/prducts/lenskart.html", "pages/stores/prducts/charles-keith.html", "pages/stores/prducts/vero-moda.html",
+            //                         "pages/stores/prducts/poorvika.html", "pages/stores/prducts/mac.html", "pages/stores/prducts/jack-zone.html", "pages/stores/prducts/label-designer-wear.html", "pages/stores/prducts/ivenus.html"]
+    
+    
+                const stores_length = stores.length
+            
+            for (let i = 0; i < stores_length; i++) {
                 console.log("hello world")
     
                 a_items = document.createElement("a");              // create tage
-                a_items.setAttribute("href",store_items[i]);       // adding class or same attribute
+                a_items.setAttribute("href", "../../pages/stores/prducts/nike.html?value=" + stores[i]["value"]);
+                     // adding class or same attribute
+                
                 console.log(a_items);                               // view code
     
                 div_store = document.createElement("div");
                 div_store.setAttribute("class", "store");
-                // console.log(div_store)
+                //console.log(div_store)
                 a_items.append(div_store)                           // placeing place 
     
                 img_imgstore = document.createElement("img");       // creating img tag
-                img_imgstore.setAttribute("src", store[i]["image"]);  // add some attribute
+                img_imgstore.setAttribute("src", stores[i]["image"]);  // add some attribute
                 img_imgstore.setAttribute("alt", "Store Logo");
                 img_imgstore.setAttribute("class", "imgstore");
                 div_store.append(img_imgstore);
@@ -563,12 +564,12 @@
     
                 h3_storenames = document.createElement("h3");
                 h3_storenames.setAttribute("class", "storenames");
-                h3_storenames.innerText = store[i]["name"];
+                h3_storenames.innerText = stores[i]["name"];
                 div.append(h3_storenames);
     
                 p_storecategory = document.createElement("p");
                 p_storecategory.setAttribute("class", "store_category");
-                p_storecategory.innerText = store[i]["category"];
+                p_storecategory.innerText = stores[i]["category"];
                 div.append(p_storecategory);
     
                 
@@ -577,17 +578,15 @@
                 p_viewmore.innerText = "View More";
                 div.append(p_viewmore);
     
+                //document.querySelector("div.stores").append(div_store);
                 document.querySelector("div.stores").append(a_items);
-                // document.querySelector("div.stores").append(div_store);
-
+                
     
             }
     
     
-    
         </script>
-
-        
+    
         
 
     </body>

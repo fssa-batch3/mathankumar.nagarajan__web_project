@@ -405,15 +405,15 @@ html {
     width: 40px;
 }
 #login{
-    position: fixed;
+    position: absolute;
     width: 120px;
     height: 80px;
     top: 60px;
-    right: -120px;
+    right: -200px;
     background-color: white;
     transition: all .5s;
 }
-#login:hover {
+#login:hover{
     right: 0px;
 }
 
