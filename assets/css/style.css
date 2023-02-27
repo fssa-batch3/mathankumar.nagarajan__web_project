@@ -56,6 +56,44 @@ a {
 
 /* nav finished */
 
+/* Nav Dropdown */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    left: -101px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #f5f5f7;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 8px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content p{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dropdown-content a:hover{
+    color: blue;
+  }
+
+
+/* End */
+
 #homecover {
     width: 100%;
     /* height: 800px; */
@@ -127,10 +165,12 @@ a {
     justify-content: space-around; */
     text-align: center;
 }
-.floor1 div h3{
+
+.floor1 div h3 {
     margin: 0%;
     margin-left: 10px;
 }
+
 .floor1 {
     display: flex;
     justify-content: space-around;
@@ -186,15 +226,18 @@ a {
     justify-content: space-between;
     /* flex-wrap: wrap; */
     overflow: hidden;
-    overflow-x: scroll;    
+    overflow-x: scroll;
 }
-.movie-list::-webkit-scrollbar{
+
+.movie-list::-webkit-scrollbar {
     display: none;
 }
 
-.movie-list div h2,p{
+.movie-list div h2,
+p {
     margin: 10px;
 }
+
 .movie-img {
     margin: 10px;
     width: 290px;
@@ -273,6 +316,8 @@ footer {
     color: white;
 }
 
+
+
 /* Stores Page Starting */
 
 #store-background {
@@ -347,6 +392,7 @@ footer {
 
 }
 
+
 .store-scroll {
     display: flex;
     justify-content: space-evenly;
@@ -358,6 +404,7 @@ footer {
 
 #margin-store {
     margin-left: 40px;
+
 }
 
 #margin-store1 {
@@ -383,7 +430,7 @@ html {
 }
 
 
-.checkbtn{
+.checkbtn {
     font-size: 30px;
     color: white;
     float: right;
@@ -392,7 +439,8 @@ html {
     cursor: pointer;
     display: none;
 }
-#check{
+
+#check {
     display: none;
 }
 
@@ -401,71 +449,71 @@ html {
     padding: 5px 10px;
     font-size: 20px;
 } */
-.material-symbols-outlined{
+.material-symbols-outlined {
     width: 40px;
 }
-#login{
-    position: absolute;
-    width: 120px;
-    height: 80px;
-    top: 60px;
-    right: -200px;
-    background-color: white;
-    transition: all .5s;
-}
-#login:hover{
-    right: 0px;
-}
+
+
+
+
+
+
 
 
 @media screen and (max-width:1082px) {
-    nav ul{
+    nav ul {
         font-size: 16px;
     }
-    
+
 }
 
 @media screen and (max-width:948px) {
-    nav ul{
+    nav ul {
         font-size: 12px;
-    }  
-    footer{
+    }
+
+    footer {
         font-size: 14px;
-    }  
-    #footer-logo{
+    }
+
+    #footer-logo {
         width: 140px;
         height: 50px;
         margin-left: 40px;
         margin-top: 20px;
     }
-    #footer-email{
+
+    #footer-email {
         height: 40px;
         width: 250px;
     }
-    #footer-button{
+
+    #footer-button {
         height: 47px;
         color: blue;
     }
-    .footer-icon{
+
+    .footer-icon {
         width: 35px;
         height: 35px;
     }
 }
 
 @media screen and (max-width:824px) {
-    nav ul{
+    nav ul {
         font-size: 10px;
-    }    
+    }
 
 }
 
 
 @media screen and (max-width:760px) {
 
-    .checkbtn{
+    .checkbtn {
         display: block;
     }
-    ul{
+
+    ul {
         position: fixed;
         width: 95%;
         height: 100vh;
@@ -475,39 +523,49 @@ html {
         text-align: center;
         transition: all .8s;
     }
-    nav ul li{
+
+    nav ul li {
         display: block;
         margin: 15px 0;
         line-height: 30px;
         font-size: 20px;
         padding: 20px;
         color: white;
-        
+
     }
-    nav ul li a{
+
+    nav ul li a {
         font-size: 20px;
     }
-    a:hover,a.active{
+
+    a:hover,
+    a.active {
         background: none;
         color: #0082e6;
     }
-    #check:checked ~ ul{
+
+    #check:checked~ul {
         left: 0;
     }
-    #signup{
+
+    #signup {
         margin-left: 20px;
     }
-    #logo{
+
+    #logo {
         width: 120px;
     }
-    footer{
+
+    footer {
         font-size: 10px;
     }
-    #footer-email{
+
+    #footer-email {
         height: 30px;
         width: 140px;
     }
-    #footer-button{
+
+    #footer-button {
         color: blue;
         padding-bottom: 2px;
         width: 30px;
@@ -516,16 +574,19 @@ html {
 
 
 }
+
 @media screen and (max-width:544px) {
-    #logo{
+    #logo {
         width: 140px;
         padding: 0 15px;
     }
-    .imgstore{
+
+    .imgstore {
         width: 120px;
         height: 70px;
     }
-    .store{
+
+    .store {
         background-color: white;
         width: 160px;
         height: 200px;
