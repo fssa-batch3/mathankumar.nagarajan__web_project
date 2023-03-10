@@ -28,20 +28,26 @@
             <div>
                 <h1>Create An Account</h1>
                 <div class="box-column">
-                    <label>First Name<br><input type="text" id="firstname" name="first-name" class="input" pattern="[A-Za-Z]{1-16}" required="true"></label>
-                    <label>Last Name<br><input type="text" id="lastname" name="Last-name" class="input" pattern="[A-Za-Z]{1-16}" required="true"></label>
+                    <label>First Name<br><input type="text" id="firstname" name="first-name" class="input"
+                            pattern="[A-Za-Z]{1-16}" required="true"></label>
+                    <label>Last Name<br><input type="text" id="lastname" name="Last-name" class="input"
+                            pattern="[A-Za-Z]{1-16}" required="true"></label>
                 </div>
 
                 <div class="box-column">
                     <label>Email<br><input type="email" id="email" required="true" name="email" class="input"></label>
-                    <label>Address<br><input type="text" id="address" required="true" name="address" class="input"></label>
+                    <label>Address<br><input type="text" id="address" required="true" name="address"
+                            class="input"></label>
                 </div>
 
                 <div class="box-column">
-                    <label>Create Password<br><input id="creatpassword" type="password" name="create password"  class="input" required="true">
-                    <label>Confirm Password<br><input id="confirmpassword" type="password" required="true" name="confirm password"  class="input"></label>
+                    <label>Create Password<br><input id="creatpassword" type="password" name="create password"
+                            class="input" required="true">
+                        <label>Confirm Password<br><input id="confirmpassword" type="password" required="true"
+                                name="confirm password" class="input"></label>
                 </div>
-                <label><input type="checkbox" name="checkbox" id="checkbox">Creating your account and you accepting<b>Terms & Conditions.</b></label>
+                <label><input type="checkbox" name="checkbox" id="checkbox">Creating your account and you
+                    accepting<b>Terms & Conditions.</b></label>
                 <br>
                 <button type="button" onclick="signup()" class="create-ac-btn"><b>Create Account</b></button>
 
@@ -65,61 +71,69 @@
 
     <script>
 
-function signup(){
+        function signup() {
 
-        const first_name = document.getElementById("firstname").value.trim();
-        const last_name = document.getElementById("lastname").value.trim();
-        const user_email = document.getElementById("email").value.trim();
-        const address = document.getElementById("address").value.trim();
-        const creatpassword = document.getElementById("creatpassword").value.trim();
-        const confirm_password = document.getElementById("confirmpassword").value.trim();
+            const first_name = document.getElementById("firstname").value.trim();
+            const last_name = document.getElementById("lastname").value.trim();
+            const user_email = document.getElementById("email").value.trim();
+            const address = document.getElementById("address").value.trim();
+            const creatpassword = document.getElementById("creatpassword").value.trim();
+            const confirm_password = document.getElementById("confirmpassword").value.trim();
 
 
 
-        if(first_name !="" && last_name !="" && user_email !="" && address !=""&& creatpassword !="" && confirm_password !="" && creatpassword === confirm_password){
-           
-            let user = {};
-            let arr=[];
+            if (first_name != "" && last_name != "" && user_email != "" && address != "" && creatpassword != "" && confirm_password != "" && creatpassword === confirm_password) {
 
-            user["first_name"]=first_name;
-            user["last_name"]=last_name;
-            user["user_email"]=user_email;
-            user["address"]=address;
-            user["creatpassword"]=creatpassword;
-            user["confirm_password"]=confirm_password;
+                let user = {};
+                let arr = [];
 
-            let User_details=JSON.parse(localStorage.getItem('arr'));
+                user["first_name"] = first_name;
+                user["last_name"] = last_name;
+                user["user_email"] = user_email;
+                user["address"] = address;
+                user["creatpassword"] = creatpassword;
+                user["confirm_password"] = confirm_password;
 
-            User_details.find(element => {
+                let User_details = JSON.parse(localStorage.getItem('arr'));
 
-                if (element["user_email"] === user_email) {
+                User_details.find(element => {
 
-                    return check = 1 
+                    if (element["user_email"] === user_email) {
+                        // if (1 === 1) {
+
+
+
+                        // const user_datas = JSON.parse(localStorage.getItem('arr')) ?? [];
+
+
+                        // user_datas.push(user);
+                        // localStorage.setItem("arr", JSON.stringify(user_datas));
+                        // window.location.href = "login.html"
+
+                        return check = 1
+                    }
+
+                    else {
+                        return check = 0
+                    }
+                });
+                if (check == 1) {
+                    alert("email already exists")
                 }
-
                 else {
-                    return check = 0
+                    const user_datas = JSON.parse(localStorage.getItem('arr')) ?? [];
+                    user_datas.push(user);
+                    localStorage.setItem("arr", JSON.stringify(user_datas));
+                    window.location.href = "login.html"
                 }
-            });
-            if (check == 1) {
-                alert("email already exists")
-            }
-            else {
-                const user_datas =JSON.parse(localStorage.getItem('arr')) ?? [];
-
-
-                user_datas.push(user);
-                localStorage.setItem("arr",JSON.stringify(user_datas));
-                window.location.href="login.html"
             }
 
-
-        }
-        else{
-            alert("Field can't be empty")
-        }
-    }
         
+            else {
+                alert("Field can't be empty")
+            }
+    }
+
     </script>
 
 

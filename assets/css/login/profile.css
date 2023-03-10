@@ -48,12 +48,22 @@ button{
     margin: auto 0px;
 }
 
+.btn_flex{
+    display: flex;
+}
+
+/* .btn_flex:first-child{
+    background-color: red;
+} */
+
 header *{
     margin: 10px 0px;
 }
 
 input{
     border: 3px solid black;
+    font-weight: bold;
+    color: #333333;
 }
 
 select{

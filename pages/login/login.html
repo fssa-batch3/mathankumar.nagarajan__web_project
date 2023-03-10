@@ -61,41 +61,44 @@
 
     <script>
 
-        // const confirm_email=document.getElementById("confirm_email").value
-        // const password=document.getElementById("password").value
-
-
-        // console.log(confirm_email)
-        // console.log(password)
-
-        // localStorage.setItem("key", value)
-
-        // localStorage.setItem("confirm_email", confirm_email)
-        // localStorage.setItem("password", password)
-
-        //new line
-
-
-        // user["confirm_email"] = document.getElementById("confirm_email").value
-        // user["password"] = document.getElementById("password").value
-
         function login() {
             const email = document.getElementById("confirm_email").value
             const password = document.getElementById("password").value
+
             const User_details = JSON.parse(localStorage.getItem("arr"))
+
+            
+
+
             let check;
             User_details.find(element => {
                 if (element["user_email"] === email && element["creatpassword"] === password) {
+
+                    let active_user= element
+                    console.log(active_user);
+                    localStorage.setItem("active_user", JSON.stringify(active_user))
+
+
                     return check = 1
+                
                 }
                 else {
+
                     return check = 0
+
                 }
             })
             if (check == 1) {
+
+
+                // const user_details = JSON.parse(localStorage.getItem('arr')) ?? [];
+                // user_details.push(login_user);
+                // localStorage.setItem("login_details", JSON.stringify(user_details));
+
+
+
                 alert("Logged in")
-                // window.location.href = "../../pages/home/home.html"
-            window.location.href = "../../pages/home/profile.html"
+                window.location.href = "../../pages/home/profile.html"
             }
             else {
                 alert("Invalid")
