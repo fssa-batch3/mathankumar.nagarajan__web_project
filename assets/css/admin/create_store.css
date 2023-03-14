@@ -24,3 +24,27 @@ input:valid{
 input:invalid{
     border: 3px solid red;
 }
+
+#update_btn{
+    visibility: hidden;
+}
+
+#store_img{
+    margin-top: 100px;
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+/* Create Product OR Create Items Page CSS Codes */
+
+
+
+
+
+
+

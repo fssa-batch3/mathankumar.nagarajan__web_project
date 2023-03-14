@@ -39,11 +39,13 @@
 
         <br>
 
-        <button type="submit" onclick="addStore()">Submit Form</button>
+        <button type="submit" id="add_store_btn">Submit Form</button>
 
-        <button type="submit" onclick="updateStore()">Update Store</button>
+        <button id="update_btn">Update Store</button>
 
-        <button type="submit" onclick="deleteStore()">Delete Store</button>
+        <button id="delete_btn">Delete Store</button>
+
+        <button id="edit_btn">Edit Store</button>
 
 
 
@@ -54,7 +56,34 @@
     <script>
 
 
-        function addStore() {
+        let edit_btn = document.getElementById("edit_btn")
+        edit_btn.addEventListener("click", el => {
+            el.preventDefault()
+            let storesDetails = JSON.parse(localStorage.getItem("stores"))
+
+            const value = document.getElementById("value").value
+
+            storesDetails.find(e => {
+
+                if (e["value"] == value) {
+
+                    document.getElementById("image").value = e["image"]
+                    document.getElementById("title").value = e["title"]
+                    document.getElementById("category").value = e["category"]
+
+                    document.getElementById("edit_btn").style.visibility = 'hidden';
+                    document.getElementById("update_btn").style.visibility = 'visible';
+
+                }
+
+            });
+        })
+
+
+
+
+        let add_store_btn = document.getElementById("add_store_btn")
+        add_store_btn.addEventListener("click", el => {
 
             let store = {};
 
@@ -74,10 +103,14 @@
 
             localStorage.setItem("stores", JSON.stringify(storesDetails))
 
-        }
+
+        })
 
 
-        function updateStore() {
+
+
+        let update_btn = document.getElementById("update_btn")
+        update_btn.addEventListener("click", el => {
 
             let storesDetails = JSON.parse(localStorage.getItem("stores"))
 
@@ -98,10 +131,13 @@
 
             });
 
-        }
+        })
 
 
-        function deleteStore() {
+
+
+        let delete_btn = document.getElementById("delete_btn")
+        delete_btn.addEventListener("click", el => {
 
             let storesDetails = JSON.parse(localStorage.getItem("stores"))
 
@@ -120,9 +156,9 @@
                 }
             }
 
+        })
 
 
-        }
 
 
     </script>
