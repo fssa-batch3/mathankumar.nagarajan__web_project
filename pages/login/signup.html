@@ -17,10 +17,12 @@
     <p id="signin">Already have an account? <a href="../../pages/login/login.html">Sign in here!</a></p>
 
 
-    <form>
 
 
-        <div class="container">
+    <div class="container">
+
+        <form id="signup_form">
+
 
             <div>
                 <img id="sign-img" src="../../assets/image/signup/signup-img.png" alt="signup img">
@@ -41,10 +43,15 @@
                 </div>
 
                 <div class="box-column">
-                    <label>Create Password<br><input id="creatpassword" type="password" name="create password"
-                            class="input" required="true">
-                        <label>Confirm Password<br><input id="confirmpassword" type="password" required="true"
-                                name="confirm password" class="input"></label>
+                    <label>Create Password
+                        <br>
+                        <input id="creatpassword" type="password" name="create password" class="input" required="true">
+                    </label>
+                    <label>Confirm Password
+                        <br>
+                        <input id="confirmpassword" type="password" required="true" name="confirm password"
+                            class="input">
+                    </label>
                 </div>
                 <label><input type="checkbox" name="checkbox" id="checkbox">Creating your account and you
                     accepting<b>Terms & Conditions.</b></label>
@@ -64,12 +71,21 @@
 
             </div>
 
-        </div>
+        </form>
 
-    </form>
+    </div>
+
 
 
     <script>
+
+
+        let form = document.getElementById("signup_form");
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            signup()
+        })
+
 
         function signup() {
 
@@ -82,7 +98,7 @@
 
 
 
-            if (first_name != "" && last_name != "" && user_email != "" && address != "" && creatpassword != "" && confirm_password != "" && creatpassword === confirm_password) {
+            if (first_name != "" && last_name != "" && user_email != "" && address != "" && creatpassword != "" && confirm_password != "" && creatpassword == confirm_password) {
 
                 let user = {};
                 let arr = [];
@@ -95,7 +111,6 @@
                 user["confirm_password"] = confirm_password;
 
                 let User_details = JSON.parse(localStorage.getItem('arr'));
-
                 User_details.find(element => {
 
                     if (element["user_email"] === user_email) {
@@ -128,11 +143,11 @@
                 }
             }
 
-        
+
             else {
                 alert("Field can't be empty")
             }
-    }
+        }
 
     </script>
 

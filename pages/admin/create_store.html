@@ -85,26 +85,78 @@
         let add_store_btn = document.getElementById("add_store_btn")
         add_store_btn.addEventListener("click", el => {
 
-            let store = {};
+            const id = Date.now();  // generate Primary Key
 
-            let storesDetails = JSON.parse(localStorage.getItem("stores")) ?? []
+            let image = document.getElementById("image").value
+            let title = document.getElementById("title").value
+            let category = document.getElementById("category").value
+            let value = document.getElementById("value").value
 
-            const image = document.getElementById("image").value
-            const title = document.getElementById("title").value
-            const category = document.getElementById("category").value
-            const value = document.getElementById("value").value
 
-            store["image"] = image;
-            store["title"] = title;
-            store["category"] = category;
-            store["value"] = value;
+            if (image != "" && title != "" && category != "" && value != "") {
 
-            storesDetails.push(store);
+                // el.preventDefault();
+                let storesDetails = JSON.parse(localStorage.getItem("stores"));
+                let value = document.getElementById("value");
 
-            localStorage.setItem("stores", JSON.stringify(storesDetails))
 
+                let storede;
+                // console.log(storesDetails)
+                storesDetails.find(e => {
+                    if (e["value"] == value.value) {
+                        // console.log(e["value"])
+                        // console.log(value.value)
+                        return storede = 1;
+                    }
+
+                });
+
+                if (storede == 1) {
+                    alert("already exists")
+                }
+                else {
+
+
+                    
+
+
+
+                    let store = {};
+
+                    storesDetails = JSON.parse(localStorage.getItem("stores")) ?? []
+
+                    // let id;
+
+                    // for (let i = storesDetails.length - 1; i >= storesDetails.length - 1; i--) {
+                    //     id = storesDetails[i] + 1;
+                    // }
+
+
+                    const image = document.getElementById("image").value
+                    const title = document.getElementById("title").value
+                    const category = document.getElementById("category").value
+                    const value = document.getElementById("value").value
+
+                    store["image"] = image;
+                    store["title"] = title;
+                    store["category"] = category;
+                    store["value"] = value;
+                    store["id"] = id;
+
+
+                    storesDetails.push(store);
+
+                    localStorage.setItem("stores", JSON.stringify(storesDetails))
+                    // alert("is not there")
+                }
+
+            }
+            else {
+                alert("Field can't be empty")
+            }
 
         })
+
 
 
 
@@ -157,7 +209,6 @@
             }
 
         })
-
 
 
 
