@@ -98,48 +98,49 @@
 
 
 
-            if (first_name != "" && last_name != "" && user_email != "" && address != "" && creatpassword != "" && confirm_password != "" && creatpassword == confirm_password) {
+            if (first_name != "" && last_name != "" && user_email != "" && address != "" && creatpassword != "" && confirm_password != "") {
 
-                let user = {};
-                let arr = [];
+                if (creatpassword == confirm_password) {
 
-                user["first_name"] = first_name;
-                user["last_name"] = last_name;
-                user["user_email"] = user_email;
-                user["address"] = address;
-                user["creatpassword"] = creatpassword;
-                user["confirm_password"] = confirm_password;
+                    let User_details = JSON.parse(localStorage.getItem('arr')) ?? [];
 
-                let User_details = JSON.parse(localStorage.getItem('arr'));
-                User_details.find(element => {
+                    let check = 0;
 
-                    if (element["user_email"] === user_email) {
-                        // if (1 === 1) {
+                    User_details.find(element => {
 
+                        if (element["user_email"] === user_email) {
 
+                            return check = 1
+                        }
 
-                        // const user_datas = JSON.parse(localStorage.getItem('arr')) ?? [];
+                        else {
+                            return check = 0
+                        }
+                    });
 
-
-                        // user_datas.push(user);
-                        // localStorage.setItem("arr", JSON.stringify(user_datas));
-                        // window.location.href = "login.html"
-
-                        return check = 1
+                    if (check == 1) {
+                        alert("Email is already exits")
                     }
-
                     else {
-                        return check = 0
+                        let user = {};
+
+                        user["first_name"] = first_name;
+                        user["last_name"] = last_name;
+                        user["user_email"] = user_email;
+                        user["address"] = address;
+                        user["creatpassword"] = creatpassword;
+                        user["confirm_password"] = confirm_password;
+
+                        User_details.push(user);
+                        localStorage.setItem("arr", JSON.stringify(User_details));
+                        window.location.href = "login.html"
+
+
                     }
-                });
-                if (check == 1) {
-                    alert("email already exists")
+
                 }
                 else {
-                    const user_datas = JSON.parse(localStorage.getItem('arr')) ?? [];
-                    user_datas.push(user);
-                    localStorage.setItem("arr", JSON.stringify(user_datas));
-                    window.location.href = "login.html"
+                    alert("Your password is not matched")
                 }
             }
 

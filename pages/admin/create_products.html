@@ -59,6 +59,7 @@
         <button id="add_product">Add Product</button>
         <button id="update_product">Update Product</button>
         <button id="edit_product">Edit Product</button>
+        <button id="delete_btn">Delete Product</button>
 
 
 
@@ -71,7 +72,7 @@
         let addProduct = document.getElementById("add_product")
         addProduct.addEventListener("click", el => {
 
-            el.preventDefault()
+            // el.preventDefault()
 
             let image = document.getElementById("image").value
             let title = document.getElementById("title").value
@@ -85,60 +86,51 @@
 
             if (image != "" && title != "" && price != "" && value != "" && full_price != "" && discount != "" && rating != "" && reviews != "") {
 
-                let productDetails = JSON.parse(localStorage.getItem("products"));
+                let productDetails = JSON.parse(localStorage.getItem("products")) ?? [];
                 let val = document.getElementById("value");
 
-                let prodcutde;
+                let prodcutde = 0;
 
                 productDetails.find(e => {
                     if (e["value"] == val.value) {
 
-                        console.log(e["value"])
-                        console.log(val.value)
+                        // console.log(e["value"])
+                        // console.log(val.value)
                         return prodcutde = 1;
-
+                    }
+                    else {
+                        return prodcutde = 0;
                     }
 
                 });
 
-        if (prodcutde == 1) {
-            alert("already exists")
-        }
-        else {
+                if (prodcutde == 1) {
+                    alert("already exists")
+                }
+                else {
 
 
-            let product = {};
-
-            let productDetails = JSON.parse(localStorage.getItem("products")) ?? []
-
-            const image = document.getElementById("image").value
-            const title = document.getElementById("title").value
-            const price = document.getElementById("price").value
-            const value = document.getElementById("value").value
-            const full_price = document.getElementById("full_price").value
-            const discount = document.getElementById("discount").value
-            const rating = document.getElementById("rating").value
-            const reviews = document.getElementById("reviews").value
+                    let product = {};
 
 
-            product["image"] = image;
-            product["title"] = title;
-            product["price"] = price;
-            product["value"] = value;
-            product["full_price"] = full_price;
-            product["discount"] = discount;
-            product["rating"] = rating;
-            product["reviews"] = reviews;
+                    product["image"] = image;
+                    product["title"] = title;
+                    product["price"] = price;
+                    product["value"] = value;
+                    product["full_price"] = full_price;
+                    product["discount"] = discount;
+                    product["rating"] = rating;
+                    product["reviews"] = reviews;
 
 
-            productDetails.push(product);
+                    productDetails.push(product);
 
-            localStorage.setItem("products", JSON.stringify(productDetails))
-        }
+                    localStorage.setItem("products", JSON.stringify(productDetails))
+                }
             }
             else {
-            alert("Field can't be empty")
-        }
+                alert("Field can't be empty")
+            }
 
 
         });
@@ -202,6 +194,30 @@
                 }
 
             });
+        })
+
+
+
+        let deleteProduct = document.getElementById("delete_btn")
+        deleteProduct.addEventListener("click", el => {
+
+            let productDetails = JSON.parse(localStorage.getItem("products"))
+
+            const value = document.getElementById("value").value
+
+            for (let i = 0; i < productDetails.length; i++) {
+
+                if (value === productDetails[i]["value"]) {
+
+                    productDetails.splice(i, 1)
+
+                    confirm("Your account have been deleted")
+
+                    localStorage.setItem("products", JSON.stringify(productDetails));
+
+                }
+            }
+
         })
 
 
