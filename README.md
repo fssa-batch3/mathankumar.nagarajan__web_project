@@ -7,7 +7,33 @@ About your project:
     For example, let's say Phoenix mall which they have full of brand items. So people can trust me 
     to buy items through my website. 
 
+
+- Problem statement: https://docs.google.com/document/d/1YLwa8yKuOSpcxANGFA6FnlKSpnsf2mJPSzrixnADBbg/edit?usp=sharing
+
+- Market Research: https://docs.google.com/document/d/1Vxxc2iwXF0qa3UHIpjDakZqRnJoUpr6omjUhbAZTNqU/edit?usp=sharing
+
+- User flow: https://drive.google.com/file/d/1VQ4HswgLBieRTho8TE_mZ4xMFhESaHq_/view?usp=sharing
+
+- Wireframe: https://drive.google.com/file/d/1alBJHaJyMYsVhkzoeCH8u0WPmCKyAfGc/view?usp=sharing
+
+- Pages Link : https://fssa-batch3.github.io/mathankumar.nagarajan__web_project/
+
+
 <h1>Features</h1>
+
+<h2>Status</h2>
+
+- Register (Completed)
+- Login (Completed)
+- Profile CRUD (Completed)
+- Store CURD (Completed)
+- Product CURD (Completed)
+- Search Box (Yet to Start)
+- Cart CURD (Yet to Start)
+- Add Payment Details (Yet to Start)
+- Add Order (Yet to Start)
+- Cancel Order (Yet to Start)
+
 
 
 <h2>Buyer</h2>
@@ -19,7 +45,7 @@ Steps:
 1. Navigate to the registration page.
 2. Enter the required information such as first_name, last_name, address, email, create_password and confirm_password.
 3. Click the "Create Account" button.
-Expected Result:
+> Expected Result:
 > The user is redirected to the login page.
 
 
@@ -30,7 +56,7 @@ Steps:
 1. Navigate to the login page.
 2. Enter the required information such as email, and password.
 3. Click the "login" button.
-Expected Result:
+> Expected Result:
 > The user is redirected to the user profile page.
 
 
@@ -41,7 +67,7 @@ Steps:
 1. Log in as a user.
 2. Navigate to the account page.
 3. View the account details such as name, email, and address.
-Expected Result:
+> Expected Result:
 > The user can view their account details.
 
 <h3>Edit and Update account details (completed)</h3>
@@ -53,7 +79,7 @@ Steps:
 3. Click the "Edit Account" button.
 4. Update the account details.
 5. Click the "Update Account" button.
-Expected Result:
+> Expected Result:
 > The user's account details are updated.
 
 
@@ -65,7 +91,7 @@ Steps:
 2. Navigate to the Home page. Click Any one store.
 3. Navigate to the product listing page.
 4. View the list of available products/items in the store.
-Expected Result:
+> Expected Result:
 > The user can view the list of available products/items in the store.
 
 
@@ -77,12 +103,12 @@ Steps:
 2. Navigate to the Home page. Click Any one store.
 3. Navigate to the product listing page.
 4. Select a product/item to view its details.
-Expected Result:
+> Expected Result:
 > The user can view the details of the selected product/item.
 
 
 <h2>Seller</h2>
-#
+
 
 <h3>Create a new store (completed)</h3>
 
@@ -92,7 +118,7 @@ Steps:
 2. Enter the store details such as name, category and give id(number).
 3. Upload store logo.
 4. Click the "Create Product" button.
-Expected Result:
+> Expected Result:
 > The new store is created and added to the Localstorage.
 
 <h3>Edit store details (completed)</h3>
@@ -101,7 +127,7 @@ Scenario 1: Successfully view list of products
 Steps:
 1. Navigate to the store creation page.
 2. Match the store id to get the store information.
-Expected Result:
+> Expected Result:
 > The seller can view their store details.
 
 <h3>Update store details (completed)</h3>
@@ -112,7 +138,7 @@ Steps:
 2. Match the store id to get the store information.
 3. update new data that page.
 4. Click the "Update store" Button.
-Expected Result:
+> Expected Result:
 > The seller can view their store details.
 
 
@@ -125,7 +151,7 @@ Steps:
 2. Enter the product details such as title, rate, full rate, discount, and give id(number).
 3. Upload product image.
 4. Click the "Create Product" button.
-Expected Result:
+> Expected Result:
 > The new product is created and added to the Localstorage.
 
 <h3>Edit product details (completed)</h3>
@@ -134,7 +160,7 @@ Scenario 1: Successfully view list of products
 Steps:
 1. Navigate to the product creation page.
 2. Match the product id to get the product information.
-Expected Result:
+> Expected Result:
 > The seller can view their product details.
 
 <h3>Update product details (completed)</h3>
@@ -145,7 +171,7 @@ Steps:
 2. Match the product id to get the product information.
 3. Chage some data to Update new data that page.
 4. Click the "Update product" Button.
-Expected Result:
+> Expected Result:
 > The seller can view their Updated product details in Localstorage.
 
 #
@@ -167,12 +193,3 @@ Expected Result:
 
 
 
-Problem statement: https://docs.google.com/document/d/1YLwa8yKuOSpcxANGFA6FnlKSpnsf2mJPSzrixnADBbg/edit?usp=sharing
-
-Market Research: https://docs.google.com/document/d/1Vxxc2iwXF0qa3UHIpjDakZqRnJoUpr6omjUhbAZTNqU/edit?usp=sharing
-
-User flow: https://drive.google.com/file/d/1VQ4HswgLBieRTho8TE_mZ4xMFhESaHq_/view?usp=sharing
-
-Wireframe: https://drive.google.com/file/d/1alBJHaJyMYsVhkzoeCH8u0WPmCKyAfGc/view?usp=sharing
-
-Pages Link : https://fssa-batch3.github.io/mathankumar.nagarajan__web_project/
