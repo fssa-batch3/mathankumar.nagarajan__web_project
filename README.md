@@ -21,7 +21,7 @@ About your project:
 
 <h1>Features</h1>
 
-<h2>Status</h2>
+<h2>Feature Status</h2>
 
 - Register (Completed)
 - Login (Completed)
