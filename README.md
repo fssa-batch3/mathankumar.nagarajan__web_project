@@ -18,7 +18,7 @@ Steps:
 1. Navigate to the registration page.
 2. Enter the required information such as first_name, last_name, address, email, create_password and confirm_password.
 3. Click the "Create Account" button.
-Expected Result:
+> Expected Result:
 > The user is redirected to the login page.
 
 
