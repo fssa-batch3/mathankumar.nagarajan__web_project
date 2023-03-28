@@ -37,24 +37,23 @@ Expected Result:
 
 Scenario 1: Successfully view account details
 Steps:
-1. Log in as a seller.
+1. Log in as a user.
 2. Navigate to the account page.
 3. View the account details such as name, email, and address.
 Expected Result:
 > The user can view their account details.
 
-<h3>Edit account details (completed)</h3>
+<h3>Edit and Update account details (completed)</h3>
 
 Scenario 1: Successfully edit account details
 Steps:
-1. Log in as a seller.
+1. Log in as a user.
 2. Navigate to the account page.
 3. Click the "Edit Account" button.
 4. Update the account details.
 5. Click the "Update Account" button.
 Expected Result:
 > The user's account details are updated.
-
 
 
 <h3>View products/items (completed)</h3>
@@ -115,6 +114,40 @@ Steps:
 Expected Result:
 > The seller can view their store details.
 
+
+
+<h3>Create a new product (completed)</h3>
+
+Scenario 1: Successfully create a new product to sell
+Steps:
+1. Navigate to the product creation page.
+2. Enter the product details such as title, rate, full rate, discount, and give id(number).
+3. Upload product image.
+4. Click the "Create Product" button.
+Expected Result:
+> The new product is created and added to the Localstorage.
+
+<h3>Edit product details (completed)</h3>
+
+Scenario 1: Successfully view list of products
+Steps:
+1. Navigate to the product creation page.
+2. Match the product id to get the product information.
+Expected Result:
+> The seller can view their product details.
+
+<h3>Update product details (completed)</h3>
+
+Scenario 1: Successfully update product details.
+Steps:
+1. Navigate to the product creation page.
+2. Match the product id to get the product information.
+3. Chage some data to Update new data that page.
+4. Click the "Update product" Button.
+Expected Result:
+> The seller can view their Updated product details in Localstorage.
+
+#
 
 
 
