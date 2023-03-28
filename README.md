@@ -8,7 +8,8 @@ About your project:
     to buy items through my website. 
 
 <h1>Features</h1>
-#
+
+
 <h2>Buyer</h2>
 
 <h3>Create an account (completed)</h3>
