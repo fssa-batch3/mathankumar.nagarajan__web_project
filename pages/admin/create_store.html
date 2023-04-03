@@ -31,7 +31,7 @@
 
     <header>
 
-        
+
 
     </header>
 
@@ -131,6 +131,7 @@
             let title = document.getElementById("title").value
             let category = document.getElementById("category").value
             let value = document.getElementById("value").value
+            let products = [];
 
 
             if (image != "" && title != "" && category != "" && value != "") {
@@ -174,13 +175,14 @@
                     //     id = storesDetails[i] + 1;
                     // }
 
-                let value = document.getElementById("value").value;
+                    let value = document.getElementById("value").value;
 
                     store["image"] = image;
                     store["title"] = title;
                     store["category"] = category;
                     store["value"] = value;
                     store["id"] = id;
+                    store["products"] = products;
 
 
                     storesDetails.push(store);

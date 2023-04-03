@@ -18,6 +18,11 @@
 
     <form action="">
 
+        <label for="store_name">Store Name :</label>
+        <input type="text" id="store_name">
+
+        <br>
+
         <label for="value">Value :</label>
         <input type="number" id="value" pattern="{0-giot 1}">
 
@@ -69,10 +74,11 @@
     <script>
 
 
-        let addProduct = document.getElementById("add_product")
-        addProduct.addEventListener("click", el => {
 
-            // el.preventDefault()
+
+        let addProduct = document.getElementById("add_product")
+        addProduct.addEventListener("click", ele => {
+            // ele.preventDefault()
 
             let image = document.getElementById("image").value
             let title = document.getElementById("title").value
@@ -83,57 +89,98 @@
             let rating = document.getElementById("rating").value
             let reviews = document.getElementById("reviews").value
 
+            let storesDetails = JSON.parse(localStorage.getItem("stores"))
+            let store_name = document.getElementById("store_name").value
 
-            if (image != "" && title != "" && price != "" && value != "" && full_price != "" && discount != "" && rating != "" && reviews != "") {
+            storesDetails.find(el => {
+                if (el["title"] == store_name) {
 
-                let productDetails = JSON.parse(localStorage.getItem("products")) ?? [];
-                let val = document.getElementById("value");
+                    console.log(el["title"])
 
-                let prodcutde = 0;
+                    if (image != "" && title != "" && price != "" && value != "" && full_price != "" && discount != "" && rating != "" && reviews != "") {
 
-                productDetails.find(e => {
-                    if (e["value"] == val.value) {
+                        let productDetails = el["products"]
+                        let val = document.getElementById("value");
+                        let prodcutde = 0;
 
-                        // console.log(e["value"])
-                        // console.log(val.value)
-                        return prodcutde = 1;
+                        productDetails.find(e => {
+
+                            console.log(e["value"])
+
+
+                            if (e["value"] == val.value) {
+                                return prodcutde = 1;
+                            }
+                            else {
+                                return prodcutde = 0;
+                            }
+                        });
+
+                        if (prodcutde == 1) {
+                            alert("already exists")
+                        }
+                        else {
+                            let product = {};
+                            product["image"] = image;
+                            product["title"] = title;
+                            product["price"] = price;
+                            product["value"] = value;
+                            product["full_price"] = full_price;
+                            product["discount"] = discount;
+                            product["rating"] = rating;
+                            product["reviews"] = reviews;
+                            productDetails.push(product);
+
+                            let newItems = JSON.parse(localStorage.getItem("stores"))
+
+                            newItems.find(element => {
+
+                                if (element["title"] == store_name) {
+                                    let save = element["products"]
+                                    // console.log(save)
+                                    save.push(product)
+                                    localStorage.setItem("stores", JSON.stringify(newItems))
+                                }
+                                else{
+                                    alert("Not matched")
+                                }
+
+                            })
+
+
+                            let save = newItems[1]["products"]
+                            console.log(save)
+                            save.push(product)
+                            localStorage.setItem("stores", JSON.stringify(newItems))
+                        }
                     }
                     else {
-                        return prodcutde = 0;
+                        alert("Field can't be empty")
                     }
-
-                });
-
-                if (prodcutde == 1) {
-                    alert("already exists")
                 }
                 else {
-
-
-                    let product = {};
-
-
-                    product["image"] = image;
-                    product["title"] = title;
-                    product["price"] = price;
-                    product["value"] = value;
-                    product["full_price"] = full_price;
-                    product["discount"] = discount;
-                    product["rating"] = rating;
-                    product["reviews"] = reviews;
-
-
-                    productDetails.push(product);
-
-                    localStorage.setItem("products", JSON.stringify(productDetails))
+                    alert("Your Store Name Isn't Matched")
                 }
-            }
-            else {
-                alert("Field can't be empty")
-            }
-
-
+            })
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         let updateProduct = document.getElementById("update_product");

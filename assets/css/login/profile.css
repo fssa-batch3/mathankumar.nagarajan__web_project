@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
 
+/* Active Page */
+
+.active{
+    border: 2px solid black;
+    color: blue;
+    background-color: #2e3393;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
 
 body {
     font-family: 'Barlow', sans-serif;
@@ -7,68 +22,160 @@ body {
     padding: 0%;
 }
 
-nav ul a{
-    text-decoration: none;
-    /* color: black; */
-}
+ /* New One Code */
+
 
 header{
-    width: 60%;
-    margin: auto auto;
-    background-color: antiquewhite;
-}
-
-header nav ul{
-    width: 100%;
-    padding-left: 0%;
+    width: 80%;
+    height: 750px;
+    background-color: #f5f5f7;
+    /* border: 2px solid black; */
+    margin: 4.5% auto;
     display: flex;
-    justify-content: space-around;
-
+    justify-content: center;
 }
 
-header nav ul li{
-    display: block;
+.profile{
+    width: 30%;
+}
+
+.details {
+    width: 70%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+}
+
+.details h1{
+    margin: 0%;
+}
+
+.profile ul{
+    display: inline-block;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+.profile ul li{
+    cursor: pointer;
+    width: 80%;
+    height: 40px;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15% auto;
+    background-color: aqua;
+    /* border-radius: 4%; */
 }
 
-header .align{
-    
+.profile ul li:hover{
+    transform: scale(1.02);
+    color: white;
+    border: 2px solid black;
+}
+
+/* .profile div{
+    display: none;
+} */
+
+.profile div h3{
+    color: blue;
+}
+
+.profile img {
+    width: 80%;
+    width: 250px;
+    height: 250px;
+    border:2px solid black;
+    display: block;
+    margin: 0% auto;
+    margin-top: 10%;
+    border-radius: 5%;
+}
+
+.profile div button{
+    width: 80%;
+    background-color: whitesmoke;
+    display: block;
+    margin: auto auto;
+}
+
+#user_nanm{
+    text-align: center;
+    margin: 0%;
+    margin-top: 15px;
+}
+
+
+/* Profile Information Slide */
+
+.pages_align{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0%;
+    margin-bottom: 10px;
+}
+
+.pages_align h4{
+    margin: 0%;
+}
+
+.pages_align i {
+    margin: auto 10px;
+    font-size: 14px;
+    color: blue;
+}
+
+.name{
     display: flex;
     justify-content: space-between;
 }
 
-header .align div input{
-    width: 28em;
-    height: 2em;
-    border-radius: 0.3em;
+.two_input{
+    width: 350px;
 }
 
-button{
-    margin: auto 0px;
+.one_input{
+    width: 800px;
 }
 
-.btn_flex{
-    display: flex;
-}
-
-/* .btn_flex:first-child{
-    background-color: red;
-} */
-
-header *{
-    margin: 10px 0px;
+.three_input{
+    width: 260px;
 }
 
 input{
-    border: 3px solid black;
-    font-weight: bold;
-    color: #333333;
+    color: black;
+    height: 40px;
+    font-size: 18px;
+    margin-bottom: 40px;
 }
 
 select{
-    border: 3px solid black;
+    height: 40px;
+    font-size: 18px;
+    color: black;
+    margin-bottom: 40px;
 }
+
+.btn_flex button {
+    width: 200px;
+    height: 40px;
+    margin: 6% 4%;
+    background-color: aqua;
+}
+
+label{
+    font-size: 18px;
+    color: #2e3393;
+    font-weight: bold;
+}
+
+
+/* Input Border Colours */
 
 input:valid{
     border-color: green;
@@ -85,5 +192,98 @@ select:valid{
 select:invalid{
     border-color: green;
 }
+
+
+/* Profile Page Filished */
+
+
+/* Order Page Starting */
+
+.order_color{
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: greenyellow;
+} 
+
+.order_list div{
+    height: 120px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.order_product .product_img {
+    min-width: none;
+    max-width: 200px;
+    max-height: 100px;
+}
+
+.order_numer h1,p{
+    margin: 0%;
+}
+
+/* Order Page Codes End */
+
+/* Wishlist Page Codes start */
+
+
+.limit{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.limit div i{
+    font-size: 24px;
+    padding: 10px;
+    background-color: #c0c5c4;
+    border-radius: 50%;
+}
+
+.limit p {
+    font-weight: bolder;
+    color: #191f24;
+}
+
+.items{
+    margin-top: 20px;
+}
+
+.items div{
+    padding: 15px;
+    margin: 20px auto;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.items div img{
+    max-width: 150px;
+    min-height: auto;
+    max-height: 100px;
+}
+
+.items div h3 {
+    width: 300px;
+}
+
+.items div button{
+    padding: 10px 20px;
+    color: white;
+    font-weight: bolder;
+    background-color: #01411C;
+}
+
+
+/* Wishlist Page Codes End */
+
+
+
+
 
 

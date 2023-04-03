@@ -7,128 +7,369 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../assets/css/login/profile.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>SpartansMT</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/image/home/logo icon.png" alt="logo icon">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 
 <body>
 
 
-    <!-- <label id="first_name"><input type="text"></label>
-    <label id="last_name"></label>
-    <label id="address"></label>
-    <label id="email"></label>
-    <label id="create_password"></label>
-    <label id="confirm_password"></label> -->
+    <header id="profile_page">
 
-    <!-- <h1 id="first_name"></h1>
-    <h1 id="last_name"></h1>
-    <h1 id="address"></h1>
-    <h1 id="email"></h1>
-    <h1 id="address"></h1>
-    <h1 id="create_password"></h1>
-    <h1 id="confirm_password"></h1>
-    <button type="button">Submit</button> -->
+        <div class="profile">
 
+            <div>
+                <img src="../../assets/image/services/buildings.jpg" alt="User Profile">
+                <h3 id="user_nanm"></h3>
+            
+            </div>
 
+            <br>
 
-
-
-    <header>
-
-        <nav>
             <ul>
-                <a href="../../pages/home/home.html">
-                    <li>Home</li>
-                </a>
-                <li>Profile</li>
-                <a href="../../index.html">
-                    <li>Logout</li>
-                </a>
+                <li id="btn_profile" class="active">Profile</li>
+                <li id="btn_order">Orders</li>
+                <li id="btn_wishlist">Wishlist</li>
+                <li>Payment</li>
             </ul>
-        </nav>
 
-        <h1>User Profile</h1>
+        </div>
 
-        <form action="">
+        <div class="details">
 
-            <div class="">
-                <div>
-                    <label for="first_name">First name</label>
-                    <br>
-                    <input type="text" id="first_name" class="col-12" disabled>
-                </div>
-                <div>
-                    <label for="last_name">Last name</label>
-                    <br>
-                    <input type="text" id="last_name" class="col-12" disabled>
-                </div>
+            <div class="pages_align">
+                <a href="../home/home.html">
+                    <h4>Home</h4>
+                </a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                <h4>Profile</h4>
             </div>
+
+            <form action="">
+
+                <div class="name">
+                    <div>
+                        <label for="first_name">First name</label>
+                        <br>
+                        <input type="text" id="first_name" class="two_input" disabled>
+                    </div>
+                    <div>
+                        <label for="last_name">Last name</label>
+                        <br>
+                        <input type="text" id="last_name" class="two_input" disabled>
+                    </div>
+                </div>
+    
+                <div>
+                    <label for="email">Email</label>
+                    <br>
+                    <input type="email" id="email" class="one_input" disabled>
+                </div>
+    
+                <div>
+                    <label for="address">Address</label>
+                    <br>
+                    <input id="address" type="text" class="one_input" disabled>
+                </div>
+    
+                <div>
+                    <label for="address2">Address2</label>
+                    <br>
+                    <input id="address2" type="text" class="one_input" disabled>
+                </div>
+    
+                <div class="name">
+                    <div>
+                        <label for="">Country</label>
+                        <br>
+                        <select name="" id="country" class="three_input" disabled>
+                            <option value=""></option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                            <option value="Canada">Canada</option>
+                        </select>
+                    </div>
+    
+                    <div>
+                        <label for="">State</label>
+                        <br>
+                        <select name="" id="state" class="three_input" disabled>
+                            <option value=""></option>
+                            <option value="Tamilnadu">Tamilnadu</option>
+                            <option value="TN">TN</option>
+                        </select>
+                    </div>
+    
+                    <div>
+                        <label for="zip_code" class="three_input">Zip</label>
+                        <br>
+                        <input id="zip_code" type="text" inputmode="numeric" pattern="[0-9]{6,6}" disabled>
+                    </div>
+                </div>
+    
+                <div class="btn_flex">
+                    <button id="edit" onclick="editItem()" type="button">Edit Profile</button>
+                    <button id="update" onclick="updateProfile()" type="button">Update Profile</button>
+                    <button onclick="deleteItem()" type="button">Delete Profile</button>
+    
+                </div>
+    
+            </form>
+
+
+        </div>
+
+    </header>
+
+    <header id="orders_page">
+
+        <div class="profile">
 
             <div>
-                <label for="email">Email</label>
-                <br>
-                <input type="email" id="email" class="col-12" disabled>
+                <img src="../../assets/image/services/buildings.jpg" alt="User Profile">
+                <h3 id="user_nanm"></h3>
+            
             </div>
+
+            <br>
+
+            <ul>
+                <li id="btn_profile">Profile</li>
+                <li id="btn_order" class="active">Orders</li>
+                <li id="btn_wishlist">Wishlist</li>
+                <li>Payment</li>
+            </ul>
+
+        </div>
+
+        <div class="details">
+
+            <div class="pages_align">
+                <a href="../home/home.html">
+                    <h4>Home</h4>
+                </a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                <h4>Profile</h4>
+            </div>
+
+            <h1>Orders</h1>
+            <h4>8 Items</h4>
+
+            <div class="order_list">
+
+                <div>
+
+                    <div class="order_numer">
+                        <h1>Order 629173</h1>
+                    </div>
+
+                    <div class="order_date">
+                        <p class="order_color"></p>
+                        <p>Shipped on 01 Apr, 2023</p>
+                    </div>
+
+                    <div class="order_product">
+
+                        <img class="product_img" src="../../assets/image/stores/items/nike1.jpg" alt="">
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <div class="order_numer">
+                        <h1>Order 522429</h1>
+                    </div>
+
+                    <div class="order_date">
+                        <p class="order_color"></p>
+                        <p>Shipped on 01 Apr, 2023</p>
+                    </div>
+
+                    <div class="order_product">
+
+                        <img class="product_img" src="../../assets/image/stores/ivenus/mobile (1).jpg" alt="">
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <div class="order_numer">
+                        <h1>Order 526782</h1>
+                    </div>
+
+                    <div class="order_date">
+                        <p class="order_color"></p>
+                        <p>Shipped on 01 Apr, 2023</p>
+                    </div>
+
+                    <div class="order_product">
+
+                        <img class="product_img" src="../../assets/image/stores/jack-zone/dress10.jpg" alt="">
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <div class="order_numer">
+                        <h1>Order 556729</h1>
+                    </div>
+
+                    <div class="order_date">
+                        <p class="order_color"></p>
+                        <p>Shipped on 01 Apr, 2023</p>
+                    </div>
+
+                    <div class="order_product">
+
+                        <img class="product_img" src="../../assets/image/stores/jack-zone/dress12.jpg" alt="">
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+    
+    </header>
+
+    <header id="wishlist_page">
+
+        <div class="profile">
 
             <div>
-                <label for="address">Address</label>
-                <br>
-                <input class="col-12" id="address" type="text" disabled>
+                <img src="../../assets/image/services/buildings.jpg" alt="User Profile">
+                <h3 id="user_nanm"></h3>
+            
             </div>
+
+            <br>
+
+            <ul>
+                <li id="btn_profile">Profile</li>
+                <li id="btn_order">Orders</li>
+                <li id="btn_wishlist" class="active">Wishlist</li>
+                <li>Payment</li>
+            </ul>
+
+        </div>
+
+        <div class="details">
+
+            <div class="pages_align">
+                <a href="../home/home.html">
+                    <h4>Home</h4>
+                </a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                <h4>Profile</h4>
+            </div>
+            
+            <h1>Wishlist</h1>
+
+            <div class="limit">
+                <p>Showing 1-4 of 24 results</p>
+                <div>
+                    <i class="fa-solid fa-caret-left"></i>
+                    <i class="fa-solid fa-caret-right"></i>
+                </div>
+            </div>
+
+            <div class="items">
+
+                <div>
+                    
+                    <img src="../../assets/image/stores/items/nike1.jpg" alt="">
+                    <h3>this product is one of the most expensive product in the world</h3>
+                    <h4>$12112</h4>
+                    <button>Add to Cart</button>
+                    <i class="fa-solid fa-xmark"></i>
+
+                </div>
+
+                <div>
+                    
+                    <img src="../../assets/image/stores/ivenus-apple/mac (1).png" alt="">
+                    <h3>this product is one of the most expensive product in the world</h3>
+                    <h4>$12112</h4>
+                    <button>Add to Cart</button>
+                    <i class="fa-solid fa-xmark"></i>
+
+                </div>
+
+                <div>
+                    
+                    <img src="../../assets/image/stores/Charles-Keith/bag2.jpeg" alt="">
+                    <h3>this product is one of the most expensive product in the world</h3>
+                    <h4>$12112</h4>
+                    <button>Add to Cart</button>
+                    <i class="fa-solid fa-xmark"></i>
+
+                </div>
+
+                <div>
+                    
+                    <img src="../../assets/image/stores/label-designer-wear/shopping (2).webp" alt="">
+                    <h3>this product is one of the most expensive product in the world</h3>
+                    <h4>$12112</h4>
+                    <button>Add to Cart</button>
+                    <i class="fa-solid fa-xmark"></i>
+
+                </div>
+
+               
+
+
+            </div>
+
+
+            
+        </div>
+
+    </header>
+    
+
+    <header id="wishlist_page">
+
+        <div class="profile">
 
             <div>
-                <label for="address2" class="col-12">Address2</label>
-                <br>
-                <input class="col-12" id="address2" type="text" disabled>
+                <img src="../../assets/image/services/buildings.jpg" alt="User Profile">
+                <h3 id="user_nanm"></h3>
+            
             </div>
 
-            <div class="row">
-                <div>
-                    <label for="">Country</label>
-                    <br>
-                    <select name="" id="" class="col-5">
-                        <option value=""></option>
-                        <option value="">mathan</option>
-                        <option value="">ragavan</option>
-                        <option value="">achu</option>
-                    </select>
-                </div>
+            <br>
 
-                <div>
-                    <label for="">State</label>
-                    <br>
-                    <select name="" id="" class="col-4">
-                        <option value=""></option>
-                        <option value="">Tamilnadu</option>
-                        <option value="">TN</option>
-                    </select>
-                </div>
+            <ul>
+                <li id="btn_profile">Profile</li>
+                <li id="btn_order">Orders</li>
+                <li id="btn_wishlist">Wishlist</li>
+                <li class="active">Payment</li>
+            </ul>
 
-                <div>
-                    <label for="zip_code">Zip</label>
-                    <br>
-                    <input class="col-3" id="zip_code" type="text" inputmode="numeric" pattern="[0-9]{6,6}" disabled>
-                </div>
-            </div>
+        </div>
 
-            <div class="btn_flex">
-                <button class="btn col-4" id="edit" onclick="editItem()" type="button">Edit Profile</button>
-                <button class="btn col-4" id="update" onclick="updateProfile()" type="button">Update Profile</button>
-                <button class="btn col-4" onclick="deleteItem()" type="button">Delete Profile</button>
+        <div class="details">
 
-            </div>
+            
 
-        </form>
-
-
-
+        </div>
+    
     </header>
 
 
@@ -136,7 +377,13 @@
 
 
 
+
     <script>
+
+
+        // document.getElementById("profile_page").style.display = "flex";
+        // document.getElementById("orders_page").style.display = "none";
+        // document.getElementById("wishlist_page").style.display = "none";
 
         let active_user = JSON.parse(localStorage.getItem('active_user'));
         let users = JSON.parse(localStorage.getItem('arr'));
@@ -148,6 +395,35 @@
         document.getElementById("address2").value = active_user["address2"];
         document.getElementById("zip_code").value = active_user["zip_code"];
 
+        document.getElementById("state").value = active_user["state"];
+        document.getElementById("country").value = active_user["country"];
+
+        document.getElementById("user_nanm").innerText = active_user["first_name"] + " " + active_user["last_name"];
+
+
+
+
+
+        let state = document.getElementById("state");
+        let selectedValue;
+
+        let country = document.getElementById("country")
+        let countryValue;
+
+        state.addEventListener("change", (event) => {
+            selectedValue = event.target.value;
+            console.log(selectedValue);
+        });
+
+        country.addEventListener("change", (event) => {
+            countryValue = event.target.value;
+            console.log(countryValue);
+        });
+
+
+
+
+
 
 
         function updateProfile() {
@@ -157,6 +433,10 @@
             let users = JSON.parse(localStorage.getItem('arr'));
 
             users.forEach(e => {
+
+
+
+
                 if (active_user["user_email"] === e["user_email"]) {
 
                     active_user["first_name"] = document.getElementById("first_name").value
@@ -166,12 +446,25 @@
                     active_user["address2"] = document.getElementById("address2").value
                     active_user["zip_code"] = document.getElementById("zip_code").value
 
+                    active_user["state"] = selectedValue;
+                    active_user["country"] = countryValue;
+
+
+
+
                     document.getElementById("first_name").value = active_user["first_name"];
                     document.getElementById("last_name").value = active_user["last_name"];
                     document.getElementById("email").value = active_user["user_email"];
                     document.getElementById("address").value = active_user["address"];
                     document.getElementById("address2").value = active_user["address2"];
                     document.getElementById("zip_code").value = active_user["zip_code"];
+                    document.getElementById("state").value = active_user["state"]
+                    document.getElementById("country").value = active_user["country"]
+
+                    selectedValue = active_user["state"];
+                    countryValue = active_user["country"];
+
+
 
                     localStorage.setItem("active_user", JSON.stringify(active_user))
 
@@ -182,14 +475,20 @@
                     e["address"] = active_user["address"]
                     e["address2"] = active_user["address2"]
                     e["zip_code"] = active_user["zip_code"]
+                    e["state"] = active_user["state"]
+                    e["country"] = active_user["country"]
 
                     localStorage.setItem("arr", JSON.stringify(users))
+
+                    location.reload();
 
                     document.getElementById("first_name").disabled = true
                     document.getElementById("last_name").disabled = true
                     document.getElementById("address").disabled = true
                     document.getElementById("address2").disabled = true
                     document.getElementById("zip_code").disabled = true
+                    document.getElementById("country").disabled = true
+                    document.getElementById("state").disabled = true
 
 
                 }
@@ -220,8 +519,39 @@
             document.getElementById("address").disabled = false
             document.getElementById("address2").disabled = false
             document.getElementById("zip_code").disabled = false
+            document.getElementById("state").disabled = false
+            document.getElementById("country").disabled = false
 
         }
+
+
+        // let btn_profile = document.getElementById("btn_profile")
+        // btn_profile.addEventListener("click", el =>{
+        //     document.getElementById("profile_page").style.display = "flex";
+        //     document.getElementById("wishlist_page").style.display = "none"
+        //     document.getElementById("orders_page").style.display = "none";
+        //     console.log("profile")
+        // })
+
+        // let btn_order = document.getElementById("btn_order")
+        // btn_order.addEventListener("click", el => {
+        //     document.getElementById("orders_page").style.display = "flex";
+        //     document.getElementById("profile_page").style.display = "none";
+        //     document.getElementById("wishlist_page").style.display = "none"
+        //     console.log("orders") 
+        // })
+
+        // let btn_wishlist = document.getElementById("btn_wishlist");
+        // btn_wishlist.addEventListener("click", el=>{
+        //     document.getElementById("wishlist_page").style.display = "flex"
+        //     document.getElementById("profile_page").style.display = "none";
+        //     document.getElementById("orders_page").style.display = "none";
+        //     console.log("wishlist")
+        // })
+
+
+
+
 
 
     </script>
