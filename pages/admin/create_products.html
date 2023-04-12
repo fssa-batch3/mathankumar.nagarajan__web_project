@@ -95,7 +95,7 @@
             storesDetails.find(el => {
                 if (el["title"] == store_name) {
 
-                    console.log(el["title"])
+                    // console.log(el["title"])
 
                     if (image != "" && title != "" && price != "" && value != "" && full_price != "" && discount != "" && rating != "" && reviews != "") {
 
@@ -147,11 +147,6 @@
 
                             })
 
-
-                            let save = newItems[1]["products"]
-                            console.log(save)
-                            save.push(product)
-                            localStorage.setItem("stores", JSON.stringify(newItems))
                         }
                     }
                     else {
