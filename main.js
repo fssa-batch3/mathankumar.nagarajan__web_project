@@ -31,14 +31,10 @@ let stores = [
                         name: ""
                     },
                 ],
-                items: [
+                products: [
                     {
-                        id: 0,
-                        img: {
-
-                            src: "../../../../assets/image/stores/items/nike1.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 0,
+                        image: "https://iili.io/HkeiZmb.webp",
                         title: "Mens Air Zoom Vomero 15 Running Shoe",
                         rate: "₹6000",
                         full_rate: "₹10000",
@@ -47,11 +43,8 @@ let stores = [
                         reviews: "( 2023 ) Reviews",
                     },
                     {
-                        id: 1,
-                        img: {
-                            src: "../../../../assets/image/stores/items/nike2.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 1,
+                        image: "https://iili.io/HkeiQku.webp",
                         title: "Men's Ultra Light Running and Training Shoes",
                         rate: "₹1518",
                         full_rate: "₹2999",
@@ -60,11 +53,8 @@ let stores = [
                         reviews: "( 3366 ) Reviews",
                     },
                     {
-                        id: 2,
-                        img: {
-                            src: "../../../../assets/image/stores/items/nike3.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 2,
+                        image: "https://iili.io/Hkeis29.webp",
                         title: "Men's Running Shoe Bacca Bucci",
                         rate: "₹1329",
                         full_rate: "₹2999",
@@ -73,11 +63,8 @@ let stores = [
                         reviews: "( 2470 ) Reviews",
                     },
                     {
-                        id: 3,
-                        img: {
-                            src: "../../../../assets/image/stores/items/nike4.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 3,
+                        image: "https://iili.io/HkeiL7e.webp",
                         title: "Mens Slip-on Premium Comfy-fit Sneaker",
                         rate: "₹1000",
                         full_rate: "₹2000",
@@ -86,11 +73,8 @@ let stores = [
                         reviews: "( 2229 ) Reviews",
                     },
                     {
-                        id: 4,
-                        img: {
-                            src: "../../../../assets/image/stores/items/nike5.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 4,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Wonder-13 Sports Running Shoes",
                         rate: "₹1999",
                         full_rate: "₹3299",
@@ -99,11 +83,8 @@ let stores = [
                         reviews: "( 1290 ) Reviews",
                     },
                     {
-                        id: 5,
-                        img: {
-                            src: "../../../../assets/image/stores/items/nike6.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 5,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Mens Ultimate Ease Range Walking Shoe",
                         rate: "₹1239",
                         full_rate: "₹1499",
@@ -112,11 +93,8 @@ let stores = [
                         reviews: "( 4238 ) Reviews",
                     },
                     {
-                        id: 6,
-                        img: {
-                            src: "../../../../assets/image/stores/items/nike7.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 6,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Wonder-13 Sports Running Shoes",
                         rate: "₹2000",
                         full_rate: "₹4000",
@@ -125,11 +103,8 @@ let stores = [
                         reviews: "( 1234 ) Reviews",
                     },
                     {
-                        id: 7,
-                        img: {
-                            src: "../../../../assets/image/stores/items/nike8.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 7,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "ASIAN Delta-20 Sports Running Walking",
                         rate: "₹1500",
                         full_rate: "₹3000",
@@ -138,11 +113,8 @@ let stores = [
                         reviews: "( 1908 ) Reviews",
                     },
                     {
-                        id: 8,
-                        img: {
-                            src: "../../../../assets/image/stores/items/nike9.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 8,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Flash Shoe Badminton Shoes for Mens",
                         rate: "₹3064",
                         full_rate: "₹6000",
@@ -151,11 +123,8 @@ let stores = [
                         reviews: "( 3193 ) Reviews",
                     },
                     {
-                        id: 9,
-                        img: {
-                            src: "../../../../assets/image/stores/items/nike10.jpeg",
-                            alt: "shoes image"
-                        },
+                        value: 9,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Cosko Sports Running, Walking,Gym",
                         rate: "₹1499",
                         full_rate: "₹4000",
@@ -164,11 +133,8 @@ let stores = [
                         reviews: "( 1208 ) Reviews",
                     },
                     {
-                        id: 10,
-                        img: {
-                            src: "../../../../assets/image/stores/items/nike11.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 10,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Crystal-13 Sports Running Walking Shoes",
                         rate: "₹1249",
                         full_rate: "₹2299",
@@ -177,11 +143,8 @@ let stores = [
                         reviews: "( 6009 ) Reviews",
                     },
                     {
-                        id: 11,
-                        img: {
-                            src: "../../../../assets/image/stores/items/nike12.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 11,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Skypee-31 Running Shoes,Walking Shoes",
                         rate: "₹1999",
                         full_rate: "₹4999",
@@ -226,13 +189,10 @@ let stores = [
                         name: ""
                     },
                 ],
-                items: [
+                products: [
                     {
-                        id: 12,
-                        img: {
-                            src: "../../../../assets/image/stores/ss-beauty/gold1.webp",
-                            alt: "shoes image"
-                        },
+                        value: 12,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Mens Air Zoom Vomero 15 Running Shoe",
                         rate: "₹6000",
                         full_rate: "₹10000",
@@ -241,11 +201,8 @@ let stores = [
                         reviews: "( 2023 ) Reviews",
                     },
                     {
-                        id: 13,
-                        img: {
-                            src: "../../../../assets/image/stores/ss-beauty/gold2.webp",
-                            alt: "shoes image"
-                        },
+                        value: 13,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Ultra Light Running and Training Shoes",
                         rate: "₹1518",
                         full_rate: "₹2999",
@@ -254,11 +211,8 @@ let stores = [
                         reviews: "( 3366 ) Reviews",
                     },
                     {
-                        id: 14,
-                        img: {
-                            src: "../../../../assets/image/stores/ss-beauty/gold3.webp",
-                            alt: "shoes image"
-                        },
+                        value: 14,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Running Shoe Bacca Bucci",
                         rate: "₹1329",
                         full_rate: "₹2999",
@@ -267,11 +221,8 @@ let stores = [
                         reviews: "( 2470 ) Reviews",
                     },
                     {
-                        id: 15,
-                        img: {
-                            src: "../../../../assets/image/stores/ss-beauty/gold4.webp",
-                            alt: "shoes image"
-                        },
+                        value: 15,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Mens Slip-on Premium Comfy-fit Sneaker",
                         rate: "₹1000",
                         full_rate: "₹2000",
@@ -280,11 +231,8 @@ let stores = [
                         reviews: "( 2229 ) Reviews",
                     },
                     {
-                        id: 16,
-                        img: {
-                            src: "../../../../assets/image/stores/ss-beauty/gold5.webp",
-                            alt: "shoes image"
-                        },
+                        value: 16,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Wonder-13 Sports Running Shoes",
                         rate: "₹1999",
                         full_rate: "₹3299",
@@ -293,11 +241,8 @@ let stores = [
                         reviews: "( 1290 ) Reviews",
                     },
                     {
-                        id: 17,
-                        img: {
-                            src: "../../../../assets/image/stores/ss-beauty/gold6.webp",
-                            alt: "shoes image"
-                        },
+                        value: 17,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Mens Ultimate Ease Range Walking Shoe",
                         rate: "₹1239",
                         full_rate: "₹1499",
@@ -306,11 +251,8 @@ let stores = [
                         reviews: "( 4238 ) Reviews",
                     },
                     {
-                        id: 18,
-                        img: {
-                            src: "../../../../assets/image/stores/ss-beauty/gold7.webp",
-                            alt: "shoes image"
-                        },
+                        value: 18,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Wonder-13 Sports Running Shoes",
                         rate: "₹2000",
                         full_rate: "₹4000",
@@ -319,11 +261,8 @@ let stores = [
                         reviews: "( 1234 ) Reviews",
                     },
                     {
-                        id: 19,
-                        img: {
-                            src: "../../../../assets/image/stores/ss-beauty/gold8.webp",
-                            alt: "shoes image"
-                        },
+                        value: 19,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "ASIAN Delta-20 Sports Running Walking",
                         rate: "₹1500",
                         full_rate: "₹3000",
@@ -332,11 +271,8 @@ let stores = [
                         reviews: "( 1908 ) Reviews",
                     },
                     {
-                        id: 20,
-                        img: {
-                            src: "../../../../assets/image/stores/ss-beauty/gold9.webp",
-                            alt: "shoes image"
-                        },
+                        value: 20,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Flash Shoe Badminton Shoes for Mens",
                         rate: "₹3064",
                         full_rate: "₹6000",
@@ -345,11 +281,8 @@ let stores = [
                         reviews: "( 3193 ) Reviews",
                     },
                     {
-                        id: 21,
-                        img: {
-                            src: "../../../../assets/image/stores/ss-beauty/gold10.webp",
-                            alt: "shoes image"
-                        },
+                        value: 21,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Cosko Sports Running, Walking,Gym",
                         rate: "₹1499",
                         full_rate: "₹4000",
@@ -358,11 +291,8 @@ let stores = [
                         reviews: "( 1208 ) Reviews",
                     },
                     {
-                        id: 22,
-                        img: {
-                            src: "../../../../assets/image/stores/ss-beauty/gold11.webp",
-                            alt: "shoes image"
-                        },
+                        value: 22,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Crystal-13 Sports Running Walking Shoes",
                         rate: "₹1249",
                         full_rate: "₹2299",
@@ -371,11 +301,8 @@ let stores = [
                         reviews: "( 6009 ) Reviews",
                     },
                     {
-                        id: 23,
-                        img: {
-                            src: "../../../../assets/image/stores/ss-beauty/gold12.webp",
-                            alt: "shoes image"
-                        },
+                        value: 23,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Skypee-31 Running Shoes,Walking Shoes",
                         rate: "₹1999",
                         full_rate: "₹4999",
@@ -418,13 +345,10 @@ let stores = [
                     },
                 ],
 
-                items: [
+                products: [
                     {
-                        id: 24,
-                        img: {
-                            src: "../../../../assets/image/stores/lenskart/glass1.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 24,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Mens Air Zoom Vomero 15 Running Shoe",
                         rate: "₹6000",
                         full_rate: "₹10000",
@@ -433,11 +357,8 @@ let stores = [
                         reviews: "( 2023 ) Reviews",
                     },
                     {
-                        id: 25,
-                        img: {
-                            src: "../../../../assets/image/stores/lenskart/glass2.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 25,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Ultra Light Running and Training Shoes",
                         rate: "₹1518",
                         full_rate: "₹2999",
@@ -446,11 +367,8 @@ let stores = [
                         reviews: "( 3366 ) Reviews",
                     },
                     {
-                        id: 26,
-                        img: {
-                            src: "../../../../assets/image/stores/lenskart/glass3.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 26,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Running Shoe Bacca Bucci",
                         rate: "₹1329",
                         full_rate: "₹2999",
@@ -459,11 +377,8 @@ let stores = [
                         reviews: "( 2470 ) Reviews",
                     },
                     {
-                        id: 27,
-                        img: {
-                            src: "../../../../assets/image/stores/lenskart/glass4.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 27,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Mens Slip-on Premium Comfy-fit Sneaker",
                         rate: "₹1000",
                         full_rate: "₹2000",
@@ -472,11 +387,8 @@ let stores = [
                         reviews: "( 2229 ) Reviews",
                     },
                     {
-                        id: 28,
-                        img: {
-                            src: "../../../../assets/image/stores/lenskart/glass5.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 28,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Wonder-13 Sports Running Shoes",
                         rate: "₹1999",
                         full_rate: "₹3299",
@@ -485,11 +397,8 @@ let stores = [
                         reviews: "( 1290 ) Reviews",
                     },
                     {
-                        id: 29,
-                        img: {
-                            src: "../../../../assets/image/stores/lenskart/glass6.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 29,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Mens Ultimate Ease Range Walking Shoe",
                         rate: "₹1239",
                         full_rate: "₹1499",
@@ -498,11 +407,8 @@ let stores = [
                         reviews: "( 4238 ) Reviews",
                     },
                     {
-                        id: 30,
-                        img: {
-                            src: "../../../../assets/image/stores/lenskart/glass7.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 30,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Wonder-13 Sports Running Shoes",
                         rate: "₹2000",
                         full_rate: "₹4000",
@@ -511,11 +417,8 @@ let stores = [
                         reviews: "( 1234 ) Reviews",
                     },
                     {
-                        id: 31,
-                        img: {
-                            src: "../../../../assets/image/stores/lenskart/glass8.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 31,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "ASIAN Delta-20 Sports Running Walking",
                         rate: "₹1500",
                         full_rate: "₹3000",
@@ -524,11 +427,8 @@ let stores = [
                         reviews: "( 1908 ) Reviews",
                     },
                     {
-                        id: 32,
-                        img: {
-                            src: "../../../../assets/image/stores/lenskart/glass9.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 32,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Flash Shoe Badminton Shoes for Mens",
                         rate: "₹3064",
                         full_rate: "₹6000",
@@ -537,11 +437,8 @@ let stores = [
                         reviews: "( 3193 ) Reviews",
                     },
                     {
-                        id: 33,
-                        img: {
-                            src: "../../../../assets/image/stores/lenskart/glass10.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 33,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Cosko Sports Running, Walking,Gym",
                         rate: "₹1499",
                         full_rate: "₹4000",
@@ -550,11 +447,8 @@ let stores = [
                         reviews: "( 1208 ) Reviews",
                     },
                     {
-                        id: 34,
-                        img: {
-                            src: "../../../../assets/image/stores/lenskart/glass11.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 34,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Crystal-13 Sports Running Walking Shoes",
                         rate: "₹1249",
                         full_rate: "₹2299",
@@ -563,11 +457,8 @@ let stores = [
                         reviews: "( 6009 ) Reviews",
                     },
                     {
-                        id: 35,
-                        img: {
-                            src: "../../../../assets/image/stores/lenskart/glass12.jpg",
-                            alt: "shoes image"
-                        },
+                        value: 35,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Crystal-13 Sports Running Walking Shoes",
                         rate: "₹1249",
                         full_rate: "₹2299",
@@ -610,13 +501,10 @@ let stores = [
                         name: ""
                     },
                 ],
-                items: [
+                products: [
                     {
-                        id: 36,
-                        img: {
-                            src: "../../../../assets/image/stores/Charles-Keith/bag1.jpeg",
-                            alt: "shoes image"
-                        },
+                        value: 36,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Mens Air Zoom Vomero 15 Running Shoe",
                         rate: "₹6000",
                         full_rate: "₹10000",
@@ -625,11 +513,8 @@ let stores = [
                         reviews: "( 2023 ) Reviews",
                     },
                     {
-                        id: 37,
-                        img: {
-                            src: "../../../../assets/image/stores/Charles-Keith/bag2.jpeg",
-                            alt: "shoes image"
-                        },
+                        value: 37,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Ultra Light Running and Training Shoes",
                         rate: "₹1518",
                         full_rate: "₹2999",
@@ -638,11 +523,8 @@ let stores = [
                         reviews: "( 3366 ) Reviews",
                     },
                     {
-                        id: 38,
-                        img: {
-                            src: "../../../../assets/image/stores/Charles-Keith/bag3.jpeg",
-                            alt: "shoes image"
-                        },
+                        value: 38,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Running Shoe Bacca Bucci",
                         rate: "₹1329",
                         full_rate: "₹2999",
@@ -651,11 +533,8 @@ let stores = [
                         reviews: "( 2470 ) Reviews",
                     },
                     {
-                        id: 39,
-                        img: {
-                            src: "../../../../assets/image/stores/Charles-Keith/bag4.jpeg",
-                            alt: "shoes image"
-                        },
+                        value: 39,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Mens Slip-on Premium Comfy-fit Sneaker",
                         rate: "₹1000",
                         full_rate: "₹2000",
@@ -664,11 +543,8 @@ let stores = [
                         reviews: "( 2229 ) Reviews",
                     },
                     {
-                        id: 40,
-                        img: {
-                            src: "../../../../assets/image/stores/Charles-Keith/bag5.jpeg",
-                            alt: "shoes image"
-                        },
+                        value: 40,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Wonder-13 Sports Running Shoes",
                         rate: "₹1999",
                         full_rate: "₹3299",
@@ -677,11 +553,8 @@ let stores = [
                         reviews: "( 1290 ) Reviews",
                     },
                     {
-                        id: 41,
-                        img: {
-                            src: "../../../../assets/image/stores/Charles-Keith/bag6.jpeg",
-                            alt: "shoes image"
-                        },
+                        value: 41,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Mens Ultimate Ease Range Walking Shoe",
                         rate: "₹1239",
                         full_rate: "₹1499",
@@ -690,11 +563,8 @@ let stores = [
                         reviews: "( 4238 ) Reviews",
                     },
                     {
-                        id: 42,
-                        img: {
-                            src: "../../../../assets/image/stores/Charles-Keith/bag1.jpeg",
-                            alt: "shoes image"
-                        },
+                        value: 42,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Wonder-13 Sports Running Shoes",
                         rate: "₹2000",
                         full_rate: "₹4000",
@@ -703,11 +573,8 @@ let stores = [
                         reviews: "( 1234 ) Reviews",
                     },
                     {
-                        id: 43,
-                        img: {
-                            src: "../../../../assets/image/stores/Charles-Keith/bag2.jpeg",
-                            alt: "shoes image"
-                        },
+                        value: 43,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "ASIAN Delta-20 Sports Running Walking",
                         rate: "₹1500",
                         full_rate: "₹3000",
@@ -716,11 +583,8 @@ let stores = [
                         reviews: "( 1908 ) Reviews",
                     },
                     {
-                        id: 44,
-                        img: {
-                            src: "../../../../assets/image/stores/Charles-Keith/bag3.jpeg",
-                            alt: "shoes image"
-                        },
+                        value: 44,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Flash Shoe Badminton Shoes for Mens",
                         rate: "₹3064",
                         full_rate: "₹6000",
@@ -729,11 +593,8 @@ let stores = [
                         reviews: "( 3193 ) Reviews",
                     },
                     {
-                        id: 45,
-                        img: {
-                            src: "../../../../assets/image/stores/Charles-Keith/bag4.jpeg",
-                            alt: "shoes image"
-                        },
+                        value: 45,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Men's Cosko Sports Running, Walking,Gym",
                         rate: "₹1499",
                         full_rate: "₹4000",
@@ -742,11 +603,8 @@ let stores = [
                         reviews: "( 1208 ) Reviews",
                     },
                     {
-                        id: 46,
-                        img: {
-                            src: "../../../../assets/image/stores/Charles-Keith/bag5.jpeg",
-                            alt: "shoes image"
-                        },
+                        value: 46,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Crystal-13 Sports Running Walking Shoes",
                         rate: "₹1249",
                         full_rate: "₹2299",
@@ -755,11 +613,8 @@ let stores = [
                         reviews: "( 6009 ) Reviews",
                     },
                     {
-                        id: 47,
-                        img: {
-                            src: "../../../../assets/image/stores/Charles-Keith/bag6.jpeg",
-                            alt: "shoes image"
-                        },
+                        value: 47,
+                        image: "https://iili.io/HkeiDIj.webp",
                         title: "Crystal-13 Sports Running Walking Shoes",
                         rate: "₹1249",
                         full_rate: "₹2299",
@@ -803,9 +658,9 @@ let stores = [
                     },
                 ],
 
-                items: [
+                products: [
                     {
-                        id: 48,
+                        value: 48,
                         img: {
                             src: "../../../../assets/image/stores/vero-moda/dress1.jpg",
                             alt: "shoes image"
@@ -818,7 +673,7 @@ let stores = [
                         reviews: "( 2023 ) Reviews",
                     },
                     {
-                        id: 49,
+                        value: 49,
                         img: {
                             src: "../../../../assets/image/stores/vero-moda/dress2.jpg",
                             alt: "shoes image"
@@ -831,7 +686,7 @@ let stores = [
                         reviews: "( 3366 ) Reviews",
                     },
                     {
-                        id: 50,
+                        value: 50,
                         img: {
                             src: "../../../../assets/image/stores/vero-moda/dress3.jpg",
                             alt: "shoes image"
@@ -844,7 +699,7 @@ let stores = [
                         reviews: "( 2470 ) Reviews",
                     },
                     {
-                        id: 51,
+                        value: 51,
                         img: {
                             src: "../../../../assets/image/stores/vero-moda/dress4.jpg",
                             alt: "shoes image"
@@ -857,7 +712,7 @@ let stores = [
                         reviews: "( 2229 ) Reviews",
                     },
                     {
-                        id: 52,
+                        value: 52,
                         img: {
                             src: "../../../../assets/image/stores/vero-moda/dress5.jpg",
                             alt: "shoes image"
@@ -870,7 +725,7 @@ let stores = [
                         reviews: "( 1290 ) Reviews",
                     },
                     {
-                        id: 53,
+                        value: 53,
                         img: {
                             src: "../../../../assets/image/stores/vero-moda/dress6.jpg",
                             alt: "shoes image"
@@ -883,7 +738,7 @@ let stores = [
                         reviews: "( 4238 ) Reviews",
                     },
                     {
-                        id: 54,
+                        value: 54,
                         img: {
                             src: "../../../../assets/image/stores/vero-moda/dress7.jpg",
                             alt: "shoes image"
@@ -896,7 +751,7 @@ let stores = [
                         reviews: "( 1234 ) Reviews",
                     },
                     {
-                        id: 55,
+                        value: 55,
                         img: {
                             src: "../../../../assets/image/stores/vero-moda/dress8.jpg",
                             alt: "shoes image"
@@ -909,7 +764,7 @@ let stores = [
                         reviews: "( 1908 ) Reviews",
                     },
                     {
-                        id: 56,
+                        value: 56,
                         img: {
                             src: "../../../../assets/image/stores/vero-moda/dress9.jpg",
                             alt: "shoes image"
@@ -922,7 +777,7 @@ let stores = [
                         reviews: "( 3193 ) Reviews",
                     },
                     {
-                        id: 57,
+                        value: 57,
                         img: {
                             src: "../../../../assets/image/stores/vero-moda/dress10.jpg",
                             alt: "shoes image"
@@ -935,7 +790,7 @@ let stores = [
                         reviews: "( 1208 ) Reviews",
                     },
                     {
-                        id: 58,
+                        value: 58,
                         img: {
                             src: "../../../../assets/image/stores/vero-moda/dress11.jpg",
                             alt: "shoes image"
@@ -948,7 +803,7 @@ let stores = [
                         reviews: "( 6009 ) Reviews",
                     },
                     {
-                        id: 59,
+                        value: 59,
                         img: {
                             src: "../../../../assets/image/stores/vero-moda/dress12.jpg",
                             alt: "shoes image"
@@ -992,9 +847,9 @@ let stores = [
                     },
                 ],
 
-                items: [
+                products: [
                     {
-                        id: 60,
+                        value: 60,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (1).jpg",
                             alt: "shoes image"
@@ -1007,7 +862,7 @@ let stores = [
                         reviews: "( 2023 ) Reviews",
                     },
                     {
-                        id: 61,
+                        value: 61,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (2).jpg",
                             alt: "shoes image"
@@ -1020,7 +875,7 @@ let stores = [
                         reviews: "( 3366 ) Reviews",
                     },
                     {
-                        id: 62,
+                        value: 62,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (3).jpg",
                             alt: "shoes image"
@@ -1033,7 +888,7 @@ let stores = [
                         reviews: "( 2470 ) Reviews",
                     },
                     {
-                        id: 63,
+                        value: 63,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (4).jpg",
                             alt: "shoes image"
@@ -1046,7 +901,7 @@ let stores = [
                         reviews: "( 2229 ) Reviews",
                     },
                     {
-                        id: 64,
+                        value: 64,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (5).jpg",
                             alt: "shoes image"
@@ -1059,7 +914,7 @@ let stores = [
                         reviews: "( 1290 ) Reviews",
                     },
                     {
-                        id: 65,
+                        value: 65,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (6).jpg",
                             alt: "shoes image"
@@ -1072,7 +927,7 @@ let stores = [
                         reviews: "( 4238 ) Reviews",
                     },
                     {
-                        id: 66,
+                        value: 66,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (7).jpg",
                             alt: "shoes image"
@@ -1085,7 +940,7 @@ let stores = [
                         reviews: "( 1234 ) Reviews",
                     },
                     {
-                        id: 67,
+                        value: 67,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (8).jpg",
                             alt: "shoes image"
@@ -1098,7 +953,7 @@ let stores = [
                         reviews: "( 1908 ) Reviews",
                     },
                     {
-                        id: 68,
+                        value: 68,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (9).jpg",
                             alt: "shoes image"
@@ -1111,7 +966,7 @@ let stores = [
                         reviews: "( 3193 ) Reviews",
                     },
                     {
-                        id: 69,
+                        value: 69,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (10).jpg",
                             alt: "shoes image"
@@ -1124,7 +979,7 @@ let stores = [
                         reviews: "( 1208 ) Reviews",
                     },
                     {
-                        id: 70,
+                        value: 70,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (11).jpg",
                             alt: "shoes image"
@@ -1137,7 +992,7 @@ let stores = [
                         reviews: "( 6009 ) Reviews",
                     },
                     {
-                        id: 71,
+                        value: 71,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (12).jpg",
                             alt: "shoes image"
@@ -1185,9 +1040,9 @@ let stores = [
                         name: "iWatch"
                     },
                 ],
-                items: [
+                products: [
                     {
-                        id: 72,
+                        value: 72,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (1).jpg",
                             alt: "shoes image"
@@ -1200,7 +1055,7 @@ let stores = [
                         reviews: "( 2023 ) Reviews",
                     },
                     {
-                        id: 73,
+                        value: 73,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (2).jpg",
                             alt: "shoes image"
@@ -1213,7 +1068,7 @@ let stores = [
                         reviews: "( 3366 ) Reviews",
                     },
                     {
-                        id: 74,
+                        value: 74,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (3).jpg",
                             alt: "shoes image"
@@ -1226,7 +1081,7 @@ let stores = [
                         reviews: "( 2470 ) Reviews",
                     },
                     {
-                        id: 75,
+                        value: 75,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (4).jpg",
                             alt: "shoes image"
@@ -1239,7 +1094,7 @@ let stores = [
                         reviews: "( 2229 ) Reviews",
                     },
                     {
-                        id: 76,
+                        value: 76,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (5).jpg",
                             alt: "shoes image"
@@ -1252,7 +1107,7 @@ let stores = [
                         reviews: "( 1290 ) Reviews",
                     },
                     {
-                        id: 77,
+                        value: 77,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (6).jpg",
                             alt: "shoes image"
@@ -1265,7 +1120,7 @@ let stores = [
                         reviews: "( 4238 ) Reviews",
                     },
                     {
-                        id: 78,
+                        value: 78,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (7).jpg",
                             alt: "shoes image"
@@ -1278,7 +1133,7 @@ let stores = [
                         reviews: "( 1234 ) Reviews",
                     },
                     {
-                        id: 79,
+                        value: 79,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (8).jpg",
                             alt: "shoes image"
@@ -1291,7 +1146,7 @@ let stores = [
                         reviews: "( 1908 ) Reviews",
                     },
                     {
-                        id: 80,
+                        value: 80,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (9).jpg",
                             alt: "shoes image"
@@ -1304,7 +1159,7 @@ let stores = [
                         reviews: "( 3193 ) Reviews",
                     },
                     {
-                        id: 81,
+                        value: 81,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (10).jpg",
                             alt: "shoes image"
@@ -1317,7 +1172,7 @@ let stores = [
                         reviews: "( 1208 ) Reviews",
                     },
                     {
-                        id: 82,
+                        value: 82,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (11).jpg",
                             alt: "shoes image"
@@ -1330,7 +1185,7 @@ let stores = [
                         reviews: "( 6009 ) Reviews",
                     },
                     {
-                        id: 83,
+                        value: 83,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (12).jpg",
                             alt: "shoes image"
@@ -1379,9 +1234,9 @@ let stores = [
                         name: "iWatch"
                     },
                 ],
-                items: [
+                products: [
                     {
-                        id: 84,
+                        value: 84,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (1).jpg",
                             alt: "shoes image"
@@ -1394,7 +1249,7 @@ let stores = [
                         reviews: "( 2023 ) Reviews",
                     },
                     {
-                        id: 85,
+                        value: 85,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (2).jpg",
                             alt: "shoes image"
@@ -1407,7 +1262,7 @@ let stores = [
                         reviews: "( 3366 ) Reviews",
                     },
                     {
-                        id: 86,
+                        value: 86,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (3).jpg",
                             alt: "shoes image"
@@ -1420,7 +1275,7 @@ let stores = [
                         reviews: "( 2470 ) Reviews",
                     },
                     {
-                        id: 87,
+                        value: 87,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (4).jpg",
                             alt: "shoes image"
@@ -1433,7 +1288,7 @@ let stores = [
                         reviews: "( 2229 ) Reviews",
                     },
                     {
-                        id: 88,
+                        value: 88,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (5).jpg",
                             alt: "shoes image"
@@ -1446,7 +1301,7 @@ let stores = [
                         reviews: "( 1290 ) Reviews",
                     },
                     {
-                        id: 89,
+                        value: 89,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (6).jpg",
                             alt: "shoes image"
@@ -1459,7 +1314,7 @@ let stores = [
                         reviews: "( 4238 ) Reviews",
                     },
                     {
-                        id: 90,
+                        value: 90,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (7).jpg",
                             alt: "shoes image"
@@ -1472,7 +1327,7 @@ let stores = [
                         reviews: "( 1234 ) Reviews",
                     },
                     {
-                        id: 91,
+                        value: 91,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (8).jpg",
                             alt: "shoes image"
@@ -1485,7 +1340,7 @@ let stores = [
                         reviews: "( 1908 ) Reviews",
                     },
                     {
-                        id: 92,
+                        value: 92,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (9).jpg",
                             alt: "shoes image"
@@ -1498,7 +1353,7 @@ let stores = [
                         reviews: "( 3193 ) Reviews",
                     },
                     {
-                        id: 93,
+                        value: 93,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (10).jpg",
                             alt: "shoes image"
@@ -1511,7 +1366,7 @@ let stores = [
                         reviews: "( 1208 ) Reviews",
                     },
                     {
-                        id: 94,
+                        value: 94,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (11).jpg",
                             alt: "shoes image"
@@ -1524,7 +1379,7 @@ let stores = [
                         reviews: "( 6009 ) Reviews",
                     },
                     {
-                        id: 95,
+                        value: 95,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (12).jpg",
                             alt: "shoes image"
@@ -1572,9 +1427,9 @@ let stores = [
                         name: ""
                     },
                 ],
-                items: [
+                products: [
                     {
-                        id: 96,
+                        value: 96,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (1).jpg",
                             alt: "shoes image"
@@ -1587,7 +1442,7 @@ let stores = [
                         reviews: "( 2023 ) Reviews",
                     },
                     {
-                        id: 97,
+                        value: 97,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (2).jpg",
                             alt: "shoes image"
@@ -1600,7 +1455,7 @@ let stores = [
                         reviews: "( 3366 ) Reviews",
                     },
                     {
-                        id: 98,
+                        value: 98,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (3).jpg",
                             alt: "shoes image"
@@ -1613,7 +1468,7 @@ let stores = [
                         reviews: "( 2470 ) Reviews",
                     },
                     {
-                        id: 99,
+                        value: 99,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (4).jpg",
                             alt: "shoes image"
@@ -1626,7 +1481,7 @@ let stores = [
                         reviews: "( 2229 ) Reviews",
                     },
                     {
-                        id: 100,
+                        value: 100,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (5).jpg",
                             alt: "shoes image"
@@ -1639,7 +1494,7 @@ let stores = [
                         reviews: "( 1290 ) Reviews",
                     },
                     {
-                        id: 101,
+                        value: 101,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (6).jpg",
                             alt: "shoes image"
@@ -1652,7 +1507,7 @@ let stores = [
                         reviews: "( 4238 ) Reviews",
                     },
                     {
-                        id: 102,
+                        value: 102,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (7).jpg",
                             alt: "shoes image"
@@ -1665,7 +1520,7 @@ let stores = [
                         reviews: "( 1234 ) Reviews",
                     },
                     {
-                        id: 103,
+                        value: 103,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (8).jpg",
                             alt: "shoes image"
@@ -1678,7 +1533,7 @@ let stores = [
                         reviews: "( 1908 ) Reviews",
                     },
                     {
-                        id: 104,
+                        value: 104,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (9).jpg",
                             alt: "shoes image"
@@ -1691,7 +1546,7 @@ let stores = [
                         reviews: "( 3193 ) Reviews",
                     },
                     {
-                        id: 105,
+                        value: 105,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (10).jpg",
                             alt: "shoes image"
@@ -1704,7 +1559,7 @@ let stores = [
                         reviews: "( 1208 ) Reviews",
                     },
                     {
-                        id: 106,
+                        value: 106,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (11).jpg",
                             alt: "shoes image"
@@ -1717,7 +1572,7 @@ let stores = [
                         reviews: "( 6009 ) Reviews",
                     },
                     {
-                        id: 107,
+                        value: 107,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (12).jpg",
                             alt: "shoes image"
@@ -1765,9 +1620,9 @@ let stores = [
                         name: "iWatch"
                     },
                 ],
-                items: [
+                products: [
                     {
-                        id: 108,
+                        value: 108,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (1).jpg",
                             alt: "shoes image"
@@ -1780,7 +1635,7 @@ let stores = [
                         reviews: "( 2023 ) Reviews",
                     },
                     {
-                        id: 109,
+                        value: 109,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (2).jpg",
                             alt: "shoes image"
@@ -1793,7 +1648,7 @@ let stores = [
                         reviews: "( 3366 ) Reviews",
                     },
                     {
-                        id: 110,
+                        value: 110,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (3).jpg",
                             alt: "shoes image"
@@ -1806,7 +1661,7 @@ let stores = [
                         reviews: "( 2470 ) Reviews",
                     },
                     {
-                        id: 111,
+                        value: 111,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (4).jpg",
                             alt: "shoes image"
@@ -1819,7 +1674,7 @@ let stores = [
                         reviews: "( 2229 ) Reviews",
                     },
                     {
-                        id: 112,
+                        value: 112,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (5).jpg",
                             alt: "shoes image"
@@ -1832,7 +1687,7 @@ let stores = [
                         reviews: "( 1290 ) Reviews",
                     },
                     {
-                        id: 113,
+                        value: 113,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (6).jpg",
                             alt: "shoes image"
@@ -1845,7 +1700,7 @@ let stores = [
                         reviews: "( 4238 ) Reviews",
                     },
                     {
-                        id: 114,
+                        value: 114,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (7).jpg",
                             alt: "shoes image"
@@ -1858,7 +1713,7 @@ let stores = [
                         reviews: "( 1234 ) Reviews",
                     },
                     {
-                        id: 115,
+                        value: 115,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (8).jpg",
                             alt: "shoes image"
@@ -1871,7 +1726,7 @@ let stores = [
                         reviews: "( 1908 ) Reviews",
                     },
                     {
-                        id: 116,
+                        value: 116,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (9).jpg",
                             alt: "shoes image"
@@ -1884,7 +1739,7 @@ let stores = [
                         reviews: "( 3193 ) Reviews",
                     },
                     {
-                        id: 117,
+                        value: 117,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (10).jpg",
                             alt: "shoes image"
@@ -1897,7 +1752,7 @@ let stores = [
                         reviews: "( 1208 ) Reviews",
                     },
                     {
-                        id: 118,
+                        value: 118,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (11).jpg",
                             alt: "shoes image"
@@ -1910,7 +1765,7 @@ let stores = [
                         reviews: "( 6009 ) Reviews",
                     },
                     {
-                        id: 119,
+                        value: 119,
                         img: {
                             src: "../../../../assets/image/stores/ivenus/mobile (12).jpg",
                             alt: "shoes image"
