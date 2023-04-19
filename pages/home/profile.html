@@ -41,7 +41,7 @@
 
         </div>
 
-        <div class="details">
+        <div class="details profile_details">
 
             <div class="pages_align">
                 <a href="../home/home.html">
@@ -107,7 +107,7 @@
                     </div>
     
                     <div>
-                        <label for="zip_code" class="three_input">Zip</label>
+                        <label for="zip_code" class="three_input">Zip Code</label>
                         <br>
                         <input id="zip_code" type="text" inputmode="numeric" pattern="[0-9]{6,6}" disabled>
                     </div>
@@ -148,7 +148,7 @@
 
         </div>
 
-        <div class="details">
+        <div class="details order_details">
 
             <div class="pages_align">
                 <a href="../home/home.html">
@@ -269,7 +269,7 @@
 
         </div>
 
-        <div class="details">
+        <div class="details wishlist_details">
 
             <div class="pages_align">
                 <a href="../home/home.html">
@@ -343,7 +343,7 @@
     </header>
     
 
-    <header id="wishlist_page">
+    <!-- <header id="wishlist_page">
 
         <div class="profile">
 
@@ -370,7 +370,7 @@
 
         </div>
     
-    </header>
+    </header> -->
 
 
 
@@ -525,29 +525,29 @@
         }
 
 
-        // let btn_profile = document.getElementById("btn_profile")
-        // btn_profile.addEventListener("click", el =>{
-        //     document.getElementById("profile_page").style.display = "flex";
-        //     document.getElementById("wishlist_page").style.display = "none"
-        //     document.getElementById("orders_page").style.display = "none";
-        //     console.log("profile")
-        // })
+        let btn_profile = document.getElementById("btn_profile")
+        btn_profile.addEventListener("click", el =>{
+            document.getElementsByClassName("profile_details")[0].style.display = "block";
+            document.getElementsByClassName("wishlist_details")[0].style.display = "none"
+            document.getElementsByClassName("order_details")[0].style.display = "none";
+            console.log("profile")
+        })
 
-        // let btn_order = document.getElementById("btn_order")
-        // btn_order.addEventListener("click", el => {
-        //     document.getElementById("orders_page").style.display = "flex";
-        //     document.getElementById("profile_page").style.display = "none";
-        //     document.getElementById("wishlist_page").style.display = "none"
-        //     console.log("orders") 
-        // })
+        let btn_order = document.getElementById("btn_order")
+        btn_order.addEventListener("click", el => {
+            document.getElementsByClassName("order_details")[0].style.display = "block";
+            document.getElementsByClassName("profile_details")[0].style.display = "none";
+            document.getElementsByClassName("wishlist_details")[0].style.display = "none"
+            console.log("orders") 
+        })
 
-        // let btn_wishlist = document.getElementById("btn_wishlist");
-        // btn_wishlist.addEventListener("click", el=>{
-        //     document.getElementById("wishlist_page").style.display = "flex"
-        //     document.getElementById("profile_page").style.display = "none";
-        //     document.getElementById("orders_page").style.display = "none";
-        //     console.log("wishlist")
-        // })
+        let btn_wishlist = document.getElementById("btn_wishlist");
+        btn_wishlist.addEventListener("click", el=>{
+            document.getElementsByClassName("wishlist_details")[0].style.display = "block"
+            document.getElementsByClassName("profile_details")[0].style.display = "none";
+            document.getElementsByClassName("order_details")[0].style.display = "none";
+            console.log("wishlist")
+        })
 
 
 

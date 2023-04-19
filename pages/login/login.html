@@ -18,31 +18,41 @@
 
 
     <header>
-        <main>
+        <form id="form">
 
-            <div>
-                <img src="../../assets/image/signup/login-page-img.jpg" alt="login-page-img" />
-            </div>
-            <div>
-                <h1>Sign In</h1>
-                <div class="input-alignment">
-                    <span class="material-symbols-outlined">person</span>
-                    <label><input class="input-box" id="confirm_email" type="email" name="email" placeholder="Email"  required="true"></label>
+            <main>
+
+
+                <div>
+                    <img src="../../assets/image/signup/login-page-img.jpg" alt="login-page-img" />
                 </div>
-                <hr>
-                <div class="input-alignment">
-                    <span class="material-symbols-outlined">lock</span>
-                    <label><input class="input-box" id="password" type="password" name="password" placeholder="Password" pattern="[A-Za-z0-9]{8-16}" required="true" /></label>
+                <div>
+                    <h1>Sign In</h1>
+                    <div class="input-alignment">
+                        <span class="material-symbols-outlined">person</span>
+                        <label><input class="input-box" id="confirm_email" type="email" name="email" placeholder="Email"
+                                pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                required="true"></label>
+                    </div>
+                    <hr>
+                    <div class="input-alignment">
+                        <span class="material-symbols-outlined">lock</span>
+                        <label><input class="input-box" id="password" type="password" name="password"
+                                placeholder="Password"
+                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"
+                                required="true" /></label>
+                    </div>
+                    <hr>
+                    <label><input id="checkbox" type="checkbox" name="checkbox" />Remember Me</label>
+                    <br>
+
+                    <button id="login" type="submit"><b>Login</b></button>
+
                 </div>
-                <hr>
-                <label><input id="checkbox" type="checkbox" name="checkbox" required />Remember me</label>
-                <br>
 
-                <button id="login" type="button" onclick="login()"><b>Login</b></button>
-                
-            </div>
+            </main>
+        </form>
 
-        </main>
         <div class="footer">
             <div>
                 <a href="../../pages/login/signup.html">
@@ -61,23 +71,28 @@
 
     <script>
 
-        function login() {
+        let form = document.getElementById("form")
+        form.onsubmit = function(e) {
+
+            e.preventDefault()
+
+
             const email = document.getElementById("confirm_email").value;
             const password = document.getElementById("password").value;
 
             const User_details = JSON.parse(localStorage.getItem("arr"));
 
-            
+
             let check;
             User_details.find(element => {
                 if (element["user_email"] === email && element["creatpassword"] === password) {
 
-                    let active_user= element;
+                    let active_user = element;
                     console.log(active_user);
                     localStorage.setItem("active_user", JSON.stringify(active_user));
 
                     return check = 1;
-                
+
                 }
                 else {
 

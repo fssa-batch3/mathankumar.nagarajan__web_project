@@ -24,7 +24,7 @@
         <br>
 
         <label for="value">Value :</label>
-        <input type="number" id="value" pattern="{0-giot 1}">
+        <input type="number" id="value">
 
         <br>
 
@@ -80,8 +80,8 @@
         addProduct.addEventListener("click", ele => {
             // ele.preventDefault()
 
-            let image = document.getElementById("image").value
-            let title = document.getElementById("title").value
+            let image = document.getElementById("image").value.trim();
+            let title = document.getElementById("title").value.trim();
             let price = document.getElementById("price").value
             let value = document.getElementById("value").value
             let full_price = document.getElementById("full_price").value
@@ -95,13 +95,12 @@
             storesDetails.find(el => {
                 if (el["title"] == store_name) {
 
-                    // console.log(el["title"])
 
                     if (image != "" && title != "" && price != "" && value != "" && full_price != "" && discount != "" && rating != "" && reviews != "") {
 
                         let productDetails = el["products"]
                         let val = document.getElementById("value");
-                        let prodcutde = 0;
+                        let prodcutde;
 
                         productDetails.find(e => {
 
@@ -141,7 +140,7 @@
                                     save.push(product)
                                     localStorage.setItem("stores", JSON.stringify(newItems))
                                 }
-                                else{
+                                else {
                                     alert("Not matched")
                                 }
 
@@ -182,71 +181,183 @@
         updateProduct.addEventListener("click", el => {
 
 
-            let productDetails = JSON.parse(localStorage.getItem("products"))
+            let storeDetails = JSON.parse(localStorage.getItem("stores"))
 
-            const value = document.getElementById("value").value
+            let value = document.getElementById("value").value
+            let storeName = document.getElementById("store_name").value
 
-            productDetails.forEach(e => {
-
-                if (value === e["value"]) {
-
-                    e["image"] = document.getElementById("image").value
-                    e["title"] = document.getElementById("title").value
-                    e["price"] = document.getElementById("price").value
-                    e["value"] = document.getElementById("value").value
-                    e["full_price"] = document.getElementById("full_price").value
-                    e["discount"] = document.getElementById("discount").value
-                    e["rating"] = document.getElementById("rating").value
-                    e["reviews"] = document.getElementById("reviews").value
+            let check;
+            let check2;
 
 
+            storeDetails.forEach(e => {
 
-                    localStorage.setItem("products", JSON.stringify(productDetails))
+                if (storeName == e["title"]) {
+
+                    return check = e;
 
                 }
 
             });
+
+            check["products"].find(element => {
+
+                if (element["value"] == value) {
+                    return check2 = element;
+                }
+
+            })
+
+
+            check2["image"] = document.getElementById("image").value
+            check2["title"] = document.getElementById("title").value
+            check2["price"] = document.getElementById("price").value
+            check2["value"] = document.getElementById("value").value
+            check2["full_price"] = document.getElementById("full_price").value
+            check2["discount"] = document.getElementById("discount").value
+            check2["rating"] = document.getElementById("rating").value
+            check2["reviews"] = document.getElementById("reviews").value
+
+
+
+            localStorage.setItem("stores", JSON.stringify(storeDetails))
+
+
+
+
         })
+
+
+
+
+
+
+
 
 
 
         let editProduct = document.getElementById("edit_product")
         editProduct.addEventListener("click", el => {
+
             el.preventDefault()
-            let productDetails = JSON.parse(localStorage.getItem("products"))
 
-            const value = document.getElementById("value").value
+            let storeDetails = JSON.parse(localStorage.getItem("stores"))
 
-            productDetails.find(e => {
+            let value = document.getElementById("value").value
+            let storeName = document.getElementById("store_name").value
 
-                if (e["value"] == value) {
+            // console.log(value)
+            // console.log(storeName)
 
-                    document.getElementById("image").value = e["image"]
-                    document.getElementById("title").value = e["title"]
-                    document.getElementById("price").value = e["price"]
-                    document.getElementById("value").value = e["value"]
-                    document.getElementById("full_price").value = e["full_price"]
-                    document.getElementById("discount").value = e["discount"]
-                    document.getElementById("rating").value = e["rating"]
-                    document.getElementById("reviews").value = e["reviews"]
+            let check;
+            let check2;
 
-                    document.getElementById("edit_product").style.visibility = 'hidden';
-                    document.getElementById("update_product").style.visibility = 'visible';
+
+
+            storeDetails.find(element => {
+
+
+                if (element["title"] == storeName) {
+
+                    // console.log(element['title'])
+                    return check = element;
 
                 }
 
-            });
+            })
+            check["products"].find((e) => {
+
+                if (e["value"] == value) {
+                    return check2 = e;
+                }
+
+            })
+            console.log(check2)
+
+
+            document.getElementById("image").value = check2["image"]
+            document.getElementById("title").value = check2["title"]
+            document.getElementById("price").value = check2["price"]
+            document.getElementById("value").value = check2["value"]
+            document.getElementById("full_price").value = check2["full_price"]
+            document.getElementById("discount").value = check2["discount"]
+            document.getElementById("rating").value = check2["rating"]
+            document.getElementById("reviews").value = check2["reviews"]
+
+            document.getElementById("edit_product").style.visibility = 'hidden';
+            document.getElementById("update_product").style.visibility = 'visible';
+
+
+
+
         })
+
+
+
+
+
+
+
+
+
+
+
 
 
 
         let deleteProduct = document.getElementById("delete_btn")
         deleteProduct.addEventListener("click", el => {
 
-            let productDetails = JSON.parse(localStorage.getItem("products"))
+            let storeDetails = JSON.parse(localStorage.getItem("stores"))
 
-            const value = document.getElementById("value").value
+            let value = document.getElementById("value").value
+            let storeName = document.getElementById("store_name").value
 
+            let check;
+
+            storeDetails.find(element => {
+
+
+                if (element["title"] == storeName) {
+
+                    // console.log(element['title'])
+                    return check = element;
+
+                }
+
+            })
+
+
+            let productDetails = check["products"]
+
+
+            for (let i = 0; i < productDetails.length; i++) {
+
+                if (value === productDetails[i]["value"]) {
+
+                    productDetails.splice(i, 1)
+
+                    confirm("Your account have been deleted")
+
+                    localStorage.setItem("stores", JSON.stringify(storeDetails));
+
+                }
+            }
+
+
+        })
+
+
+
+
+
+
+
+
+
+
+        /*
+        
             for (let i = 0; i < productDetails.length; i++) {
 
                 if (value === productDetails[i]["value"]) {
@@ -259,8 +370,8 @@
 
                 }
             }
-
-        })
+        
+        */
 
 
 

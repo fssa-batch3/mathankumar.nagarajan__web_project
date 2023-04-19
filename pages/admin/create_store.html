@@ -79,7 +79,7 @@
 
         <br>
 
-        <button type="submit" id="add_store_btn">Submit Form</button>
+        <button id="add_store_btn">Submit Form</button>
 
         <button id="update_btn">Update Store</button>
 
@@ -122,8 +122,8 @@
 
 
 
-        let add_store_btn = document.getElementById("form")
-        add_store_btn.addEventListener("submit", el => {
+        let add_store_btn = document.getElementById("add_store_btn")
+        add_store_btn.addEventListener("click", el => {
 
             const id = Date.now();  // generate Primary Key
 

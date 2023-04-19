@@ -103,6 +103,10 @@ hr{
     margin-left: 10px;
 }
 .add-more-items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 600px;
     margin: 0%;
     margin-bottom: 40px;
 }
@@ -114,6 +118,14 @@ hr{
 }
 #place-order-container{
     border: 1px solid black;
+}
+
+.remove_cart_btn{
+    padding: 10px;
+    background-color: rgb(254, 64, 64);
+    font-weight: bold;
+    color: white;
+    border: 2px solid black;
 }
 
 /* Details */
@@ -138,6 +150,8 @@ hr{
 .price-details div h1{
     width: 300px;
 }
+
+
 
 
 /* Footer starting */

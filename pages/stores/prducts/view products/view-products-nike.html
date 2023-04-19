@@ -1423,7 +1423,7 @@
         //                 reviews: "( 2317 ) Reviews",
         //             },
         //         ],
-            
+
         //     },
 
         //     {
@@ -1616,8 +1616,8 @@
         //                 reviews: "( 2317 ) Reviews",
         //             },
         //         ],
-            
-                
+
+
         //     },
 
         //     {
@@ -1810,7 +1810,7 @@
         //                 reviews: "( 2317 ) Reviews",
         //             },
         //         ],
-            
+
         //     },
 
         //     {
@@ -2003,7 +2003,7 @@
         //                 reviews: "( 2317 ) Reviews",
         //             },
         //         ],
-            
+
         //     },
 
         //     {
@@ -2196,9 +2196,9 @@
         //                 reviews: "( 2317 ) Reviews",
         //             },
         //         ],
-            
+
         //     }
-            
+
         // ]
 
 
@@ -2225,16 +2225,16 @@
                 if (items) {
                     items.find(
 
-                        
+
                         function (item) {
 
-                        // console.log(item)
+                            // console.log(item)
 
 
                             if (item["value"] == paramsId) {
                                 itemObj = item
                                 return true;
-                            } 
+                            }
                             else {
                                 // alert("isnt match")
                                 return false;
@@ -2285,12 +2285,12 @@
         div_product_img = document.createElement("div")
         div_product_img.setAttribute("class", "product_div")
 
-        
+
 
 
         product_image = document.createElement("img");
         product_image.setAttribute("class", "product-img")
-        product_image.setAttribute("src",itemObj["image"])
+        product_image.setAttribute("src", itemObj["image"])
         // product_image.setAttribute("alt", itemObj["img"]["alt"]);
         div_product_img.append(product_image)
 
@@ -2404,6 +2404,7 @@
 
         a_add_to_cart = document.createElement("button");
         a_add_to_cart.setAttribute("type", "button");
+        a_add_to_cart.setAttribute("id", "btn_cart");
         // a_add_to_cart.setAttribute("onclick", addCart())                     //add to cart
         a_add_to_cart.innerText = "Add to Cart";
         div_button.prepend(a_add_to_cart)
@@ -2699,40 +2700,60 @@
 
 
 
-        function addCart(){
+        let btn_cart = document.getElementById("btn_cart")
+        btn_cart.addEventListener("click", el => {
 
-            // let stores = JSON.parse(localStorage.getItem("stores"))
             let user = JSON.parse(localStorage.getItem("active_user"))
-            
-           
-
-            let addCart = JSON.parse(localStorage.getItem("addCart")) ?? [];
-            let item = {};
-            
 
 
+            let addCart = JSON.parse(localStorage.getItem("Cart")) ?? [];
 
-            item["title"] = itemObj["title"];
-            item["image"] = itemObj["image"];
-            item["rate"] = itemObj["price"];
-            item["full_rate"] = itemObj["full_price"];
-            item["offer"] = itemObj["discount"];
-            item["value"] = itemObj["value"]
-            item["user_email"] = user["user_email"]
-            
+            let check;
 
-            addCart.push(item);
-            localStorage.setItem("Cart", JSON.stringify(addCart));
-            
+            addCart.find(e => {
 
-        }
+                if (e["value"] == itemObj["value"] && e["user_email"] == user["user_email"]) {
+                    return check = 1;
+                }
+                else {
+                    return check = 0;
+                }
 
+            })
 
 
+            if (check == 1) {
+                alert("already added")
+            }
+            else {
+
+                let item = {};
+
+                item["title"] = itemObj["title"];
+                item["image"] = itemObj["image"];
+                item["price"] = itemObj["price"];
+                item["full_price"] = itemObj["full_price"];
+                item["discount"] = itemObj["discount"];
+                item["rating"] = itemObj["rating"];
+                item["reviews"] = itemObj["reviews"];
+                item["value"] = itemObj["value"];
+                item["user_email"] = user["user_email"];
+
+                addCart.push(item);
+                localStorage.setItem("Cart", JSON.stringify(addCart));
+
+                alert("added")
+
+            }
+
+        })
 
 
 
-    </script>
+
+
+
+    // </script>
 
 
 </body>

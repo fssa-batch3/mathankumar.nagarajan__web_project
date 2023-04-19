@@ -31,13 +31,14 @@
                 <h1>Create An Account</h1>
                 <div class="box-column">
                     <label>First Name<br><input type="text" id="firstname" name="first-name" class="input"
-                            pattern="[A-Za-Z]{1-16}" required="true"></label>
+                        pattern="[a-zA-Z]{1,64}" required="true"></label>
                     <label>Last Name<br><input type="text" id="lastname" name="Last-name" class="input"
-                            pattern="[A-Za-Z]{1-16}" required="true"></label>
+                        pattern="[a-zA-Z]{1,64}" required="true"></label>
                 </div>
 
                 <div class="box-column">
-                    <label>Email<br><input type="email" id="email" required="true" name="email" class="input"></label>
+                    <label>Email<br><input type="email" id="email" required="true" name="email" class="input"
+                            pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" /></label>
                     <label>Address<br><input type="text" id="address" required="true" name="address"
                             class="input"></label>
                 </div>
@@ -45,18 +46,17 @@
                 <div class="box-column">
                     <label>Create Password
                         <br>
-                        <input id="creatpassword" type="password" name="create password" class="input" required="true">
+                        <input id="creatpassword" type="password" name="create password" class="input" required="true" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" />
                     </label>
                     <label>Confirm Password
                         <br>
-                        <input id="confirmpassword" type="password" required="true" name="confirm password"
-                            class="input">
+                        <input id="confirmpassword" type="password" required="true" name="confirm password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" class="input">
                     </label>
                 </div>
                 <label><input type="checkbox" name="checkbox" id="checkbox">Creating your account and you
                     accepting<b>Terms & Conditions.</b></label>
                 <br>
-                <button type="button" onclick="signup()" class="create-ac-btn"><b>Create Account</b></button>
+                <button type="submit" class="create-ac-btn"><b>Create Account</b></button>
 
                 <div class="box-column">
                     <div class="icons-alignment">
@@ -71,7 +71,6 @@
 
             </div>
 
-
         </div>
     </form>
 
@@ -82,13 +81,9 @@
 
 
         let form = document.getElementById("signup_form");
-        form.addEventListener("submit", e => {
-            e.preventDefault();
-            signup()
-        })
+        form.onsubmit = function(e) {
 
-
-        function signup() {
+            e.preventDefault()
 
             const first_name = document.getElementById("firstname").value.trim();
             const last_name = document.getElementById("lastname").value.trim();
@@ -99,9 +94,9 @@
 
 
 
-            if (first_name != "" && last_name != "" && user_email != "" && address != "" && creatpassword != "" && confirm_password != "" ) {
+            if (first_name != "" && last_name != "" && user_email != "" && address != "" && creatpassword != "" && confirm_password != "") {
 
-                
+
 
                 if (creatpassword == confirm_password) {
 
@@ -113,11 +108,11 @@
 
                         if (element["user_email"] === user_email) {
 
-                            return check = 1
+                            return check = 1;
                         }
 
                         else {
-                            return check = 0
+                            return check = 0;
                         }
                     });
 
@@ -125,6 +120,7 @@
                         alert("Email is already exits")
                     }
                     else {
+
                         let user = {};
 
                         user["first_name"] = first_name;
@@ -138,7 +134,6 @@
                         localStorage.setItem("arr", JSON.stringify(User_details));
                         window.location.href = "login.html"
 
-
                     }
 
                 }
@@ -146,12 +141,13 @@
                     alert("Your password is not matched")
                 }
             }
-
-
             else {
                 alert("Field can't be empty")
             }
         }
+
+
+
 
     </script>
 
