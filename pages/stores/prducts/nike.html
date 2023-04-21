@@ -1838,7 +1838,9 @@
         // ]
 
 
-            let stores = JSON.parse(localStorage.getItem("stores"))
+        
+        
+        let stores = JSON.parse(localStorage.getItem("stores"))
             
 
 
@@ -1857,6 +1859,10 @@
         let h3_rating;
         let h4_rating_cound;
         let h5;
+        let icon;
+        let icon_link = "../../../assets/image/stores/heart.png";
+
+        // console.log(icon_link)
 
 
         const url = window.location.search;                // ?name=Arun
@@ -1881,68 +1887,78 @@
         console.log(store);
 
 
-        // let banner = document.createElement("img");
-        // banner.setAttribute("class", "banner");
-        // banner.setAttribute("src", store["banner"])
-        // banner.setAttribute("alt", "brand banner")
-        // document.querySelector("div.banner").prepend(banner)
-
-        // let div_mobile_brands_img;
-        // let img_logo;
-        // let h3_brand;
-
-        // for (let j = 0; j < 6; j++) {
 
 
-        //     div_mobile_brands_img = document.createElement("div");
-        //     div_mobile_brands_img.setAttribute("class", "mobile-brands-img");
-
-        //     img_logo = document.createElement("img");
-        //     img_logo.setAttribute("src", store["brand_img"][j]["img"])
-        //     img_logo.setAttribute("alt", "")
-        //     div_mobile_brands_img.prepend(img_logo)
-
-        //     h3_brand = document.createElement("h3");
-        //     h3_brand.innerText = store["brand_img"][j]["name"];
-        //     div_mobile_brands_img.append(h3_brand);
-
-
-        //     document.querySelector("div.mobile-brands-apple").append(div_mobile_brands_img)
-
-        // }
-
-
-
-
+        
         for (let i = 0; i < store["products"].length; i++) {
 
             // console.log(store)
             // console.log(store["items"])
 
 
+            // let user = JSON.parse(localStorage.getItem("active_user"))
+
+            // let wishList = JSON.parse(localStorage.getItem("wishList"))
+            
+            // wishList.find(e => {
+
+            //     if(store["products"][i]["title"] == e["title"] && user["user_email"] == e["user_email"]){
+            //         icon_link = "../../../assets/image/stores/heart_black.png"
+            //     }
+            //     else{
+            //         icon_link = "../../../assets/image/stores/heart.png"
+            //     }
+
+
+            // })
+            
+
+
+
+            let newdiv = document.createElement("div")
+            newdiv.setAttribute("class", "wishlist")
+            newdiv.setAttribute("value", i)
+
+            let div = document.createElement("div")
+            div.setAttribute("class", "wishlist_icon")
+            newdiv.prepend(div)
+
+
+            icon = document.createElement("img")
+            icon.setAttribute("class", "icon")
+            icon.setAttribute("id", "wishlist_icon")
+            icon.setAttribute("src", icon_link)
+            icon.setAttribute("alt", "img wishlist icon")
+            div.prepend(icon);
+        
+
+
             a = document.createElement("a");
             a.setAttribute("href", "../../../pages/stores/prducts/view products/view-products-nike.html?id=" + store["products"][i]["value"]);
             // console.log(a)
+            newdiv.append(a)
 
 
             // <div class="products-items">
             div_products_items = document.createElement("div");
             div_products_items.setAttribute("class", "products-items");
             // console.log(div_products_items)
-            a.append(div_products_items)
+            a.prepend(div_products_items)
+
 
 
             // <img class="productsimg" src="../../../assets/image/stores/items/nike1.jpg" alt="store image"/>
             img_productsimg = document.createElement("img");
             img_productsimg.setAttribute("class", "productsimg");
             img_productsimg.setAttribute("src", store["products"][i]["image"]);
-            // img_productsimg.setAttribute("alt", store["items"][i]["img"]["alt"]);
-            div_products_items.prepend(img_productsimg);
+            img_productsimg.setAttribute("alt", "Product Images");
+            div_products_items.append(img_productsimg);
 
             div = document.createElement("div");
             div_products_items.append(div);
-
+            
             h2_title = document.createElement("h2");
+            // h2_title.setAttribute("dataset-keyword",store["products"][i]["value"])
             h2_title.innerText = store["products"][i]["title"];
             div.prepend(h2_title);
 
@@ -1995,8 +2011,93 @@
             h5.innerText = "FREE Delivery By SpartansMT";
             div.append(h5);
 
-            document.querySelector("div.products").append(a)
+            document.querySelector("div.products").append(newdiv)
             // document.querySelector("div.products").append(div_products_items)
+
+
+            icon.addEventListener("click",function () {
+
+                let check;
+
+                let user = JSON.parse(localStorage.getItem("active_user"))
+                
+                let productTitle = store["products"][i]["title"]
+
+                let product = store["products"][i]
+
+                let wishList = JSON.parse(localStorage.getItem("wishList")) ?? [];
+
+                
+                
+                wishList.find((e) => {
+
+                    if(e["title"] == productTitle){
+
+                        return check = 1;
+
+                    }
+                    else{
+                        return check = 0;
+                    }
+
+                })
+
+
+                if(check == 1){
+
+                    for(let j=0; j<wishList.length; j++){
+
+                        if(productTitle == wishList[j]["title"]){
+
+                            wishList.splice(j,1);
+
+                            localStorage.setItem("wishList", JSON.stringify(wishList))
+                        }
+
+                    }
+
+                    icon_link = "../../../assets/image/stores/heart_black.png"
+
+                    alert("Removed From Wishlist")
+                }
+                else{
+
+                    icon_link = "../../../assets/image/stores/heart.png"
+
+                    product["user_email"] = user["user_email"]
+
+                    wishList.push(product)
+
+                    localStorage.setItem("wishList", JSON.stringify(wishList))
+
+                    alert("Added From WishList")
+
+                }
+
+
+            })
+
+
+
+            
+            // let wishList = JSON.parse(localStorage.getItem("wishList"))
+            
+            // wishList.forEach(e => {
+
+            //     if(store["products"][i]["title"] == e["title"]){
+            //         icon_link = "../../../assets/image/stores/heart_black.png"
+            //     }
+            //     else{
+            //         icon_link = "../../../assets/image/stores/heart.png"
+            //     }
+
+            // })
+
+
+
+
+
+
 
         }
 
@@ -2066,10 +2167,40 @@
 
         }
 
+
+
+        // let iconWishlist = document.querySelectorAll(".icon")
+        // iconWishlist.forEach((e) => {
+        //     // e.preventDefault()
+
+        //     let divTitle;
+
+        //     e.addEventListener("click", (el) => {
+
+        //         divTitle = e.parentElement.parentElement.innerText
+        //         console.log(divTitle)
+
+        //         // let newone = divTitle.firstChild.innerText
+        //         // console.log(newone)
+
+
+        //         // parentElement.parentElement.children[1].children[1].children[0].innerText
+        //     })
+
+            
+
+        // })
+
+
+
+
+
+
+
+
     </script>
 
 
-    <img src="../../../assets/image/stores/ivenus-apple/" alt="">
 
 
 </body>

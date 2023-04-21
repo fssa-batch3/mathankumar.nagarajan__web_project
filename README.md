@@ -64,47 +64,43 @@ Steps:
 
 Scenario 1: Successfully view account details
 Steps:
-1. Log in as a user.
-2. Navigate to the account page.
-3. View the account details such as name, email, and address.
+1. Navigate to the account page.
+2. View the account details such as first name, last name, email, and address.
 > Expected Result:
 > The user can view their account details.
 
-<h3>Edit and Update account details (completed)</h3>
+
+<h3>Edit account details (completed)</h3>
 
 Scenario 1: Successfully edit account details
 Steps:
-1. Log in as a user.
-2. Navigate to the account page.
-3. Click the "Edit Account" button.
-4. Update the account details.
-5. Click the "Update Account" button.
+1. In the Profile page.
+2. Click the "Edit" button to Edit Your details.
+3. And fill extra details Like Address 2, zipcode, country and state.
 > Expected Result:
-> The user's account details are updated.
+> The user account details has edit but its not updated in the localstorage.
 
 
-<h3>View products/items (completed)</h3>
+<h3>Update account details (completed)</h3>
 
-Scenario 1: Successfully view products/items
+Scenario 1: Successfully Update account details
 Steps:
-1. Log in as a buyer.
-2. Navigate to the Home page. Click Any one store.
-3. Navigate to the product listing page.
-4. View the list of available products/items in the store.
+1. In the Profile page.
+2. You already Changed details.
+3. So, Click the "Update" button to Update Your details in localstorage.
 > Expected Result:
-> The user can view the list of available products/items in the store.
+> The user has updated his detail in the local storage.
 
 
-<h3>View product/item details (completed)</h3>
+<h3>Delete account details (completed)</h3>
 
-Scenario 1: Successfully view product/item details
+Scenario 1: Successfully Delete account details
 Steps:
-1. Log in as a buyer.
-2. Navigate to the Home page. Click Any one store.
-3. Navigate to the product listing page.
-4. Select a product/item to view its details.
+1. In the Profile page.
+2. So, Click the "Delete" button to Delete Your details in localstorage.
 > Expected Result:
-> The user can view the details of the selected product/item.
+> The user has Deleted his detail in the local storage.
+
 
 
 <h2>Seller</h2>
@@ -112,67 +108,97 @@ Steps:
 
 <h3>Create a new store (completed)</h3>
 
-Scenario 1: Successfully create a new product to sell
+Scenario 1: Successfully created a new product to sell our product.
 Steps:
-1. Navigate to the store creation page.
-2. Enter the store details such as name, category and give id(number).
-3. Upload store logo.
-4. Click the "Create Product" button.
+1. Go to the home page and log out of your account.
+2. it's going to an index page.
+3. In the page go to the footer and click on the "Home" word in the footer it's open the form.
+4. Enter the store details such as name, category and give unique id as a number.
+5. Upload store logo url link in the "Store URL" input box.
+6. Click the "Create" button.
 > Expected Result:
-> The new store is created and added to the Localstorage.
+> The new store is created and added to the Localstorage. The Store shows the user home page.
+
+
 
 <h3>Edit store details (completed)</h3>
 
 Scenario 1: Successfully view list of products
 Steps:
-1. Navigate to the store creation page.
+1. in the store form page in the "value" input box enter your store unique id.
+2. To click the "Edit" Button.
+3. To get the Store Information and then change your new updates about the store details 
 2. Match the store id to get the store information.
 > Expected Result:
-> The seller can view their store details.
+> The seller can view their store details in the input boxes.
+
+
 
 <h3>Update store details (completed)</h3>
 
-Scenario 1: Successfully update store details.
+Scenario 1: Successfully Updated store details.
 Steps:
-1. Navigate to the store creation page.
-2. Match the store id to get the store information.
-3. update new data that page.
-4. Click the "Update store" Button.
+1. After changing details Click the "Update" button to update new details.
+2. It's Changed in the local storage from old details to updated details.
 > Expected Result:
-> The seller can view their store details.
+> The seller can Update their store details in the local storage.
 
+
+<h3>Delete store details (completed)</h3>
+
+Scenario 1: Successfully Deleted store details.
+Steps:
+1. In the value input box to put the store unique id.
+2. And Click "Delete" Button.
+> Expected Result:
+> The seller can Delete their store details in the local storage.
 
 
 <h3>Create a new product (completed)</h3>
 
 Scenario 1: Successfully create a new product to sell
 Steps:
-1. Navigate to the product creation page.
-2. Enter the product details such as title, rate, full rate, discount, and give id(number).
-3. Upload product image.
+1. Go to index page.
+2. In the index page go to the footer and click on the "Stores" word in the footer it's open the form.
+3. Enter the your store name to add product details like Product Title, Price, Full Price, Discount, Rating, Reviews, and Add Product image into URL.
+4. And give give Unique id the product as "Value".
 4. Click the "Create Product" button.
 > Expected Result:
-> The new product is created and added to the Localstorage.
+> The new product is created and added to the Localstorage. it's shows in the store.
+
 
 <h3>Edit product details (completed)</h3>
 
-Scenario 1: Successfully view list of products
+Scenario 1: Successfully Edited Product Details.
 Steps:
-1. Navigate to the product creation page.
-2. Match the product id to get the product information.
+1. In the form match the Product id as Value and Store name as a Store name in the form.
+2. Click the "Edit" button.
+2. To get the All details about that product.
 > Expected Result:
-> The seller can view their product details.
+> The seller can view their product details in the input boxes.
+
 
 <h3>Update product details (completed)</h3>
 
-Scenario 1: Successfully update product details.
+Scenario 1: Successfully Updated product details.
 Steps:
-1. Navigate to the product creation page.
-2. Match the product id to get the product information.
-3. Chage some data to Update new data that page.
-4. Click the "Update product" Button.
+1. After Clicked 'Edit' button to change some details new.
+2. And then Click "Update" Button.
 > Expected Result:
-> The seller can view their Updated product details in Localstorage.
+> The seller can Updated product details in Localstorage.
+
+
+<h3>Delete product details (completed)</h3>
+
+Scenario 1: Successfully Deleted product details.
+Steps:
+1. In the form Match product_id and match Store Name to get the details
+2. And then Click "Delete Product" Button.
+> Expected Result:
+> The seller can Delete product details in Localstorage.
+
+
+
 
 #
 
