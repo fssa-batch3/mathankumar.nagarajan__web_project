@@ -16,7 +16,7 @@
 
 <body>
 
-    <header>
+    <!-- <header>
         <div>
             <img src="../../assets/image/home/correct_mark.png" alt="">
             <h1>Order Confirmed</h1>
@@ -28,11 +28,57 @@
             </a>
 
         </div>
+    </header> -->
+
+
+
+    <header>
+
+        <h1>Your order has been received</h1>
+        <div>
+            <img src="../../assets/image/home/order_confirmation.gif" alt="order confirm image">
+        </div>
+        <h2>Thank you for your purchase !</h2>
+        <p id="order_id"></p>
+        <p>You will receive an order confirmation email with details of your order</p>
+
+        <button id="check_status">Check status</button>
+
+
     </header>
 
 
 
 
+
+
+    <script>
+
+        let url = window.location.search;
+        let urlParams = new URLSearchParams(url);
+        let paramsId = urlParams.get("order_id")
+
+
+        let order_id = document.getElementById("order_id")
+        order_id.innerText = "Your order ID is:" + paramsId
+
+        let check_status = document.getElementById("check_status")
+        check_status.addEventListener("click", function(){
+
+            window.location.href = "../home/profile.html?id=orders";
+
+        })
+
+
+
+       
+
+
+
+    </script>
+
 </body>
+
+
 
 </html>

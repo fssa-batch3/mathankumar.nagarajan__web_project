@@ -8,43 +8,38 @@ body{
 
 *{
     font-family: 'Barlow', sans-serif;
-}
-
-header{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
 }
 
-header img{
-    width: 100px;
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
 }
 
-a{
-    text-decoration: none;
+header div img{
+    width: 500px;
+}
+
+header p{
     font-size: 18px;
 }
 
-button{
-    cursor: pointer;
-    margin-top: 100px;
-    background-color: #f07db1;
-    border: 2px solid lightgreen;
-    color: white;
+header button{
+    padding: 20px 100px;
     font-size: 20px;
-    font-weight: bold;
-    padding: 13px 100px;
+    font-weight: bolder;
+    background-color: #23e200;
+    border: none;
+    color: white;
+    box-shadow: #23e200 0px 2px 20px;
 }
 
-button:hover{
-    transform: scale(1.02);
-    border: 2px solid #f07db1;
-    background-color: lightgreen;
+header h1{
+    font-size: 40px;
 }
-
-
-
 
 

@@ -39,7 +39,7 @@
                 <div class="box-column">
                     <label>Email<br><input type="email" id="email" required="true" name="email" class="input"
                             pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" /></label>
-                    <label>Address<br><input type="text" id="address" required="true" name="address"
+                    <label>Phone number<br><input type="tel" pattern="[789][0-9]{9}" id="address" required="true" name="address"
                             class="input"></label>
                 </div>
 
@@ -91,7 +91,10 @@
             const address = document.getElementById("address").value.trim();
             const creatpassword = document.getElementById("creatpassword").value.trim();
             const confirm_password = document.getElementById("confirmpassword").value.trim();
-
+            const address2 = "";
+            const zip_code = "";
+            const country = "";
+            const state = "";
 
 
             if (first_name != "" && last_name != "" && user_email != "" && address != "" && creatpassword != "" && confirm_password != "") {
@@ -126,9 +129,13 @@
                         user["first_name"] = first_name;
                         user["last_name"] = last_name;
                         user["user_email"] = user_email;
-                        user["address"] = address;
+                        user["mobile_number"] = address;
                         user["creatpassword"] = creatpassword;
                         user["confirm_password"] = confirm_password;
+                        user["address2"] = address2;
+                        user["zip_code"] = zip_code;
+                        user["country"] = country;
+                        user["state"] = state;
 
                         User_details.push(user);
                         localStorage.setItem("arr", JSON.stringify(User_details));

@@ -45,19 +45,22 @@ a{
 .order-summary{
     /* border: 1px solid black; */
     display: flex;
-    
+    align-items: center;
+    justify-content: space-around;
 }
 hr{
     width: 90%;
 }
 #order-summary-word{
-    color: red;
-    background-color: rgb(227, 227, 227);
-    border: 1px solid;
+    /* color: red; */
+    text-align: center;
+    font-size: 25px;
+    background-color: #fafafa;
+    border: 1px solid black;
 }
 .order-img{
-    width: 250px;
-    height: 125px;
+    max-width: 250px;
+    min-height: 125px;
     padding: 100px;
     /* border: 1px solid black; */
 }
@@ -198,3 +201,153 @@ footer{
 html{
     scroll-behavior: smooth;
 }
+
+
+
+
+
+
+
+
+/* responsive */
+
+
+/* 
+@media screen and (max-width:1082px) {
+    nav ul {
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width:948px) {
+    nav ul {
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+
+    #footer-logo {
+        width: 140px;
+        height: 50px;
+        margin-left: 40px;
+        margin-top: 20px;
+    }
+
+    #footer-email {
+        height: 40px;
+        width: 250px;
+    }
+
+    #footer-button {
+        height: 47px;
+        color: blue;
+    }
+
+    .footer-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width:824px) {
+    nav ul {
+        font-size: 10px;
+    }
+
+}
+
+
+@media screen and (max-width:760px) {
+
+    .checkbtn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 95%;
+        height: 100vh;
+        background: #c9ddf0;
+        top: 70px;
+        left: -120%;
+        text-align: center;
+        transition: all .8s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 15px 0;
+        line-height: 30px;
+        font-size: 20px;
+        padding: 20px;
+        color: white;
+
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    a:hover,
+    a.active {
+        background: none;
+        color: #0082e6;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+
+    #signup {
+        margin-left: 20px;
+    }
+
+    #logo {
+        width: 120px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+
+    #footer-email {
+        height: 30px;
+        width: 140px;
+    }
+
+    #footer-button {
+        color: blue;
+        padding-bottom: 2px;
+        width: 30px;
+        height: 37px;
+    }
+
+
+}
+
+
+
+@media screen and (max-width:544px) {
+    #logo {
+        width: 140px;
+        padding: 0 15px;
+    }
+
+    .imgstore {
+        width: 120px;
+        height: 70px;
+    }
+
+    .store {
+        background-color: white;
+        width: 160px;
+        height: 200px;
+        font-size: 14px;
+        padding-top: 20px;
+    }
+}
+
+ */

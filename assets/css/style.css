@@ -468,8 +468,24 @@ html {
 }
 
 
+/* Cart icon */
+#cart_icon{
+    font-size: 25px;
+}
 
-
+/* cart icon count */
+#cart_count{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-weight: bolder;
+    /* background-color: aqua; */
+    border-radius: 100%;
+    position: absolute;
+    font-size: 18px;
+    right: 80px;
+    top: 5px;
+}
 
 
 
@@ -588,6 +604,8 @@ html {
 
 
 }
+
+
 
 @media screen and (max-width:544px) {
     #logo {
