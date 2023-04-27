@@ -53,7 +53,7 @@
                 <h4>Profile</h4>
             </div>
 
-            <form action="">
+            <form id="form">
 
                 <div class="name">
                     <div>
@@ -77,13 +77,13 @@
                 <div>
                     <label for="address">Mobile number</label>
                     <br>
-                    <input id="address" type="tel" pattern="[789][0-9]{9}" class="one_input" disabled>
+                    <input id="address" type="tel" pattern="[789][0-9]{9}" class="one_input" required disabled>
                 </div>
 
                 <div>
                     <label for="address2">Address</label>
                     <br>
-                    <input id="address2" type="text" class="one_input" disabled>
+                    <input id="address2" type="text" class="one_input" required disabled>
                 </div>
 
                 <div class="name">
@@ -91,19 +91,19 @@
                     <div>
                         <label for="country">Country</label>
                         <br>
-                        <input id="country" type="text" class="three_input" disabled>
+                        <input id="country" type="text" class="three_input" required disabled>
                     </div>
 
                     <div>
                         <label for="state">State</label>
                         <br>
-                        <input id="state" type="text" class="three_input" disabled>
+                        <input id="state" type="text" class="three_input" required disabled>
                     </div>
 
                     <div>
                         <label for="zip_code" class="three_input">Zip Code</label>
                         <br>
-                        <input id="zip_code" type="number" inputmode="numeric" pattern="[0-9]{5,6}" disabled>
+                        <input id="zip_code" type="number" pattern="[0-9]{5,6}" required disabled>
                     </div>
 
                 </div>
@@ -111,7 +111,7 @@
 
                 <div class="btn_flex">
                     <button id="edit" onclick="editItem()" type="button">Edit Profile</button>
-                    <button id="update" onclick="updateProfile()" type="button">Update Profile</button>
+                    <button id="update" type="submit">Update Profile</button>
                     <button onclick="deleteItem()" type="button">Delete Profile</button>
 
                 </div>
@@ -349,7 +349,12 @@
 
 
         // Update Profile codes
-        function updateProfile() {
+
+        let form = document.getElementById("form")
+        form.addEventListener("submit", function(){
+
+
+       
 
             let active_user = JSON.parse(localStorage.getItem('active_user'));
 
@@ -417,7 +422,7 @@
                 }
             })
 
-        }
+        })
 
         // delect profile codes
         function deleteItem() {
@@ -604,7 +609,7 @@
 
         */
 
-        let orders = JSON.parse(localStorage.getItem("orders"))
+        let orders = JSON.parse(localStorage.getItem("orders")) ?? []
 
             let items_count = 0;
 

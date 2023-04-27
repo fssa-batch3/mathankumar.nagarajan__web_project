@@ -1567,7 +1567,7 @@ let stores = [
             
         ]
 
-if(localStorage.getItem("stores")){
+if(JSON.parse(localStorage.getItem("stores"))){
     return;
 }
 else{
