@@ -24,9 +24,45 @@
             <li><a href="../../../entertainment/entertainment.html">Entertainment</a></li>
             <li><a href="../../../foodcourt/foodcourt.html">Foodcourt</a></li>
             <li><a href="../../../services/services.html">Services</a></li>
-            <li><a href="../../../cart/add-to- cart.html">Cart</a></li>
-            <li><a href="../../../../index.html"><span class="material-symbols-outlined"
-                        style="width: 50px;">person</span></a></li>
+            <li><a href="../../pages/cart/add-to- cart.html">
+                <i id="cart_icon" class="material-symbols-outlined">shopping_cart</i>
+            </a></li>
+            
+
+
+                        <p id="cart_count"></p>
+
+                        <li class="dropdown">
+                            <i class="material-symbols-outlined">expand_more</i>
+                            <div class="dropdown-content">
+                                <a href="profile.html">
+                                    <p>
+                                        <i class="material-symbols-outlined">person</i>
+                                        Profile
+                                    </p>
+                                </a>
+                                <a href="../home/profile.html?id=orders">
+                                    <p>
+                                        <i class="material-symbols-outlined">shopping_bag</i>
+                                        My Orders
+                                    </p>
+                                </a>
+                                <a href="../home/profile.html?id=wishlist">
+                                    <p>
+                                        <i class="material-symbols-outlined">favorite</i>
+                                        WishList
+                                    </p>
+                                </a>
+                                <a href="../../index.html">
+                                    <p>
+                                        <i class="material-symbols-outlined">logout</i>
+                                        Logout
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+
+
         </ul>
     </nav>
     <div class="view-product">
@@ -2758,9 +2794,30 @@
 
 
 
+        // cart count for nav bar
 
 
-    // </script>
+        let Cart = JSON.parse(localStorage.getItem("Cart"))
+        let active_user = JSON.parse(localStorage.getItem("active_user"))
+        let cart_count = document.getElementById("cart_count")
+        let count = 0;
+        
+
+        Cart.find(e=>{
+            if(e.user_email == active_user.user_email){
+                count++
+            }
+        })
+        console.log(count)
+
+        cart_count.innerText = count
+
+
+
+
+
+
+    </script>
 
 
 </body>
