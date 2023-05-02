@@ -240,6 +240,22 @@ select:invalid{
     margin: 0%;
 }
 
+.silder_fles{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.silder_fles div{
+    width: 100px;
+    display: flex;
+}
+
+.silder_fles div p{
+    font-size: 25px;
+    margin: 5px;
+}
+
 /* Order Page Codes End */
 
 /* Wishlist Page Codes start */

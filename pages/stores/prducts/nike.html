@@ -425,22 +425,7 @@
 
 
 
-// Cart count codes
-
-let Cart = JSON.parse(localStorage.getItem("Cart"))
-        let active_user = JSON.parse(localStorage.getItem("active_user"))
-        let cart_count = document.getElementById("cart_count")
-        let count = 0;
-
-
-        Cart.find(e => {
-            if (e.user_email == active_user.user_email) {
-                count++
-            }
-        })
-        console.log(count)
-
-        cart_count.innerText = count
+        
 
 
         // const stores = [
@@ -2248,6 +2233,23 @@ let Cart = JSON.parse(localStorage.getItem("Cart"))
 
 
 
+
+        // Cart count codes
+
+        let Cart = JSON.parse(localStorage.getItem("Cart"))
+        let active_user = JSON.parse(localStorage.getItem("active_user"))
+        let cart_count = document.getElementById("cart_count")
+        let count = 0;
+
+
+        Cart.find(e => {
+            if (e.user_email == active_user.user_email) {
+                count++
+            }
+        })
+        console.log(count)
+
+        cart_count.innerText = count
 
 
 

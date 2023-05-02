@@ -24,16 +24,17 @@
             <li><a href="../entertainment/entertainment.html">Entertainment</a></li>
             <li><a href="../../pages/foodcourt/foodcourt.html">Foodcourt</a></li>
             <li><a href="../../pages/services/services.html">Services</a></li>
-            <li><a href="../cart/add-to- cart.html" class="nav-highlighted">Cart</a></li>
-            <li><a href="../../index.html"><span class="material-symbols-outlined"
-                        style="width: 50px;">person</span></a></li>
+            <li><a href="../cart/add-to- cart.html">
+                    <i id="cart_icon" class="material-symbols-outlined">shopping_cart</i>
+                </a></li>
 
-            <!-- <p id="cart_count"></p>
+
+            <p id="cart_count"></p>
 
             <li class="dropdown">
                 <i class="material-symbols-outlined">expand_more</i>
                 <div class="dropdown-content">
-                    <a href="profile.html">
+                    <a href="../home/profile.html">
                         <p>
                             <i class="material-symbols-outlined">person</i>
                             Profile
@@ -58,7 +59,7 @@
                         </p>
                     </a>
                 </div>
-            </li> -->
+            </li>
 
         </ul>
     </nav>
@@ -297,6 +298,8 @@
 
             if (produte_list[i]["user_email"] == user["user_email"]) {
 
+                let quantity = 1;
+
                 // total discount code for line 267 to 269
                 let discount = 0
                 discount = Number(produte_list[i].full_price) - Number(produte_list[i].price)
@@ -393,15 +396,33 @@
                 label_number_of_items.innerText = "Add More Items";
                 h3_add_more_items.append(label_number_of_items);
 
-                input_items = document.createElement("input");
-                input_items.setAttribute("class", "number-of-items")
-                input_items.setAttribute("type", "number");
-                input_items.setAttribute("type", "number");
-                input_items.setAttribute("placeholder", "1");
-                input_items.setAttribute("name", "number");
-                input_items.setAttribute("min", "1");
-                input_items.setAttribute("max", "5");
-                label_number_of_items.append(input_items)
+
+
+                // input_items = document.createElement("input");
+                // input_items.setAttribute("class", "number-of-items")
+                // input_items.setAttribute("type", "number");
+                // input_items.setAttribute("type", "number");
+                // input_items.setAttribute("placeholder", "1");
+                // input_items.setAttribute("name", "number");
+                // input_items.setAttribute("min", "1");
+                // input_items.setAttribute("max", "5");
+                // label_number_of_items.append(input_items)
+
+                let p_minus = document.createElement("button")
+                p_minus.setAttribute("class", "minus")
+                p_minus.innerText = "-";
+                label_number_of_items.append(p_minus)
+
+                let span = document.createElement("span")
+                span.setAttribute("id", "span")
+                span.innerText = quantity;
+                label_number_of_items.append(span)
+
+
+                let p_plus = document.createElement("button")
+                p_plus.setAttribute("class", "plus")
+                p_plus.innerText = "+";
+                label_number_of_items.append(p_plus)
 
                 let btn_remove = document.createElement("button")
                 btn_remove.innerText = "Remove Cart";
@@ -438,10 +459,45 @@
                 })
 
 
+                p_plus.addEventListener("click", e => {
+
+
+
+                    quantity++
+                    document.querySelector("#span").innerText = quantity
+                    console.log(quantity)
+
+
+                })
+
+
+                p_minus.addEventListener("click", e => {
+
+
+
+                    quantity--
+                    document.querySelector("#span").innerText = quantity
+                    console.log(quantity)
+
+
+                })
+
 
             }
 
         }
+
+
+        // quantity code
+        // let increase_quantity = document.querySelector(".plus")
+        // increase_quantity.addEventListener("click", e => {
+
+        //     console.log(e)
+
+        // })
+
+
+
 
 
         document.getElementById("totalValue").innerText = "₹ " + totalValue
@@ -483,7 +539,28 @@
 
 
 
-        // })
+
+
+
+
+
+        // cart icon count code
+
+
+        let Cart = JSON.parse(localStorage.getItem("Cart"))
+        let active_user = JSON.parse(localStorage.getItem("active_user"))
+        let cart_count = document.getElementById("cart_count")
+        let count = 0;
+
+
+        Cart.find(e => {
+            if (e.user_email == active_user.user_email) {
+                count++
+            }
+        })
+        console.log(count)
+
+        cart_count.innerText = count
 
 
 

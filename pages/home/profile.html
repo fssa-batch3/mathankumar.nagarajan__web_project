@@ -132,7 +132,17 @@
             </div>
 
             <h1>Orders</h1>
-            <h4 id="product_count"></h4>
+
+            <div class="silder_fles">
+                <h4 id="product_count"></h4>
+
+                <div>
+                    <p id="silder_left"><i class="fa-solid fa-caret-left"></i></p>
+                    <p>1</p>
+                    <p id="silder_right"><i class="fa-solid fa-caret-right"></i></p>
+                </div>
+
+            </div>
 
             <div class="order_list">
 
@@ -234,9 +244,9 @@
             <div class="limit">
                 <p id="wl_total_items"></p>
                 <div id="slider">
-                    <p><i class="fa-solid fa-caret-left"></i></p>
+                    <p id="silder_left"><i class="fa-solid fa-caret-left"></i></p>
                     <p>1</p>
-                    <p><i class="fa-solid fa-caret-right"></i></p>
+                    <p id="silder_right"><i class="fa-solid fa-caret-right"></i></p>
                 </div>
             </div>
 
@@ -351,10 +361,10 @@
         // Update Profile codes
 
         let form = document.getElementById("form")
-        form.addEventListener("submit", function(){
+        form.addEventListener("submit", function () {
 
 
-       
+
 
             let active_user = JSON.parse(localStorage.getItem('active_user'));
 
@@ -572,6 +582,58 @@
                 })
 
 
+                wl_btn_cart.addEventListener("click", function () {
+
+                    let user = JSON.parse(localStorage.getItem("active_user"))
+
+
+                    let addCart = JSON.parse(localStorage.getItem("Cart")) ?? [];
+
+                    let check;
+
+                    addCart.find(e => {
+
+                        if (e["value"] == element["value"] && e["user_email"] == user["user_email"]) {
+                            return check = 1;
+                        }
+                        else {
+                            return check = 0;
+                        }
+
+                    })
+
+
+                    if (check == 1) {
+                        alert("already added")
+                    }
+                    else {
+
+                        let item = {};
+
+                        item["title"] = element["title"];
+                        item["image"] = element["image"];
+                        item["price"] = element["price"];
+                        item["full_price"] = element["full_price"];
+                        item["discount"] = element["discount"];
+                        item["rating"] = element["rating"];
+                        item["reviews"] = element["reviews"];
+                        item["value"] = element["value"];
+                        item["user_email"] = user["user_email"];
+
+                        // I didn't added Store Value so Clear the Bug After unblock the below code
+                        // item["store_value"] = storeValue;
+
+
+                        addCart.push(item);
+                        localStorage.setItem("Cart", JSON.stringify(addCart));
+
+                        alert("added")
+
+                    }
+
+                })
+
+
 
 
             }
@@ -611,15 +673,17 @@
 
         let orders = JSON.parse(localStorage.getItem("orders")) ?? []
 
-            let items_count = 0;
+        let items_count = 0;
 
         orders.find(el => {
+
+            // for(let i=orders.length; i<orders.length-4; i++){
 
             if (el.user_email == active_user.user_email) {
 
 
                 // items count
-                items_count ++
+                items_count++
 
 
                 // order page div alignment
@@ -668,8 +732,10 @@
 
                 document.querySelector(".order_list").append(div)
 
-                
+
             }
+
+            // }
 
 
 
@@ -689,25 +755,25 @@
         // get params value to match the page 
 
         let url = window.location.search;
-        let urlParams =  new URLSearchParams(url);
+        let urlParams = new URLSearchParams(url);
         let paramsId = urlParams.get("id")
 
         console.log(paramsId)
 
-        if(paramsId == "orders"){
+        if (paramsId == "orders") {
 
             document.getElementsByClassName("order_details")[0].style.display = "block";
             document.getElementsByClassName("profile_details")[0].style.display = "none";
             document.getElementsByClassName("wishlist_details")[0].style.display = "none"
-                        
+
 
         }
-        if(paramsId == "wishlist"){
+        if (paramsId == "wishlist") {
 
             document.getElementsByClassName("wishlist_details")[0].style.display = "block"
             document.getElementsByClassName("profile_details")[0].style.display = "none";
             document.getElementsByClassName("order_details")[0].style.display = "none";
-            
+
 
         }
 
