@@ -50,6 +50,8 @@ a {
 /* order summary box */
 .main-contant {
     border: 1px solid black;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .order-summary {
@@ -137,6 +139,7 @@ hr {
 }
 
 #place-order-btn {
+    cursor: pointer;
     padding: 20px;
     background-color: aquamarine;
     float: right;
@@ -250,10 +253,13 @@ html {
     /* background-color: green; */
 }
 
-#span{
+.qty{
+    margin: 5px;
+    width: 50px;
+    text-align: center;
     font-size: 30px;
     font-weight: bolder;
-    padding: 0px 20px;
+    /* padding: 0px 20px; */
     border: 2px solid grey;
 
 
@@ -268,6 +274,10 @@ html {
     margin-left: 20px;
 
 }
+
+/* #place_order_a{
+    cursor: pointer;
+} */
 
 
 
@@ -330,6 +340,8 @@ html {
 .dropdown-content a:hover {
     color: blue;
 }
+
+
 
 
 

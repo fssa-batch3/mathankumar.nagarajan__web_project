@@ -50,7 +50,9 @@
                     <h4>Home</h4>
                 </a>
                 <i class="fa-solid fa-chevron-right"></i>
-                <h4>Profile</h4>
+                <a href="../../pages/home/profile.html?id=orders">
+                    <h4>Profile</h4>
+                </a>
             </div>
 
             <form id="form">
@@ -103,7 +105,7 @@
                     <div>
                         <label for="zip_code" class="three_input">Zip Code</label>
                         <br>
-                        <input id="zip_code" type="number" pattern="[0-9]{5,6}" required disabled>
+                        <input id="zip_code" type="number" pattern="[0-9]{6}" required disabled>
                     </div>
 
                 </div>
@@ -122,6 +124,10 @@
         </div>
 
         <div class="details order_details" id="order_details">
+
+
+            
+
 
             <div class="pages_align">
                 <a href="../home/home.html">
@@ -306,8 +312,6 @@
 
 
 
-
-
     <script>
 
 
@@ -348,7 +352,7 @@
         document.getElementById("last_name").value = active_user["last_name"];
         document.getElementById("email").value = active_user["user_email"];
         document.getElementById("address").value = active_user["mobile_number"];
-        document.getElementById("address2").value = active_user["address2"];
+        document.getElementById("address2").value = active_user["address"];
         document.getElementById("zip_code").value = active_user["zip_code"];
 
         document.getElementById("state").value = active_user["state"];
@@ -381,7 +385,7 @@
                     active_user["last_name"] = document.getElementById("last_name").value
                     active_user["user_email"] = document.getElementById("email").value
                     active_user["mobile_number"] = document.getElementById("address").value
-                    active_user["address2"] = document.getElementById("address2").value
+                    active_user["address"] = document.getElementById("address2").value
                     active_user["zip_code"] = document.getElementById("zip_code").value
 
                     active_user["state"] = document.getElementById("state").value;
@@ -394,7 +398,7 @@
                     document.getElementById("last_name").value = active_user["last_name"];
                     document.getElementById("email").value = active_user["user_email"];
                     document.getElementById("address").value = active_user["mobile_number"];
-                    document.getElementById("address2").value = active_user["address2"];
+                    document.getElementById("address2").value = active_user["address"];
                     document.getElementById("zip_code").value = active_user["zip_code"];
                     document.getElementById("state").value = active_user["state"]
                     document.getElementById("country").value = active_user["country"]
@@ -411,7 +415,7 @@
                     e["last_name"] = active_user["last_name"]
                     e["user_email"] = active_user["user_email"]
                     e["mobile_number"] = active_user["mobile_number"]
-                    e["address2"] = active_user["address2"]
+                    e["address"] = active_user["address"]
                     e["zip_code"] = active_user["zip_code"]
                     e["state"] = active_user["state"]
                     e["country"] = active_user["country"]
@@ -698,6 +702,12 @@
 
 
                 div = document.createElement("div")
+                div.addEventListener("click", function () {
+
+                   window.location.href = "order_tracker.html?id=" + el.order_id
+
+                })
+
 
 
                 div_order_numer = document.createElement("div")
@@ -729,6 +739,7 @@
                 img_product_img.setAttribute("src", el.image)
                 img_product_img.setAttribute("alt", "Product image")
                 div_order_product.prepend(img_product_img)
+
 
                 document.querySelector(".order_list").append(div)
 

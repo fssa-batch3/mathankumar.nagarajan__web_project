@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/image/home/logo icon.png">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        
 </head>
 
 <body>
@@ -1899,8 +1900,8 @@
         let h3_rating;
         let h4_rating_cound;
         let h5;
-        let icon;
-        let icon_link = "../../../assets/image/stores/heart.png";
+        // let icon;
+        // = "../../../assets/image/stores/heart.png";
 
         // console.log(icon_link)
 
@@ -1935,22 +1936,7 @@
             // console.log(store)
             // console.log(store["items"])
 
-
-            // let user = JSON.parse(localStorage.getItem("active_user"))
-
-            // let wishList = JSON.parse(localStorage.getItem("wishList"))
             
-            // wishList.find(e => {
-
-            //     if(store["products"][i]["title"] == e["title"] && user["user_email"] == e["user_email"]){
-            //         icon_link = "../../../assets/image/stores/heart_black.png"
-            //     }
-            //     else{
-            //         icon_link = "../../../assets/image/stores/heart.png"
-            //     }
-
-
-            // })
             
 
 
@@ -1967,7 +1953,7 @@
             icon = document.createElement("img")
             icon.setAttribute("class", "icon")
             icon.setAttribute("id", "wishlist_icon")
-            icon.setAttribute("src", icon_link)
+            icon.setAttribute("src", "../../../assets/image/stores/heart.png")
             icon.setAttribute("alt", "img wishlist icon")
             div.prepend(icon);
         
@@ -1998,7 +1984,8 @@
             div_products_items.append(div);
             
             h2_title = document.createElement("h2");
-            // h2_title.setAttribute("dataset-keyword",store["products"][i]["value"])
+            h2_title.setAttribute("class", "product_title")
+            // h2_title.setAttribute("dataset-keyword",store["products"][i]["title"])
             h2_title.innerText = store["products"][i]["title"];
             div.prepend(h2_title);
 
@@ -2119,27 +2106,54 @@
 
 
 
-            
-            // let wishList = JSON.parse(localStorage.getItem("wishList"))
-            
-            // wishList.forEach(e => {
 
-            //     if(store["products"][i]["title"] == e["title"]){
+            
+        }
+
+
+
+        // Wishlist Icon Visible code
+            let icon_link;
+
+            let user = JSON.parse(localStorage.getItem("active_user"))
+
+            let wishList = JSON.parse(localStorage.getItem("wishList"))
+            
+            let icons = document.querySelectorAll(".icon").values
+            let title = document.querySelectorAll(".product_title").values
+
+            for(let i=0; i<icons.length; i++){
+
+                if(wishList[i].title == title[i].innerText && user.user_email == wishList[i].user_email){
+
+                    icons[i].setAttribute("src", "../../../assets/image/stores/heart_black.png")
+
+                }
+                else{
+                    icons[i].setAttribute("src", "../../../assets/image/stores/heart.png")
+                    
+                }
+
+            }
+
+                
+                
+
+            
+            
+            
+            
+            // wishList.find(e => {
+
+            //     if(store["products"][i]["title"] == e["title"] && user["user_email"] == e["user_email"]){
             //         icon_link = "../../../assets/image/stores/heart_black.png"
             //     }
             //     else{
             //         icon_link = "../../../assets/image/stores/heart.png"
             //     }
 
+
             // })
-
-
-
-
-
-
-
-        }
 
 
 

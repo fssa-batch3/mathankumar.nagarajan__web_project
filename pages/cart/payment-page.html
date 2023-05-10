@@ -324,7 +324,7 @@
                         <div>
                             <label for="">Zip code
                                 <br>
-                                <input type="number" pattern="[0-9]{5,6}" id="zip_code" class="address" required>
+                                <input type="number" pattern="[0-9]{6}" id="zip_code" class="address" required>
                             </label>
                         </div>
 
@@ -494,6 +494,8 @@
         let order_id = Date.now();
         console.log(order_id)
 
+        // Total Order Price
+        // let total_price = 0
 
 
         let active_user = JSON.parse(localStorage.getItem('active_user'));
@@ -504,7 +506,7 @@
         document.getElementById("phone_number").value = active_user.mobile_number;
 
 
-        document.getElementById("address").value = active_user["address2"];
+        document.getElementById("address").value = active_user["address"];
         document.getElementById("zip_code").value = active_user["zip_code"];
         document.getElementById("state").value = active_user["state"];
         document.getElementById("country").value = active_user["country"];
@@ -639,7 +641,7 @@
 
                     })
 
-                    totalPrice += Number(el.price)
+                    totalPrice += Number(el.price) * el.quantity
 
                     let div_order_items;
                     let img_product_img;
@@ -682,7 +684,7 @@
 
                     // <p>$121212</p>
                     p_price = document.createElement("p")
-                    p_price.innerText = "₹" + el.price;
+                    p_price.innerText = "₹" + el.price + " " + "x" + " " + el.quantity
                     div.append(p_price)
 
                     document.querySelector("#order_summary").append(div_order_items)
@@ -698,6 +700,8 @@
 
 
         }
+
+        
 
         document.getElementById("subtotal").innerText = "₹" + totalPrice
         document.getElementById("total").innerText = "₹" + totalPrice
@@ -728,7 +732,7 @@
                     active_user.zip_code = document.getElementById("zip_code").value;
                     active_user.country = document.getElementById("country").value;
                     active_user.state = document.getElementById("state").value;
-                    active_user.address2 = document.getElementById("address").value;
+                    active_user.address = document.getElementById("address").value;
 
                     localStorage.setItem("active_user", JSON.stringify(active_user))
 
@@ -736,7 +740,7 @@
                     el.zip_code = document.getElementById("zip_code").value;
                     el.country = document.getElementById("country").value;
                     el.state = document.getElementById("state").value;
-                    el.address2 = document.getElementById("address").value;
+                    el.address = document.getElementById("address").value;
 
 
 
@@ -765,6 +769,11 @@
                 obj.payment_option = payment_option;
                 obj.order_date = newdate;
                 obj.image = itemObj.image
+                obj.title = itemObj.title
+                obj.quantity = 1;
+                obj.price = itemObj.price
+
+
 
                 orders.push(obj)
                 localStorage.setItem("orders", JSON.stringify(orders))
@@ -789,6 +798,9 @@
                         obj.payment_option = payment_option;
                         obj.order_date = newdate;
                         obj.image = el.image
+                        obj.title = el.title
+                        obj.quantity = el.quantity
+                        obj.price = el.price
 
                         orders.push(obj)
                         localStorage.setItem("orders", JSON.stringify(orders))

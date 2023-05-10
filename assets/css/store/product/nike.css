@@ -401,7 +401,8 @@
 
     .icon {
         color: black;
-        /* background-color: black; */
+
+        /* background-color: red; */
         width: 10%;
 
         float: right;
@@ -692,6 +693,9 @@
     }
 
     /* Mobile phones page ending */
+
+
+
 
 
       /* nav drapdown codes */

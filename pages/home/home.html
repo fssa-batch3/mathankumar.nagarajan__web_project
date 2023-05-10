@@ -28,10 +28,10 @@
             <li><a href="../../pages/entertainment/entertainment.html">Entertainment</a></li>
             <li><a href="../../pages/foodcourt/foodcourt.html">Foodcourt</a></li>
             <li><a href="../../pages/services/services.html">Services</a></li>
-            
+
             <li><a href="../../pages/cart/add-to- cart.html">
-                <i id="cart_icon" class="material-symbols-outlined">shopping_cart</i>
-            </a></li>
+                    <i id="cart_icon" class="material-symbols-outlined">shopping_cart</i>
+                </a></li>
             <p id="cart_count"></p>
             <li class="dropdown">
                 <i class="material-symbols-outlined">expand_more</i>
@@ -464,12 +464,16 @@
                 </a>
 
             </div>
-            <div>
-                <h3>Signup Offers & Events<br> Updates</h3>
-                <label><input id="footer-email" name="email" type="email" placeholder="hello@gmail.com"
-                        required></label>
-                <button type="submit" id="footer-button">➡</button>
-            </div>
+
+            <form id="offer_form">
+                <div>
+                    <h3>Signup Offers & Events<br> Updates</h3>
+                    <label>
+                        <input id="footer-email" name="email" type="email" placeholder="hello@gmail.com" required>
+                    </label>
+                    <button type="submit" id="footer-button">➡</button>
+                </div>
+            </form>
             <div>
                 <h3>Follow Us</h3>
                 <img class="footer-icon" src="../../assets/image/home/facebook.png" alt="facebook-icon" />
@@ -481,9 +485,42 @@
 
     </footer>
 
-
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
 
     <script>
+
+        let offer_form = document.getElementById("offer_form")
+        offer_form.addEventListener("submit", (e) => {
+
+            let email_btn = document.getElementById("footer-email").value;
+
+            
+
+            // e.preventDefault();
+
+            console.log("Email");
+
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "spartansmarkettown@gmail.com",
+                Password: "91D930B237E09E2FC1BD214D354EBEEEC50F",
+                To: email_btn,
+                From: "spartansmarkettown@gmail.com",
+                Subject: "SpartansMT Offers Updates",
+                Body: "Empty"
+            }).then(
+                message => alert(message)
+            );
+
+        })
+
+        // let emil_btn = document.getElementById("footer-button");
+
+        // emil_btn.addEventListener("click", e => {
+            
+
+        // })
 
         //creating let alement
 
@@ -623,10 +660,10 @@
         let active_user = JSON.parse(localStorage.getItem("active_user"))
         let cart_count = document.getElementById("cart_count")
         let count = 0;
-        
 
-        Cart.find(e=>{
-            if(e.user_email == active_user.user_email){
+
+        Cart.find(e => {
+            if (e.user_email == active_user.user_email) {
                 count++
             }
         })

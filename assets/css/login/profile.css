@@ -2,7 +2,7 @@
 
 /* Active Page */
 
-.active{
+.active:visited{
     border: 2px solid black;
     color: blue;
     background-color: #2e3393;
@@ -203,7 +203,83 @@ select:invalid{
 /* Profile Page Filished */
 
 
+
+/* order tracker */
+
+#order_tracker{
+    /* background-color: #01411C; */
+    /* mix-blend-mode: color-burn; */
+    /* display: none; */
+    width: 60%;
+    margin: auto;
+    padding: 50px;
+}
+
+#order_date_div{
+    display: flex;
+    align-items: center;
+}
+
+#order_date_div i{
+    transform: rotate(-90deg);
+    color: lightgreen;
+    margin-right: 5px;
+
+}
+
+#order_date_div p{
+    margin: 0% 10px;
+}
+
+#order_items{
+    display: flex;
+    align-items: center;
+}
+
+.order_img{
+    /* border: 2px solid black; */
+    margin-right: 20px;
+    padding: 10px;
+    width: 200px;
+    /* height: 100px; */
+}
+
+#order_items img{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 150px;
+    /* min-width: 100px; */
+    max-height: 100px;
+}
+
+.order_items_details{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order_price{
+    text-align: end;
+}
+
+#user_order_details{
+    display: flex;
+}
+
+#user_order_details div{
+    width: 50%
+}
+
+#total_price{
+    text-align: end;
+}
+
+/* order tracker code end */
+
 /* Order Page Starting */
+
+
 
 .order_color{
     width: 15px;
@@ -216,6 +292,8 @@ select:invalid{
 .order_list{
     overflow: hidden;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column-reverse;
 }
 .order_list::-webkit-scrollbar {
     display: none;

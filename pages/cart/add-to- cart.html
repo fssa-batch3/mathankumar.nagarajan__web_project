@@ -288,7 +288,8 @@
 
         let totalDiscount = 0
 
-        let totalItems = 0
+        let totalItems = 0;
+
 
         // let params = "";
 
@@ -298,6 +299,8 @@
 
             if (produte_list[i]["user_email"] == user["user_email"]) {
 
+
+                // cart Product Quantity
                 let quantity = 1;
 
                 // total discount code for line 267 to 269
@@ -306,7 +309,8 @@
                 totalDiscount += discount
 
                 // total value code
-                totalValue += Number(produte_list[i]["price"])
+                totalValue += Number(produte_list[i]["price"]) * quantity;
+
 
                 // total products in the cart page code
                 totalItems++
@@ -322,6 +326,9 @@
                 // for (let i=0; i < produte_list.length; i++) {
                 // console.log("hello world")
 
+                // Product Value
+
+
                 div_order_summary = document.createElement("div");
                 div_order_summary.setAttribute("class", "order-summary");
                 // console.log(div_order_summary);
@@ -336,7 +343,9 @@
                 div_order_summary.append(div_detalis);
 
                 title = document.createElement("h1");
+                title.setAttribute("class", "product_value")
                 title.innerText = produte_list[i]["title"];
+                title.setAttribute("data-value", produte_list[i]["value"])
                 div_detalis.prepend(title);
 
                 p_special_price = document.createElement("p");
@@ -351,11 +360,14 @@
                 h6_rate = document.createElement("h6");
                 h6_rate.setAttribute("class", "rate");
                 h6_rate.innerText = "₹" + produte_list[i]["price"];
+                h6_rate.setAttribute("data-keyword", produte_list[i]["price"])
+
                 div_column.prepend(h6_rate);
 
                 p_line_through = document.createElement("p");
                 p_line_through.setAttribute("class", "line-through");
                 p_line_through.innerText = "₹" + produte_list[i]["full_price"];
+                p_line_through.setAttribute("data-full_price", produte_list[i].full_price)
                 div_column.append(p_line_through);
 
                 p_green = document.createElement("p");
@@ -363,6 +375,8 @@
                 div_column.append(p_green);
 
                 b = document.createElement("b")
+                b.setAttribute("class", "discount")
+                b.setAttribute("data-discount", produte_list[i].discount)
                 b.innerText = "(" + produte_list[i]["discount"] + "%)";
                 p_green.append(b)
 
@@ -408,13 +422,30 @@
                 // input_items.setAttribute("max", "5");
                 // label_number_of_items.append(input_items)
 
+                // let rate;
+                let currentProductRate;
+
                 let p_minus = document.createElement("button")
                 p_minus.setAttribute("class", "minus")
                 p_minus.innerText = "-";
+                // p_minus.addEventListener("click", function () {
+                //     if (quantity > 1) {
+                //         quantity--;
+                //         span.value = quantity;
+                //         // console.log(rate);
+                //         currentProductRate -=  produte_list[i]["price"]
+                //         h6_rate.innerText = "₹" + currentProductRate;
+                //         console.log(currentProductRate);
+                //         // p_line_through.innerText = "₹" + produte_list[i]["full_price"]/quantity;
+                //     }
+                // })
+
                 label_number_of_items.append(p_minus)
 
-                let span = document.createElement("span")
-                span.setAttribute("id", "span")
+                let span = document.createElement("input")
+                span.setAttribute("class", "qty")
+                span.setAttribute("value", quantity)
+                span.setAttribute("type", "text")
                 span.innerText = quantity;
                 label_number_of_items.append(span)
 
@@ -422,6 +453,21 @@
                 let p_plus = document.createElement("button")
                 p_plus.setAttribute("class", "plus")
                 p_plus.innerText = "+";
+                // p_plus.addEventListener("click", function () {
+                //     quantity++;
+                //     span.value = quantity;
+
+                //     // rate =  produte_list[i]["price"]*quantity
+                //     currentProductRate = produte_list[i]["price"] * quantity;
+                //     h6_rate.innerText = "₹" + currentProductRate;
+                //     console.log(productRate);
+                //     p_line_through.innerText = produte_list[i]["full_price"]*quantity;
+
+
+
+
+                // });
+
                 label_number_of_items.append(p_plus)
 
                 let btn_remove = document.createElement("button")
@@ -459,53 +505,116 @@
                 })
 
 
-                p_plus.addEventListener("click", e => {
-
-
-
-                    quantity++
-                    document.querySelector("#span").innerText = quantity
-                    console.log(quantity)
-
-
-                })
-
-
-                p_minus.addEventListener("click", e => {
-
-
-
-                    quantity--
-                    document.querySelector("#span").innerText = quantity
-                    console.log(quantity)
-
-
-                })
-
 
             }
 
         }
 
-
-        // quantity code
-        // let increase_quantity = document.querySelector(".plus")
-        // increase_quantity.addEventListener("click", e => {
-
-        //     console.log(e)
-
-        // })
-
-
-
-
-
+        // Total value 
         document.getElementById("totalValue").innerText = "₹ " + totalValue
         document.getElementById("totalValue1").innerText = "₹ " + totalValue
 
+
+        // Cart Quantity Codes (+ and -)
+
+        let plus_btn = document.querySelectorAll(".plus")
+        let minus_btn = document.querySelectorAll(".minus")
+        let price_pr = document.querySelectorAll(".rate")
+        let num_digit = document.querySelectorAll(".qty")
+
+        let full_price = document.querySelectorAll(".line-through")
+        let discount = document.querySelectorAll(".discount")
+
+        let product_value = document.querySelectorAll(".product_value")
+
+
+
+        for (let i = 0; i < plus_btn.length; i++) {
+
+            plus_btn[i].addEventListener("click", function () {
+
+                num_digit[i].value++
+                totalItems++
+
+
+                // Total price (+)
+                let totalvalue = parseFloat(price_pr[i].dataset.keyword) * parseFloat(num_digit[i].value)
+                // console.log(totalvalue)
+                price_pr[i].innerText = "₹" + totalvalue;
+
+                // Total full price (+)
+                let full_price_value = parseFloat(full_price[i].dataset.full_price) * parseFloat(num_digit[i].value)
+                full_price[i].innerText = "₹" + full_price_value;
+
+                // Total discount (%)
+                let discount_value = parseFloat(discount[i].dataset.discount) * parseFloat(num_digit[i].value)
+                discount[i].innerText = "(" + discount_value + "%)"
+
+
+                // Total product count 
+                document.getElementById("total_items").innerText = "Price ( " + totalItems + " : Items)"
+
+                // Total price for all product
+                totalValue += parseFloat(price_pr[i].dataset.keyword)
+                document.getElementById("totalValue").innerText = "₹ " + totalValue
+                document.getElementById("totalValue1").innerText = "₹ " + totalValue
+
+
+
+            })
+
+        }
+
+        for (let i = 0; i < minus_btn.length; i++) {
+
+            minus_btn[i].addEventListener("click", function () {
+                if (num_digit[i].value > 1) {
+
+                    num_digit[i].value--
+                    totalItems--
+
+                    // Total price (-)
+                    let totalvalue = parseFloat(price_pr[i].dataset.keyword) * parseFloat(num_digit[i].value)
+                    console.log(totalvalue)
+                    price_pr[i].innerText = "₹" + totalvalue;
+
+                    // Total full price (-)
+                    let full_price_value = parseFloat(full_price[i].dataset.full_price) * parseFloat(num_digit[i].value)
+                    full_price[i].innerText = "₹" + full_price_value;
+
+                    // Total discount (%)
+                    let discount_value = parseFloat(discount[i].dataset.discount) * parseFloat(num_digit[i].value)
+                    discount[i].innerText = "(" + discount_value + "%)"
+
+                    // Total product count ++
+                    document.getElementById("total_items").innerText = "Price ( " + totalItems + " : Items)"
+
+                    // Total price for all product
+                    totalValue -= parseFloat(price_pr[i].dataset.keyword)
+                    document.getElementById("totalValue").innerText = "₹ " + totalValue
+                    document.getElementById("totalValue1").innerText = "₹ " + totalValue
+
+
+                }
+
+
+            })
+
+        }
+
+       
+
+
+
+
+
+
+
+
+
         document.getElementById("user-name-address").innerText = user.first_name + " " + user.last_name
         document.getElementById("user-email-address").innerText = user.user_email
-        document.getElementById("user-address").innerText = user.address2
+        document.getElementById("user-address").innerText = user.address
         document.getElementById("user_mobile_number").innerText = user.mobile_number
 
 
@@ -516,9 +625,9 @@
 
 
 
-        // place order btn
+        // Place Order Button Codes for JS
 
-        // <a href="../../pages/cart/payment-page.html">
+        // <a href="../../pages/cart/payment-page.html">            // HTML Code Converted for JS
         //     <h4 id="place-order-btn">Place Order</h4>
         // </a>
 
@@ -527,7 +636,39 @@
 
 
         a_tag = document.createElement("a")
-        a_tag.setAttribute("href", "../../pages/cart/payment-page.html?id=" + user.user_email)
+        a_tag.setAttribute("id", "place_order_a")
+        a_tag.addEventListener("click", function(){
+
+            produte_list.find(e=>{
+
+                if (e["user_email"] == user["user_email"]){
+
+                    for(let i=0; i<num_digit.length; i++){
+                        // num_digit[i].value
+                        if(e.value == product_value[i].dataset.value){
+
+                            e.quantity = Number(num_digit[i].value)
+
+                            localStorage.setItem("Cart", JSON.stringify(produte_list))
+
+                            break;
+
+                            // console.log(e);
+                        }
+
+
+                    }
+
+
+                }
+
+            })
+
+            window.location.href = "../../pages/cart/payment-page.html?id=" + user.user_email
+
+        })
+
+        // a_tag.setAttribute("href", "../../pages/cart/payment-page.html?id=" + user.user_email)
 
         h4_place_order_btn = document.createElement("h4")
         h4_place_order_btn.setAttribute("id", "place-order-btn")
@@ -545,7 +686,6 @@
 
 
         // cart icon count code
-
 
         let Cart = JSON.parse(localStorage.getItem("Cart"))
         let active_user = JSON.parse(localStorage.getItem("active_user"))

@@ -2780,7 +2780,8 @@
                 item["value"] = itemObj["value"];
                 item["user_email"] = user["user_email"];
                 item["store_value"] = storeValue;
-                
+                item["quantity"] = 1;
+
 
                 addCart.push(item);
                 localStorage.setItem("Cart", JSON.stringify(addCart));
