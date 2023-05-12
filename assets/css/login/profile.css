@@ -328,6 +328,7 @@ select:invalid{
     align-items: center;
     justify-content: space-between;
     margin: 20px;
+    cursor: pointer;
 }
 
 .order_list div{
