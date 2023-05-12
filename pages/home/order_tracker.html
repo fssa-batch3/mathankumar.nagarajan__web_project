@@ -156,7 +156,7 @@
     <script>
 
         let order_id;
-        let price=0;
+        let price = 0;
 
 
         // get params value to match the page 
@@ -172,7 +172,7 @@
             if (e.order_id == paramsId) {
 
                 // payment Option
-                let payment_option = document.getElementById("payment_option") 
+                let payment_option = document.getElementById("payment_option")
                 payment_option.innerText = e.payment_option
 
                 // order id
@@ -182,10 +182,10 @@
                 order_id = document.querySelector(".order_id")
                 order_id.innerText = "Order ID: " + e.order_id
 
-                let order_date =  document.getElementById("order_date")
+                let order_date = document.getElementById("order_date")
                 order_date.innerText = "Order Date: " + e.order_date
 
-                let estimated_date =  document.getElementById("estimated_date")
+                let estimated_date = document.getElementById("estimated_date")
                 estimated_date.innerText = "Estimated delivery: " + e.order_date
 
                 // Total Price
@@ -231,8 +231,13 @@
                 div.prepend(h3)
 
                 p = document.createElement("p")
-                p.innerText = " ";
+                p.innerText = "Ordered by: ";
                 div.append(p)
+
+                let b = document.createElement("b")
+                b.innerText = e.ordered_by;
+                p.append(b)
+
 
                 div_order_price = document.createElement("div")
                 div_order_price.setAttribute("class", "order_price")
@@ -249,21 +254,22 @@
 
                 document.querySelector("#orders_div").append(div_order_items)
 
+                // address and mobile number code using active user
+                let mobile_number = document.getElementById("mobile_number")
+                mobile_number.innerText = e.mobile_number
+
+                // ADDRESS
+                let address = document.getElementById("address")
+                address.innerText = e.address + ", " + e.state + ", " + e.country + ", " + e.zip_code + "."
 
             }
-            
+
 
         })
 
-        // address and mobile number code using active user
         let active_user = JSON.parse(localStorage.getItem("active_user"))
-        
-        let mobile_number = document.getElementById("mobile_number")
-        mobile_number.innerText = active_user.mobile_number
 
-        // ADDRESS
-        let address = document.getElementById("address")
-        address.innerText = active_user.address + ", " + active_user.state + ", " + active_user.country + ", " + active_user.zip_code + "."
+
 
 
 

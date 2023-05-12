@@ -35,9 +35,22 @@
             <br>
 
             <ul>
-                <li id="btn_profile" class="active">Profile</li>
-                <li id="btn_order" class="active">Orders</li>
-                <li id="btn_wishlist" class="active">Wishlist</li>
+                <a href="profile.html?id=profile">
+                    <li id="btn_profile" class="active">
+                        Profile
+                    </li>
+                </a>
+                <a href="profile.html?id=orders">
+                    <li id="btn_order" class="active">
+                        Orders
+                    </li>
+                </a>
+
+                <a href="profile.html?id=wishlist">
+                    <li id="btn_wishlist" class="active">
+                        Wishlist
+                    </li>
+                </a>
                 <!-- <li id="btn_payment" class="active">Payment</li> -->
             </ul>
 
@@ -126,7 +139,7 @@
         <div class="details order_details" id="order_details">
 
 
-            
+
 
 
             <div class="pages_align">
@@ -142,11 +155,11 @@
             <div class="silder_fles">
                 <h4 id="product_count"></h4>
 
-                <div>
-                    <p id="silder_left"><i class="fa-solid fa-caret-left"></i></p>
-                    <p>1</p>
-                    <p id="silder_right"><i class="fa-solid fa-caret-right"></i></p>
-                </div>
+                <!-- <div> -->
+                    <!-- <p id="silder_left"><i class="fa-solid fa-caret-left"></i></p> -->
+                    <!-- <p id="silder_point">1</p> -->
+                    <!-- <p id="silder_right"><i class="fa-solid fa-caret-right"></i></p> -->
+                <!-- </div> -->
 
             </div>
 
@@ -250,9 +263,9 @@
             <div class="limit">
                 <p id="wl_total_items"></p>
                 <div id="slider">
-                    <p id="silder_left"><i class="fa-solid fa-caret-left"></i></p>
+                    <p><i class="fa-solid fa-caret-left"></i></p>
                     <p>1</p>
-                    <p id="silder_right"><i class="fa-solid fa-caret-right"></i></p>
+                    <p><i class="fa-solid fa-caret-right"></i></p>
                 </div>
             </div>
 
@@ -362,7 +375,7 @@
 
 
 
-        // Update Profile codes
+        // Update Profile Details codes
 
         let form = document.getElementById("form")
         form.addEventListener("submit", function () {
@@ -675,10 +688,11 @@
 
         */
 
+        
+
+        // Order Details Codes
         let orders = JSON.parse(localStorage.getItem("orders")) ?? []
-
         let items_count = 0;
-
         orders.find(el => {
 
             // for(let i=orders.length; i<orders.length-4; i++){
@@ -688,7 +702,6 @@
 
                 // items count
                 items_count++
-
 
                 // order page div alignment
                 let div;
@@ -702,9 +715,10 @@
 
 
                 div = document.createElement("div")
+                div.setAttribute("class", "product")
                 div.addEventListener("click", function () {
 
-                   window.location.href = "order_tracker.html?id=" + el.order_id
+                    window.location.href = "order_tracker.html?id=" + el.order_id
 
                 })
 
@@ -744,6 +758,8 @@
                 document.querySelector(".order_list").append(div)
 
 
+
+                
             }
 
             // }
@@ -787,6 +803,73 @@
 
 
         }
+
+
+        // // silder Count (+ & -)
+        // let point = 1;
+
+        // let silder_right = document.querySelector("#silder_right")
+        // silder_right.addEventListener("click", function () {
+
+        //     point++
+
+        //     document.querySelector("#silder_point").innerText = point;
+
+        //     silder()
+
+
+        // })
+
+
+        // let silder_left = document.querySelector("#silder_left")
+        // silder_left.addEventListener("click", function () {
+
+        //     if (point > 1) {
+        //         point--;
+        //         document.querySelector("#silder_point").innerText = point;
+        //     }
+
+
+        // })
+
+        // console.log(silder_product)
+
+        // function silder() {
+
+        //     let arr = silder_product
+
+        //     // 3 Products Array
+        //     let new_arr = []
+
+        //     let num = point;
+        //     let limit = 3;
+
+        //     let now = num * limit
+
+        //     for (let i = arr.length-1; i >= 0; i--) {
+
+        //         let str = i + (now - limit)
+
+        //         if (i >= arr.length - now) {
+        //             new_arr.push(arr[i])
+        //         }
+
+        //     }
+
+        //         console.log(new_arr)
+
+
+        //     for (let j = new_arr.length-1; j >= new_arr.length - 3; j--) {
+
+
+                
+
+        //         // document.querySelector(".product").style.display = "flex"
+
+        //     }
+
+        // }
+        // silder()
 
 
 

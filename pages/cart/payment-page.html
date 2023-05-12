@@ -542,7 +542,7 @@
 
                     const items = product["products"]
 
-                    storeName = product["title"]
+                    // storeName = product["title"]
 
                     // console.log(items)
 
@@ -556,6 +556,7 @@
 
 
                                 if (item["value"] == paramsId) {
+                                    storeName = product.title
                                     itemObj = item
                                     return true;
                                 }
@@ -772,6 +773,13 @@
                 obj.title = itemObj.title
                 obj.quantity = 1;
                 obj.price = itemObj.price
+                
+                // user address
+                obj.address = active_user.address
+                obj.country = active_user.country
+                obj.state = active_user.state
+                obj.zip_code = active_user.zip_code
+                obj.mobile_number = active_user.mobile_number
 
 
 
@@ -801,6 +809,13 @@
                         obj.title = el.title
                         obj.quantity = el.quantity
                         obj.price = el.price
+
+                        // user address
+                        obj.address = active_user.address
+                        obj.country = active_user.country
+                        obj.state = active_user.state
+                        obj.zip_code = active_user.zip_code
+                        obj.mobile_number = active_user.mobile_number
 
                         orders.push(obj)
                         localStorage.setItem("orders", JSON.stringify(orders))

@@ -290,22 +290,49 @@ select:invalid{
 } 
 
 .order_list{
-    overflow: hidden;
-    overflow-y: scroll;
+    height: 500px;
+    /* overflow: auto; */
     display: flex;
     flex-direction: column-reverse;
+    justify-content: start;
 }
 .order_list::-webkit-scrollbar {
-    display: none;
+    /* display: none; */
 }
 
-.order_list div{
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #b2b2b2; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+.product{
+    display: flex;
     height: 120px;
     background-color: white;
-    display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 20px;
+}
+
+.order_list div{
+    
+    
 }
 
 .order_product .product_img {

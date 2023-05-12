@@ -5,13 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Style -->
     <link rel="stylesheet" href="../../../assets/css/store/product/nike.css">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap"
-        rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap" -->
+        <!-- rel="stylesheet"> -->
+
+    <!-- Title -->
     <title>SpartansMT</title>
+
+    <!-- Google icon Fontawesome -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Title icon src -->
     <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/image/home/logo icon.png">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <!-- icon link -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous"></script> -->
+
         
 </head>
 
@@ -1943,7 +1956,7 @@
 
             let newdiv = document.createElement("div")
             newdiv.setAttribute("class", "wishlist")
-            newdiv.setAttribute("value", i)
+            // newdiv.setAttribute("value", i)
 
             let div = document.createElement("div")
             div.setAttribute("class", "wishlist_icon")
@@ -2079,17 +2092,19 @@
                             wishList.splice(j,1);
 
                             localStorage.setItem("wishList", JSON.stringify(wishList))
+                            // icon.setAttribute("src", "../../../assets/image/stores/heart.png")
+
                         }
 
                     }
 
-                    icon_link = "../../../assets/image/stores/heart_black.png"
+                    location.reload(1)
 
-                    alert("Removed From Wishlist")
+                    // alert("Removed From Wishlist")
                 }
                 else{
 
-                    icon_link = "../../../assets/image/stores/heart.png"
+                    // icon.setAttribute("src", "../../../assets/image/stores/heart_black.png")
 
                     product["user_email"] = user["user_email"]
 
@@ -2097,7 +2112,8 @@
 
                     localStorage.setItem("wishList", JSON.stringify(wishList))
 
-                    alert("Added From WishList")
+                    // alert("Added From WishList")
+                    location.reload(1)
 
                 }
 
@@ -2105,36 +2121,52 @@
             })
 
 
+            // // Wishlist Icon Visible code
+            let wishList = JSON.parse(localStorage.getItem("wishList")) ?? [];
+            let active_user = JSON.parse(localStorage.getItem("active_user"))
+            let productTitle = store["products"][i]["title"]
+            let product = store["products"][i]
 
+            wishList.forEach(element => {
+               
+                if(element.user_email == active_user.user_email && productTitle == element.title){
+                  
+                    icon.setAttribute("src", "../../../assets/image/stores/heart_black.png")
+                }
+                // else{
+                //     icon.setAttribute("src", "../../../assets/image/stores/heart.png")
+                // }
+               
 
+            })
             
         }
 
 
 
-        // Wishlist Icon Visible code
-            let icon_link;
+        // // Wishlist Icon Visible code
+        //     let icon_link;
 
-            let user = JSON.parse(localStorage.getItem("active_user"))
+        //     let user = JSON.parse(localStorage.getItem("active_user"))
 
-            let wishList = JSON.parse(localStorage.getItem("wishList"))
+        //     let wishList = JSON.parse(localStorage.getItem("wishList"))
             
-            let icons = document.querySelectorAll(".icon").values
-            let title = document.querySelectorAll(".product_title").values
+        //     let icons = document.querySelectorAll(".icon").values
+        //     let title = document.querySelectorAll(".product_title").values
 
-            for(let i=0; i<icons.length; i++){
+        //     for(let i=0; i<icons.length; i++){
 
-                if(wishList[i].title == title[i].innerText && user.user_email == wishList[i].user_email){
+        //         if(wishList[i].title == title[i].innerText && user.user_email == wishList[i].user_email){
 
-                    icons[i].setAttribute("src", "../../../assets/image/stores/heart_black.png")
+        //             icons[i].setAttribute("src", "../../../assets/image/stores/heart_black.png")
 
-                }
-                else{
-                    icons[i].setAttribute("src", "../../../assets/image/stores/heart.png")
+        //         }
+        //         else{
+        //             icons[i].setAttribute("src", "../../../assets/image/stores/heart.png")
                     
-                }
+        //         }
 
-            }
+            // }
 
                 
                 
