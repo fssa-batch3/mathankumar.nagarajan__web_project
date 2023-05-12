@@ -135,7 +135,7 @@ let stores = [
 
 
 if(localStorage.getItem("stores")){
-    return;
+    
 }
 else{
     localStorage.setItem("stores", JSON.stringify(stores))
