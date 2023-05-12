@@ -180,7 +180,7 @@ for (let i = 0; i < 10; i++) {
 
     h3_storenames = document.createElement("h3");
     h3_storenames.setAttribute("class", "storenames");
-    h3_storenames.innerText = stores[i].name;
+    h3_storenames.innerText = stores[i].title;
     div.append(h3_storenames);
 
     p_storecategory = document.createElement("p");
