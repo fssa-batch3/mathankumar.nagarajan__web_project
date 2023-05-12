@@ -11,7 +11,7 @@
     <title>SpartansMT</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/image/home/logo icon.png" alt="logo icon">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
 
 </head>
 
@@ -31,31 +31,7 @@
 
     <header>
 
-
-
     </header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <form id="form">
 
@@ -87,29 +63,22 @@
 
         <button id="edit_btn">Edit Store</button>
 
-
-
     </form>
 
-
-
-    <script>
-
-
-        let edit_btn = document.getElementById("edit_btn")
+    <script>        const edit_btn = document.getElementById("edit_btn")
         edit_btn.addEventListener("click", el => {
             el.preventDefault()
-            let storesDetails = JSON.parse(localStorage.getItem("stores"))
+            const storesDetails = JSON.parse(localStorage.getItem("stores"))
 
-            const value = document.getElementById("value").value
+            const {value} = document.getElementById("value")
 
             storesDetails.find(e => {
 
-                if (e["value"] == value) {
+                if (e.value == value) {
 
-                    document.getElementById("image").value = e["image"]
-                    document.getElementById("title").value = e["title"]
-                    document.getElementById("category").value = e["category"]
+                    document.getElementById("image").value = e.image
+                    document.getElementById("title").value = e.title
+                    document.getElementById("category").value = e.category
 
                     document.getElementById("edit_btn").style.visibility = 'hidden';
                     document.getElementById("update_btn").style.visibility = 'visible';
@@ -119,55 +88,46 @@
             });
         })
 
-
-
-
-        let add_store_btn = document.getElementById("add_store_btn")
+        const add_store_btn = document.getElementById("add_store_btn")
         add_store_btn.addEventListener("click", el => {
 
             const id = Date.now();  // generate Primary Key
 
-            let image = document.getElementById("image").value
-            let title = document.getElementById("title").value
-            let category = document.getElementById("category").value
-            let value = document.getElementById("value").value
-            let products = [];
-
+            const image = document.getElementById("image").value
+            const title = document.getElementById("title").value
+            const category = document.getElementById("category").value
+            const {value} = document.getElementById("value")
+            const products = [];
 
             if (image != "" && title != "" && category != "" && value != "") {
 
                 // el.preventDefault();
-                let storesDetails = JSON.parse(localStorage.getItem("stores")) ?? [];
-                let value = document.getElementById("value");
+                const storesDetails = JSON.parse(localStorage.getItem("stores")) ?? [];
+                const value = document.getElementById("value");
 
-                let image = document.getElementById("image").value
-                let title = document.getElementById("title").value
-                let category = document.getElementById("category").value
-
+                const image = document.getElementById("image").value
+                const title = document.getElementById("title").value
+                const category = document.getElementById("category").value
 
                 let storede = 0;
                 // console.log(storesDetails)
                 storesDetails.find(e => {
-                    if (e["value"] == value.value) {
-                        // console.log(e["value"])
-                        // console.log(value.value)
-                        return storede = 1;
-                    }
-                    else {
-                        return storede = 0;
-                    }
+            if (e.value == value.value) {
+                // console.log(e["value"])
+                // console.log(value.value)
+                return storede = 1;
+            }
+            
+                return storede = 0;
 
-                });
+        });
 
                 if (storede == 1) {
                     alert("already exists")
                 }
                 else {
 
-
-
-                    let store = {};
-
+                    const store = {};
 
                     // let id;
 
@@ -175,15 +135,14 @@
                     //     id = storesDetails[i] + 1;
                     // }
 
-                    let value = document.getElementById("value").value;
+                    const {value} = document.getElementById("value");
 
-                    store["image"] = image;
-                    store["title"] = title;
-                    store["category"] = category;
-                    store["value"] = value;
-                    store["id"] = id;
-                    store["products"] = products;
-
+                    store.image = image;
+                    store.title = title;
+                    store.category = category;
+                    store.value = value;
+                    store.id = id;
+                    store.products = products;
 
                     storesDetails.push(store);
 
@@ -197,25 +156,21 @@
 
         })
 
-
-
-
-
-        let update_btn = document.getElementById("update_btn")
+        const update_btn = document.getElementById("update_btn")
         update_btn.addEventListener("click", el => {
 
-            let storesDetails = JSON.parse(localStorage.getItem("stores"))
+            const storesDetails = JSON.parse(localStorage.getItem("stores"))
 
-            const value = document.getElementById("value").value
+            const {value} = document.getElementById("value")
 
             storesDetails.forEach(e => {
 
-                if (value === e["value"]) {
+                if (value === e.value) {
 
-                    e["image"] = document.getElementById("image").value
-                    e["title"] = document.getElementById("title").value
-                    e["category"] = document.getElementById("category").value
-                    e["value"] = document.getElementById("value").value
+                    e.image = document.getElementById("image").value
+                    e.title = document.getElementById("title").value
+                    e.category = document.getElementById("category").value
+                    e.value = document.getElementById("value").value
 
                     localStorage.setItem("stores", JSON.stringify(storesDetails))
 
@@ -225,19 +180,16 @@
 
         })
 
-
-
-
-        let delete_btn = document.getElementById("delete_btn")
+        const delete_btn = document.getElementById("delete_btn")
         delete_btn.addEventListener("click", el => {
 
-            let storesDetails = JSON.parse(localStorage.getItem("stores"))
+            const storesDetails = JSON.parse(localStorage.getItem("stores"))
 
-            const value = document.getElementById("value").value
+            const {value} = document.getElementById("value")
 
             for (let i = 0; i < storesDetails.length; i++) {
 
-                if (value === storesDetails[i]["value"]) {
+                if (value === storesDetails[i].value) {
 
                     storesDetails.splice(i, 1)
 
@@ -249,11 +201,7 @@
             }
 
         });
-
-
-
     </script>
-
 
 </body>
 

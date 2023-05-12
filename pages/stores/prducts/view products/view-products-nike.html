@@ -11,24 +11,35 @@
     <title>SpartansMT</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../../../../assets/image/home/logo icon.png">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
 </head>
 
 <body>
     <nav id="#homepage">
-        <img id="logo" src="../../../../assets/image/home/logo1.png" alt="logo" />
+        <img id="logo" src="../../../../assets/image/home/logo1.png" alt="logo">
         <ul>
-            <li><a href="../../../../pages/home/home.html">Home</a></li>
-            <li><a href="../../../../pages/stores/stores.html">Stores</a></li>
-            <li><a href="../../../offer/offer.html">Offers</a></li>
-            <li><a href="../../../entertainment/entertainment.html">Entertainment</a></li>
-            <li><a href="../../../foodcourt/foodcourt.html">Foodcourt</a></li>
-            <li><a href="../../../services/services.html">Services</a></li>
-            <li><a href="../../../cart/add-to- cart.html">
+            <li>
+<a href="../../../../pages/home/home.html">Home</a>
+</li>
+            <li>
+<a href="../../../../pages/stores/stores.html">Stores</a>
+</li>
+            <li>
+<a href="../../../offer/offer.html">Offers</a>
+</li>
+            <li>
+<a href="../../../entertainment/entertainment.html">Entertainment</a>
+</li>
+            <li>
+<a href="../../../foodcourt/foodcourt.html">Foodcourt</a>
+</li>
+            <li>
+<a href="../../../services/services.html">Services</a>
+</li>
+            <li>
+<a href="../../../cart/add-to- cart.html">
                 <i id="cart_icon" class="material-symbols-outlined">shopping_cart</i>
             </a></li>
-            
-
 
                         <p id="cart_count"></p>
 
@@ -61,7 +72,6 @@
                                 </a>
                             </div>
                         </li>
-
 
         </ul>
     </nav>
@@ -252,15 +262,16 @@
 
     </div>
 
-
     <!-- Footer starting -->
 
     <a class="back-to-top" href="#">BACK TO TOP</a>
     <footer>
-        <img id="footer-logo" src="../../../../assets/image/home/logo.png" alt="logo" />
+        <img id="footer-logo" src="../../../../assets/image/home/logo.png" alt="logo">
         <div class="footer">
             <div>
-                <h3>Thanks For Visiting <br>Our Website</h3>
+                <h3>
+Thanks For Visiting <br>Our Website
+</h3>
             </div>
             <div>
                 <a href="#" class="footer-h3">
@@ -284,30 +295,26 @@
 
             </div>
             <div>
-                <h3>Signup Offers & Events<br> Updates</h3>
-                <label><input id="footer-email" name="email" type="email" placeholder="hello@gmail.com"
+                <h3>
+Signup Offers & Events<br> Updates
+</h3>
+                <label>
+<input id="footer-email" name="email" type="email" placeholder="hello@gmail.com"
                         required></label>
                 <button type="submit" id="footer-button">➡</button>
             </div>
             <div>
                 <h3>Follow Us</h3>
-                <img class="footer-icon" src="../../../../assets/image/home/facebook.png" alt="facebook icon" />
-                <img class="footer-icon" src="../../../../assets/image/home/twitter-sign.png" alt="twitter icon" />
-                <img class="footer-icon" src="../../../../assets/image/home/instagram.png" alt="instagram icon" />
-                <img class="footer-icon" src="../../../../assets/image/home/youtube.png" alt="youtube icon" />
+                <img class="footer-icon" src="../../../../assets/image/home/facebook.png" alt="facebook icon">
+                <img class="footer-icon" src="../../../../assets/image/home/twitter-sign.png" alt="twitter icon">
+                <img class="footer-icon" src="../../../../assets/image/home/instagram.png" alt="instagram icon">
+                <img class="footer-icon" src="../../../../assets/image/home/youtube.png" alt="youtube icon">
             </div>
         </div>
 
     </footer>
 
-
-    <script>
-
-
-
-
-
-        // const storess = [
+    <script>        // const storess = [
         //     {
         //         value: "0",
         //         name: "Nike",
@@ -1653,7 +1660,6 @@
         //             },
         //         ],
 
-
         //     },
 
         //     {
@@ -2237,49 +2243,41 @@
 
         // ]
 
-
-
-
-        let storess = JSON.parse(localStorage.getItem("stores"))
-
+        const storess = JSON.parse(localStorage.getItem("stores"))
 
         const url = window.location.search;                // ?name=Arun
         const urlParams = new URLSearchParams(url);        // converting string into key value pair
         const paramsId = parseInt(urlParams.get("id"))             // return value of the "name" key
         console.log(paramsId);
-        
 
         let storeValue;
         let itemObj = {};
 
         const store = storess.find(
-            function (product) {
+            (product) => {
 
-                const items = product["products"]
+                const items = product.products
 
-                storeValue = product["value"]
+                storeValue = product.value
 
                 // console.log(items)
 
                 if (items) {
                     items.find(
 
+                        (item) => {
 
-                        function (item) {
+                    // console.log(item)
 
-                            // console.log(item)
+                    if (item.value == paramsId) {
+                        itemObj = item
+                        return true;
+                    }
+                    
+                        // alert("isnt match")
+                        return false;
 
-
-                            if (item["value"] == paramsId) {
-                                itemObj = item
-                                return true;
-                            }
-                            else {
-                                // alert("isnt match")
-                                return false;
-                            }
-
-                        }
+                }
                     )
                 }
 
@@ -2289,17 +2287,6 @@
         console.log(itemObj);
 
         console.log(storeValue);
-
-
-
-
-
-
-
-
-
-
-
 
         let div_product_img;
         let product_image;
@@ -2322,16 +2309,12 @@
         let a_buy_now;
         let h6_buy_now;
 
-
         div_product_img = document.createElement("div")
         div_product_img.setAttribute("class", "product_div")
 
-
-
-
         product_image = document.createElement("img");
         product_image.setAttribute("class", "product-img")
-        product_image.setAttribute("src", itemObj["image"])
+        product_image.setAttribute("src", itemObj.image)
         // product_image.setAttribute("alt", itemObj["img"]["alt"]);
         div_product_img.append(product_image)
 
@@ -2341,7 +2324,7 @@
         // <h1>Nike Mens Air Zoom Vomero 15 Running Shoe</h1>
         h1_title = document.createElement("h1");
         h1_title.setAttribute("class", "title")
-        h1_title.innerText = itemObj["title"];
+        h1_title.innerText = itemObj.title;
         div.prepend(h1_title)
 
         // <p><span class="price-color"> special Price</span></p>
@@ -2358,19 +2341,19 @@
         // <h6 class="rate">&#8377;6,000</h6>
         h6_rate = document.createElement("h6")
         h6_rate.setAttribute("class", "rate")
-        h6_rate.innerText = "₹" + itemObj["price"];
+        h6_rate.innerText = `₹${  itemObj.price}`;
         div_column.prepend(h6_rate)
 
         // <p class="line-through">&#8377;10,000</p>
         p_line_through = document.createElement("p")
         p_line_through.setAttribute("class", "line-through");
-        p_line_through.innerText = "₹" + itemObj["full_price"];
+        p_line_through.innerText = `₹${  itemObj.full_price}`;
         div_column.append(p_line_through);
 
         // <p><b><span class="green">(40% off)</span></b></p>
         p_green = document.createElement("p")
         p_green.setAttribute("class", "green")
-        p_green.innerText = "(" + itemObj["discount"] + "%)";
+        p_green.innerText = `(${  itemObj.discount  }%)`;
         div_column.append(p_green);
 
         // <h4>Sizes</h4>
@@ -2383,7 +2366,7 @@
         div_size.setAttribute("class", "size");
         div.append(div_size);
 
-        let a = [7, 8, 9, 10];
+        const a = [7, 8, 9, 10];
         for (let i = 0; i < 4; i++) {
             h5 = document.createElement("h5");
             h5.innerText = a[i];
@@ -2406,28 +2389,28 @@
         // <li><b>Bank Offer:</b> 10% instant discount on SBI Credit Card, up to ₹750 on orders of ₹2,500 and above <a href="#">T&C</a></li>
         // <li><b>Bank Offer:</b> Flat ₹100 Instant Cashback on Paytm Wallet. Min Order Value ₹1000. <br>Valid once per Paytm account <a href="#">T&C</a></li>
 
-        let b = [
-            {
-                offer: "Special Price:",
-                coupon: " Get extra 3% off (price inclusive of cashback/coupon) T&C",
-            },
-            {
-                offer: "Bank Offer:",
-                coupon: " 10% instant discount on SBI Credit Card, up to ₹750 on orders of ₹2,500 and above T&C",
-            },
-            {
-                offer: "Bank Offer:",
-                coupon: " Flat ₹100 Instant Cashback on Paytm Wallet. Min Order Value ₹1000. Valid once per Paytm account T&C",
-            }
-        ]
+        const b = [
+    {
+        offer: "Special Price:",
+        coupon: " Get extra 3% off (price inclusive of cashback/coupon) T&C",
+    },
+    {
+        offer: "Bank Offer:",
+        coupon: " 10% instant discount on SBI Credit Card, up to ₹750 on orders of ₹2,500 and above T&C",
+    },
+    {
+        offer: "Bank Offer:",
+        coupon: " Flat ₹100 Instant Cashback on Paytm Wallet. Min Order Value ₹1000. Valid once per Paytm account T&C",
+    }
+]
 
         for (let i = 0; i < 3; i++) {
             li = document.createElement("li");
-            li.innerText = b[i]["coupon"];
+            li.innerText = b[i].coupon;
             ol.append(li);
 
-            let bold = document.createElement("b");
-            bold.innerText = b[i]["offer"]
+            const bold = document.createElement("b");
+            bold.innerText = b[i].offer
             li.prepend(bold);
         }
 
@@ -2451,7 +2434,7 @@
         div_button.prepend(a_add_to_cart)
 
         a_buy_no1 = document.createElement("a");
-        a_buy_no1.setAttribute("href", "../../../cart/payment-page.html?id=" + paramsId)
+        a_buy_no1.setAttribute("href", `../../../cart/payment-page.html?id=${  paramsId}`)
         div_button.append(a_buy_no1)
 
         // h6_buy_now = document.createElement("h6")
@@ -2474,7 +2457,7 @@
         h2.innerText = "Customer Reviews:";
         div.prepend(h2)
 
-        let div_star_center_tag = document.createElement("div");
+        const div_star_center_tag = document.createElement("div");
         div_star_center_tag.setAttribute("class", "star-center-tag")
         div.append(div_star_center_tag)
 
@@ -2484,92 +2467,89 @@
         img_star_rating.setAttribute("alt", "star rating img")
         div_star_center_tag.prepend(img_star_rating)
 
-        let h3 = document.createElement("h3")
-        h3.innerText = itemObj["rating"];
+        const h3 = document.createElement("h3")
+        h3.innerText = itemObj.rating;
         div_star_center_tag.append(h3)
 
         h4 = document.createElement("h4");
-        h4.innerText = "(" + itemObj["reviews"] + ")";
+        h4.innerText = `(${  itemObj.reviews  })`;
         div_star_center_tag.append(h4)
 
         h2 = document.createElement("h2")
         h2.innerText = "Product Details :-";
         div.append(h2)
 
-
         ol = document.createElement("ol")
         div.append(ol)
 
-        let c = [
-            {
-                offer: "Dimensions :",
-                coupon: " 26.2 x 8.5 x 9 cm; 500 Grams",
-            },
-            {
-                offer: "Date First Available  :",
-                coupon: " 31 May 2022",
-            },
-            {
-                offer: "Manufacturer :",
-                coupon: "  Nike",
-            },
-            {
-                offer: "Manufacturer :",
-                coupon: "Nike India Pvt Ltd C V Raman Nagar",
-            },
-            {
-                offer: "Place:",
-                coupon: "Bangalore",
-            },
-            {
-                offer: "Packer :",
-                coupon: " Nike India Pvt Ltd C V Raman Nagar.",
-            },
-            {
-                offer: "Importer :",
-                coupon: " Nike India Pvt Ltd C V Raman Nagar.",
-            },
-            {
-                offer: "Item Weight  : ",
-                coupon: " g",
-            },
-            {
-                offer: "Generic Name  : ",
-                coupon: " Running Shoe",
-            },
-        ]
+        const c = [
+    {
+        offer: "Dimensions :",
+        coupon: " 26.2 x 8.5 x 9 cm; 500 Grams",
+    },
+    {
+        offer: "Date First Available  :",
+        coupon: " 31 May 2022",
+    },
+    {
+        offer: "Manufacturer :",
+        coupon: "  Nike",
+    },
+    {
+        offer: "Manufacturer :",
+        coupon: "Nike India Pvt Ltd C V Raman Nagar",
+    },
+    {
+        offer: "Place:",
+        coupon: "Bangalore",
+    },
+    {
+        offer: "Packer :",
+        coupon: " Nike India Pvt Ltd C V Raman Nagar.",
+    },
+    {
+        offer: "Importer :",
+        coupon: " Nike India Pvt Ltd C V Raman Nagar.",
+    },
+    {
+        offer: "Item Weight  : ",
+        coupon: " g",
+    },
+    {
+        offer: "Generic Name  : ",
+        coupon: " Running Shoe",
+    },
+]
 
         for (let j = 0; j < 9; j++) {
             li = document.createElement("li");
-            li.innerText = c[j]["coupon"];
+            li.innerText = c[j].coupon;
             ol.append(li);
 
             bold = document.createElement("b");
-            bold.innerText = c[j]["offer"]
+            bold.innerText = c[j].offer
             li.prepend(bold);
         }
 
         document.querySelector("div.details").prepend(div);
 
-
-        let div_four_offer_box = document.createElement("div");
+        const div_four_offer_box = document.createElement("div");
         div_four_offer_box.setAttribute("class", "four-offer-box")
         // console.log(div_four_offer_box)
 
         for (let i = 0; i < 2; i++) {
 
-
-            let div_side_offer = document.createElement("div")
+            const div_side_offer = document.createElement("div")
             div_side_offer.setAttribute("class", "side-offers");
             div_four_offer_box.prepend(div_side_offer)
 
             for (let j = 0; j < 2; j++) {
 
-                let div_offer_items = document.createElement("div")
+                const div_offer_items = document.createElement("div")
                 div_offer_items.setAttribute("class", "offer-items")
                 div_side_offer.prepend(div_offer_items)
 
-                let div_offer_img = document.createElement("img")
+                const div_offer_img = document.createElement("img")
                 div_offer_img.setAttribute("class", "offer-img");
                 div_offer_img.setAttribute("src", "../../../../assets/image/stores/items/nike12.jpg")
                 div_offer_img.setAttribute("alt", "products images");
@@ -2582,7 +2562,7 @@
                 h2.innerText = "Save 50%";
                 div.prepend(h2)
 
-                let p = document.createElement("p")
+                const p = document.createElement("p")
                 p.innerText = "Nike Mens Air Zoom Vomero 15 Running Shoe";
                 div.append(p);
 
@@ -2613,7 +2593,7 @@
                 p_green = document.createElement("p")
                 div_column.append(p_green)
 
-                let spen = document.createElement("spen")
+                const spen = document.createElement("spen")
                 spen.setAttribute("class", "green")
                 spen.innerText = "(50% off)";
                 p_green.prepend(spen)
@@ -2621,7 +2601,6 @@
             }
         }
         document.querySelector("div.details").append(div_four_offer_box)
-
 
         // scroll box container starting
 
@@ -2632,9 +2611,6 @@
         let p_storecategory;
         let p_viewmore;
         let a_items;
-
-
-
 
         const stores = [
             {
@@ -2699,13 +2675,11 @@
             }
         ]
 
-
-
         for (let i = 0; i <= 9; i++) {
             // console.log("hello world")
 
             a_items = document.createElement("a");              // create tage
-            a_items.setAttribute("href", "../../../../pages/stores/prducts/nike.html?value=" + stores[i]["value"]);       // adding class or same attribute
+            a_items.setAttribute("href", `../../../../pages/stores/prducts/nike.html?value=${  stores[i].value}`);       // adding class or same attribute
             // console.log(a_items);                               // view code
 
             single_box = document.createElement("div");
@@ -2713,7 +2687,7 @@
             a_items.append(single_box)                           // placeing place 
 
             img_size = document.createElement("img");       // creating img tag
-            img_size.setAttribute("src", stores[i]["image"]);  // add some attribute
+            img_size.setAttribute("src", stores[i].image);  // add some attribute
             img_size.setAttribute("alt", "Store Logo");
             img_size.setAttribute("class", "img-size");
             single_box.prepend(img_size);
@@ -2722,11 +2696,11 @@
             single_box.append(div_home);
 
             h2_storenames = document.createElement("h2");
-            h2_storenames.innerText = stores[i]["name"];
+            h2_storenames.innerText = stores[i].name;
             div_home.prepend(h2_storenames);
 
             p_storecategory = document.createElement("p");
-            p_storecategory.innerText = stores[i]["category"];
+            p_storecategory.innerText = stores[i].category;
             div_home.append(p_storecategory);
 
             p_viewmore = document.createElement("p");
@@ -2738,50 +2712,43 @@
 
         }
 
-
-
-
-        let btn_cart = document.getElementById("btn_cart")
+        const btn_cart = document.getElementById("btn_cart")
         btn_cart.addEventListener("click", el => {
 
-            let user = JSON.parse(localStorage.getItem("active_user"))
+            const user = JSON.parse(localStorage.getItem("active_user"))
 
-
-            let addCart = JSON.parse(localStorage.getItem("Cart")) ?? [];
+            const addCart = JSON.parse(localStorage.getItem("Cart")) ?? [];
 
             let check;
 
             addCart.find(e => {
 
-                if (e["value"] == itemObj["value"] && e["user_email"] == user["user_email"]) {
-                    return check = 1;
-                }
-                else {
-                    return check = 0;
-                }
+        if (e.value == itemObj.value && e.user_email == user.user_email) {
+            return check = 1;
+        }
+        
+            return check = 0;
 
-            })
-
+    })
 
             if (check == 1) {
                 alert("already added")
             }
             else {
 
-                let item = {};
+                const item = {};
 
-                item["title"] = itemObj["title"];
-                item["image"] = itemObj["image"];
-                item["price"] = itemObj["price"];
-                item["full_price"] = itemObj["full_price"];
-                item["discount"] = itemObj["discount"];
-                item["rating"] = itemObj["rating"];
-                item["reviews"] = itemObj["reviews"];
-                item["value"] = itemObj["value"];
-                item["user_email"] = user["user_email"];
-                item["store_value"] = storeValue;
-                item["quantity"] = 1;
-
+                item.title = itemObj.title;
+                item.image = itemObj.image;
+                item.price = itemObj.price;
+                item.full_price = itemObj.full_price;
+                item.discount = itemObj.discount;
+                item.rating = itemObj.rating;
+                item.reviews = itemObj.reviews;
+                item.value = itemObj.value;
+                item.user_email = user.user_email;
+                item.store_value = storeValue;
+                item.quantity = 1;
 
                 addCart.push(item);
                 localStorage.setItem("Cart", JSON.stringify(addCart));
@@ -2792,17 +2759,12 @@
 
         })
 
-
-
-
         // cart count for nav bar
 
-
-        let Cart = JSON.parse(localStorage.getItem("Cart"))
-        let active_user = JSON.parse(localStorage.getItem("active_user"))
-        let cart_count = document.getElementById("cart_count")
+        const Cart = JSON.parse(localStorage.getItem("Cart"))
+        const active_user = JSON.parse(localStorage.getItem("active_user"))
+        const cart_count = document.getElementById("cart_count")
         let count = 0;
-        
 
         Cart.find(e=>{
             if(e.user_email == active_user.user_email){
@@ -2812,14 +2774,7 @@
         console.log(count)
 
         cart_count.innerText = count
-
-
-
-
-
-
     </script>
-
 
 </body>
 
