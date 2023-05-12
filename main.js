@@ -1,4 +1,4 @@
-const stores = [
+let stores = [
   {
     image: "https://iili.io/HWXkdkx.png",
     title: "Nike",
