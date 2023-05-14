@@ -25,10 +25,10 @@
         </div>
         <ul>
             <a href="create_store.html">
-                <li>Store Form</li>
+                <menu>Store Form</menu>
             </a>
             <a href="create_products.html">
-                <li>Product Form</li>
+                <menu>Product Form</menu>
             </a>
         </ul>
     </nav>
@@ -88,7 +88,7 @@
 
             storesDetails.find(e => {
 
-                if (e.value == value) {
+                if (e.value === value) {
 
                     document.getElementById("image").value = e.image
                     document.getElementById("title").value = e.title
@@ -99,7 +99,7 @@
                     document.getElementById("update_btn").style.visibility = 'visible';
 
                 }
-
+                return e;
             });
         })
 
@@ -115,31 +115,31 @@
             const { value } = document.getElementById("value")
             const products = [];
 
-            if (image != "" && title != "" && category != "" && value != "" && banner != "" ) {
+            if (image !== "" && title !== "" && category !== "" && value !== "" && banner !== "" ) {
 
                 // el.preventDefault();
                 const storesDetails = JSON.parse(localStorage.getItem("stores")) ?? [];
-                const value = document.getElementById("value");
+                // const value = document.getElementById("value");
 
-                const image = document.getElementById("image").value
-                const title = document.getElementById("title").value
-                const category = document.getElementById("category").value
-                const banner = document.getElementById("banner").value
+                // const image = document.getElementById("image").value
+                // const title = document.getElementById("title").value
+                // const category = document.getElementById("category").value
+                // const banner = document.getElementById("banner").value
 
                 let storede = 0;
                 // console.log(storesDetails)
                 storesDetails.find(e => {
-                    if (e.value == value.value) {
+                    if (e.value === value.value) {
                         // console.log(e["value"])
                         // console.log(value.value)
                         return storede = 1;
                     }
 
-                    return storede = 0;
-
+                    storede = 0;
+                    return e;
                 });
 
-                if (storede == 1) {
+                if (storede === 1) {
                     alert("already exists")
                 }
                 else {
@@ -152,7 +152,7 @@
                     //     id = storesDetails[i] + 1;
                     // }
 
-                    const { value } = document.getElementById("value");
+                    // const { value } = document.getElementById("value");
 
                     store.image = image;
                     store.title = title;
@@ -212,7 +212,7 @@
 
                     storesDetails.splice(i, 1)
 
-                    confirm("Your account have been deleted")
+                    alert("Your account have been deleted")
 
                     localStorage.setItem("stores", JSON.stringify(storesDetails));
 

@@ -142,9 +142,8 @@
 
     </div>
 
-    <script>        let order_id;
+    <script>    // let order_id;
         let price = 0;
-
         // get params value to match the page 
 
         const url = window.location.search;
@@ -180,32 +179,32 @@
 
                 // Order Items Div Created Codes
 
-                let div_order_items;
-                let div_order_img;
-                let img;
-                let div_order_items_details;
-                let div;
+                // let div_order_items;
+                // let div_order_img;
+                // let img;
+                // let div_order_items_details;
+                // let div;
                 let h3;
                 let p;
-                let div_order_price;
+                // let div_order_price;
 
-                div_order_items = document.createElement("div")
+                const div_order_items = document.createElement("div")
                 div_order_items.setAttribute("id", "order_items")
 
-                div_order_img = document.createElement("div")
+                const div_order_img = document.createElement("div")
                 div_order_img.setAttribute("class", "order_img")
                 div_order_items.prepend(div_order_img)
 
-                img = document.createElement("img")
+                const img = document.createElement("img")
                 img.setAttribute("src", e.image)
                 img.setAttribute("alt", "Product image")
                 div_order_img.prepend(img)
 
-                div_order_items_details = document.createElement("div")
+                const div_order_items_details = document.createElement("div")
                 div_order_items_details.setAttribute("class", "order_items_details")
                 div_order_items.append(div_order_items_details)
 
-                div = document.createElement("div")
+                const div = document.createElement("div")
                 div_order_items_details.prepend(div)
 
                 h3 = document.createElement("h3")
@@ -220,7 +219,7 @@
                 b.innerText = e.ordered_by;
                 p.append(b)
 
-                div_order_price = document.createElement("div")
+                const div_order_price = document.createElement("div")
                 div_order_price.setAttribute("class", "order_price")
                 div_order_items_details.append(div_order_price)
 
@@ -243,10 +242,10 @@
                 address.innerText = `${e.address  }, ${  e.state  }, ${  e.country  }, ${  e.zip_code  }.`
 
             }
-
+            // return e;
         })
 
-        const active_user = JSON.parse(localStorage.getItem("active_user"))
+        // const active_user = JSON.parse(localStorage.getItem("active_user"))
     </script>
 
 </body>

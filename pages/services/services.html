@@ -83,7 +83,7 @@
         <img src="../../assets/image/services/parking.jpg" alt="parking img">
 
         <div>
-            <h1>Parking Facility </h1>
+            <span class="h1">Parking Facility</span>
             <p>
 An amazing shopping mall should include enough parking space so that shoppers can <br>
                 park their vehicles with ease and convenience. Not only good parking but also good <br>
@@ -97,7 +97,7 @@ An amazing shopping mall should include enough parking space so that shoppers ca
     <div class="header">
 
         <div>
-            <h1>Clean Food Court </h1>
+            <span class="h1">Clean Food Court</span>
             <p>
 A shopping mall is not just a place to enable one to shop. Additionally, it is a spot where<br>
                 you can dine out with your family and friends. A food court is a place in a shopping mall<br>
@@ -116,7 +116,7 @@ A shopping mall is not just a place to enable one to shop. Additionally, it is a
         <img src="../../assets/image/services/buildings.jpg" alt="parking img">
 
         <div>
-            <h1>Building structures</h1>
+            <span class="h1">Building structures</span>
             <p>
 The unique architecture is an utmost fascination. Such building structures always<br>
                 attract people and tourists. When the mall's building has a unique structure, it will stand<br>
@@ -133,7 +133,7 @@ The unique architecture is an utmost fascination. Such building structures alway
     <div class="header">
 
         <div>
-            <h1>Entertainment</h1>
+            <span class="h1">Entertainment</span>
             <p>
 Let's talk about the entertainment section of the shopping mall. It is one of the most<br>
                 advanced, crowded places in the mall where every age group person can be seen.<br>
@@ -156,7 +156,7 @@ Let's talk about the entertainment section of the shopping mall. It is one of th
         <img src="../../assets/image/services/brand.png" alt="parking img">
 
         <div>
-            <h1>Local and International Brand</h1>
+            <span class="h1">Local and International Brand</span>
             <p>
 The most important reason for building a shopping mall has good stores for <b>
 clothing,<br>
@@ -236,9 +236,10 @@ Signup Offers & Events<br> Updates
         let count = 0;
 
         Cart.find(e => {
-            if (e.user_email == active_user.user_email) {
+            if (e.user_email === active_user.user_email) {
                 count++
             }
+            // return e
         })
         console.log(count)
 

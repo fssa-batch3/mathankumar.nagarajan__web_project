@@ -159,9 +159,10 @@ Signup Offers & Events<br> Updates
         let count = 0;
 
         Cart.find(e => {
-            if (e.user_email == active_user.user_email) {
+            if (e.user_email === active_user.user_email) {
                 count++
             }
+            // return e;
         })
         console.log(count)
 

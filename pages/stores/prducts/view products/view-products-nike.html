@@ -2247,14 +2247,13 @@ Signup Offers & Events<br> Updates
 
         const url = window.location.search;                // ?name=Arun
         const urlParams = new URLSearchParams(url);        // converting string into key value pair
-        const paramsId = parseInt(urlParams.get("id"))             // return value of the "name" key
+        const paramsId = urlParams.get("id")             // return value of the "name" key
         console.log(paramsId);
 
         let storeValue;
         let itemObj = {};
 
-        const store = storess.find(
-            (product) => {
+        storess.find((product) => {
 
                 const items = product.products
 
@@ -2269,7 +2268,7 @@ Signup Offers & Events<br> Updates
 
                     // console.log(item)
 
-                    if (item.value == paramsId) {
+                    if (item.value === paramsId) {
                         itemObj = item
                         return true;
                     }
@@ -2280,7 +2279,7 @@ Signup Offers & Events<br> Updates
                 }
                     )
                 }
-
+                return product;
             }
         )
         // console.log(store);
@@ -2288,31 +2287,31 @@ Signup Offers & Events<br> Updates
 
         console.log(storeValue);
 
-        let div_product_img;
-        let product_image;
+        // let div_product_img;
+        // let product_image;
         let div;
-        let h1_title;
-        let p_price_color;
+        // let h1_title;
+        // let p_price_color;
         let div_column;
         let h6_rate;
         let p_line_through;
         let p_green;
-        let h4;
-        let div_size;
+        // let h4;
+        // let div_size;
         let h5;
         let h2;
         let ol;
         let li;
-        let div_button;
-        let a_add_to_cart;
-        let h6_add_to_cart;
-        let a_buy_now;
-        let h6_buy_now;
+        // let div_button;
+        // let a_add_to_cart;
+        // let h6_add_to_cart;
+        // let a_buy_now;
+        // let h6_buy_now;
 
-        div_product_img = document.createElement("div")
+        const div_product_img = document.createElement("div")
         div_product_img.setAttribute("class", "product_div")
 
-        product_image = document.createElement("img");
+        const product_image = document.createElement("img");
         product_image.setAttribute("class", "product-img")
         product_image.setAttribute("src", itemObj.image)
         // product_image.setAttribute("alt", itemObj["img"]["alt"]);
@@ -2322,13 +2321,13 @@ Signup Offers & Events<br> Updates
         // console.log(div)
 
         // <h1>Nike Mens Air Zoom Vomero 15 Running Shoe</h1>
-        h1_title = document.createElement("h1");
+        const h1_title = document.createElement("h1");
         h1_title.setAttribute("class", "title")
         h1_title.innerText = itemObj.title;
         div.prepend(h1_title)
 
         // <p><span class="price-color"> special Price</span></p>
-        p_price_color = document.createElement("p");
+        const p_price_color = document.createElement("p");
         p_price_color.setAttribute("class", "price-color");
         p_price_color.innerText = "Special Price";
         div.append(p_price_color);
@@ -2415,7 +2414,7 @@ Signup Offers & Events<br> Updates
         }
 
         // <div class="button"></div>
-        div_button = document.createElement("div");
+        const div_button = document.createElement("div");
         div_button.setAttribute("class", "button");
         div.append(div_button);
 
@@ -2426,14 +2425,14 @@ Signup Offers & Events<br> Updates
         // h6_add_to_cart.innerText = "ADD TO CART";
         // a_add_to_cart.append(h6_add_to_cart)
 
-        a_add_to_cart = document.createElement("button");
+        const a_add_to_cart = document.createElement("button");
         a_add_to_cart.setAttribute("type", "button");
         a_add_to_cart.setAttribute("id", "btn_cart");
         // a_add_to_cart.setAttribute("onclick", addCart())                     //add to cart
         a_add_to_cart.innerText = "Add to Cart";
         div_button.prepend(a_add_to_cart)
 
-        a_buy_no1 = document.createElement("a");
+        const a_buy_no1 = document.createElement("a");
         a_buy_no1.setAttribute("href", `../../../cart/payment-page.html?id=${  paramsId}`)
         div_button.append(a_buy_no1)
 
@@ -2441,7 +2440,7 @@ Signup Offers & Events<br> Updates
         // h6_buy_now.innerText = "BUY NOW";
         // a_buy_now.append(h6_buy_now)
 
-        a_buy_now = document.createElement("button");
+        const a_buy_now = document.createElement("button");
         a_buy_now.setAttribute("type", "button");
         a_buy_now.innerText = "Buy Now";
         a_buy_no1.append(a_buy_now)
@@ -2471,7 +2470,7 @@ Signup Offers & Events<br> Updates
         h3.innerText = itemObj.rating;
         div_star_center_tag.append(h3)
 
-        h4 = document.createElement("h4");
+        const h4 = document.createElement("h4");
         h4.innerText = `(${  itemObj.reviews  })`;
         div_star_center_tag.append(h4)
 
@@ -2526,7 +2525,7 @@ Signup Offers & Events<br> Updates
             li.innerText = c[j].coupon;
             ol.append(li);
 
-            bold = document.createElement("b");
+            const bold = document.createElement("b");
             bold.innerText = c[j].offer
             li.prepend(bold);
         }
@@ -2723,15 +2722,15 @@ Signup Offers & Events<br> Updates
 
             addCart.find(e => {
 
-        if (e.value == itemObj.value && e.user_email == user.user_email) {
-            return check = 1;
-        }
+                if (e.value === itemObj.value && e.user_email === user.user_email) {
+                    return check = 1;
+                }
         
-            return check = 0;
+                    // check = 0;
+                return e
+            })
 
-    })
-
-            if (check == 1) {
+            if (check === 1) {
                 alert("already added")
             }
             else {
@@ -2767,9 +2766,10 @@ Signup Offers & Events<br> Updates
         let count = 0;
 
         Cart.find(e=>{
-            if(e.user_email == active_user.user_email){
+            if(e.user_email === active_user.user_email){
                 count++
             }
+            // return e
         })
         console.log(count)
 

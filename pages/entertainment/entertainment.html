@@ -76,7 +76,7 @@
 
         <div class="align-heading">
             <p class="heading-left-color"></p>
-            <h1>Now Showing</h1>
+            <span class="h1">Now Showing</span>
             <p class="heading-left-color1"></p>
             <p class="heading-left-color1"></p>
             <p class="heading-left-color1"></p>
@@ -249,7 +249,7 @@
 
         <div class="align-heading">
             <p class="heading-left-color"></p>
-            <h1>Coming Soon</h1>
+            <span class="h1">Coming Soon</span>
             <p class="heading-left-color1"></p>
             <p class="heading-left-color1"></p>
             <p class="heading-left-color1"></p>
@@ -368,9 +368,10 @@ Signup Offers & Events<br> Updates
         let count = 0;
 
         Cart.find(e=>{
-            if(e.user_email == active_user.user_email){
+            if(e.user_email === active_user.user_email){
                 count++
             }
+            // return e;
         })
         console.log(count)
 

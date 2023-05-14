@@ -33,22 +33,22 @@
 
             <ul>
                 <a href="profile.html?id=profile">
-                    <li id="btn_profile" class="active">
+                    <menu id="btn_profile" class="active">
                         Profile
-                    </li>
+                    </menu>
                 </a>
                 <a href="profile.html?id=orders">
-                    <li id="btn_order" class="active">
+                    <menu id="btn_order" class="active">
                         Orders
-                    </li>
+                    </menu>
                 </a>
 
                 <a href="profile.html?id=wishlist">
-                    <li id="btn_wishlist" class="active">
+                    <menu id="btn_wishlist" class="active">
                         Wishlist
-                    </li>
+                    </menu>
                 </a>
-                <!-- <li id="btn_payment" class="active">Payment</li> -->
+                <!-- <menu id="btn_payment" class="active">Payment</menu> -->
             </ul>
 
         </div>
@@ -141,7 +141,7 @@
                 <h4>Orders</h4>
             </div>
 
-            <h1>Orders</h1>
+            <span class="h1">Orders</span>
 
             <div class="silder_fles">
                 <h4 id="product_count"></h4>
@@ -246,19 +246,19 @@
                 <h4>WishList</h4>
             </div>
 
-            <h1>Wishlist</h1>
+            <span class="h1">Wishlist</span>
 
             <div class="limit">
                 <p id="wl_total_items"></p>
-                <div id="slider">
+                <!-- <div id="slider">
                     <p>
-<i class="fa-solid fa-caret-left"></i>
-</p>
+                        <i class="fa-solid fa-caret-left"></i>
+                    </p>
                     <p>1</p>
                     <p>
-<i class="fa-solid fa-caret-right"></i>
-</p>
-                </div>
+                        <i class="fa-solid fa-caret-right"></i>
+                    </p>
+                </div> -->
             </div>
 
             <div class="items">
@@ -351,9 +351,9 @@
         const form = document.getElementById("form")
         form.addEventListener("submit", () => {
 
-            const active_user = JSON.parse(localStorage.getItem('active_user'));
+            // const active_user = JSON.parse(localStorage.getItem('active_user'));
 
-            const users = JSON.parse(localStorage.getItem('arr'));
+            // const users = JSON.parse(localStorage.getItem('arr'));
 
             users.forEach(e => {
 
@@ -412,12 +412,12 @@
         // delect profile codes
         function deleteItem() {
 
-            const users = JSON.parse(localStorage.getItem("arr"));
+            // const users = JSON.parse(localStorage.getItem("arr"));
 
             for (let i = 0; i < users.length; i++) {
                 if (document.getElementById("email").value === users[i].user_email) {
                     users.splice(i, 1)
-                    confirm("Your account have been deleted")
+                    alert("Your account have been deleted")
                     localStorage.setItem("arr", JSON.stringify(users));
 
                     window.location.href = "../../pages/login/login.html";
@@ -469,49 +469,49 @@
 
         // Wishlist page code converted HTML to JS codes below
 
-        const wishlist_items = JSON.parse(localStorage.getItem("wishList"))
+        const wishlist_items = JSON.parse(localStorage.getItem("wishList")) ?? []
         let wl_total_items = 0;
 
         wishlist_items.find(element => {
 
-            if (active_user.user_email == element.user_email) {
+            if (active_user.user_email === element.user_email) {
 
                 wl_total_items++;
 
                 // WL meen Wishlist
-                let wl_div
-                let wl_img;
-                let wl_h3;
-                let wl_h4;
-                let wl_btn_cart;
-                let icon;
+                // let wl_div
+                // let wl_img;
+                // let wl_h3;
+                // let wl_h4;
+                // let wl_btn_cart;
+                // let icon;
 
                 // <div></div>
-                wl_div = document.createElement("div")
+                const wl_div = document.createElement("div")
 
                 // <img src="../../assets/image/stores/items/nike1.jpg" alt="">
-                wl_img = document.createElement("img")
+                const wl_img = document.createElement("img")
                 wl_img.setAttribute("src", element.image)
                 wl_img.setAttribute("alt", "Product img")
                 wl_div.prepend(wl_img)
 
                 // <h3>this product is one of the most expensive product in the world</h3>
-                wl_h3 = document.createElement("h3")
+                const wl_h3 = document.createElement("h3")
                 wl_h3.innerText = element.title;
                 wl_div.append(wl_h3)
 
                 // <h4>$12112</h4>
-                wl_h4 = document.createElement("h4")
+                const wl_h4 = document.createElement("h4")
                 wl_h4.innerText = `₹${  element.price}`;
                 wl_div.append(wl_h4)
 
                 // <button>Add to Cart</button>
-                wl_btn_cart = document.createElement("button")
+                const wl_btn_cart = document.createElement("button")
                 wl_btn_cart.innerText = "Add to Cart";
                 wl_div.append(wl_btn_cart)
 
                 // <i class="fa-solid fa-xmark"></i>
-                icon = document.createElement("i")
+                const icon = document.createElement("i")
                 icon.setAttribute("class", "fa-solid fa-xmark")
                 wl_div.append(icon)
 
@@ -523,13 +523,13 @@
 
                     for (let j = 0; j < wishlist_items.length; j++) {
 
-                        if (productTitle == wishlist_items[j].title) {
+                        if (productTitle === wishlist_items[j].title) {
 
                             wishlist_items.splice(j, 1);
 
                             localStorage.setItem("wishList", JSON.stringify(wishlist_items))
 
-                            location.reload()
+                            location.reload(1)
 
                             window.location.href = "profile.html?id=wishlist";
 
@@ -550,15 +550,16 @@
 
                     addCart.find(e => {
 
-                if (e.value == element.value && e.user_email == user.user_email) {
+                if (e.value === element.value && e.user_email === user.user_email) {
                     return check = 1;
                 }
                 
-                    return check = 0;
+                    check = 0;
+                    return e;
 
             })
 
-                    if (check == 1) {
+                    if (check === 1) {
                         alert("already added")
                     }
                     else {
@@ -576,7 +577,7 @@
                         item.user_email = user.user_email;
 
                         // I didn't added Store Value so Clear the Bug After unblock the below code
-                        // item["store_value"] = storeValue;
+                        item["store_value"] = element.store_value;
 
                         addCart.push(item);
                         localStorage.setItem("Cart", JSON.stringify(addCart));
@@ -589,9 +590,11 @@
 
             }
 
+            // return element;
+
         })
 
-        document.getElementById("wl_total_items").innerText = `Showing 1-4 of ${  wl_total_items  } results`
+        document.getElementById("wl_total_items").innerText = `${  wl_total_items  } results`
 
         /*
         
@@ -623,22 +626,22 @@
 
             // for(let i=orders.length; i<orders.length-4; i++){
 
-            if (el.user_email == active_user.user_email) {
+            if (el.user_email === active_user.user_email) {
 
                 // items count
                 items_count++
 
                 // order page div alignment
-                let div;
-                let div_order_numer;
-                let h1_order_id;
-                let div_order_date;
-                let p_order_color;
-                let p_order_date;
-                let div_order_product;
-                let img_product_img;
+                // let div;
+                // let div_order_numer;
+                // let h1_order_id;
+                // let div_order_date;
+                // let p_order_color;
+                // let p_order_date;
+                // let div_order_product;
+                // let img_product_img;
 
-                div = document.createElement("div")
+                const div = document.createElement("div")
                 div.setAttribute("class", "product")
                 div.addEventListener("click", () => {
 
@@ -646,31 +649,31 @@
 
                 })
 
-                div_order_numer = document.createElement("div")
+                const div_order_numer = document.createElement("div")
                 div_order_numer.setAttribute("class", "order_numer")
                 div.prepend(div_order_numer)
 
-                h1_order_id = document.createElement("h1")
+                const h1_order_id = document.createElement("h1")
                 h1_order_id.innerText = `Order id: ${  el.order_id}`;
                 div_order_numer.prepend(h1_order_id)
 
-                div_order_date = document.createElement("div")
+                const div_order_date = document.createElement("div")
                 div_order_date.setAttribute("class", "order_date")
                 div.append(div_order_date)
 
-                p_order_color = document.createElement("p")
+                const p_order_color = document.createElement("p")
                 p_order_color.setAttribute("class", "order_color")
                 div_order_date.prepend(p_order_color)
 
-                p_order_date = document.createElement("p")
+                const p_order_date = document.createElement("p")
                 p_order_date.innerText = `Shipped on ${  el.order_date}`;
                 div_order_date.append(p_order_date)
 
-                div_order_product = document.createElement("div")
+                const div_order_product = document.createElement("div")
                 div_order_product.setAttribute("class", "order_product")
                 div.append(div_order_product)
 
-                img_product_img = document.createElement("img")
+                const img_product_img = document.createElement("img")
                 img_product_img.setAttribute("class", "product_img")
                 img_product_img.setAttribute("src", el.image)
                 img_product_img.setAttribute("alt", "Product image")
@@ -681,6 +684,8 @@
             }
 
             // }
+
+            // return el;
 
         })
 
@@ -696,14 +701,14 @@
 
         console.log(paramsId)
 
-        if (paramsId == "orders") {
+        if (paramsId === "orders") {
 
             document.getElementsByClassName("order_details")[0].style.display = "block";
             document.getElementsByClassName("profile_details")[0].style.display = "none";
             document.getElementsByClassName("wishlist_details")[0].style.display = "none"
 
         }
-        if (paramsId == "wishlist") {
+        if (paramsId === "wishlist") {
 
             document.getElementsByClassName("wishlist_details")[0].style.display = "block"
             document.getElementsByClassName("profile_details")[0].style.display = "none";

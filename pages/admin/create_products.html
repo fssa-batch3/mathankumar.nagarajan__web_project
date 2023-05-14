@@ -24,10 +24,10 @@
         </div>
         <ul>
             <a href="create_store.html">
-                <li>Store Form</li>
+                <menu>Store Form</menu>
             </a>
             <a href="create_products.html">
-                <li>Product Form</li>
+                <menu>Product Form</menu>
             </a>
         </ul>
     </nav>
@@ -114,9 +114,9 @@
             const store_name = document.getElementById("store_name").value
 
             storesDetails.find(el => {
-                if (el.title == store_name) {
+                if (el.title === store_name) {
 
-                    if (image != "" && title != "" && price != "" && value != "" && full_price != "" && discount != "" && rating != "" && reviews != "") {
+                    if (image !== "" && title !== "" && price !== "" && value !== "" && full_price !== "" && discount !== "" && rating !== "" && reviews !== "") {
 
                         const productDetails = el.products
                         const val = document.getElementById("value");
@@ -126,15 +126,15 @@
 
                             console.log(e.value)
 
-                            if (e.value == val.value) {
+                            if (e.value === val.value) {
                                 return prodcutde = 1;
                             }
 
-                            return prodcutde = 0;
-
+                            prodcutde = 0;
+                            return e;
                         });
 
-                        if (prodcutde == 1) {
+                        if (prodcutde === 1) {
                             alert("already exists")
                         }
                         else {
@@ -153,13 +153,13 @@
 
                             newItems.find(element => {
 
-                                if (element.title == store_name) {
+                                if (element.title === store_name) {
                                     const save = element.products
                                     // console.log(save)
                                     save.push(product)
                                     localStorage.setItem("stores", JSON.stringify(newItems))
                                 }
-
+                                return element;
                             })
 
                         }
@@ -171,6 +171,7 @@
                 // else {
                 //     alert("Your Store Name Isn't Matched")
                 // }
+                return el;
             })
         });
 
@@ -187,20 +188,20 @@
 
             storeDetails.forEach(e => {
 
-                if (storeName == e.title) {
+                if (storeName === e.title) {
 
                     return check = e;
 
                 }
-
+                return e;
             });
 
             check.products.find(element => {
 
-                if (element.value == value) {
+                if (element.value === value) {
                     return check2 = element;
                 }
-
+                return element;
             })
 
             check2.image = document.getElementById("image").value
@@ -234,20 +235,20 @@
 
             storeDetails.find(element => {
 
-                if (element.title == storeName) {
+                if (element.title === storeName) {
 
                     // console.log(element['title'])
                     return check = element;
 
                 }
-
+                return element;
             })
             check.products.find((e) => {
 
-                if (e.value == value) {
+                if (e.value === value) {
                     return check2 = e;
                 }
-
+                return e;
             })
             console.log(check2)
 
@@ -277,13 +278,13 @@
 
             storeDetails.find(element => {
 
-                if (element.title == storeName) {
+                if (element.title === storeName) {
 
                     // console.log(element['title'])
                     return check = element;
 
                 }
-
+                return element;
             })
 
             const productDetails = check.products
@@ -294,7 +295,7 @@
 
                     productDetails.splice(i, 1)
 
-                    confirm("Your account have been deleted")
+                    alert("Your account have been deleted")
 
                     localStorage.setItem("stores", JSON.stringify(storeDetails));
 

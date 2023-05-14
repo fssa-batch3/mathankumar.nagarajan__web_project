@@ -141,7 +141,7 @@
     <div class="details">
         <div class="price-details">
             <div>
-                <h1>Price Details</h1>
+                <span class="h1">Price Details</span>
                 <h3 id="total_items"></h3>
                 <h3>Delivery Charge</h3>
                 <hr>
@@ -161,7 +161,7 @@
 
         <div class="price-details">
             <div>
-                <h1>Your Details</h1>
+                <span class="h1">Your Details</span>
                 <h4>Name:</h4>
                 <h4>Emaii:</h4>
                 <h4>Moblie No:</h4>
@@ -249,7 +249,7 @@
         // document.getElementById("user-address").innerText = address;
 
         let div_order_summary;
-        let div_img;
+        // let div_img;
         let div_detalis;
         let produte_img;
         let title;
@@ -264,7 +264,7 @@
         let b;
         let h4_rating;
         let h3_add_more_items;
-        let input_items;
+        // let input_items;
         let label_number_of_items;
 
         // const produte_list = [
@@ -309,7 +309,7 @@
 
         for (let i = 0; i < produte_list.length; i++) {
 
-            if (produte_list[i].user_email == user.user_email) {
+            if (produte_list[i].user_email === user.user_email) {
 
                 // cart Product Quantity
                 const quantity = 1;
@@ -427,7 +427,7 @@
                 // label_number_of_items.append(input_items)
 
                 // let rate;
-                let currentProductRate;
+                // let currentProductRate;
 
                 const p_minus = document.createElement("button")
                 p_minus.setAttribute("class", "minus")
@@ -484,7 +484,7 @@
 
                         // console.log(produte_list[i])
 
-                        if (produte_list[i].user_email == user.user_email && produte_list[i].title == produte_list[j].title) {
+                        if (produte_list[i].user_email === user.user_email && produte_list[i].title === produte_list[j].title) {
 
                             // console.log(produte_list[i])
 
@@ -492,7 +492,7 @@
 
                             localStorage.setItem("Cart", JSON.stringify(produte_list));
 
-                            location.reload()
+                            location.reload(1)
                             break
                         }
 
@@ -602,20 +602,20 @@
         //     <h4 id="place-order-btn">Place Order</h4>
         // </a>
 
-        let a_tag;
-        let h4_place_order_btn;
+        // let a_tag;
+        // let h4_place_order_btn;
 
-        a_tag = document.createElement("a")
+        const a_tag = document.createElement("a")
         a_tag.setAttribute("id", "place_order_a")
         a_tag.addEventListener("click", () => {
 
             produte_list.find(e => {
 
-                if (e.user_email == user.user_email) {
+                if (e.user_email === user.user_email) {
 
                     for (let i = 0; i < num_digit.length; i++) {
                         // num_digit[i].value
-                        if (e.value == product_value[i].dataset.value) {
+                        if (e.value === product_value[i].dataset.value) {
 
                             e.quantity = Number(num_digit[i].value)
 
@@ -631,14 +631,14 @@
                     window.location.href = `../../pages/cart/payment-page.html?id=${user.user_email}`
 
                 }
-
+                // return e;
             })
 
         })
 
         // a_tag.setAttribute("href", "../../pages/cart/payment-page.html?id=" + user.user_email)
 
-        h4_place_order_btn = document.createElement("h4")
+        const h4_place_order_btn = document.createElement("h4")
         h4_place_order_btn.setAttribute("id", "place-order-btn")
         h4_place_order_btn.innerText = "Place order";
         a_tag.prepend(h4_place_order_btn)
@@ -653,9 +653,10 @@
         let count = 0;
 
         Cart.find(e => {
-            if (e.user_email == active_user.user_email) {
+            if (e.user_email === active_user.user_email) {
                 count++
             }
+            // return e;
         })
         console.log(count)
 

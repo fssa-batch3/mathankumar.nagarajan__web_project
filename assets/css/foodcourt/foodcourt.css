@@ -12,6 +12,10 @@ nav{
     align-items: center;
     /* position: fixed; */
 }
+.h1{
+    font-size: 40px;
+    font-weight: bold;
+}
 #logo{
     width: 180px;
     height: 60px;

@@ -51,6 +51,11 @@ a{
     width: 400px;
 }
 
+.h1{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
 /* Footer starting */
 #homepage{
     margin-top: 40px;

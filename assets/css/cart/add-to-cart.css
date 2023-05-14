@@ -46,6 +46,11 @@ a {
     border-bottom: 2px solid blue;
 }
 
+.h1{
+    font-size: 40px;
+    font-weight: bold;
+}
+
 /* nav finished */
 
 /* empty cart bg */

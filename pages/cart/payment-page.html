@@ -465,14 +465,14 @@
 
     <script>        // get date code
 
-        let newdate;
+        // let newdate;
         
         const dateObj = new Date();
         const month = dateObj.getUTCMonth() + 1; //months from 1-12
         const day = dateObj.getUTCDate();
         const year = dateObj.getUTCFullYear();
 
-        newdate = `${day  }/${  month  }/${  year}`;
+        const newdate = `${day  }/${  month  }/${  year}`;
         console.log(newdate)
 
         // orders id code
@@ -494,7 +494,7 @@
         document.getElementById("state").value = active_user.state;
         document.getElementById("country").value = active_user.country;
 
-        const Cart = JSON.parse(localStorage.getItem("Cart"))
+        const Cart = JSON.parse(localStorage.getItem("Cart")) ?? []
         const storess = JSON.parse(localStorage.getItem("stores"))
 
         const url = window.location.search;                // ?name=Arun
@@ -502,7 +502,7 @@
         const paramsId = urlParams.get("id")             // return value of the "name" key
         console.log(paramsId);
 
-        const num = Number(paramsId)
+        // const num = Number(paramsId)
 
         let storeName;
 
@@ -514,7 +514,7 @@
 
             console.log("work")
 
-            const store = storess.find(
+            storess.find(
                 (product) => {
 
                     const items = product.products
@@ -530,7 +530,7 @@
 
                         // console.log(item)
 
-                        if (item.value == paramsId) {
+                        if (item.value === paramsId) {
                             storeName = product.title
                             itemObj = item
                             return true;
@@ -542,48 +542,48 @@
                     }
                         )
                     }
-
+                    // return product;
                 }
             )
             console.log(itemObj)
 
             totalPrice += Number(itemObj.price)
 
-            let div_order_items;
-            let img_product_img;
-            let div;
-            let h4_order_title;
-            let p_store_name;
-            let p_price;
+            // let div_order_items;
+            // let img_product_img;
+            // let div;
+            // let h4_order_title;
+            // let p_store_name;
+            // let p_price;
 
             // <div class="order_items"></div>
-            div_order_items = document.createElement("div")
+            const div_order_items = document.createElement("div")
             div_order_items.setAttribute("class", "order_items")
 
             // <img class="product_img" src="../../assets/image/stores/ivenus-apple/mobile (6).png" alt="product">
-            img_product_img = document.createElement("img")
+            const img_product_img = document.createElement("img")
             img_product_img.setAttribute("class", "product_img")
             img_product_img.setAttribute("src", itemObj.image)
             img_product_img.setAttribute("alt", "product_img")
             div_order_items.prepend(img_product_img)
 
             // <div></div>
-            div = document.createElement("div")
+            const div = document.createElement("div")
             div_order_items.append(div)
 
             // <h4 id="order_title"></h4>
-            h4_order_title = document.createElement("h4")
+            const h4_order_title = document.createElement("h4")
             h4_order_title.setAttribute("id", "order_title")
             h4_order_title.innerText = itemObj.title;
             div.prepend(h4_order_title)
 
             // <p>Store name: Iphones</p>
-            p_store_name = document.createElement("p")
+            const p_store_name = document.createElement("p")
             p_store_name.innerText = `Storename: ${  storeName}`;
             div.append(p_store_name);
 
             // <p>$121212</p>
-            p_price = document.createElement("p")
+            const p_price = document.createElement("p")
             p_price.innerText = `₹${  itemObj.price}`;
             div.append(p_price)
 
@@ -593,64 +593,64 @@
         else {
             // console.log("dont")
 
-            const product = Cart.find(el => {
+            Cart.find(el => {
 
-                if (paramsId == el.user_email) {
+                if (paramsId === el.user_email) {
 
                     storess.find(e => {
 
-                        if (e.value == el.store_value) {
+                        if (e.value === el.store_value) {
 
                             storeName = e.title
 
                         }
-
+                        // return e;
                     })
 
                     totalPrice += Number(el.price) * el.quantity
 
-                    let div_order_items;
-                    let img_product_img;
-                    let div;
-                    let h4_order_title;
-                    let p_store_name;
-                    let p_price;
+                    // let div_order_items;
+                    // let img_product_img;
+                    // let div;
+                    // let h4_order_title;
+                    // let p_store_name;
+                    // let p_price;
 
                     // <div class="order_items"></div>
-                    div_order_items = document.createElement("div")
+                    const div_order_items = document.createElement("div")
                     div_order_items.setAttribute("class", "order_items")
 
                     // <img class="product_img" src="../../assets/image/stores/ivenus-apple/mobile (6).png" alt="product">
-                    img_product_img = document.createElement("img")
+                    const img_product_img = document.createElement("img")
                     img_product_img.setAttribute("class", "product_img")
                     img_product_img.setAttribute("src", el.image)
                     img_product_img.setAttribute("alt", "product_img")
                     div_order_items.prepend(img_product_img)
 
                     // <div></div>
-                    div = document.createElement("div")
+                    const div = document.createElement("div")
                     div_order_items.append(div)
 
                     // <h4 id="order_title"></h4>
-                    h4_order_title = document.createElement("h4")
+                    const h4_order_title = document.createElement("h4")
                     h4_order_title.setAttribute("id", "order_title")
                     h4_order_title.innerText = el.title;
                     div.prepend(h4_order_title)
 
                     // <p>Store name: Iphones</p>
-                    p_store_name = document.createElement("p")
+                    const p_store_name = document.createElement("p")
                     p_store_name.innerText = `Storename:${  storeName}`;
                     div.append(p_store_name);
 
                     // <p>$121212</p>
-                    p_price = document.createElement("p")
+                    const p_price = document.createElement("p")
                     p_price.innerText = `₹${  el.price  } ` + `x` + ` ${  el.quantity}`
                     div.append(p_price)
 
                     document.querySelector("#order_summary").append(div_order_items)
 
                 }
-
+                // return el;
             })
 
         }
@@ -660,7 +660,7 @@
 
         // get checkout btn
         const form = document.getElementById("form")
-        form.onsubmit = function (e) {
+        form.onsubmit = function checkout(e) {
 
             e.preventDefault()
 
@@ -669,11 +669,11 @@
             console.log(payment_option)
 
             const user_details = JSON.parse(localStorage.getItem("arr"))
-            const active_user = JSON.parse(localStorage.getItem("active_user"))
+            // const active_user = JSON.parse(localStorage.getItem("active_user"))
 
             user_details.find(el => {
 
-                if (active_user.user_email == el.user_email) {
+                if (active_user.user_email === el.user_email) {
 
                     active_user.zip_code = document.getElementById("zip_code").value;
                     active_user.country = document.getElementById("country").value;
@@ -690,6 +690,7 @@
                     localStorage.setItem("arr", JSON.stringify(user_details))
 
                 }
+                // return el;
             })
 
             const orders = JSON.parse(localStorage.getItem("orders")) ?? []
@@ -730,7 +731,7 @@
 
                 Cart.find(el => {
 
-                    if (paramsId == el.user_email) {
+                    if (paramsId === el.user_email) {
 
                         const obj = {};
 
@@ -756,7 +757,7 @@
                         localStorage.setItem("orders", JSON.stringify(orders))
 
                     }
-
+                    // return el;
                 })
 
             }
@@ -767,15 +768,16 @@
 
         // Cart count codes
 
-        const Cart1 = JSON.parse(localStorage.getItem("Cart"))
+        const Cart1 = JSON.parse(localStorage.getItem("Cart")) ?? []
         const active_user1 = JSON.parse(localStorage.getItem("active_user"))
         const cart_count = document.getElementById("cart_count")
         let count = 0;
 
         Cart1.find(e => {
-            if (e.user_email == active_user1.user_email) {
+            if (e.user_email === active_user1.user_email) {
                 count++
             }
+            // return e;
         })
         console.log(count)
 

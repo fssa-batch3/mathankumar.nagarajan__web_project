@@ -79,7 +79,7 @@
         const paramsId = urlParams.get("id")
     
         const form = document.getElementById("form")
-        form.onsubmit = function(e) {
+        form.onsubmit = function login(e) {
 
             e.preventDefault()
 
@@ -100,13 +100,14 @@
 
         }
 
-            return check = 0;
+            check = 0;
+            return element;
         
     })
-            if (check == 1) {
+            if (check === 1) {
 
                 alert("Logged in");
-                if(paramsId == "signup"){
+                if(paramsId === "signup"){
                     window.location.href = "../../pages/home/profile.html?id=profile";
                 }else{
                     window.location.href = "../../pages/home/home.html"

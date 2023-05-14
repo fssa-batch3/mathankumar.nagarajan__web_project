@@ -77,7 +77,7 @@
     </nav>
     <img id="banner" src="../../assets/image/foodcourt/foodcourt-banner.jpg" alt="banner">
 
-    <h1 class="heading-align">FOOD COURT</h1>
+    <span class="heading-align h1">FOOD COURT</span>
 
     <div class="stores">
         <div class="store">
@@ -241,7 +241,7 @@
 
     <!-- Second line end -->
 
-    <h1 class="heading-align">Most Viewed Stores</h1>
+    <span class="h1 heading-align">Most Viewed Stores</span>
 
     <div class="stores1">
         <div class="store">
@@ -399,9 +399,10 @@ Signup Offers & Events<br> Updates
         let count = 0;
 
         Cart.find(e => {
-            if (e.user_email == active_user.user_email) {
+            if (e.user_email === active_user.user_email) {
                 count++
             }
+            // return e;
         })
         console.log(count)
 

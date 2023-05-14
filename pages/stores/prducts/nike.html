@@ -1917,7 +1917,7 @@ Signup Offers & Events<br> Updates
         const urlParams = new URLSearchParams(url);        // converting string into key value pair
         const storevalue = urlParams.get("value")          // return value of the "name" key
         console.log(storevalue);
-
+            let store_name;
         // Array.find(  function(variableName){} )
 
         const store = stores.find(
@@ -1925,6 +1925,7 @@ Signup Offers & Events<br> Updates
 
             const {value} = userObj;
                 if (storevalue === value) {
+                    store_name = userObj.value
                     return true;
                 } 
                     return false;
@@ -1944,11 +1945,11 @@ Signup Offers & Events<br> Updates
             newdiv.setAttribute("class", "wishlist")
             // newdiv.setAttribute("value", i)
 
-            let div = document.createElement("div")
+            div = document.createElement("div")
             div.setAttribute("class", "wishlist_icon")
             newdiv.prepend(div)
 
-            icon = document.createElement("img")
+            const icon = document.createElement("img")
             icon.setAttribute("class", "icon")
             icon.setAttribute("id", "wishlist_icon")
             icon.setAttribute("src", "../../../assets/image/stores/heart.png")
@@ -2048,21 +2049,23 @@ Signup Offers & Events<br> Updates
                 
                 wishList.find((e) => {
 
-            if(e.title == productTitle){
+                    if(e.title === productTitle){
 
-                return check = 1;
+                        return check = 1;
 
-            }
-            
-                return check = 0;
+                    }
+                    
+                        // check = 0;
 
-        })
+                    return e;
 
-                if(check == 1){
+                })
+
+                if(check === 1){
 
                     for(let j=0; j<wishList.length; j++){
 
-                        if(productTitle == wishList[j].title){
+                        if(productTitle === wishList[j].title){
 
                             wishList.splice(j,1);
 
@@ -2082,6 +2085,8 @@ Signup Offers & Events<br> Updates
                     // icon.setAttribute("src", "../../../assets/image/stores/heart_black.png")
 
                     product.user_email = user.user_email
+                    product.store_value = store_name
+
 
                     wishList.push(product)
 
@@ -2098,12 +2103,11 @@ Signup Offers & Events<br> Updates
             const wishList = JSON.parse(localStorage.getItem("wishList")) ?? [];
             const active_user = JSON.parse(localStorage.getItem("active_user"))
             const productTitle = store.products[i].title
-            const product = store.products[i]
-
+            
             wishList.forEach(element => {
                
-                if(element.user_email == active_user.user_email && productTitle == element.title){
-                  
+                if(element.user_email === active_user.user_email && productTitle === element.title){
+
                     icon.setAttribute("src", "../../../assets/image/stores/heart_black.png")
                 }
                 // else{
@@ -2235,9 +2239,10 @@ Signup Offers & Events<br> Updates
         let count = 0;
 
         Cart.find(e => {
-            if (e.user_email == active_user.user_email) {
+            if (e.user_email === active_user.user_email) {
                 count++
             }
+            // return e
         })
         console.log(count)
 

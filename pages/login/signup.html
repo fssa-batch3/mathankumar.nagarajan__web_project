@@ -89,7 +89,7 @@ Phone number<br>
     </form>
 
     <script>        const form = document.getElementById("signup_form");
-        form.onsubmit = function(e) {
+        form.onsubmit = function signup(e) {
 
             e.preventDefault()
 
@@ -104,9 +104,9 @@ Phone number<br>
             const country = "";
             const state = "";
 
-            if (first_name != "" && last_name != "" && user_email != "" && address != "" && creatpassword != "" && confirm_password != "") {
+            if (first_name !== "" && last_name !== "" && user_email !== "" && address !== "" && creatpassword !== "" && confirm_password !== "") {
 
-                if (creatpassword == confirm_password) {
+                if (creatpassword === confirm_password) {
 
                     const User_details = JSON.parse(localStorage.getItem('arr')) ?? [];
 
@@ -114,16 +114,18 @@ Phone number<br>
 
                     User_details.find(element => {
 
-                if (element.user_email === user_email) {
+                        if (element.user_email === user_email) {
 
-                    return check = 1;
-                }
-                
-                    return check = 0;
-                
-            });
+                            return check = 1;
+                        }
+                        
+                            check = 0;
 
-                    if (check == 1) {
+                        return element;
+                
+                    });
+
+                    if (check === 1) {
                         alert("Email is already exits")
                     }
                     else {

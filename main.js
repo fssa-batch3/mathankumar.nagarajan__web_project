@@ -465,7 +465,28 @@ const stores = [
       "category": "Mobile Shop",
       "value": "5",
       "id": 1683014867397,
-      "products": [],
+      "products": [
+          {
+              "image": "https://iili.io/HUMtdvt.webp",
+              "title": "Tecno Spark 9 (Infinity Black, 4GB RAM,64GB Storage)",
+              "price": "7799",
+              "value": "49",
+              "full_price": "9899",
+              "discount": "26",
+              "rating": "3.9",
+              "reviews": "1234"
+          },
+          {
+              "image": "https://iili.io/HUMtFun.webp",
+              "title": "IQOO Z6 44W (Lumina Blue, 128 GB)  (8 GB RAM)",
+              "price": "16499",
+              "value": "50",
+              "full_price": "19999",
+              "discount": "15",
+              "rating": "4.5",
+              "reviews": "7649"
+          }
+      ],
       "banner": "https://iili.io/HU1QB7s.jpg"
   },
   {
@@ -534,9 +555,10 @@ const stores = [
       "products": [],
       "banner": "https://iili.io/HU1i72a.webp"
   }
-]
+];
 
 if (localStorage.getItem("stores")) {
+  console.log("Working");
 } else {
   localStorage.setItem("stores", JSON.stringify(stores));
 }
@@ -544,7 +566,7 @@ if (localStorage.getItem("stores")) {
 // index page script codes
 let div_store;
 let img_imgstore;
-let floor;
+let div_floor;
 let div;
 let h3_storenames;
 let p_storecategory;

@@ -514,7 +514,7 @@ Signup Offers & Events<br> Updates
             const email_btn = document.getElementById("footer-email").value;
 
             // e.preventDefault();
-
+            let Email;
             console.log("Email");
 
             Email.send({
@@ -541,7 +541,7 @@ Signup Offers & Events<br> Updates
 
         let div_store;
         let img_imgstore;
-        let floor;
+        let div_floor;
         let div;
         let h3_storenames;
         let p_storecategory;
@@ -670,9 +670,10 @@ Signup Offers & Events<br> Updates
         let count = 0;
 
         Cart.find(e => {
-            if (e.user_email == active_user.user_email) {
+            if (e.user_email === active_user.user_email) {
                 count++
             }
+            // return e;
         })
         console.log(count)
 
