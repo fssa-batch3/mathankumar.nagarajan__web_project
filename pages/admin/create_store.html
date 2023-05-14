@@ -24,44 +24,58 @@
             </a>
         </div>
         <ul>
-            <li>Forms</li>
-            <li>Tables</li> 
+            <a href="create_store.html">
+                <li>Store Form</li>
+            </a>
+            <a href="create_products.html">
+                <li>Product Form</li>
+            </a>
         </ul>
     </nav>
-
-    <header>
-
-    </header>
 
     <form id="form">
 
         <label for="value">Value</label>
+        <br>
         <input type="number" id="value">
 
         <br>
 
         <label for="title">Title</label>
+        <br>
         <input type="text" id="title">
 
         <br>
 
         <label for="category">Category</label>
+        <br>
         <input type="text" id="category">
 
         <br>
 
-        <label for="image">Store URL</label>
+        <label for="image">Store logo URL</label>
+        <br>
         <input type="url" id="image">
 
         <br>
+
+        <label for="banner">Store Banner URL</label>
+        <br>
+        <input type="url" id="banner">
+
+        <br>
+
+        <div class="btns">
 
         <button id="add_store_btn">Submit Form</button>
 
         <button id="update_btn">Update Store</button>
 
+        <button id="edit_btn">Edit Store</button>
+
         <button id="delete_btn">Delete Store</button>
 
-        <button id="edit_btn">Edit Store</button>
+        </div>
 
     </form>
 
@@ -70,7 +84,7 @@
             el.preventDefault()
             const storesDetails = JSON.parse(localStorage.getItem("stores"))
 
-            const {value} = document.getElementById("value")
+            const { value } = document.getElementById("value")
 
             storesDetails.find(e => {
 
@@ -79,7 +93,8 @@
                     document.getElementById("image").value = e.image
                     document.getElementById("title").value = e.title
                     document.getElementById("category").value = e.category
-
+                    document.getElementById("banner").value = e.banner
+                    
                     document.getElementById("edit_btn").style.visibility = 'hidden';
                     document.getElementById("update_btn").style.visibility = 'visible';
 
@@ -96,10 +111,11 @@
             const image = document.getElementById("image").value
             const title = document.getElementById("title").value
             const category = document.getElementById("category").value
-            const {value} = document.getElementById("value")
+            const banner = document.getElementById("banner").value 
+            const { value } = document.getElementById("value")
             const products = [];
 
-            if (image != "" && title != "" && category != "" && value != "") {
+            if (image != "" && title != "" && category != "" && value != "" && banner != "" ) {
 
                 // el.preventDefault();
                 const storesDetails = JSON.parse(localStorage.getItem("stores")) ?? [];
@@ -108,19 +124,20 @@
                 const image = document.getElementById("image").value
                 const title = document.getElementById("title").value
                 const category = document.getElementById("category").value
+                const banner = document.getElementById("banner").value
 
                 let storede = 0;
                 // console.log(storesDetails)
                 storesDetails.find(e => {
-            if (e.value == value.value) {
-                // console.log(e["value"])
-                // console.log(value.value)
-                return storede = 1;
-            }
-            
-                return storede = 0;
+                    if (e.value == value.value) {
+                        // console.log(e["value"])
+                        // console.log(value.value)
+                        return storede = 1;
+                    }
 
-        });
+                    return storede = 0;
+
+                });
 
                 if (storede == 1) {
                     alert("already exists")
@@ -135,7 +152,7 @@
                     //     id = storesDetails[i] + 1;
                     // }
 
-                    const {value} = document.getElementById("value");
+                    const { value } = document.getElementById("value");
 
                     store.image = image;
                     store.title = title;
@@ -143,6 +160,7 @@
                     store.value = value;
                     store.id = id;
                     store.products = products;
+                    store.banner = banner;
 
                     storesDetails.push(store);
 
@@ -161,7 +179,7 @@
 
             const storesDetails = JSON.parse(localStorage.getItem("stores"))
 
-            const {value} = document.getElementById("value")
+            const { value } = document.getElementById("value")
 
             storesDetails.forEach(e => {
 
@@ -171,6 +189,7 @@
                     e.title = document.getElementById("title").value
                     e.category = document.getElementById("category").value
                     e.value = document.getElementById("value").value
+                    e.banner =  document.getElementById("banner").value
 
                     localStorage.setItem("stores", JSON.stringify(storesDetails))
 
@@ -185,7 +204,7 @@
 
             const storesDetails = JSON.parse(localStorage.getItem("stores"))
 
-            const {value} = document.getElementById("value")
+            const { value } = document.getElementById("value")
 
             for (let i = 0; i < storesDetails.length; i++) {
 

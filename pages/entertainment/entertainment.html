@@ -362,7 +362,7 @@ Signup Offers & Events<br> Updates
     </footer>
 
     <script>        // Cart count 
-        const Cart = JSON.parse(localStorage.getItem("Cart"))
+        const Cart = JSON.parse(localStorage.getItem("Cart")) ?? []
         const active_user = JSON.parse(localStorage.getItem("active_user"))
         const cart_count = document.getElementById("cart_count")
         let count = 0;

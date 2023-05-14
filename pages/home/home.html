@@ -613,11 +613,11 @@ Signup Offers & Events<br> Updates
 
         const storesDetails = JSON.parse(localStorage.getItem("stores"));
 
-        const stores_length = storesDetails.length
+        // const stores_length = storesDetails.length
 
         // const stores_length = stores.length
 
-        for (let i = 0; i < stores_length; i++) {
+        for (let i = 0; i < 10; i++) {
 
             a_items = document.createElement("a");              // create tage
             a_items.setAttribute("href", `../../pages/stores/prducts/nike.html?value=${  storesDetails[i].value}`);

@@ -16,55 +16,84 @@
 
 <body>
 
+    <nav>
+        <div>
+            <a href="../../index.html">
+                <img src="../../assets/image/home/logo1.png" alt="Product Logo">
+            </a>
+        </div>
+        <ul>
+            <a href="create_store.html">
+                <li>Store Form</li>
+            </a>
+            <a href="create_products.html">
+                <li>Product Form</li>
+            </a>
+        </ul>
+    </nav>
+
     <form action="">
 
         <label for="store_name">Store Name :</label>
+        <br>
         <input type="text" id="store_name">
 
         <br>
 
         <label for="value">Value :</label>
+        <br>
         <input type="number" id="value">
 
         <br>
 
         <label for="title">Title :</label>
+        <br>
         <input type="text" id="title">
 
         <br>
 
         <label for="price">Price :</label>
+        <br>
         <input type="number" id="price">
 
         <br>
 
         <label for="full_price">Full Price :</label>
+        <br>
         <input type="number" id="full_price">
 
         <br>
 
         <label for="discount">Discount :</label>
+        <br>
         <input type="number" id="discount">
 
         <br>
 
         <label for="rating">Rating :</label>
+        <br>
         <input type="text" id="rating">
 
         <br>
 
         <label for="reviews">Reviews :</label>
+        <br>
         <input type="number" id="reviews">
 
         <br>
 
         <label for="image">Product URL Link :</label>
+        <br>
         <input type="url" id="image">
 
-        <button id="add_product">Add Product</button>
-        <button id="update_product">Update Product</button>
-        <button id="edit_product">Edit Product</button>
-        <button id="delete_btn">Delete Product</button>
+        <div class="btns">
+
+            <button id="add_product">Add Product</button>
+            <button id="update_product">Update Product</button>
+            <button id="edit_product">Edit Product</button>
+            <button id="delete_btn">Delete Product</button>
+
+        </div>
 
     </form>
 
@@ -75,7 +104,7 @@
             const image = document.getElementById("image").value.trim();
             const title = document.getElementById("title").value.trim();
             const price = document.getElementById("price").value
-            const {value} = document.getElementById("value")
+            const { value } = document.getElementById("value")
             const full_price = document.getElementById("full_price").value
             const discount = document.getElementById("discount").value
             const rating = document.getElementById("rating").value
@@ -95,15 +124,15 @@
 
                         productDetails.find(e => {
 
-                    console.log(e.value)
+                            console.log(e.value)
 
-                    if (e.value == val.value) {
-                        return prodcutde = 1;
-                    }
-                    
-                        return prodcutde = 0;
-                    
-                });
+                            if (e.value == val.value) {
+                                return prodcutde = 1;
+                            }
+
+                            return prodcutde = 0;
+
+                        });
 
                         if (prodcutde == 1) {
                             alert("already exists")
@@ -130,9 +159,6 @@
                                     save.push(product)
                                     localStorage.setItem("stores", JSON.stringify(newItems))
                                 }
-                                else {
-                                    alert("Not matched")
-                                }
 
                             })
 
@@ -142,9 +168,9 @@
                         alert("Field can't be empty")
                     }
                 }
-                else {
-                    alert("Your Store Name Isn't Matched")
-                }
+                // else {
+                //     alert("Your Store Name Isn't Matched")
+                // }
             })
         });
 
@@ -153,7 +179,7 @@
 
             const storeDetails = JSON.parse(localStorage.getItem("stores"))
 
-            const {value} = document.getElementById("value")
+            const { value } = document.getElementById("value")
             const storeName = document.getElementById("store_name").value
 
             let check;
@@ -197,7 +223,7 @@
 
             const storeDetails = JSON.parse(localStorage.getItem("stores"))
 
-            const {value} = document.getElementById("value")
+            const { value } = document.getElementById("value")
             const storeName = document.getElementById("store_name").value
 
             // console.log(value)
@@ -244,7 +270,7 @@
 
             const storeDetails = JSON.parse(localStorage.getItem("stores"))
 
-            const {value} = document.getElementById("value")
+            const { value } = document.getElementById("value")
             const storeName = document.getElementById("store_name").value
 
             let check;

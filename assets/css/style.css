@@ -407,7 +407,7 @@ footer {
     justify-content: space-evenly;
 }
 
-#margin_store{
+.margin_store{
     margin: 0% 20px;
     padding: 30px;
 }

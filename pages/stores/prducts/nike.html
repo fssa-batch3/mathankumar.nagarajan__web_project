@@ -89,14 +89,14 @@
         </ul>
     </nav>
 
-    <div class="banner">
+    <!-- <div class="banner"> -->
+    <img class="banner" alt="background">
 
-    </div>
+    <!-- </div> -->
 
     <div class="mobile-brands-apple">
     </div>
 
-    <!-- <img class="banner" src="../../../assets/image/stores/nike-background.jpg" alt="background" /> -->
     <div class="products">
         <!-- <a href="../../../pages/stores/prducts/view products/view-products-nike.html">
             <div class="products-items">
@@ -392,8 +392,8 @@
     <!-- Footer starting -->
 
     <a href="#">
-<span class="back-to-top">BACK TO TOP</span>
-</a>
+        <span class="back-to-top">BACK TO TOP</span>
+    </a>
     <footer>
         <img id="footer-logo" src="../../../assets/image/home/logo.png" alt="logo">
         <div class="footer">
@@ -443,9 +443,7 @@ Signup Offers & Events<br> Updates
 
     </footer>
 
-    <img src="../../../assets/image/stores/ivenus/" alt="">
-
-    <script>        // const stores = [
+    <script>    // const stores = [
         //     {
         //         value: "0",
         //         name: "Nike",
@@ -1925,15 +1923,17 @@ Signup Offers & Events<br> Updates
         const store = stores.find(
             (userObj) => {
 
-        const {value} = userObj;
-        if (storevalue === value) {
-            return true;
-        } 
-            return false;
-        
-    }
-        )
+            const {value} = userObj;
+                if (storevalue === value) {
+                    return true;
+                } 
+                    return false;
+                
+                }
+            )
         console.log(store);
+
+        document.querySelector(".banner").setAttribute("src", store.banner)
         
         for (let i = 0; i < store.products.length; i++) {
 
@@ -2229,7 +2229,7 @@ Signup Offers & Events<br> Updates
 
         // Cart count codes
 
-        const Cart = JSON.parse(localStorage.getItem("Cart"))
+        const Cart = JSON.parse(localStorage.getItem("Cart")) ?? []
         const active_user = JSON.parse(localStorage.getItem("active_user"))
         const cart_count = document.getElementById("cart_count")
         let count = 0;

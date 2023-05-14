@@ -291,10 +291,9 @@ select:invalid{
 
 .order_list{
     height: 500px;
-    /* overflow: auto; */
+    overflow: auto;
     display: flex;
     flex-direction: column-reverse;
-    justify-content: start;
 }
 .order_list::-webkit-scrollbar {
     /* display: none; */

@@ -19,27 +19,28 @@
         <img id="logo" src="../../assets/image/home/logo1.png" alt="logo1">
         <ul>
             <li>
-<a href="../../pages/home/home.html">Home</a>
-</li>
+                <a href="../../pages/home/home.html">Home</a>
+            </li>
             <li>
-<a href="../../pages/stores/stores.html">Stores</a>
-</li>
+                <a href="../../pages/stores/stores.html">Stores</a>
+            </li>
             <li>
-<a href="../../pages/offer/offer.html">Offers</a>
-</li>
+                <a href="../../pages/offer/offer.html">Offers</a>
+            </li>
             <li>
-<a href="../entertainment/entertainment.html">Entertainment</a>
-</li>
+                <a href="../entertainment/entertainment.html">Entertainment</a>
+            </li>
             <li>
-<a href="../../pages/foodcourt/foodcourt.html">Foodcourt</a>
-</li>
+                <a href="../../pages/foodcourt/foodcourt.html">Foodcourt</a>
+            </li>
             <li>
-<a href="../../pages/services/services.html">Services</a>
-</li>
+                <a href="../../pages/services/services.html">Services</a>
+            </li>
             <li>
-<a href="../cart/add-to- cart.html">
+                <a href="../cart/add-to- cart.html">
                     <i id="cart_icon" class="material-symbols-outlined">shopping_cart</i>
-                </a></li>
+                </a>
+            </li>
 
             <p id="cart_count"></p>
 
@@ -75,6 +76,12 @@
 
         </ul>
     </nav>
+
+    <div id="empty_cart">
+        <img src="https://iili.io/HUEYLrv.webp" alt="empty_cart">
+        
+        <button id="showNow_btn">Shop Now</button>
+    </div>
 
     <div id="order-summary-word">
         <h2>Order Summary</h2>
@@ -183,8 +190,8 @@
         <div class="footer">
             <div>
                 <h3>
-Thanks For Visiting <br>Our Website
-</h3>
+                    Thanks For Visiting <br>Our Website
+                </h3>
             </div>
             <div>
                 <a href="#" class="footer-h3">
@@ -209,8 +216,8 @@ Thanks For Visiting <br>Our Website
             </div>
             <div>
                 <h3>
-Signup Offers & Events<br> Updates
-</h3>
+                    Signup Offers & Events<br> Updates
+                </h3>
                 <label>
                     <input id="footer-email" name="email" type="email" placeholder="hello@gmail.com" required>
                 </label>
@@ -358,14 +365,14 @@ Signup Offers & Events<br> Updates
 
                 h6_rate = document.createElement("h6");
                 h6_rate.setAttribute("class", "rate");
-                h6_rate.innerText = `₹${  produte_list[i].price}`;
+                h6_rate.innerText = `₹${produte_list[i].price}`;
                 h6_rate.setAttribute("data-keyword", produte_list[i].price)
 
                 div_column.prepend(h6_rate);
 
                 p_line_through = document.createElement("p");
                 p_line_through.setAttribute("class", "line-through");
-                p_line_through.innerText = `₹${  produte_list[i].full_price}`;
+                p_line_through.innerText = `₹${produte_list[i].full_price}`;
                 p_line_through.setAttribute("data-full_price", produte_list[i].full_price)
                 div_column.append(p_line_through);
 
@@ -376,7 +383,7 @@ Signup Offers & Events<br> Updates
                 b = document.createElement("b")
                 b.setAttribute("class", "discount")
                 b.setAttribute("data-discount", produte_list[i].discount)
-                b.innerText = `(${  produte_list[i].discount  }%)`;
+                b.innerText = `(${produte_list[i].discount}%)`;
                 p_green.append(b)
 
                 h4 = document.createElement("h4");
@@ -396,7 +403,7 @@ Signup Offers & Events<br> Updates
                 p.append(b)
 
                 h4_rating = document.createElement("h4");
-                h4_rating.innerText = `( ${  produte_list[i].reviews  } )`;
+                h4_rating.innerText = `( ${produte_list[i].reviews} )`;
                 div_rating.append(h4_rating);
 
                 h3_add_more_items = document.createElement("h3");
@@ -498,8 +505,8 @@ Signup Offers & Events<br> Updates
         }
 
         // Total value 
-        document.getElementById("totalValue").innerText = `₹ ${  totalValue}`
-        document.getElementById("totalValue1").innerText = `₹ ${  totalValue}`
+        document.getElementById("totalValue").innerText = `₹ ${totalValue}`
+        document.getElementById("totalValue1").innerText = `₹ ${totalValue}`
 
         // Cart Quantity Codes (+ and -)
 
@@ -523,23 +530,23 @@ Signup Offers & Events<br> Updates
                 // Total price (+)
                 const totalvalue = parseFloat(price_pr[i].dataset.keyword) * parseFloat(num_digit[i].value)
                 // console.log(totalvalue)
-                price_pr[i].innerText = `₹${  totalvalue}`;
+                price_pr[i].innerText = `₹${totalvalue}`;
 
                 // Total full price (+)
                 const full_price_value = parseFloat(full_price[i].dataset.full_price) * parseFloat(num_digit[i].value)
-                full_price[i].innerText = `₹${  full_price_value}`;
+                full_price[i].innerText = `₹${full_price_value}`;
 
                 // Total discount (%)
                 const discount_value = parseFloat(discount[i].dataset.discount) * parseFloat(num_digit[i].value)
-                discount[i].innerText = `(${  discount_value  }%)`
+                discount[i].innerText = `(${discount_value}%)`
 
                 // Total product count 
-                document.getElementById("total_items").innerText = `Price ( ${  totalItems  } : Items)`
+                document.getElementById("total_items").innerText = `Price ( ${totalItems} : Items)`
 
                 // Total price for all product
                 totalValue += parseFloat(price_pr[i].dataset.keyword)
-                document.getElementById("totalValue").innerText = `₹ ${  totalValue}`
-                document.getElementById("totalValue1").innerText = `₹ ${  totalValue}`
+                document.getElementById("totalValue").innerText = `₹ ${totalValue}`
+                document.getElementById("totalValue1").innerText = `₹ ${totalValue}`
 
             })
 
@@ -556,23 +563,23 @@ Signup Offers & Events<br> Updates
                     // Total price (-)
                     const totalvalue = parseFloat(price_pr[i].dataset.keyword) * parseFloat(num_digit[i].value)
                     console.log(totalvalue)
-                    price_pr[i].innerText = `₹${  totalvalue}`;
+                    price_pr[i].innerText = `₹${totalvalue}`;
 
                     // Total full price (-)
                     const full_price_value = parseFloat(full_price[i].dataset.full_price) * parseFloat(num_digit[i].value)
-                    full_price[i].innerText = `₹${  full_price_value}`;
+                    full_price[i].innerText = `₹${full_price_value}`;
 
                     // Total discount (%)
                     const discount_value = parseFloat(discount[i].dataset.discount) * parseFloat(num_digit[i].value)
-                    discount[i].innerText = `(${  discount_value  }%)`
+                    discount[i].innerText = `(${discount_value}%)`
 
                     // Total product count ++
-                    document.getElementById("total_items").innerText = `Price ( ${  totalItems  } : Items)`
+                    document.getElementById("total_items").innerText = `Price ( ${totalItems} : Items)`
 
                     // Total price for all product
                     totalValue -= parseFloat(price_pr[i].dataset.keyword)
-                    document.getElementById("totalValue").innerText = `₹ ${  totalValue}`
-                    document.getElementById("totalValue1").innerText = `₹ ${  totalValue}`
+                    document.getElementById("totalValue").innerText = `₹ ${totalValue}`
+                    document.getElementById("totalValue1").innerText = `₹ ${totalValue}`
 
                 }
 
@@ -580,14 +587,14 @@ Signup Offers & Events<br> Updates
 
         }
 
-        document.getElementById("user-name-address").innerText = `${user.first_name  } ${  user.last_name}`
+        document.getElementById("user-name-address").innerText = `${user.first_name} ${user.last_name}`
         document.getElementById("user-email-address").innerText = user.user_email
         document.getElementById("user-address").innerText = user.address
         document.getElementById("user_mobile_number").innerText = user.mobile_number
 
-        document.getElementById("total_discount").innerText = `Your Total Savings on this order` + ` ₹ ${  totalDiscount}`
+        document.getElementById("total_discount").innerText = `Your Total Savings on this order` + ` ₹ ${totalDiscount}`
 
-        document.getElementById("total_items").innerText = `Price ( ${  totalItems  } : Items)`
+        document.getElementById("total_items").innerText = `Price ( ${totalItems} : Items)`
 
         // Place Order Button Codes for JS
 
@@ -600,15 +607,15 @@ Signup Offers & Events<br> Updates
 
         a_tag = document.createElement("a")
         a_tag.setAttribute("id", "place_order_a")
-        a_tag.addEventListener("click", () =>{
+        a_tag.addEventListener("click", () => {
 
-            produte_list.find(e=>{
+            produte_list.find(e => {
 
-                if (e.user_email == user.user_email){
+                if (e.user_email == user.user_email) {
 
-                    for(let i=0; i<num_digit.length; i++){
+                    for (let i = 0; i < num_digit.length; i++) {
                         // num_digit[i].value
-                        if(e.value == product_value[i].dataset.value){
+                        if (e.value == product_value[i].dataset.value) {
 
                             e.quantity = Number(num_digit[i].value)
 
@@ -621,11 +628,11 @@ Signup Offers & Events<br> Updates
 
                     }
 
+                    window.location.href = `../../pages/cart/payment-page.html?id=${user.user_email}`
+
                 }
 
             })
-
-            window.location.href = `../../pages/cart/payment-page.html?id=${  user.user_email}`
 
         })
 
@@ -640,7 +647,7 @@ Signup Offers & Events<br> Updates
 
         // cart icon count code
 
-        const Cart = JSON.parse(localStorage.getItem("Cart"))
+        const Cart = JSON.parse(localStorage.getItem("Cart")) ?? []
         const active_user = JSON.parse(localStorage.getItem("active_user"))
         const cart_count = document.getElementById("cart_count")
         let count = 0;
@@ -653,6 +660,37 @@ Signup Offers & Events<br> Updates
         console.log(count)
 
         cart_count.innerText = count
+
+        // Empty Cart Codes
+        if(Number(totalValue) === 0){
+
+            document.getElementById("empty_cart").style.display = "flex";
+            document.getElementById("order-summary-word").style.display = "none";
+            document.querySelector(".main-contant").style.display = "none"; // flex
+            document.querySelector(".details").style.display = "none"; //flex
+            document.getElementById("place-order-container").style.display = "none";
+            document.querySelector(".back-to-top").style.display = "none"; // block
+            document.querySelector("footer").style.display = "none";
+
+            document.getElementById("showNow_btn").addEventListener("click", () =>{
+                console.log(1)
+                window.location.href = "../home/home.html";
+            })
+
+        }
+        else{
+            
+            document.getElementById("empty_cart").style.display = "none";
+            document.getElementById("order-summary-word").style.display = "block";
+            document.querySelector(".main-contant").style.display = "flex"; // flex
+            document.querySelector(".details").style.display = "flex"; //flex
+            document.getElementById("place-order-container").style.display = "block";
+            document.querySelector(".back-to-top").style.display = "block"; // block
+            document.querySelector("footer").style.display = "block"; 
+            
+        }
+
+        // Shop Now btn
     </script>
 
 </body>

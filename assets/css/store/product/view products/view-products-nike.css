@@ -51,12 +51,11 @@ a {
     height: 400px;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 
 }
 
 .product-img {
-    /* margin: 30px; */
     max-width: 400px;
     max-height: 250px;
     /* min-height: 300px; */
