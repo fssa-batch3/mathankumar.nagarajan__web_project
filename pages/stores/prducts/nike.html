@@ -2061,7 +2061,7 @@ Signup Offers & Events<br> Updates
 
                 })
 
-                if(check === 1){
+                if(check == 1){
 
                     for(let j=0; j<wishList.length; j++){
 
@@ -2104,7 +2104,7 @@ Signup Offers & Events<br> Updates
             const active_user = JSON.parse(localStorage.getItem("active_user"))
             const productTitle = store.products[i].title
             
-            wishList.forEach(element => {
+            wishList.find(element => {
                
                 if(element.user_email === active_user.user_email && productTitle === element.title){
 

@@ -370,6 +370,10 @@ select:invalid{
 /* Wishlist Page Codes start */
 
 
+
+
+
+
 .limit{
     display: flex;
     justify-content: space-between;
@@ -399,13 +403,20 @@ select:invalid{
     color: #191f24;
 }
 
+
+
+
 .items{
     margin-top: 20px;
+    height: 500px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .items div{
     padding: 15px;
-    margin: 20px auto;
+    /* margin: 20px auto; */
     background-color: white;
     display: flex;
     justify-content: space-around;
@@ -428,6 +439,32 @@ select:invalid{
     font-weight: bolder;
     background-color: #01411C;
 }
+
+.items::-webkit-scrollbar {
+    /* display: none; */
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #b2b2b2; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
 
 /* .slider{
     display: block;
