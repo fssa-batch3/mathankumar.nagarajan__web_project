@@ -2055,13 +2055,13 @@ Signup Offers & Events<br> Updates
 
                     }
                     
-                        // check = 0;
+                        check = 0;
 
-                    return e;
+                    // return e;
 
                 })
 
-                if(check == 1){
+                if(check === 1){
 
                     for(let j=0; j<wishList.length; j++){
 
@@ -2078,7 +2078,7 @@ Signup Offers & Events<br> Updates
 
                     location.reload(1)
 
-                    // alert("Removed From Wishlist")
+                    alert("Removed From Wishlist")
                 }
                 else{
 
@@ -2092,7 +2092,7 @@ Signup Offers & Events<br> Updates
 
                     localStorage.setItem("wishList", JSON.stringify(wishList))
 
-                    // alert("Added From WishList")
+                    alert("Added From WishList")
                     location.reload(1)
 
                 }
