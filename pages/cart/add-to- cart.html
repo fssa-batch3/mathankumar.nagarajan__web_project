@@ -79,7 +79,7 @@
 
     <div id="empty_cart">
         <img src="https://iili.io/HUEYLrv.webp" alt="empty_cart">
-        
+
         <button id="showNow_btn">Shop Now</button>
     </div>
 
@@ -557,8 +557,8 @@
             minus_btn[i].addEventListener("click", () => {
                 if (num_digit[i].value > 1) {
 
-                    num_digit[i].value--
-                    totalItems--
+                    num_digit[i].value--;
+                    totalItems--;
 
                     // Total price (-)
                     const totalvalue = parseFloat(price_pr[i].dataset.keyword) * parseFloat(num_digit[i].value)
@@ -663,7 +663,7 @@
         cart_count.innerText = count
 
         // Empty Cart Codes
-        if(Number(totalValue) === 0){
+        if (Number(totalValue) === 0) {
 
             document.getElementById("empty_cart").style.display = "flex";
             document.getElementById("order-summary-word").style.display = "none";
@@ -673,22 +673,22 @@
             document.querySelector(".back-to-top").style.display = "none"; // block
             document.querySelector("footer").style.display = "none";
 
-            document.getElementById("showNow_btn").addEventListener("click", () =>{
+            document.getElementById("showNow_btn").addEventListener("click", () => {
                 console.log(1)
                 window.location.href = "../home/home.html";
             })
 
         }
-        else{
-            
+        else {
+
             document.getElementById("empty_cart").style.display = "none";
             document.getElementById("order-summary-word").style.display = "block";
             document.querySelector(".main-contant").style.display = "flex"; // flex
             document.querySelector(".details").style.display = "flex"; //flex
             document.getElementById("place-order-container").style.display = "block";
             document.querySelector(".back-to-top").style.display = "block"; // block
-            document.querySelector("footer").style.display = "block"; 
-            
+            document.querySelector("footer").style.display = "block";
+
         }
 
         // Shop Now btn

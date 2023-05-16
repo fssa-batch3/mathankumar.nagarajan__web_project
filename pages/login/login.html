@@ -29,7 +29,7 @@
                     <div class="input-alignment">
                         <span class="material-symbols-outlined">person</span>
                         <label>
-<input class="input-box" id="confirm_email" type="email" name="email" placeholder="Email"
+                            <input class="input-box" id="confirm_email" type="email" name="email" placeholder="Email"
                                 pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                                 required="true"></label>
                     </div>
@@ -37,20 +37,20 @@
                     <div class="input-alignment">
                         <span class="material-symbols-outlined">lock</span>
                         <label>
-<input class="input-box" id="password" type="password" name="password"
+                            <input class="input-box" id="password" type="password" name="password"
                                 placeholder="Password"
                                 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"
                                 required="true"></label>
                     </div>
                     <hr>
                     <label>
-<input id="checkbox" type="checkbox" name="checkbox">Remember Me
-</label>
+                        <input id="checkbox" type="checkbox" name="checkbox">Remember Me
+                    </label>
                     <br>
 
                     <button id="login" type="submit">
-<b>Login</b>
-</button>
+                        <b>Login</b>
+                    </button>
 
                 </div>
 
@@ -77,7 +77,7 @@
         const url = window.location.search;
         const urlParams = new URLSearchParams(url);
         const paramsId = urlParams.get("id")
-    
+
         const form = document.getElementById("form")
         form.onsubmit = function login(e) {
 
@@ -89,33 +89,47 @@
             const User_details = JSON.parse(localStorage.getItem("arr"));
 
             let check;
-            User_details.find(element => {
-        if (element.user_email === email && element.creatpassword === password) {
 
-            const active_user = element;
-            console.log(active_user);
-            localStorage.setItem("active_user", JSON.stringify(active_user));
+            if (email === "admin@spartansmt.com" && password === "Admin@123") {
 
-            return check = 1;
+                window.location.href = "../../pages/admin/admin_home.html";
+                alert("Admin Logged")
 
-        }
+            } else {
 
-            check = 0;
-            return element;
-        
-    })
-            if (check === 1) {
+                User_details.find(element => {
+                    if (element.user_email === email && element.creatpassword === password) {
 
-                alert("Logged in");
-                if(paramsId === "signup"){
-                    window.location.href = "../../pages/home/profile.html?id=profile";
-                }else{
-                    window.location.href = "../../pages/home/home.html"
+                        const active_user = element;
+                        console.log(active_user);
+                        localStorage.setItem("active_user", JSON.stringify(active_user));
+
+                        return check = 1;
+
+                    }
+
+                    check = 0;
+                    return element;
+
+                })
+                if (check === 1) {
+
+                    alert("Logged in");
+                    if (paramsId === "signup") {
+                        window.location.href = "../../pages/home/profile.html?id=profile";
+                    } else {
+                        window.location.href = "../../pages/home/home.html"
+                    }
                 }
+                else {
+                    alert("Invalid");
+                }
+
             }
-            else {
-                alert("Invalid");
-            }
+
+
+
+
         }
     </script>
 

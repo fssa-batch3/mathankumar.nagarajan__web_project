@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Home Page Title -->
+    <title>SpartansMT Admin</title>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="../../assets/css/admin/admin_home.css">
+
+    <!-- Title Icon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/image/home/logo icon.png" alt="logo icon">
+
+    <!-- Google Font link -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chart script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <nav>
+
+            <div id="logo">
+                <img src="../../assets/image/home/logo.png" alt="">
+            </div>
+
+            <ul>
+
+                <span class="menu">MENU</span>
+                <menu>Dashboard</menu>
+                <menu>Forms</menu>
+                <menu>Tables</menu>
+
+            </ul>
+
+
+
+        </nav>
+
+        <div class="right_side">
+
+            <div class="nav">
+
+                <div>
+                    <i class="fa-solid fa-magnifying-glass search_icon"></i>
+                    <input id="search" type="search" placeholder="Search...">
+                </div>
+
+                <div>
+                    <span id="profile">Profile</span>
+                </div>
+
+            </div>
+
+
+            <div id="dashboard">
+
+                <div class="dash_align">
+
+                    <h4>DASHBOARD</h4>
+                    <div>
+                        <span>SpartansMT</span>
+                        <i class="fa-light fa-chevron-right"></i>
+                        <span class="menu">Dashboard</span>
+                    </div>
+
+                </div>
+
+                <div class="container">
+
+                    <div class="container_left">
+
+                        <div class="first_row">
+
+                            <div class="three_divs">
+
+                                <div class="dash_align">
+                                    <div class="block">
+                                        <span class="menu">Number of Sales</span>
+                                        <span class="h1">1452</span>
+                                    </div>
+                                    <i class="fa-solid fa-layer-group dash_icon"></i>
+                                </div>
+                                <hr>
+                                <div class="dash_align">
+                                    <span class="percentage">2.5%</span>
+                                    <span class="menu">From previous period</span>
+                                </div>
+
+                            </div>
+
+                            <div class="three_divs">
+
+                                <div class="dash_align">
+                                    <div class="block">
+                                        <span class="menu">Sales Revenue</span>
+                                        <span class="h1">$ 38452</span>
+                                    </div>
+                                    <i class="fa-solid fa-store dash_icon"></i>
+                                </div>
+                                <hr>
+                                <div class="dash_align">
+                                    <span class="percentage">2.5%</span>
+                                    <span class="menu">From previous period</span>
+                                </div>
+
+                            </div>
+
+                            <div class="three_divs">
+
+                                <div class="dash_align">
+                                    <div class="block">
+                                        <span class="menu">Average Price</span>
+                                        <span class="h1">$ 15.4</span>
+                                    </div>
+                                    <i class="fa-solid fa-briefcase dash_icon"></i>
+                                </div>
+                                <hr>
+                                <div class="dash_align">
+                                    <span class="percentage">2.5%</span>
+                                    <span class="menu">From previous period</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <canvas id="myChart" style="width:100%;max-width:100%"></canvas>
+
+
+                    </div>
+
+                    <div class="container_right">
+
+
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </header>
+
+
+
+
+    <script>
+        var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+        var yValues = [55, 49, 44, 24, 15];
+        var barColors = ["red", "green", "blue", "orange", "brown"];
+
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "Revenue Analytics"
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
