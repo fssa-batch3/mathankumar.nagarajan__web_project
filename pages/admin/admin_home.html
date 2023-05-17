@@ -26,51 +26,63 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
 
+
 </head>
 
 <body>
 
+    <nav>
+
+        <div id="logo">
+            <img src="../../assets/image/home/logo.png" alt="">
+        </div>
+
+        <div class="nav">
+
+            <div>
+                <i class="fa-solid fa-magnifying-glass search_icon"></i>
+                <input id="search" type="search" placeholder="Search...">
+            </div>
+
+            <div>
+                <span id="profile">Profile</span>
+                <a href="../login/login.html">
+                    <i class="fa-solid fa-right-from-bracket logout"></i>
+                </a>
+            </div>
+
+        </div>
+
+
+    </nav>
+
 
     <header>
 
-        <nav>
 
-            <div id="logo">
-                <img src="../../assets/image/home/logo.png" alt="">
-            </div>
+        <ul>
 
-            <ul>
+            <span class="menu">MENU</span>
 
-                <span class="menu">MENU</span>
+            <a href="admin_home.html?id=dashboard">
                 <menu>Dashboard</menu>
-                <menu>Forms</menu>
-                <menu>Tables</menu>
+            </a>
+            
+            <a href="admin_home.html?id=store_form">
+                <menu>Create Store Form</menu>
+            </a>
+            
+            <a href="admin_home.html?id=product_form">
+                <menu>Create Product Form</menu>
+            </a>
+            
+            <menu>Tables</menu>
 
-            </ul>
+        </ul>
 
-
-
-        </nav>
 
         <div class="right_side">
-
-            <div class="nav">
-
-                <div>
-                    <i class="fa-solid fa-magnifying-glass search_icon"></i>
-                    <input id="search" type="search" placeholder="Search...">
-                </div>
-
-                <div>
-                    <span id="profile">Profile</span>
-                    <a href="../login/login.html">
-                        <i class="fa-solid fa-right-from-bracket logout"></i>
-                    </a>
-                </div>
-
-            </div>
-
-
+            
             <div id="dashboard">
 
                 <div class="dash_align">
@@ -86,82 +98,107 @@
 
                 <div class="container">
 
-                    <div class="container_left">
+                    <div class="container_main">
 
-                        <div class="first_row">
+                        <div class="container_left">
 
-                            <div class="three_divs">
-
-                                <div class="dash_align">
-                                    <div class="block">
-                                        <span class="menu">Number of Sales</span>
-                                        <span class="h1" id="total_sales"></span>
+                            <div class="first_row">
+    
+                                <div class="three_divs">
+    
+                                    <div class="dash_align">
+                                        <div class="block">
+                                            <span class="menu">Number of Sales</span>
+                                            <span class="h1" id="total_sales"></span>
+                                        </div>
+                                        <i class="fa-solid fa-layer-group dash_icon"></i>
                                     </div>
-                                    <i class="fa-solid fa-layer-group dash_icon"></i>
-                                </div>
-                                <hr>
-                                <div class="dash_align">
-                                    <span class="percentage">2.5%</span>
-                                    <span class="menu">From previous period</span>
-                                </div>
-
-                            </div>
-
-                            <div class="three_divs">
-
-                                <div class="dash_align">
-                                    <div class="block">
-                                        <span class="menu">Sales Revenue</span>
-                                        <span class="h1" id="total_price"></span>
+                                    <hr>
+                                    <div class="dash_align">
+                                        <span class="percentage">2.5%</span>
+                                        <span class="menu">From previous period</span>
                                     </div>
-                                    <i class="fa-solid fa-store dash_icon"></i>
+    
                                 </div>
-                                <hr>
-                                <div class="dash_align">
-                                    <span class="percentage">2.5%</span>
-                                    <span class="menu">From previous period</span>
-                                </div>
-
-                            </div>
-
-                            <div class="three_divs">
-
-                                <div class="dash_align">
-                                    <div class="block">
-                                        <span class="menu">Average Price</span>
-                                        <span class="h1" id="average"></span>
+    
+                                <div class="three_divs">
+    
+                                    <div class="dash_align">
+                                        <div class="block">
+                                            <span class="menu">Sales Revenue</span>
+                                            <span class="h1" id="total_price"></span>
+                                        </div>
+                                        <i class="fa-solid fa-store dash_icon"></i>
                                     </div>
-                                    <i class="fa-solid fa-briefcase dash_icon"></i>
+                                    <hr>
+                                    <div class="dash_align">
+                                        <span class="percentage">2.5%</span>
+                                        <span class="menu">From previous period</span>
+                                    </div>
+    
                                 </div>
-                                <hr>
-                                <div class="dash_align">
-                                    <span class="percentage">2.5%</span>
-                                    <span class="menu">From previous period</span>
+    
+                                <div class="three_divs">
+    
+                                    <div class="dash_align">
+                                        <div class="block">
+                                            <span class="menu">Average Price</span>
+                                            <span class="h1" id="average"></span>
+                                        </div>
+                                        <i class="fa-solid fa-briefcase dash_icon"></i>
+                                    </div>
+                                    <hr>
+                                    <div class="dash_align">
+                                        <span class="percentage">2.5%</span>
+                                        <span class="menu">From previous period</span>
+                                    </div>
+    
                                 </div>
-
+    
                             </div>
-
+    
+                            <div id="bar_chart">
+    
+                                <div>
+                                    <span class="chart_headings">Revenue Analytics</span>
+                                </div>
+    
+                                <canvas id="myChart" style="width:100%;max-width:100%;"></canvas>
+    
+                            </div>
+    
                         </div>
-
-                        <div id="bar_chart">
-
-                            <div>
-                                <span class="chart_headings">Revenue Analytics</span>
+    
+                        <div class="container_right">
+    
+                            <div id="pie_chart">
+                                <span class="chart_headings">Sales Analytics</span>
+                                <canvas id="myChart1" style="width:100%;max-width:600px;max-height: 320px;"></canvas>
                             </div>
-
-                            <canvas id="myChart" style="width:100%;max-width:100%"></canvas>
-
+    
+                            <div id="two_pie_charts">
+                                <span class="chart_headings">Earning Reports</span>
+                                <div>
+                                    <canvas id="myChart2" style="width:50%;max-width:150px"></canvas>
+                                    <canvas id="myChart3" style="width:50%;max-width:150px"></canvas>
+                                </div>
+                                <div>
+                                    <span class="menu">Weekly Earning</span>
+                                    <span class="menu">Monthly Earning</span>
+                                </div>
+    
+                            </div>
+    
+    
                         </div>
-
-                        
-
 
                     </div>
 
-                    <div class="container_right">
+                    <!-- <div id="summa"> -->
 
 
-                    </div>
+
+                    <!-- </div> -->
 
 
 
@@ -175,6 +212,15 @@
         </div>
 
 
+        <div class="right_side_store">
+
+
+
+
+        </div>
+
+
+
 
     </header>
 
@@ -183,10 +229,33 @@
 
     <script>
 
-        
-        var xValues = ["Italy", "France", "Spain", "USA", "Argentina",1,2,3,4,5,6];
-        var yValues = [55, 49, 44, 24, 15,22, 11,42,54,13,35,64];
-        var barColors = ["red", "green", "blue", "orange", "brown", "red", "green", "blue", "orange", "brown", "green"];
+
+        // URL Params
+        const url = window.location.search;
+        const urlParams = new URLSearchParams(url);
+        const paramsId = urlParams.get("id")
+        console.log(paramsId)
+
+        // Display Block and None Codes
+        if(paramsId === "store_form"){
+            document.querySelector(".right_side_store").style.display = "block"
+            document.querySelector(".right_side").style.display = "none"
+        }
+
+        if(paramsId === "dashboard"){
+            document.querySelector(".right_side_store").style.display = "none"
+            document.querySelector(".right_side").style.display = "block"
+        }
+
+
+
+
+
+
+        // Bar Chart Codes
+        var xValues = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var yValues = [55, 49, 44, 24, 25, 22, 43];
+        var barColors = ["red", "green", "blue", "orange", "brown", "red", "green"];
 
         new Chart("myChart", {
             type: "bar",
@@ -208,6 +277,76 @@
 
 
 
+        // Chart.js Codes
+        var xValues = ["Nike", "Lenskart", "Chales & Keith", "Vero Moda", "Poorvika"];
+        var yValues = [55, 49, 44, 33, 63];
+        var barColors = ["red", "green", "blue", "orange", "brown"];
+
+        new Chart("myChart1", {
+            type: "doughnut",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues,
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    // text: "World Wide Wine Production 2018"
+                }
+            }
+        });
+
+        // End Chart.js Codes
+
+
+        var xValues = ["Weekly Earnings", ""];
+        var yValues = [75, 25];
+        var barColors = ["blue",];
+
+        new Chart("myChart2", {
+            type: "doughnut",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues,
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    // text: "World Wide Wine Production 2018"
+                }
+            }
+        });
+
+
+        var xValues = ["Monthly Earnings", ""];
+        var yValues = [75, 25];
+        var barColors = ["green",];
+
+        new Chart("myChart3", {
+            type: "doughnut",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues,
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    // text: "World Wide Wine Production 2018"
+                }
+            }
+        });
+
+
+
 
 
 
@@ -219,7 +358,7 @@
         let orders = JSON.parse(localStorage.getItem("orders"))
         let total_price1 = 0
         let quantity = 0;
-        for(let i=0; i<orders.length; i++){
+        for (let i = 0; i < orders.length; i++) {
 
             total_price1 += parseFloat(orders[i].price) * parseFloat(orders[i].quantity)
             quantity += parseFloat(orders[i].quantity)
@@ -228,15 +367,10 @@
 
         // Average Algorithm
         let total_average = 0;
-        total_average = total_price1/quantity
-
-        // let empty = total_average.split()
-        // console.log(empty)
-
-
+        total_average = total_price1 / quantity
 
         // Number of Sales
-        let total_sales =  document.getElementById("total_sales")
+        let total_sales = document.getElementById("total_sales")
         total_sales.innerText = orders.length;
 
         // Total Sales Revenue

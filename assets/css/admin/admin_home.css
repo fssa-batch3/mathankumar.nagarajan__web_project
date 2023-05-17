@@ -9,37 +9,50 @@ body{
     color: white;
 }
 
+a{
+    text-decoration: none;
+}
+
+nav{
+    background-color: #252b3b;
+    display: flex;
+    align-items: center;
+}
+
 header{
     display: flex;
 }
 
-header nav{
-
-    width: 20%;
-    background-color: #252b3b;
-    height: 100vh;
-
+ul .menu{
+    line-height: 60px;
+    color: rebeccapurple;
 }
 
-header .right_side{
-    width: 80%;
-    background-color: #1d222e;
-    height: 100vh;
-}
 
 #logo{
     /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-    /* padding-right: 2px; */
+    width: 20%;
 }
 
 #logo img{
     width: 50%;
-    margin: 15px 20px;
+    margin: 15px 35px;
 }
 
 ul{
-    /* display: flex; */
+    margin: 0px 0px;
+    width: 15%;
+    background-color: #252b3b;
+    height: 91.1vh;
 }
+
+.right_side{
+    /* display: none; */
+    width: 85%;
+    background-color: #1d222e;
+    height: 91.1vh;
+}
+
 
 ul menu{
     padding: 0%;
@@ -52,13 +65,14 @@ ul menu{
     font-size: 14px;
     font-weight: bold;
     color: #4c5366;
+
 }
 
 .nav{
     margin: 0%;
     padding: 0%;
-    width: 100%;
-    height: 80px;
+    width: 80%;
+    /* height: 80px; */
     background-color: #252b3b;
     /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     display: flex;
@@ -101,6 +115,7 @@ ul menu{
 
     margin-right: 25px;
     font-size: 20px;
+    color: white;
 
 }
 
@@ -138,19 +153,19 @@ ul menu{
     font-size: 14px;
 }
 
-.container{
+.container .container_main{
     display: flex;
     justify-content: space-around;
 }
 
 .container_left{
-    width: 70%;
+    width: 65%;
     /* background-color: aliceblue; */
     height: 30px;
 }
 
 .container_right{
-    width: 25%;
+    width: 30%;
     /* background-color: aqua; */
 
 }
@@ -185,4 +200,46 @@ ul menu{
 .chart_headings{
     font-size: 16px;
     font-weight: 500;
+    margin: 0%;
+    padding: 0%;
 }
+
+#pie_chart{
+    background-color: #252b3b;
+    padding: 20px;
+    border-radius: 3px;
+}
+
+#two_pie_charts{
+    background-color: #252b3b;
+    padding: 15px;
+    border-radius: 3px;
+    margin-top: 25px;
+}
+
+#two_pie_charts div{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#summa{
+    background-color: white;
+    width: 100%;
+    height: 10px;
+}
+
+
+
+
+
+/* Create Store Codes */
+
+.right_side_store{
+    /* display: none; */
+    width: 85%;
+    background-color: #1d222e;
+    height: 91.1vh;
+}
+
+

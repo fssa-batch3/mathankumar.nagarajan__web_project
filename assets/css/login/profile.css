@@ -283,7 +283,9 @@ select:invalid{
 
 /* Order Page Starting */
 
-
+.order_date{
+    display: flex;
+}
 
 .order_color{
     width: 15px;
@@ -297,7 +299,7 @@ select:invalid{
     height: 500px;
     overflow: auto;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 .order_list::-webkit-scrollbar {
     /* display: none; */
@@ -411,7 +413,7 @@ select:invalid{
     height: 500px;
     overflow: auto;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 
 .items div{

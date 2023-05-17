@@ -515,7 +515,7 @@
                 icon.setAttribute("class", "fa-solid fa-xmark")
                 wl_div.append(icon)
 
-                document.querySelector(".items").append(wl_div)
+                document.querySelector(".items").prepend(wl_div)
 
                 const productTitle = element.title
 
@@ -653,7 +653,7 @@
                 div_order_numer.setAttribute("class", "order_numer")
                 div.prepend(div_order_numer)
 
-                const h1_order_id = document.createElement("h1")
+                const h1_order_id = document.createElement("h2")
                 h1_order_id.innerText = `Order id: ${  el.order_id}`;
                 div_order_numer.prepend(h1_order_id)
 
@@ -679,7 +679,7 @@
                 img_product_img.setAttribute("alt", "Product image")
                 div_order_product.prepend(img_product_img)
 
-                document.querySelector(".order_list").append(div)
+                document.querySelector(".order_list").prepend(div)
                 
             }
 
