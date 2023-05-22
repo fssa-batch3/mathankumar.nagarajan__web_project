@@ -45,6 +45,10 @@ a {
 /* Nav Finished */
 
 
+.title{
+    font-size: 35px;
+}
+
 .product_div {
     border: 1px solid black;
     width: 600px;
