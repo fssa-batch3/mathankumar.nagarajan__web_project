@@ -242,4 +242,89 @@ ul menu{
     height: 91.1vh;
 }
 
+.right_side_products{
+    width: 85%;
+    background-color: #1d222e;
+    height: 91.1vh;
+}
+
+.create_product_btn{
+    float: right;
+    width: 18.5%;
+}
+
+.create_store_btn{
+    float: right;
+    width: 18.5%;
+}
+
+.create_product_btn button{
+    padding: 15px 40px;
+    background-color: #fb7b44;
+    box-shadow: #fb7b44 0px 0px 15px;
+    font-size: 16px;
+    font-weight: bolder;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+.create_store_btn button{
+    padding: 15px 40px;
+    background-color: #fb7b44;
+    box-shadow: #fb7b44 0px 0px 15px;
+    font-size: 16px;
+    font-weight: bolder;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+table{
+    width: 90%;
+    margin: auto;
+}
+
+table tr th{
+    text-align: start;
+}
+
+.label{
+    width: 20%;
+    height: 50px;
+}
+
+.inputs{
+    width: 80%;
+}
+
+.inputs input{
+    width: 90%;
+    height: 35px;
+    font-size: 16px;
+    color: white;
+    outline: none;
+    background-color: #2b3141;
+    border: 1px solid #2f3649;
+    border-radius: 3px;
+}
+
+.btns{
+    width: 100%;
+
+}
+
+.btns button{
+    float: right;
+    margin-top: 30px;
+    margin-right: 150px;
+    padding: 15px 40px;
+    background-color: #23b723;
+    box-shadow: #23b723 0px 0px 10px;
+    font-size: 16px;
+    font-weight: bolder;
+    color: white;
+    border: none;
+    outline: none;
+}
 

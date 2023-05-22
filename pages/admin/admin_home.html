@@ -67,22 +67,19 @@
             <a href="admin_home.html?id=dashboard">
                 <menu>Dashboard</menu>
             </a>
-            
+
             <a href="admin_home.html?id=store_form">
-                <menu>Create Store Form</menu>
+                <menu>Forms</menu>
             </a>
-            
-            <a href="admin_home.html?id=product_form">
-                <menu>Create Product Form</menu>
-            </a>
-            
+
+
             <menu>Tables</menu>
 
         </ul>
 
 
         <div class="right_side">
-            
+
             <div id="dashboard">
 
                 <div class="dash_align">
@@ -103,9 +100,9 @@
                         <div class="container_left">
 
                             <div class="first_row">
-    
+
                                 <div class="three_divs">
-    
+
                                     <div class="dash_align">
                                         <div class="block">
                                             <span class="menu">Number of Sales</span>
@@ -118,11 +115,11 @@
                                         <span class="percentage">2.5%</span>
                                         <span class="menu">From previous period</span>
                                     </div>
-    
+
                                 </div>
-    
+
                                 <div class="three_divs">
-    
+
                                     <div class="dash_align">
                                         <div class="block">
                                             <span class="menu">Sales Revenue</span>
@@ -135,11 +132,11 @@
                                         <span class="percentage">2.5%</span>
                                         <span class="menu">From previous period</span>
                                     </div>
-    
+
                                 </div>
-    
+
                                 <div class="three_divs">
-    
+
                                     <div class="dash_align">
                                         <div class="block">
                                             <span class="menu">Average Price</span>
@@ -152,30 +149,30 @@
                                         <span class="percentage">2.5%</span>
                                         <span class="menu">From previous period</span>
                                     </div>
-    
+
                                 </div>
-    
+
                             </div>
-    
+
                             <div id="bar_chart">
-    
+
                                 <div>
                                     <span class="chart_headings">Revenue Analytics</span>
                                 </div>
-    
+
                                 <canvas id="myChart" style="width:100%;max-width:100%;"></canvas>
-    
+
                             </div>
-    
+
                         </div>
-    
+
                         <div class="container_right">
-    
+
                             <div id="pie_chart">
                                 <span class="chart_headings">Sales Analytics</span>
                                 <canvas id="myChart1" style="width:100%;max-width:600px;max-height: 320px;"></canvas>
                             </div>
-    
+
                             <div id="two_pie_charts">
                                 <span class="chart_headings">Earning Reports</span>
                                 <div>
@@ -186,10 +183,10 @@
                                     <span class="menu">Weekly Earning</span>
                                     <span class="menu">Monthly Earning</span>
                                 </div>
-    
+
                             </div>
-    
-    
+
+
                         </div>
 
                     </div>
@@ -215,9 +212,181 @@
         <div class="right_side_store">
 
 
+            <div class="dash_align">
+
+                <h4>CREATE STORE</h4>
+                <div>
+                    <span>SpartansMT</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                    <span class="menu">Create Store Form</span>
+                </div>
+
+            </div>
+
+            <div class="create_product_btn">
+                <button id="create_product_btn">Create Products</button>
+            </div>
+
+            <form id="form">
+
+
+                <table>
+
+                    <tr>
+                        <th class="label">Labels</th>
+                        <th class="inputs">Inputs</th>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Value:</td>
+                        <td class="inputs"><input type="number" id="value"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Title:</td>
+                        <td class="inputs"><input type="text" id="title"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Category:</td>
+                        <td class="inputs"><input type="text" id="category"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Store logo URL:</td>
+                        <td class="inputs"><input type="url" id="image"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Store Banner URL:</td>
+                        <td class="inputs"><input type="url" id="banner"></td>
+                    </tr>
+
+                </table>
+
+
+                <div class="btns">
+
+                    <button id="add_store_btn" type="submit">Submit Form</button>
+
+                    <!-- <button id="update_btn">Update Store</button>
+            
+                    <button id="edit_btn">Edit Store</button>
+            
+                    <button id="delete_btn">Delete Store</button> -->
+
+                </div>
+
+
+
+            </form>
 
 
         </div>
+
+
+        <div class="right_side_products">
+
+
+            <div class="dash_align">
+
+                <h4>CREATE PRODUCT</h4>
+                <div>
+                    <span>SpartansMT</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                    <span class="menu">Create Product Form</span>
+                </div>
+
+            </div>
+
+            <div class="create_store_btn">
+                <button id="create_store_btn">Create Stores</button>
+            </div>
+
+
+
+            <form id="product_form">
+
+                <table>
+
+                    <tr>
+                        <th class="label">Labels</th>
+                        <th class="inputs">Inputs</th>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Store Name :</td>
+                        <td class="inputs"><input type="text" id="store_name" required></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Value :</td>
+                        <td class="inputs"><input type="number" id="product_value" required></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Title :</td>
+                        <td class="inputs"><input type="text" id="product_title" required></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Price :</td>
+                        <td class="inputs"><input type="number" id="price" required></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Full Price :</td>
+                        <td class="inputs"><input type="number" id="full_price" required></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Discount :</td>
+                        <td class="inputs"><input type="number" id="discount" required></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Rating :</td>
+                        <td class="inputs"><input type="text" id="rating" required></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Reviews :</td>
+                        <td class="inputs"><input type="number" id="reviews" required></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Product URL Link :</td>
+                        <td class="inputs"><input type="url" id="product_image" required></td>
+                    </tr>
+
+                </table>
+
+
+                <div class="btns">
+
+                    <button id="add_product" type="submit">Add Product</button>
+                    <!-- <button id="update_product">Update Product</button> -->
+                    <!-- <button id="edit_product">Edit Product</button> -->
+                    <!-- <button id="delete_btn">Delete Product</button> -->
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+
+        <div class="tables">
+
+            
+
+        </div>
+
+
+
+
 
 
 
@@ -229,6 +398,19 @@
 
     <script>
 
+        // Passing params id
+        let create_product_btn = document.getElementById("create_product_btn")
+        create_product_btn.addEventListener("click", function () {
+            window.location.href = "admin_home.html?id=product_form"
+        })
+
+        let create_store_btn = document.getElementById("create_store_btn")
+        create_store_btn.addEventListener("click", function () {
+            window.location.href = "admin_home.html?id=store_form"
+        })
+
+
+
 
         // URL Params
         const url = window.location.search;
@@ -237,16 +419,23 @@
         console.log(paramsId)
 
         // Display Block and None Codes
-        if(paramsId === "store_form"){
+        if (paramsId === "store_form") {
             document.querySelector(".right_side_store").style.display = "block"
             document.querySelector(".right_side").style.display = "none"
+            document.querySelector(".right_side_products").style.display = "none"
         }
 
-        if(paramsId === "dashboard"){
+        if (paramsId === "dashboard") {
             document.querySelector(".right_side_store").style.display = "none"
+            document.querySelector(".right_side_products").style.display = "none"
             document.querySelector(".right_side").style.display = "block"
         }
 
+        if (paramsId === "product_form") {
+            document.querySelector(".right_side_store").style.display = "none"
+            document.querySelector(".right_side_products").style.display = "block"
+            document.querySelector(".right_side").style.display = "none"
+        }
 
 
 
@@ -344,6 +533,170 @@
                 }
             }
         });
+
+
+        // Add Store Details in the localstorage codes
+        const add_store_btn = document.getElementById("form")
+        add_store_btn.addEventListener("submit", el => {
+
+            const id = Date.now();  // generate Primary Key
+
+            const image = document.getElementById("image").value
+            const title = document.getElementById("title").value
+            const category = document.getElementById("category").value
+            const banner = document.getElementById("banner").value 
+            const { value } = document.getElementById("value")
+            const products = [];
+
+            if (image !== "" && title !== "" && category !== "" && value !== "" && banner !== "" ) {
+
+                el.preventDefault();
+                const storesDetails = JSON.parse(localStorage.getItem("stores")) ?? [];
+                // const value = document.getElementById("value");
+
+                // const image = document.getElementById("image").value
+                // const title = document.getElementById("title").value
+                // const category = document.getElementById("category").value
+                // const banner = document.getElementById("banner").value
+
+                let storede = 0;
+                // console.log(storesDetails)
+                storesDetails.find(e => {
+                    if (e.value === value.value) {
+                        // console.log(e["value"])
+                        // console.log(value.value)
+                        return storede = 1;
+                    }
+
+                    storede = 0;
+                });
+
+                if (storede === 1) {
+                    alert("already exists")
+                }
+                else {
+
+                    const store = {};
+
+                    // let id;
+
+                    // for (let i = storesDetails.length - 1; i >= storesDetails.length - 1; i--) {
+                    //     id = storesDetails[i] + 1;
+                    // }
+
+                    // const { value } = document.getElementById("value");
+
+                    store.image = image;
+                    store.title = title;
+                    store.category = category;
+                    store.value = value;
+                    store.id = id;
+                    store.products = products;
+                    store.banner = banner;
+
+                    storesDetails.push(store);
+
+                    localStorage.setItem("stores", JSON.stringify(storesDetails))
+
+                }
+
+            }
+            else {
+                alert("Field can't be empty")
+            }
+
+            window.location.href = "admin_home.html?id=store_form"
+
+        })
+
+
+
+        // Add Product Details in the localstorage code
+        const product_form = document.getElementById("product_form")
+        product_form.addEventListener("submit", ele => {
+            
+            // ele.preventDefault()
+
+            const image = document.getElementById("product_image").value.trim();
+            const title = document.getElementById("product_title").value.trim();
+            const price = document.getElementById("price").value
+            const { value } = document.getElementById("product_value").value
+            const full_price = document.getElementById("full_price").value
+            const discount = document.getElementById("discount").value
+            const rating = document.getElementById("rating").value
+            const reviews = document.getElementById("reviews").value
+
+            const storesDetails = JSON.parse(localStorage.getItem("stores"))
+            const store_name = document.getElementById("store_name").value
+
+            storesDetails.find(el => {
+                if (el.title === store_name) {
+
+                    if (image !== "" && title !== "" && price !== "" && value !== "" && full_price !== "" && discount !== "" && rating !== "" && reviews !== "") {
+
+                        const productDetails = el.products
+                        const val = document.getElementById("product_value");
+                        let prodcutde;
+
+                        productDetails.find(e => {
+
+                            console.log(e.value)
+
+                            if (e.value === val.value) {
+                                return prodcutde = 1;
+                            }
+
+                            prodcutde = 0;
+                            // return e;
+                        });
+
+                        if (prodcutde === 1) {
+                            alert("already exists")
+                        }
+                        else {
+                            const product = {};
+                            product.image = image;
+                            product.title = title;
+                            product.price = price;
+                            product.value = val.value;
+                            product.full_price = full_price;
+                            product.discount = discount;
+                            product.rating = rating;
+                            product.reviews = reviews;
+                            productDetails.push(product);
+
+                            const newItems = JSON.parse(localStorage.getItem("stores"))
+
+                            newItems.find(element => {
+
+                                if (element.title === store_name) {
+                                    const save = element.products
+                                    // console.log(save)
+                                    save.push(product)
+                                    localStorage.setItem("stores", JSON.stringify(newItems))
+                                }
+                                // return element;
+                            })
+
+                        }
+                    }
+                    else {
+                        alert("Field can't be empty")
+                    }
+                }
+                // else {
+                //     alert("Your Store Name Isn't Matched")
+                // }
+                // return el;
+
+            })
+        
+
+            window.location.href = "admin_home.html?id=product_form"
+
+        });
+
+
 
 
 
