@@ -2161,25 +2161,27 @@ Signup Offers & Events<br> Updates
         let p_viewmore;
         let a_items;
 
-        // store names in Array
-        const store_names = ["Nike", "SS Beauty Shop", "Lenskart", "Chales & Keith", "Vero Moda", "Poorvika", "MAC", "Jack & Zone", "Label Ritu Kumar", "ivenus"];
+        // // store names in Array
+        // const store_names = ["Nike", "SS Beauty Shop", "Lenskart", "Chales & Keith", "Vero Moda", "Poorvika", "MAC", "Jack & Zone", "Label Ritu Kumar", "ivenus"];
 
-        // store category in Array
-        const store_category = ["Shoes Shop", "Beauty Shop", "Specse Shop", "Bags & Luggage", "Fashion Dress For Women", "Mobile Shop", "Beauty Products", "Mens Fashion", "Designer Wear", "Apple Premium Reseller"];
+        // // store category in Array
+        // const store_category = ["Shoes Shop", "Beauty Shop", "Specse Shop", "Bags & Luggage", "Fashion Dress For Women", "Mobile Shop", "Beauty Products", "Mens Fashion", "Designer Wear", "Apple Premium Reseller"];
 
-        // store images path in Array
-        const store_images = ["../../../assets/image/stores/store27.png", "../../../assets/image/stores/store1.jpeg", "../../../assets/image/stores/store42.jpg", "../../../assets/image/stores/store2.png", "../../../assets/image/stores/store3.png",
-            "../../../assets/image/stores/store52.png", "../../../assets/image/stores/store34.gif", "../../../assets/image/stores/store4.png", "../../../assets/image/stores/store9.jpg", "../../../assets/image/stores/store18.jpeg"];
+        // // store images path in Array
+        // const store_images = ["../../../assets/image/stores/store27.png", "../../../assets/image/stores/store1.jpeg", "../../../assets/image/stores/store42.jpg", "../../../assets/image/stores/store2.png", "../../../assets/image/stores/store3.png",
+        //     "../../../assets/image/stores/store52.png", "../../../assets/image/stores/store34.gif", "../../../assets/image/stores/store4.png", "../../../assets/image/stores/store9.jpg", "../../../assets/image/stores/store18.jpeg"];
 
-        // next page file path in Array 
-        const store_items = ["../../../pages/stores/prducts/nike.html", "../../../pages/stores/prducts/ss-beauty.html", "../../../pages/stores/prducts/lenskart.html", "../../../pages/stores/prducts/charles-keith.html", "../../../pages/stores/prducts/vero-moda.html",
-            "../../../pages/stores/prducts/poorvika.html", "../../../pages/stores/prducts/mac.html", "../../../pages/stores/prducts/jack-zone.html", "../../../pages/stores/prducts/label-designer-wear.html", "../../../pages/stores/prducts/ivenus.html"]
+        // // next page file path in Array 
+        // const store_items = ["../../../pages/stores/prducts/nike.html", "../../../pages/stores/prducts/ss-beauty.html", "../../../pages/stores/prducts/lenskart.html", "../../../pages/stores/prducts/charles-keith.html", "../../../pages/stores/prducts/vero-moda.html",
+        //     "../../../pages/stores/prducts/poorvika.html", "../../../pages/stores/prducts/mac.html", "../../../pages/stores/prducts/jack-zone.html", "../../../pages/stores/prducts/label-designer-wear.html", "../../../pages/stores/prducts/ivenus.html"]
+
+                
 
         for (let i = 0; i <= 9; i++) {
             // console.log("hello world")
 
             a_items = document.createElement("a");              // create tage
-            a_items.setAttribute("href", store_items[i]);       // adding class or same attribute
+            a_items.setAttribute("href", "../../../pages/stores/prducts/nike.html?value=" + stores[i].value);       // adding class or same attribute
             // console.log(a_items);                               // view code
 
             single_box = document.createElement("div");
@@ -2187,7 +2189,7 @@ Signup Offers & Events<br> Updates
             a_items.append(single_box)                           // placeing place 
 
             img_size = document.createElement("img");       // creating img tag
-            img_size.setAttribute("src", store_images[i]);  // add some attribute
+            img_size.setAttribute("src", stores[i].image);  // add some attribute
             img_size.setAttribute("alt", "Store Logo");
             img_size.setAttribute("class", "img-size");
             single_box.prepend(img_size);
@@ -2196,11 +2198,11 @@ Signup Offers & Events<br> Updates
             single_box.append(div_home);
 
             h2_storenames = document.createElement("h2");
-            h2_storenames.innerText = store_names[i];
+            h2_storenames.innerText = stores[i].title;
             div_home.prepend(h2_storenames);
 
             p_storecategory = document.createElement("p");
-            p_storecategory.innerText = store_category[i];
+            p_storecategory.innerText = stores[i].category;
             div_home.append(p_storecategory);
 
             p_viewmore = document.createElement("p");
