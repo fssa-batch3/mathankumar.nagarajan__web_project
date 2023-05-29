@@ -577,7 +577,7 @@
                         item.user_email = user.user_email;
 
                         // I didn't added Store Value so Clear the Bug After unblock the below code
-                        item["store_value"] = element.store_value;
+                        item.store_value = element.store_value;
 
                         addCart.push(item);
                         localStorage.setItem("Cart", JSON.stringify(addCart));

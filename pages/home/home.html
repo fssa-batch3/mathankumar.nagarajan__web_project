@@ -514,7 +514,7 @@ Signup Offers & Events<br> Updates
             const email_btn = document.getElementById("footer-email").value;
 
             // e.preventDefault();
-            let Email;
+
             console.log("Email");
 
             Email.send({
@@ -524,7 +524,7 @@ Signup Offers & Events<br> Updates
                 To: email_btn,
                 From: "spartansmarkettown@gmail.com",
                 Subject: "SpartansMT Offers Updates",
-                Body: "Empty"
+                Body: ""
             }).then(
                 message => alert(message)
             );

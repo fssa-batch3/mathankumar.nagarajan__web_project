@@ -2087,7 +2087,6 @@ Signup Offers & Events<br> Updates
                     product.user_email = user.user_email
                     product.store_value = store_name
 
-
                     wishList.push(product)
 
                     localStorage.setItem("wishList", JSON.stringify(wishList))
@@ -2175,13 +2174,11 @@ Signup Offers & Events<br> Updates
         // const store_items = ["../../../pages/stores/prducts/nike.html", "../../../pages/stores/prducts/ss-beauty.html", "../../../pages/stores/prducts/lenskart.html", "../../../pages/stores/prducts/charles-keith.html", "../../../pages/stores/prducts/vero-moda.html",
         //     "../../../pages/stores/prducts/poorvika.html", "../../../pages/stores/prducts/mac.html", "../../../pages/stores/prducts/jack-zone.html", "../../../pages/stores/prducts/label-designer-wear.html", "../../../pages/stores/prducts/ivenus.html"]
 
-                
-
         for (let i = 0; i <= 9; i++) {
             // console.log("hello world")
 
             a_items = document.createElement("a");              // create tage
-            a_items.setAttribute("href", "../../../pages/stores/prducts/nike.html?value=" + stores[i].value);       // adding class or same attribute
+            a_items.setAttribute("href", `../../../pages/stores/prducts/nike.html?value=${  stores[i].value}`);       // adding class or same attribute
             // console.log(a_items);                               // view code
 
             single_box = document.createElement("div");

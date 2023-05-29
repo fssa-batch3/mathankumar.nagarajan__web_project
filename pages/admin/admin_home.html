@@ -25,8 +25,6 @@
     <!-- Chart script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
-
-
 </head>
 
 <body>
@@ -53,12 +51,9 @@
 
         </div>
 
-
     </nav>
 
-
     <header>
-
 
         <ul>
 
@@ -72,11 +67,11 @@
                 <menu>Forms</menu>
             </a>
 
-
-            <menu>Tables</menu>
+            <a href="admin_table.html">
+                <menu>Tables</menu>
+            </a>
 
         </ul>
-
 
         <div class="right_side">
 
@@ -186,31 +181,21 @@
 
                             </div>
 
-
                         </div>
 
                     </div>
 
                     <!-- <div id="summa"> -->
 
-
-
                     <!-- </div> -->
-
-
 
                 </div>
 
-
             </div>
-
-
 
         </div>
 
-
         <div class="right_side_store">
-
 
             <div class="dash_align">
 
@@ -229,7 +214,6 @@
 
             <form id="form">
 
-
                 <table>
 
                     <tr>
@@ -239,31 +223,40 @@
 
                     <tr>
                         <td class="label">Value:</td>
-                        <td class="inputs"><input type="number" id="value"></td>
+                        <td class="inputs">
+                            <input type="number" id="value">
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="label">Title:</td>
-                        <td class="inputs"><input type="text" id="title"></td>
+                        <td class="inputs">
+                            <input type="text" id="title">
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="label">Category:</td>
-                        <td class="inputs"><input type="text" id="category"></td>
+                        <td class="inputs">
+                            <input type="text" id="category">
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="label">Store logo URL:</td>
-                        <td class="inputs"><input type="url" id="image"></td>
+                        <td class="inputs">
+                            <input type="url" id="image">
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="label">Store Banner URL:</td>
-                        <td class="inputs"><input type="url" id="banner"></td>
+                        <td class="inputs">
+                            <input type="url" id="banner">
+                        </td>
                     </tr>
 
                 </table>
-
 
                 <div class="btns">
 
@@ -277,16 +270,11 @@
 
                 </div>
 
-
-
             </form>
-
 
         </div>
 
-
         <div class="right_side_products">
-
 
             <div class="dash_align">
 
@@ -303,8 +291,6 @@
                 <button id="create_store_btn">Create Stores</button>
             </div>
 
-
-
             <form id="product_form">
 
                 <table>
@@ -316,51 +302,68 @@
 
                     <tr>
                         <td class="label">Store Name :</td>
-                        <td class="inputs"><input type="text" id="store_name" required></td>
+                        <td class="inputs">
+                            <input type="text" id="store_name" required>
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="label">Value :</td>
-                        <td class="inputs"><input type="number" id="product_value" required></td>
+                        <td class="inputs">
+                            <input type="number" id="product_value" required>
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="label">Title :</td>
-                        <td class="inputs"><input type="text" id="product_title" required></td>
+                        <td class="inputs">
+                            <input type="text" id="product_title" required>
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="label">Price :</td>
-                        <td class="inputs"><input type="number" id="price" required></td>
+                        <td class="inputs">
+                            <input type="number" id="price" required>
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="label">Full Price :</td>
-                        <td class="inputs"><input type="number" id="full_price" required></td>
+                        <td class="inputs">
+                            <input type="number" id="full_price" required>
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="label">Discount :</td>
-                        <td class="inputs"><input type="number" id="discount" required></td>
+                        <td class="inputs">
+                            <input type="number" id="discount" required>
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="label">Rating :</td>
-                        <td class="inputs"><input type="text" id="rating" required></td>
+                        <td class="inputs">
+                            <input type="text" id="rating" required>
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="label">Reviews :</td>
-                        <td class="inputs"><input type="number" id="reviews" required></td>
+                        <td class="inputs">
+                            <input type="number" id="reviews" required>
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="label">Product URL Link :</td>
-                        <td class="inputs"><input type="url" id="product_image" required></td>
+                        <td class="inputs">
+                            <input type="url" id="product_image" required>
+                        </td>
                     </tr>
 
                 </table>
-
 
                 <div class="btns">
 
@@ -371,46 +374,24 @@
 
                 </div>
 
-
             </form>
 
-
         </div>
 
-
-        <div class="tables">
-
-            
-
-        </div>
-
-
-
-
-
-
-
+        
 
     </header>
 
-
-
-
-    <script>
-
-        // Passing params id
-        let create_product_btn = document.getElementById("create_product_btn")
-        create_product_btn.addEventListener("click", function () {
+    <script>        // Passing params id
+        const create_product_btn = document.getElementById("create_product_btn")
+        create_product_btn.addEventListener("click", () => {
             window.location.href = "admin_home.html?id=product_form"
         })
 
-        let create_store_btn = document.getElementById("create_store_btn")
-        create_store_btn.addEventListener("click", function () {
+        const create_store_btn = document.getElementById("create_store_btn")
+        create_store_btn.addEventListener("click", () => {
             window.location.href = "admin_home.html?id=store_form"
         })
-
-
-
 
         // URL Params
         const url = window.location.search;
@@ -437,9 +418,12 @@
             document.querySelector(".right_side").style.display = "none"
         }
 
-
-
-
+        // if (paramsId === "tables") {
+        //     document.querySelector(".right_side_store").style.display = "none"
+        //     document.querySelector(".right_side_products").style.display = "none"
+        //     document.querySelector(".right_side").style.display = "none"
+        //     document.querySelector(".tables").style.display = "block"
+        // }
 
         // Bar Chart Codes
         var xValues = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -463,8 +447,6 @@
                 }
             }
         });
-
-
 
         // Chart.js Codes
         var xValues = ["Nike", "Lenskart", "Chales & Keith", "Vero Moda", "Poorvika"];
@@ -490,7 +472,6 @@
 
         // End Chart.js Codes
 
-
         var xValues = ["Weekly Earnings", ""];
         var yValues = [75, 25];
         var barColors = ["blue",];
@@ -512,7 +493,6 @@
             }
         });
 
-
         var xValues = ["Monthly Earnings", ""];
         var yValues = [75, 25];
         var barColors = ["green",];
@@ -533,8 +513,6 @@
                 }
             }
         });
-        
-
 
         // Add Store Details in the localstorage codes
         const add_store_btn = document.getElementById("form")
@@ -545,11 +523,11 @@
             const image = document.getElementById("image").value
             const title = document.getElementById("title").value
             const category = document.getElementById("category").value
-            const banner = document.getElementById("banner").value 
+            const banner = document.getElementById("banner").value
             const { value } = document.getElementById("value")
             const products = [];
 
-            if (image !== "" && title !== "" && category !== "" && value !== "" && banner !== "" ) {
+            if (image !== "" && title !== "" && category !== "" && value !== "" && banner !== "") {
 
                 el.preventDefault();
                 const storesDetails = JSON.parse(localStorage.getItem("stores")) ?? [];
@@ -610,12 +588,10 @@
 
         })
 
-
-
         // Add Product Details in the localstorage code
         const product_form = document.getElementById("product_form")
         product_form.addEventListener("submit", ele => {
-            
+
             // ele.preventDefault()
 
             const image = document.getElementById("product_image").value.trim();
@@ -691,25 +667,13 @@
                 // return el;
 
             })
-        
 
             window.location.href = "admin_home.html?id=product_form"
 
         });
 
-
-
-
-
-
-
-
-
-
-
-
         // First Row Three Boxes count Codes
-        let orders = JSON.parse(localStorage.getItem("orders"))
+        const orders = JSON.parse(localStorage.getItem("orders"))
         let total_price1 = 0
         let quantity = 0;
         for (let i = 0; i < orders.length; i++) {
@@ -724,21 +688,17 @@
         total_average = total_price1 / quantity
 
         // Number of Sales
-        let total_sales = document.getElementById("total_sales")
+        const total_sales = document.getElementById("total_sales")
         total_sales.innerText = orders.length;
 
         // Total Sales Revenue
-        let total_price = document.getElementById("total_price")
-        total_price.innerText = "₹ " + total_price1;
+        const total_price = document.getElementById("total_price")
+        total_price.innerText = `₹ ${total_price1}`;
 
         // Average Price
-        let average = document.getElementById("average")
-        average.innerText = "₹ " + parseFloat(total_average.toFixed(2))
-
-
-
+        const average = document.getElementById("average")
+        average.innerText = `₹ ${parseFloat(total_average.toFixed(2))}`
     </script>
-
 
 </body>
 
