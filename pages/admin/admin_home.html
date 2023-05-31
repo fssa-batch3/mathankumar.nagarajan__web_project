@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Home Page Title -->
+    <title>SpartansMT Admin</title>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="../../assets/css/admin/admin_home.css">
+
+    <!-- Title Icon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/image/home/logo icon.png" alt="logo icon">
+
+    <!-- Google Font link -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chart script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+</head>
+
+<body>
+
+    <nav>
+
+        <div id="logo">
+            <img src="../../assets/image/home/logo.png" alt="">
+        </div>
+
+        <div class="nav">
+
+            <div>
+                <i class="fa-solid fa-magnifying-glass search_icon"></i>
+                <input id="search" type="search" placeholder="Search...">
+            </div>
+
+            <div>
+                <span id="profile">Profile</span>
+                <a href="../login/login.html">
+                    <i class="fa-solid fa-right-from-bracket logout"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <header>
+
+        <ul>
+
+            <span class="menu">MENU</span>
+
+            <a href="admin_home.html?id=dashboard">
+                <menu>Dashboard</menu>
+            </a>
+
+            <a href="admin_home.html?id=store_form">
+                <menu>Forms</menu>
+            </a>
+
+            <a href="admin_table.html">
+                <menu>Tables</menu>
+            </a>
+
+        </ul>
+
+        <div class="right_side">
+
+            <div id="dashboard">
+
+                <div class="dash_align">
+
+                    <h4>DASHBOARD</h4>
+                    <div>
+                        <span>SpartansMT</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                        <span class="menu">Dashboard</span>
+                    </div>
+
+                </div>
+
+                <div class="container">
+
+                    <div class="container_main">
+
+                        <div class="container_left">
+
+                            <div class="first_row">
+
+                                <div class="three_divs">
+
+                                    <div class="dash_align">
+                                        <div class="block">
+                                            <span class="menu">Number of Sales</span>
+                                            <span class="h1" id="total_sales"></span>
+                                        </div>
+                                        <i class="fa-solid fa-layer-group dash_icon"></i>
+                                    </div>
+                                    <hr>
+                                    <div class="dash_align">
+                                        <span class="percentage">2.5%</span>
+                                        <span class="menu">From previous period</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="three_divs">
+
+                                    <div class="dash_align">
+                                        <div class="block">
+                                            <span class="menu">Sales Revenue</span>
+                                            <span class="h1" id="total_price"></span>
+                                        </div>
+                                        <i class="fa-solid fa-store dash_icon"></i>
+                                    </div>
+                                    <hr>
+                                    <div class="dash_align">
+                                        <span class="percentage">2.5%</span>
+                                        <span class="menu">From previous period</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="three_divs">
+
+                                    <div class="dash_align">
+                                        <div class="block">
+                                            <span class="menu">Average Price</span>
+                                            <span class="h1" id="average"></span>
+                                        </div>
+                                        <i class="fa-solid fa-briefcase dash_icon"></i>
+                                    </div>
+                                    <hr>
+                                    <div class="dash_align">
+                                        <span class="percentage">2.5%</span>
+                                        <span class="menu">From previous period</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div id="bar_chart">
+
+                                <div>
+                                    <span class="chart_headings">Revenue Analytics</span>
+                                </div>
+
+                                <canvas id="myChart" style="width:100%;max-width:100%;"></canvas>
+
+                            </div>
+
+                        </div>
+
+                        <div class="container_right">
+
+                            <div id="pie_chart">
+                                <span class="chart_headings">Sales Analytics</span>
+                                <canvas id="myChart1" style="width:100%;max-width:600px;max-height: 320px;"></canvas>
+                            </div>
+
+                            <div id="two_pie_charts">
+                                <span class="chart_headings">Earning Reports</span>
+                                <div>
+                                    <canvas id="myChart2" style="width:50%;max-width:150px"></canvas>
+                                    <canvas id="myChart3" style="width:50%;max-width:150px"></canvas>
+                                </div>
+                                <div>
+                                    <span class="menu">Weekly Earning</span>
+                                    <span class="menu">Monthly Earning</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- <div id="summa"> -->
+
+                    <!-- </div> -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="right_side_store">
+
+            <div class="dash_align">
+
+                <h4>CREATE STORE</h4>
+                <div>
+                    <span>SpartansMT</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                    <span class="menu">Create Store Form</span>
+                </div>
+
+            </div>
+
+            <div class="create_product_btn">
+                <button id="create_product_btn">Create Products</button>
+            </div>
+
+            <form id="form">
+
+                <table>
+
+                    <tr>
+                        <th class="label">Labels</th>
+                        <th class="inputs">Inputs</th>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Value:</td>
+                        <td class="inputs">
+                            <input type="number" id="value">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Title:</td>
+                        <td class="inputs">
+                            <input type="text" id="title">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Category:</td>
+                        <td class="inputs">
+                            <input type="text" id="category">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Store logo URL:</td>
+                        <td class="inputs">
+                            <input type="url" id="image">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Store Banner URL:</td>
+                        <td class="inputs">
+                            <input type="url" id="banner">
+                        </td>
+                    </tr>
+
+                </table>
+
+                <div class="btns">
+
+                    <button id="add_store_btn" type="submit">Submit Form</button>
+
+                    <!-- <button id="update_btn">Update Store</button>
+            
+                    <button id="edit_btn">Edit Store</button>
+            
+                    <button id="delete_btn">Delete Store</button> -->
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <div class="right_side_products">
+
+            <div class="dash_align">
+
+                <h4>CREATE PRODUCT</h4>
+                <div>
+                    <span>SpartansMT</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                    <span class="menu">Create Product Form</span>
+                </div>
+
+            </div>
+
+            <div class="create_store_btn">
+                <button id="create_store_btn">Create Stores</button>
+            </div>
+
+            <form id="product_form">
+
+                <table>
+
+                    <tr>
+                        <th class="label">Labels</th>
+                        <th class="inputs">Inputs</th>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Store Name :</td>
+                        <td class="inputs">
+                            <input type="text" id="store_name" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Value :</td>
+                        <td class="inputs">
+                            <input type="number" id="product_value" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Title :</td>
+                        <td class="inputs">
+                            <input type="text" id="product_title" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Price :</td>
+                        <td class="inputs">
+                            <input type="number" id="price" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Full Price :</td>
+                        <td class="inputs">
+                            <input type="number" id="full_price" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Discount :</td>
+                        <td class="inputs">
+                            <input type="number" id="discount" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Rating :</td>
+                        <td class="inputs">
+                            <input type="text" id="rating" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Reviews :</td>
+                        <td class="inputs">
+                            <input type="number" id="reviews" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Product URL Link :</td>
+                        <td class="inputs">
+                            <input type="url" id="product_image" required>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <div class="btns">
+
+                    <button id="add_product" type="submit">Add Product</button>
+                    <!-- <button id="update_product">Update Product</button> -->
+                    <!-- <button id="edit_product">Edit Product</button> -->
+                    <!-- <button id="delete_btn">Delete Product</button> -->
+
+                </div>
+
+            </form>
+
+        </div>
+
+        
+
+    </header>
+
+    <script>        // Passing params id
+        const create_product_btn = document.getElementById("create_product_btn")
+        create_product_btn.addEventListener("click", () => {
+            window.location.href = "admin_home.html?id=product_form"
+        })
+
+        const create_store_btn = document.getElementById("create_store_btn")
+        create_store_btn.addEventListener("click", () => {
+            window.location.href = "admin_home.html?id=store_form"
+        })
+
+        // URL Params
+        const url = window.location.search;
+        const urlParams = new URLSearchParams(url);
+        const paramsId = urlParams.get("id")
+        console.log(paramsId)
+
+        // Display Block and None Codes
+        if (paramsId === "store_form") {
+            document.querySelector(".right_side_store").style.display = "block"
+            document.querySelector(".right_side").style.display = "none"
+            document.querySelector(".right_side_products").style.display = "none"
+        }
+
+        if (paramsId === "dashboard") {
+            document.querySelector(".right_side_store").style.display = "none"
+            document.querySelector(".right_side_products").style.display = "none"
+            document.querySelector(".right_side").style.display = "block"
+        }
+
+        if (paramsId === "product_form") {
+            document.querySelector(".right_side_store").style.display = "none"
+            document.querySelector(".right_side_products").style.display = "block"
+            document.querySelector(".right_side").style.display = "none"
+        }
+
+        // if (paramsId === "tables") {
+        //     document.querySelector(".right_side_store").style.display = "none"
+        //     document.querySelector(".right_side_products").style.display = "none"
+        //     document.querySelector(".right_side").style.display = "none"
+        //     document.querySelector(".tables").style.display = "block"
+        // }
+
+        // Bar Chart Codes
+        var xValues = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var yValues = [55, 49, 44, 24, 25, 22, 43];
+        var barColors = ["red", "green", "blue", "orange", "brown", "red", "green"];
+
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: ""
+                }
+            }
+        });
+
+        // Chart.js Codes
+        var xValues = ["Nike", "Lenskart", "Chales & Keith", "Vero Moda", "Poorvika"];
+        var yValues = [55, 49, 44, 33, 63];
+        var barColors = ["red", "green", "blue", "orange", "brown"];
+
+        new Chart("myChart1", {
+            type: "doughnut",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues,
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    // text: "World Wide Wine Production 2018"
+                }
+            }
+        });
+
+        // End Chart.js Codes
+
+        var xValues = ["Weekly Earnings", ""];
+        var yValues = [75, 25];
+        var barColors = ["blue",];
+
+        new Chart("myChart2", {
+            type: "doughnut",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues,
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    // text: "World Wide Wine Production 2018"
+                }
+            }
+        });
+
+        var xValues = ["Monthly Earnings", ""];
+        var yValues = [75, 25];
+        var barColors = ["green",];
+
+        new Chart("myChart3", {
+            type: "doughnut",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues,
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    // text: "World Wide Wine Production 2018"
+                }
+            }
+        });
+
+        // Add Store Details in the localstorage codes
+        const add_store_btn = document.getElementById("form")
+        add_store_btn.addEventListener("submit", el => {
+
+            const id = Date.now();  // generate Primary Key
+
+            const image = document.getElementById("image").value
+            const title = document.getElementById("title").value
+            const category = document.getElementById("category").value
+            const banner = document.getElementById("banner").value
+            const { value } = document.getElementById("value")
+            const products = [];
+
+            if (image !== "" && title !== "" && category !== "" && value !== "" && banner !== "") {
+
+                el.preventDefault();
+                const storesDetails = JSON.parse(localStorage.getItem("stores")) ?? [];
+                // const value = document.getElementById("value");
+
+                // const image = document.getElementById("image").value
+                // const title = document.getElementById("title").value
+                // const category = document.getElementById("category").value
+                // const banner = document.getElementById("banner").value
+
+                let storede = 0;
+                // console.log(storesDetails)
+                storesDetails.find(e => {
+                    if (e.value === value.value) {
+                        // console.log(e["value"])
+                        // console.log(value.value)
+                        return storede = 1;
+                    }
+
+                    storede = 0;
+                });
+
+                if (storede === 1) {
+                    alert("already exists")
+                }
+                else {
+
+                    const store = {};
+
+                    // let id;
+
+                    // for (let i = storesDetails.length - 1; i >= storesDetails.length - 1; i--) {
+                    //     id = storesDetails[i] + 1;
+                    // }
+
+                    // const { value } = document.getElementById("value");
+
+                    store.image = image;
+                    store.title = title;
+                    store.category = category;
+                    store.value = value;
+                    store.id = id;
+                    store.products = products;
+                    store.banner = banner;
+
+                    storesDetails.push(store);
+
+                    localStorage.setItem("stores", JSON.stringify(storesDetails))
+
+                }
+
+            }
+            else {
+                alert("Field can't be empty")
+            }
+
+            window.location.href = "admin_home.html?id=store_form"
+
+        })
+
+        // Add Product Details in the localstorage code
+        const product_form = document.getElementById("product_form")
+        product_form.addEventListener("submit", ele => {
+
+            // ele.preventDefault()
+
+            const image = document.getElementById("product_image").value.trim();
+            const title = document.getElementById("product_title").value.trim();
+            const price = document.getElementById("price").value
+            const { value } = document.getElementById("product_value").value
+            const full_price = document.getElementById("full_price").value
+            const discount = document.getElementById("discount").value
+            const rating = document.getElementById("rating").value
+            const reviews = document.getElementById("reviews").value
+
+            const storesDetails = JSON.parse(localStorage.getItem("stores"))
+            const store_name = document.getElementById("store_name").value
+
+            storesDetails.find(el => {
+                if (el.title === store_name) {
+
+                    if (image !== "" && title !== "" && price !== "" && value !== "" && full_price !== "" && discount !== "" && rating !== "" && reviews !== "") {
+
+                        const productDetails = el.products
+                        const val = document.getElementById("product_value");
+                        let prodcutde;
+
+                        productDetails.find(e => {
+
+                            console.log(e.value)
+
+                            if (e.value === val.value) {
+                                return prodcutde = 1;
+                            }
+
+                            prodcutde = 0;
+                            // return e;
+                        });
+
+                        if (prodcutde === 1) {
+                            alert("already exists")
+                        }
+                        else {
+                            const product = {};
+                            product.image = image;
+                            product.title = title;
+                            product.price = price;
+                            product.value = val.value;
+                            product.full_price = full_price;
+                            product.discount = discount;
+                            product.rating = rating;
+                            product.reviews = reviews;
+                            productDetails.push(product);
+
+                            const newItems = JSON.parse(localStorage.getItem("stores"))
+
+                            newItems.find(element => {
+
+                                if (element.title === store_name) {
+                                    const save = element.products
+                                    // console.log(save)
+                                    save.push(product)
+                                    localStorage.setItem("stores", JSON.stringify(newItems))
+                                }
+                                // return element;
+                            })
+
+                        }
+                    }
+                    else {
+                        alert("Field can't be empty")
+                    }
+                }
+                // else {
+                //     alert("Your Store Name Isn't Matched")
+                // }
+                // return el;
+
+            })
+
+            window.location.href = "admin_home.html?id=product_form"
+
+        });
+
+        // First Row Three Boxes count Codes
+        const orders = JSON.parse(localStorage.getItem("orders"))
+        let total_price1 = 0
+        let quantity = 0;
+        for (let i = 0; i < orders.length; i++) {
+
+            total_price1 += parseFloat(orders[i].price) * parseFloat(orders[i].quantity)
+            quantity += parseFloat(orders[i].quantity)
+
+        }
+
+        // Average Algorithm
+        let total_average = 0;
+        total_average = total_price1 / quantity
+
+        // Number of Sales
+        const total_sales = document.getElementById("total_sales")
+        total_sales.innerText = orders.length;
+
+        // Total Sales Revenue
+        const total_price = document.getElementById("total_price")
+        total_price.innerText = `₹ ${total_price1}`;
+
+        // Average Price
+        const average = document.getElementById("average")
+        average.innerText = `₹ ${parseFloat(total_average.toFixed(2))}`
+    </script>
+
+</body>
+
+</html>

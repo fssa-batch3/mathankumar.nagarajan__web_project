@@ -11,38 +11,56 @@
     <title>SpartansMT</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/image/home/logo icon.png" alt="logo icon">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+
+        <!-- Notify CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/suryaumapathy2812/notify__js/notify.css">
+
 </head>
 
 <body>
 
-
     <header>
-        <main>
+        <form id="form">
 
-            <div>
-                <img src="../../assets/image/signup/login-page-img.jpg" alt="login-page-img" />
-            </div>
-            <div>
-                <h1>Sign In</h1>
-                <div class="input-alignment">
-                    <span class="material-symbols-outlined">person</span>
-                    <label><input class="input-box" id="confirm_email" type="email" name="email" placeholder="Email"  required="true"></label>
+            <main>
+
+                <div>
+                    <img src="../../assets/image/signup/login-page-img.jpg" alt="login-page-img">
                 </div>
-                <hr>
-                <div class="input-alignment">
-                    <span class="material-symbols-outlined">lock</span>
-                    <label><input class="input-box" id="password" type="password" name="password" placeholder="Password" pattern="[A-Za-z0-9]{8-16}" required="true" /></label>
+                <div>
+                    <h1>Sign In</h1>
+                    <div class="input-alignment">
+                        <span class="material-symbols-outlined">person</span>
+                        <label>
+                            <input class="input-box" id="confirm_email" type="email" name="email" placeholder="Email"
+                                pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                required="true"></label>
+                    </div>
+                    <hr>
+                    <div class="input-alignment">
+                        <span class="material-symbols-outlined">lock</span>
+                        <label>
+                            <input class="input-box" id="password" type="password" name="password"
+                                placeholder="Password"
+                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"
+                                required="true"></label>
+                    </div>
+                    <hr>
+                    <label>
+                        <input id="checkbox" type="checkbox" name="checkbox">Remember Me
+                    </label>
+                    <br>
+
+                    <button id="login" type="submit">
+                        <b>Login</b>
+                    </button>
+
                 </div>
-                <hr>
-                <label><input id="checkbox" type="checkbox" name="checkbox" required />Remember me</label>
-                <br>
 
-                <button id="login" type="button" onclick="login()"><b>Login</b></button>
-                
-            </div>
+            </main>
+        </form>
 
-        </main>
         <div class="footer">
             <div>
                 <a href="../../pages/login/signup.html">
@@ -51,64 +69,72 @@
             </div>
             <div id="icons">
                 <p>Or login with</p>
-                <img src="../../assets/image/home/facebook.png" alt="facebook icon" />
-                <img src="../../assets/image/home/twitter-sign.png" alt="twitter icon" />
-                <img src="../../assets/image/home/google-icon.png" alt="google-icon" />
+                <img src="../../assets/image/home/facebook.png" alt="facebook icon">
+                <img src="../../assets/image/home/twitter-sign.png" alt="twitter icon">
+                <img src="../../assets/image/home/google-icon.png" alt="google-icon">
             </div>
         </div>
 
     </header>
 
-    <script>
+    <!-- Notify Js script file -->
+    <script src="https://cdn.jsdelivr.net/gh/suryaumapathy2812/notify__js/notify.js"> </script>
 
-        function login() {
-            const email = document.getElementById("confirm_email").value
-            const password = document.getElementById("password").value
+    <script>        // Url params value
+        const url = window.location.search;
+        const urlParams = new URLSearchParams(url);
+        const paramsId = urlParams.get("id")
 
-            const User_details = JSON.parse(localStorage.getItem("arr"))
+        const form = document.getElementById("form")
+        form.onsubmit = function login(e) {
 
-            
+            e.preventDefault()
 
+            const email = document.getElementById("confirm_email").value;
+            const password = document.getElementById("password").value;
+
+            const User_details = JSON.parse(localStorage.getItem("arr"));
 
             let check;
-            User_details.find(element => {
-                if (element["user_email"] === email && element["creatpassword"] === password) {
 
-                    let active_user= element
-                    console.log(active_user);
-                    localStorage.setItem("active_user", JSON.stringify(active_user))
+            if (email === "admin@spartansmt.com" && password === "Admin@123") {
 
+                window.location.href = "../../pages/admin/admin_home.html?id=dashboard";
+                alert("Admin Logged")
 
-                    return check = 1
-                
+            } else {
+
+                User_details.find(element => {
+                    if (element.user_email === email && element.creatpassword === password) {
+
+                        const active_user = element;
+                        console.log(active_user);
+                        localStorage.setItem("active_user", JSON.stringify(active_user));
+
+                        return check = 1;
+
+                    }
+
+                    check = 0;
+
+                })
+                if (check === 1) {
+
+                    Notify.success("Logged in");
+                    if (paramsId === "signup") {
+                        window.location.href = "../../pages/home/profile.html?id=profile";
+                    } else {
+                        window.location.href = "../../pages/home/home.html"
+                    }
                 }
                 else {
-
-                    return check = 0
-
+                    Notify.error("Invalid");
                 }
-            })
-            if (check == 1) {
 
-
-                // const user_details = JSON.parse(localStorage.getItem('arr')) ?? [];
-                // user_details.push(login_user);
-                // localStorage.setItem("login_details", JSON.stringify(user_details));
-
-
-
-                alert("Logged in")
-                window.location.href = "../../pages/home/profile.html"
             }
-            else {
-                alert("Invalid")
-            }
+
         }
-
-
-
     </script>
-
 
 </body>
 

@@ -2,40 +2,124 @@
 
 
 body{
-    background-color: black;
-    color: white;
-    font-size: 40px;
     margin: 0%;
     padding: 0%;
     font-family: 'Barlow', sans-serif;
-    font-weight: bold;
 }
 
-input{
-    color: red;
-    font-size: 20px;
-    border: 3px solid blue;
-}
 
-input:valid{
+
+/* input:valid{
     border: 3px solid lightgreen;
 }
 
 input:invalid{
     border: 3px solid red;
-}
+} */
 
 #update_btn{
     visibility: hidden;
 }
 
-#store_img{
+/* #store_img{
     margin-top: 100px;
     width: 200px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+} */
+
+/* Nav Bar Starting */
+
+nav{
+    height: 80px;
+    background-color: #f5f5f7;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
 }
+
+nav div img{
+    width: 18%;
+    margin-left: 30px;
+}
+
+nav ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li{
+    display: block;
+    font-size: 17px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* Store Form CSS */
+
+input{
+    font-size: 20px;
+    width: 500px;
+    height: 30px;
+    /* border: none; */
+    outline: none;
+    /* margin: 0% auto; */
+}
+
+label{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0% auto;
+
+}
+
+form{
+    width: 60%;
+    border-radius: 20px;
+    margin: 5% auto;
+    background-color: rgb(255, 249, 240);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.btns{
+    display: flex;
+    margin-top: 10px;
+}
+
+.btns button{
+    padding: 15px 40px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+#add_store_btn, #add_product{
+    background-color: #00ff00;
+}
+
+#update_btn, #update_product {
+    background-color: #0000ff;
+}
+
+#delete_btn{
+    background-color: #ff0000;
+}
+
+#edit_btn, #edit_product {
+    background-color: #ff6600;
+}
+
 
 
 
@@ -44,7 +128,9 @@ input:invalid{
 
 
 
-
+#update_product {
+    visibility: hidden;
+}
 
 
 

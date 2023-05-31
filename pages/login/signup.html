@@ -14,11 +14,11 @@
 
 <body>
 
-    <p id="signin">Already have an account? <a href="../../pages/login/login.html">Sign in here!</a></p>
+    <p id="signin">
+Already have an account? <a href="../../pages/login/login.html">Sign in here!</a>
+</p>
 
-
-    <form>
-
+    <form id="signup_form">
 
         <div class="container">
 
@@ -28,50 +28,70 @@
             <div>
                 <h1>Create An Account</h1>
                 <div class="box-column">
-                    <label>First Name<br><input type="text" id="firstname" name="first-name" class="input"
-                            pattern="[A-Za-Z]{1-16}" required="true"></label>
-                    <label>Last Name<br><input type="text" id="lastname" name="Last-name" class="input"
-                            pattern="[A-Za-Z]{1-16}" required="true"></label>
+                    <label>
+First Name<br>
+<input type="text" id="firstname" name="first-name" class="input"
+                        pattern="[A-Za-z]{1,20}" required="true"></label>
+                    <label>
+Last Name<br>
+<input type="text" id="lastname" name="Last-name" class="input"
+                        pattern="[a-zA-Z]{1,20}" required="true"></label>
                 </div>
 
                 <div class="box-column">
-                    <label>Email<br><input type="email" id="email" required="true" name="email" class="input"></label>
-                    <label>Address<br><input type="text" id="address" required="true" name="address"
+                    <label>
+Email<br>
+<input type="email" id="email" required="true" name="email" class="input"
+                            pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"></label>
+                    <label>
+Phone number<br>
+<input type="tel" pattern="[789][0-9]{9}" id="address" required="true" name="address"
                             class="input"></label>
                 </div>
 
                 <div class="box-column">
-                    <label>Create Password<br><input id="creatpassword" type="password" name="create password"
-                            class="input" required="true">
-                        <label>Confirm Password<br><input id="confirmpassword" type="password" required="true"
-                                name="confirm password" class="input"></label>
+                    <label>Create Password
+                        <br>
+                        <input id="creatpassword" type="password" name="create password" class="input" required="true" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$">
+                    </label>
+                    <label>Confirm Password
+                        <br>
+                        <input id="confirmpassword" type="password" required="true" name="confirm password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" class="input">
+                    </label>
                 </div>
-                <label><input type="checkbox" name="checkbox" id="checkbox">Creating your account and you
-                    accepting<b>Terms & Conditions.</b></label>
+                <label>
+<input type="checkbox" name="checkbox" id="checkbox">Creating your account and you
+                    accepting<b>Terms & Conditions.</b>
+</label>
                 <br>
-                <button type="button" onclick="signup()" class="create-ac-btn"><b>Create Account</b></button>
+                <button type="submit" class="create-ac-btn">
+<b>Create Account</b>
+</button>
 
                 <div class="box-column">
                     <div class="icons-alignment">
                         <img class="icon" src="../../assets/image/home/facebook.png" alt="facebook icon">
-                        <p><b>Sign up Using Facebook!</b></p>
+                        <p>
+<b>Sign up Using Facebook!</b>
+</p>
                     </div>
                     <div class="icons-alignment">
                         <img class="icon" src="../../assets/image/home/twitter-sign.png" alt="icon">
-                        <p><b>Sign up Using Twitter!</b></p>
+                        <p>
+<b>Sign up Using Twitter!</b>
+</p>
                     </div>
                 </div>
 
             </div>
 
         </div>
-
     </form>
 
+    <script>        const form = document.getElementById("signup_form");
+        form.onsubmit = function signup(e) {
 
-    <script>
-
-        function signup() {
+            e.preventDefault()
 
             const first_name = document.getElementById("firstname").value.trim();
             const last_name = document.getElementById("lastname").value.trim();
@@ -79,63 +99,66 @@
             const address = document.getElementById("address").value.trim();
             const creatpassword = document.getElementById("creatpassword").value.trim();
             const confirm_password = document.getElementById("confirmpassword").value.trim();
+            const address2 = "";
+            const zip_code = "";
+            const country = "";
+            const state = "";
 
+            if (first_name !== "" && last_name !== "" && user_email !== "" && address !== "" && creatpassword !== "" && confirm_password !== "") {
 
+                if (creatpassword === confirm_password) {
 
-            if (first_name != "" && last_name != "" && user_email != "" && address != "" && creatpassword != "" && confirm_password != "" && creatpassword === confirm_password) {
+                    const User_details = JSON.parse(localStorage.getItem('arr')) ?? [];
 
-                let user = {};
-                let arr = [];
+                    let check = 0;
 
-                user["first_name"] = first_name;
-                user["last_name"] = last_name;
-                user["user_email"] = user_email;
-                user["address"] = address;
-                user["creatpassword"] = creatpassword;
-                user["confirm_password"] = confirm_password;
+                    User_details.find(element => {
 
-                let User_details = JSON.parse(localStorage.getItem('arr'));
+                        if (element.user_email === user_email) {
 
-                User_details.find(element => {
+                            return check = 1;
+                        }
+                        
+                            check = 0;
 
-                    if (element["user_email"] === user_email) {
-                        // if (1 === 1) {
+                        return element;
+                
+                    });
 
-
-
-                        // const user_datas = JSON.parse(localStorage.getItem('arr')) ?? [];
-
-
-                        // user_datas.push(user);
-                        // localStorage.setItem("arr", JSON.stringify(user_datas));
-                        // window.location.href = "login.html"
-
-                        return check = 1
+                    if (check === 1) {
+                        alert("Email is already exits")
                     }
-
                     else {
-                        return check = 0
+
+                        const user = {};
+
+                        user.first_name = first_name;
+                        user.last_name = last_name;
+                        user.user_email = user_email;
+                        user.mobile_number = address;
+                        user.creatpassword = creatpassword;
+                        user.confirm_password = confirm_password;
+                        user.address = address2;
+                        user.zip_code = zip_code;
+                        user.country = country;
+                        user.state = state;
+
+                        User_details.push(user);
+                        localStorage.setItem("arr", JSON.stringify(User_details));
+                        window.location.href = "login.html?id=signup"
+
                     }
-                });
-                if (check == 1) {
-                    alert("email already exists")
+
                 }
                 else {
-                    const user_datas = JSON.parse(localStorage.getItem('arr')) ?? [];
-                    user_datas.push(user);
-                    localStorage.setItem("arr", JSON.stringify(user_datas));
-                    window.location.href = "login.html"
+                    alert("Your password is not matched")
                 }
             }
-
-        
             else {
                 alert("Field can't be empty")
             }
-    }
-
+        }
     </script>
-
 
 </body>
 

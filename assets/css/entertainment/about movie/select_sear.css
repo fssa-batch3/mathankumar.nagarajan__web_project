@@ -186,13 +186,13 @@ a {
     transform: scale(1.1);
 }
 
-#white{
+.white{
     background-color: white;
 }
-#yellow{
+.yellow{
     background-color: #f9ba11;
 }
-#blue{
+.blue{
     background-color: #4d82ff;
 }
 #booking_hours{

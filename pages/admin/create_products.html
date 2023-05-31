@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/admin/create_store.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>SpartansMT</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/image/home/logo icon.png" alt="logo icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+</head>
+
+<body>
+
+    <nav>
+        <div>
+            <a href="../../index.html">
+                <img src="../../assets/image/home/logo1.png" alt="Product Logo">
+            </a>
+        </div>
+        <ul>
+            <a href="create_store.html">
+                <menu>Store Form</menu>
+            </a>
+            <a href="create_products.html">
+                <menu>Product Form</menu>
+            </a>
+        </ul>
+    </nav>
+
+    <form action="">
+
+        <label for="store_name">Store Name :</label>
+        <br>
+        <input type="text" id="store_name">
+
+        <br>
+
+        <label for="value">Value :</label>
+        <br>
+        <input type="number" id="value">
+
+        <br>
+
+        <label for="title">Title :</label>
+        <br>
+        <input type="text" id="title">
+
+        <br>
+
+        <label for="price">Price :</label>
+        <br>
+        <input type="number" id="price">
+
+        <br>
+
+        <label for="full_price">Full Price :</label>
+        <br>
+        <input type="number" id="full_price">
+
+        <br>
+
+        <label for="discount">Discount :</label>
+        <br>
+        <input type="number" id="discount">
+
+        <br>
+
+        <label for="rating">Rating :</label>
+        <br>
+        <input type="text" id="rating">
+
+        <br>
+
+        <label for="reviews">Reviews :</label>
+        <br>
+        <input type="number" id="reviews">
+
+        <br>
+
+        <label for="image">Product URL Link :</label>
+        <br>
+        <input type="url" id="image">
+
+        <div class="btns">
+
+            <button id="add_product">Add Product</button>
+            <button id="update_product">Update Product</button>
+            <button id="edit_product">Edit Product</button>
+            <button id="delete_btn">Delete Product</button>
+
+        </div>
+
+    </form>
+
+    <script>        const addProduct = document.getElementById("add_product")
+        addProduct.addEventListener("click", ele => {
+            // ele.preventDefault()
+
+            const image = document.getElementById("image").value.trim();
+            const title = document.getElementById("title").value.trim();
+            const price = document.getElementById("price").value
+            const { value } = document.getElementById("value")
+            const full_price = document.getElementById("full_price").value
+            const discount = document.getElementById("discount").value
+            const rating = document.getElementById("rating").value
+            const reviews = document.getElementById("reviews").value
+
+            const storesDetails = JSON.parse(localStorage.getItem("stores"))
+            const store_name = document.getElementById("store_name").value
+
+            storesDetails.find(el => {
+                if (el.title === store_name) {
+
+                    if (image !== "" && title !== "" && price !== "" && value !== "" && full_price !== "" && discount !== "" && rating !== "" && reviews !== "") {
+
+                        const productDetails = el.products
+                        const val = document.getElementById("value");
+                        let prodcutde;
+
+                        productDetails.find(e => {
+
+                            console.log(e.value)
+
+                            if (e.value === val.value) {
+                                return prodcutde = 1;
+                            }
+
+                            prodcutde = 0;
+                            // return e;
+                        });
+
+                        if (prodcutde === 1) {
+                            alert("already exists")
+                        }
+                        else {
+                            const product = {};
+                            product.image = image;
+                            product.title = title;
+                            product.price = price;
+                            product.value = value;
+                            product.full_price = full_price;
+                            product.discount = discount;
+                            product.rating = rating;
+                            product.reviews = reviews;
+                            productDetails.push(product);
+
+                            const newItems = JSON.parse(localStorage.getItem("stores"))
+
+                            newItems.find(element => {
+
+                                if (element.title === store_name) {
+                                    const save = element.products
+                                    // console.log(save)
+                                    save.push(product)
+                                    localStorage.setItem("stores", JSON.stringify(newItems))
+                                }
+                                // return element;
+                            })
+
+                        }
+                    }
+                    else {
+                        alert("Field can't be empty")
+                    }
+                }
+                // else {
+                //     alert("Your Store Name Isn't Matched")
+                // }
+                // return el;
+            })
+        });
+
+        const updateProduct = document.getElementById("update_product");
+        updateProduct.addEventListener("click", el => {
+
+            const storeDetails = JSON.parse(localStorage.getItem("stores"))
+
+            const { value } = document.getElementById("value")
+            const storeName = document.getElementById("store_name").value
+
+            let check;
+            let check2;
+
+            storeDetails.forEach(e => {
+
+                if (storeName === e.title) {
+
+                    return check = e;
+
+                }
+                // return e;
+            });
+
+            check.products.find(element => {
+
+                if (element.value === value) {
+                    return check2 = element;
+                }
+                // return element;
+            })
+
+            check2.image = document.getElementById("image").value
+            check2.title = document.getElementById("title").value
+            check2.price = document.getElementById("price").value
+            check2.value = document.getElementById("value").value
+            check2.full_price = document.getElementById("full_price").value
+            check2.discount = document.getElementById("discount").value
+            check2.rating = document.getElementById("rating").value
+            check2.reviews = document.getElementById("reviews").value
+
+            localStorage.setItem("stores", JSON.stringify(storeDetails))
+
+        })
+
+        const editProduct = document.getElementById("edit_product")
+        editProduct.addEventListener("click", el => {
+
+            el.preventDefault()
+
+            const storeDetails = JSON.parse(localStorage.getItem("stores"))
+
+            const { value } = document.getElementById("value")
+            const storeName = document.getElementById("store_name").value
+
+            // console.log(value)
+            // console.log(storeName)
+
+            let check;
+            let check2;
+
+            storeDetails.find(element => {
+
+                if (element.title === storeName) {
+
+                    // console.log(element['title'])
+                    return check = element;
+
+                }
+                // return element;
+            })
+            check.products.find((e) => {
+
+                if (e.value === value) {
+                    return check2 = e;
+                }
+                // return e;
+            })
+            console.log(check2)
+
+            document.getElementById("image").value = check2.image
+            document.getElementById("title").value = check2.title
+            document.getElementById("price").value = check2.price
+            document.getElementById("value").value = check2.value
+            document.getElementById("full_price").value = check2.full_price
+            document.getElementById("discount").value = check2.discount
+            document.getElementById("rating").value = check2.rating
+            document.getElementById("reviews").value = check2.reviews
+
+            document.getElementById("edit_product").style.visibility = 'hidden';
+            document.getElementById("update_product").style.visibility = 'visible';
+
+        })
+
+        const deleteProduct = document.getElementById("delete_btn")
+        deleteProduct.addEventListener("click", el => {
+
+            const storeDetails = JSON.parse(localStorage.getItem("stores"))
+
+            const { value } = document.getElementById("value")
+            const storeName = document.getElementById("store_name").value
+
+            let check;
+
+            storeDetails.find(element => {
+
+                if (element.title === storeName) {
+
+                    // console.log(element['title'])
+                    return check = element;
+
+                }
+                // return element;
+            })
+
+            const productDetails = check.products
+
+            for (let i = 0; i < productDetails.length; i++) {
+
+                if (value === productDetails[i].value) {
+
+                    productDetails.splice(i, 1)
+
+                    alert("Your account have been deleted")
+
+                    localStorage.setItem("stores", JSON.stringify(storeDetails));
+
+                }
+            }
+
+        })
+
+        /*
+        
+            for (let i = 0; i < productDetails.length; i++) {
+
+                if (value === productDetails[i]["value"]) {
+
+                    productDetails.splice(i, 1)
+
+                    confirm("Your account have been deleted")
+
+                    localStorage.setItem("products", JSON.stringify(productDetails));
+
+                }
+            }
+        
+        */
+    </script>
+
+</body>
+
+</html>

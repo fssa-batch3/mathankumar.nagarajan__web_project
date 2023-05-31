@@ -8,6 +8,11 @@
     background-repeat: no-repeat;
 } */
 
+.h1{
+    font-size: 40px;
+    font-weight: bold;
+}
+
 body{
     margin: 0%;
     font-family: 'Barlow', sans-serif;
