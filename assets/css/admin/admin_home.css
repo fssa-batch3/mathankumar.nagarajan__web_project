@@ -46,7 +46,7 @@ ul{
     height: 91.1vh;
 }
 
-.right_side{
+.right_side, .tables{
     /* display: none; */
     width: 85%;
     background-color: #1d222e;
@@ -326,5 +326,16 @@ table tr th{
     color: white;
     border: none;
     outline: none;
+}
+
+
+/* Tables */
+
+.store_table{
+    width: 95%;
+    height: 80vh;
+    margin: auto;
+    background-color: #252b3b;
+    border-radius: 3px;
 }
 

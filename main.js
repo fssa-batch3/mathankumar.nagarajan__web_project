@@ -48,7 +48,7 @@ const stores = [
       },
       {
         image: "https://iili.io/HUEMhf1.webp",
-        title: "Men's Wonder-13 Sports Running Shoes",
+        title: "Men's Wonder-13 Sports Running Shoe",
         price: "1799",
         value: "5",
         full_price: "2999",
