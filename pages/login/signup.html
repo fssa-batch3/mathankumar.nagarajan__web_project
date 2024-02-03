@@ -94,7 +94,7 @@
                 user["creatpassword"] = creatpassword;
                 user["confirm_password"] = confirm_password;
 
-                let User_details = JSON.parse(localStorage.getItem('arr'));
+                let User_details = JSON.parse(localStorage.getItem('arr')) ?? [];
 
                 User_details.find(element => {
 
